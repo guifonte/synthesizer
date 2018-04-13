@@ -1,0 +1,30 @@
+|infrastructure_block
+clk_50M => takt_teiler:inst_takt_teiler.clk_fast_i
+button_1 => sync_block:inst_sync_block_1.async_i
+button_2 => sync_block:inst_sync_block_2.async_i
+clk_12M << takt_teiler:inst_takt_teiler.clk_slow_o
+button_1sync <= sync_block:inst_sync_block_1.syncd_o
+button_2sync <= sync_block:inst_sync_block_2.syncd_o
+
+
+|infrastructure_block|takt_teiler:inst_takt_teiler
+clk_fast_i => count[0].CLK
+clk_fast_i => count[1].CLK
+clk_fast_i => count[2].CLK
+clk_slow_o <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|infrastructure_block|sync_block:inst_sync_block_1
+async_i => shiftreg[2].DATAIN
+clk => shiftreg[1].CLK
+clk => shiftreg[2].CLK
+syncd_o <= shiftreg[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|infrastructure_block|sync_block:inst_sync_block_2
+async_i => shiftreg[2].DATAIN
+clk => shiftreg[1].CLK
+clk => shiftreg[2].CLK
+syncd_o <= shiftreg[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

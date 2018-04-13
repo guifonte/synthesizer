@@ -32,7 +32,7 @@ BEGIN
     -------------------------------------------
 	comb_proc : PROCESS(async_i, shiftreg)
 	BEGIN	
-		next_shiftreg <= data_in & shiftreg(2 downto 1) ;  -- shift direction towards LSB		
+		next_shiftreg <= async_i & shiftreg(2 downto 1) ;  -- shift direction towards LSB		
 	END PROCESS comb_proc;		
 	 
 	-------------------------------------------
@@ -40,7 +40,7 @@ BEGIN
     -------------------------------------------
 	reg_proc : PROCESS(clk)
 	BEGIN	
-		IF (rising_edge(clock)) THEN
+		IF (rising_edge(clk)) THEN
 			shiftreg <= next_shiftreg;
 		END IF;
 	END PROCESS reg_proc;	
@@ -49,6 +49,6 @@ BEGIN
     -- Concurrent Assignments  
 	-- OBs.: no logic after the 1st-FF (shiftreg(2)) because it was added for sync purposes
     -------------------------------------------
-	data_out	<= 	   shiftreg(1) ; 	-- take serial_in at same period as fall/rise pulse
+	syncd_o	<= 	   shiftreg(1) ; 	-- take serial_in at same period as fall/rise pulse
 			
 END rtl;	

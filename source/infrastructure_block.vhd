@@ -14,12 +14,12 @@ use ieee.std_logic_1164.all;
 -- Entity Declaration 
 ENTITY infrastructure_block IS
 	PORT(
-	clk_50M  		:  IN   STD_LOGIC;
-	button_1			:  IN   STD_LOGIC;
-	button_2			:  IN   STD_LOGIC;
-	clk_12M			:	OUT  STD_LOGIC;
-	button_1sync	:	OUT  STD_LOGIC;
-	button_2sync	:	OUT  STD_LOGIC
+	clk_50M  		:  IN			STD_LOGIC;
+	button_1			:  IN			STD_LOGIC;
+	button_2			:  IN			STD_LOGIC;
+	clk_12M			:	BUFFER	STD_LOGIC;
+	button_1sync	:	OUT		STD_LOGIC;
+	button_2sync	:	OUT		STD_LOGIC
 	);
 END infrastructure_block ;
 
@@ -39,28 +39,27 @@ ARCHITECTURE struct OF infrastructure_block IS
 		clk				: IN    std_logic;
 		syncd_o			: OUT	  std_logic 
 	);
-	END COMPONENT;
-	
-	SIGNAL clk_12M_sig	:	std_logic;
+	END COMPONENT;	
 	
 	BEGIN
 		inst_takt_teiler: takt_teiler
 		PORT MAP(
-					clk_fast_i	=> clk_50M;
+					clk_fast_i	=> clk_50M,
 					clk_slow_o  =>	clk_12M
 					);
 					
 		inst_sync_block_1: sync_block
 		PORT MAP(
-					async_i	=>	button_1;
-					clk 		=> clk_12M;
+					async_i	=>	button_1,
+					clk 		=> clk_12M,
 					syncd_o  =>	button_1sync
 					);
 	
 		inst_sync_block_2: sync_block
 		PORT MAP(
-					async_i	=>	button_2;
-					clk 		=> clk_12M;
+					async_i	=>	button_2,
+					clk 		=> clk_12M,
 					syncd_o  =>	button_2sync
-					);
+					);	
+		
 END struct;	
