@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Thu Apr 12 19:58:22 2018
+Analysis & Synthesis Status : Successful - Fri Apr 13 10:35:21 2018
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : Synthesizer
-Top-level Entity Name : infrastructure_block
+Top-level Entity Name : FPGA_infrastructure_block
 Family : Cyclone II
-Total logic elements : 8
-    Total combinational functions : 4
-    Dedicated logic registers : 7
-Total registers : 7
-Total pins : 6
+Total logic elements : 1,920
+    Total combinational functions : 1,910
+    Dedicated logic registers : 94
+Total registers : 94
+Total pins : 19
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

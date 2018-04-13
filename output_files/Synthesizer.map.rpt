@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Synthesizer
-Thu Apr 12 19:58:22 2018
+Fri Apr 13 10:35:21 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,10 +13,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: takt_teiler:inst_takt_teiler
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. State Machine - |FPGA_infrastructure_block|i2c_master:inst_i2c_master|fsm_state
+  9. State Machine - |FPGA_infrastructure_block|codec_control:inst_codec_control|fsm_state
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler
+ 14. Parameter Settings for Inferred Entity Instance: codec_control:inst_codec_control|lpm_divide:Mod0
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -42,16 +47,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Apr 12 19:58:22 2018           ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 13 10:35:21 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Synthesizer                                     ;
-; Top-level Entity Name              ; infrastructure_block                            ;
+; Top-level Entity Name              ; FPGA_infrastructure_block                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 8                                               ;
-;     Total combinational functions  ; 4                                               ;
-;     Dedicated logic registers      ; 7                                               ;
-; Total registers                    ; 7                                               ;
-; Total pins                         ; 6                                               ;
+; Total logic elements               ; 1,920                                           ;
+;     Total combinational functions  ; 1,910                                           ;
+;     Dedicated logic registers      ; 94                                              ;
+; Total registers                    ; 94                                              ;
+; Total pins                         ; 19                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -59,89 +64,89 @@ applicable agreement for further details.
 +------------------------------------+-------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                          ;
-+----------------------------------------------------------------------------+----------------------+--------------------+
-; Option                                                                     ; Setting              ; Default Value      ;
-+----------------------------------------------------------------------------+----------------------+--------------------+
-; Device                                                                     ; EP2C20F484C7         ;                    ;
-; Top-level entity name                                                      ; infrastructure_block ; Synthesizer        ;
-; Family name                                                                ; Cyclone II           ; Cyclone IV GX      ;
-; Use smart compilation                                                      ; Off                  ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                   ; On                 ;
-; Enable compact report table                                                ; Off                  ; Off                ;
-; Restructure Multiplexers                                                   ; Auto                 ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off                  ; Off                ;
-; Preserve fewer node names                                                  ; On                   ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                  ; Off                ;
-; Verilog Version                                                            ; Verilog_2001         ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993            ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto                 ; Auto               ;
-; Safe State Machine                                                         ; Off                  ; Off                ;
-; Extract Verilog State Machines                                             ; On                   ; On                 ;
-; Extract VHDL State Machines                                                ; On                   ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off                  ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000                 ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250                  ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                   ; On                 ;
-; Infer RAMs from Raw Logic                                                  ; On                   ; On                 ;
-; Parallel Synthesis                                                         ; On                   ; On                 ;
-; DSP Block Balancing                                                        ; Auto                 ; Auto               ;
-; NOT Gate Push-Back                                                         ; On                   ; On                 ;
-; Power-Up Don't Care                                                        ; On                   ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off                  ; Off                ;
-; Remove Duplicate Registers                                                 ; On                   ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off                  ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off                  ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off                  ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                  ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off                  ; Off                ;
-; Ignore SOFT Buffers                                                        ; On                   ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                  ; Off                ;
-; Optimization Technique                                                     ; Balanced             ; Balanced           ;
-; Carry Chain Length                                                         ; 70                   ; 70                 ;
-; Auto Carry Chains                                                          ; On                   ; On                 ;
-; Auto Open-Drain Pins                                                       ; On                   ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                  ; Off                ;
-; Auto ROM Replacement                                                       ; On                   ; On                 ;
-; Auto RAM Replacement                                                       ; On                   ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto                 ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto                 ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On                   ; On                 ;
-; Strict RAM Replacement                                                     ; Off                  ; Off                ;
-; Allow Synchronous Control Signals                                          ; On                   ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off                  ; Off                ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                  ; Off                ;
-; Auto Resource Sharing                                                      ; Off                  ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off                  ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off                  ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off                  ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                   ; On                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off                  ; Off                ;
-; Timing-Driven Synthesis                                                    ; Off                  ; Off                ;
-; Report Parameter Settings                                                  ; On                   ; On                 ;
-; Report Source Assignments                                                  ; On                   ; On                 ;
-; Report Connectivity Checks                                                 ; On                   ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                  ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                    ; 2                  ;
-; PowerPlay Power Optimization                                               ; Normal compilation   ; Normal compilation ;
-; HDL message level                                                          ; Level2               ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off                  ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 5000                 ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                 ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                  ; 100                ;
-; Clock MUX Protection                                                       ; On                   ; On                 ;
-; Auto Gated Clock Conversion                                                ; Off                  ; Off                ;
-; Block Design Naming                                                        ; Auto                 ; Auto               ;
-; SDC constraint protection                                                  ; Off                  ; Off                ;
-; Synthesis Effort                                                           ; Auto                 ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                   ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                       ; Off                  ; Off                ;
-; Analysis & Synthesis Message Level                                         ; Medium               ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto                 ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On                   ; On                 ;
-; Synthesis Seed                                                             ; 1                    ; 1                  ;
-+----------------------------------------------------------------------------+----------------------+--------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                               ;
++----------------------------------------------------------------------------+---------------------------+--------------------+
+; Option                                                                     ; Setting                   ; Default Value      ;
++----------------------------------------------------------------------------+---------------------------+--------------------+
+; Device                                                                     ; EP2C20F484C7              ;                    ;
+; Top-level entity name                                                      ; FPGA_infrastructure_block ; Synthesizer        ;
+; Family name                                                                ; Cyclone II                ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                       ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                        ; On                 ;
+; Enable compact report table                                                ; Off                       ; Off                ;
+; Restructure Multiplexers                                                   ; Auto                      ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                       ; Off                ;
+; Preserve fewer node names                                                  ; On                        ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                       ; Off                ;
+; Verilog Version                                                            ; Verilog_2001              ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993                 ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto                      ; Auto               ;
+; Safe State Machine                                                         ; Off                       ; Off                ;
+; Extract Verilog State Machines                                             ; On                        ; On                 ;
+; Extract VHDL State Machines                                                ; On                        ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                       ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000                      ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                       ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                        ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                        ; On                 ;
+; Parallel Synthesis                                                         ; On                        ; On                 ;
+; DSP Block Balancing                                                        ; Auto                      ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                        ; On                 ;
+; Power-Up Don't Care                                                        ; On                        ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                       ; Off                ;
+; Remove Duplicate Registers                                                 ; On                        ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                       ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                       ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                       ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                       ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                       ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                        ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                       ; Off                ;
+; Optimization Technique                                                     ; Balanced                  ; Balanced           ;
+; Carry Chain Length                                                         ; 70                        ; 70                 ;
+; Auto Carry Chains                                                          ; On                        ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                        ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                       ; Off                ;
+; Auto ROM Replacement                                                       ; On                        ; On                 ;
+; Auto RAM Replacement                                                       ; On                        ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto                      ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                      ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                        ; On                 ;
+; Strict RAM Replacement                                                     ; Off                       ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                        ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                       ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                       ; Off                ;
+; Auto Resource Sharing                                                      ; Off                       ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                       ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                       ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                       ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                        ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                       ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                       ; Off                ;
+; Report Parameter Settings                                                  ; On                        ; On                 ;
+; Report Source Assignments                                                  ; On                        ; On                 ;
+; Report Connectivity Checks                                                 ; On                        ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                       ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                         ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation        ; Normal compilation ;
+; HDL message level                                                          ; Level2                    ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                       ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                      ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                      ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                       ; 100                ;
+; Clock MUX Protection                                                       ; On                        ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                       ; Off                ;
+; Block Design Naming                                                        ; Auto                      ; Auto               ;
+; SDC constraint protection                                                  ; Off                       ; Off                ;
+; Synthesis Effort                                                           ; Auto                      ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                        ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                       ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium                    ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto                      ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                        ; On                 ;
+; Synthesis Seed                                                             ; 1                         ; 1                  ;
++----------------------------------------------------------------------------+---------------------------+--------------------+
 
 
 Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
@@ -155,58 +160,109 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                              ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                       ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
-; source/sync_block.vhd            ; yes             ; User VHDL File  ; C:/Users/megas/Documents/Git/Synth/source/sync_block.vhd           ;         ;
-; source/takt_teiler.vhd           ; yes             ; User VHDL File  ; C:/Users/megas/Documents/Git/Synth/source/takt_teiler.vhd          ;         ;
-; source/infrastructure_block.vhd  ; yes             ; User VHDL File  ; C:/Users/megas/Documents/Git/Synth/source/infrastructure_block.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++--------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++--------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; source/reg_table_pkg.vhd             ; yes             ; User VHDL File               ; C:/Users/ea999/Desktop/synthesizer/source/reg_table_pkg.vhd             ;         ;
+; source/i2c_master.vhd                ; yes             ; User VHDL File               ; C:/Users/ea999/Desktop/synthesizer/source/i2c_master.vhd                ;         ;
+; source/sync_block.vhd                ; yes             ; User VHDL File               ; C:/Users/ea999/Desktop/synthesizer/source/sync_block.vhd                ;         ;
+; source/takt_teiler.vhd               ; yes             ; User VHDL File               ; C:/Users/ea999/Desktop/synthesizer/source/takt_teiler.vhd               ;         ;
+; source/infrastructure_block.vhd      ; yes             ; User VHDL File               ; C:/Users/ea999/Desktop/synthesizer/source/infrastructure_block.vhd      ;         ;
+; source/fsm.vhd                       ; yes             ; User VHDL File               ; C:/Users/ea999/Desktop/synthesizer/source/fsm.vhd                       ;         ;
+; source/FPGA_infrastructure_block.vhd ; yes             ; User VHDL File               ; C:/Users/ea999/Desktop/synthesizer/source/FPGA_infrastructure_block.vhd ;         ;
+; lpm_divide.tdf                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf        ;         ;
+; abs_divider.inc                      ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc       ;         ;
+; sign_div_unsign.inc                  ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc   ;         ;
+; aglobal130.inc                       ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; db/lpm_divide_qlo.tdf                ; yes             ; Auto-Generated Megafunction  ; C:/Users/ea999/Desktop/synthesizer/db/lpm_divide_qlo.tdf                ;         ;
+; db/abs_divider_4dg.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/ea999/Desktop/synthesizer/db/abs_divider_4dg.tdf               ;         ;
+; db/alt_u_div_k5f.tdf                 ; yes             ; Auto-Generated Megafunction  ; C:/Users/ea999/Desktop/synthesizer/db/alt_u_div_k5f.tdf                 ;         ;
+; db/add_sub_lkc.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/ea999/Desktop/synthesizer/db/add_sub_lkc.tdf                   ;         ;
+; db/add_sub_mkc.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/ea999/Desktop/synthesizer/db/add_sub_mkc.tdf                   ;         ;
+; db/lpm_abs_0s9.tdf                   ; yes             ; Auto-Generated Megafunction  ; C:/Users/ea999/Desktop/synthesizer/db/lpm_abs_0s9.tdf                   ;         ;
++--------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                       ;
-+---------------------------------------------+-------------------------------------+
-; Resource                                    ; Usage                               ;
-+---------------------------------------------+-------------------------------------+
-; Estimated Total logic elements              ; 8                                   ;
-;                                             ;                                     ;
-; Total combinational functions               ; 4                                   ;
-; Logic element usage by number of LUT inputs ;                                     ;
-;     -- 4 input functions                    ; 1                                   ;
-;     -- 3 input functions                    ; 2                                   ;
-;     -- <=2 input functions                  ; 1                                   ;
-;                                             ;                                     ;
-; Logic elements by mode                      ;                                     ;
-;     -- normal mode                          ; 4                                   ;
-;     -- arithmetic mode                      ; 0                                   ;
-;                                             ;                                     ;
-; Total registers                             ; 7                                   ;
-;     -- Dedicated logic registers            ; 7                                   ;
-;     -- I/O registers                        ; 0                                   ;
-;                                             ;                                     ;
-; I/O pins                                    ; 6                                   ;
-; Embedded Multiplier 9-bit elements          ; 0                                   ;
-; Maximum fan-out node                        ; takt_teiler:inst_takt_teiler|Equal0 ;
-; Maximum fan-out                             ; 8                                   ;
-; Total fan-out                               ; 29                                  ;
-; Average fan-out                             ; 1.71                                ;
-+---------------------------------------------+-------------------------------------+
++----------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                            ;
++---------------------------------------------+------------------------------------------+
+; Resource                                    ; Usage                                    ;
++---------------------------------------------+------------------------------------------+
+; Estimated Total logic elements              ; 1,920                                    ;
+;                                             ;                                          ;
+; Total combinational functions               ; 1910                                     ;
+; Logic element usage by number of LUT inputs ;                                          ;
+;     -- 4 input functions                    ; 653                                      ;
+;     -- 3 input functions                    ; 586                                      ;
+;     -- <=2 input functions                  ; 671                                      ;
+;                                             ;                                          ;
+; Logic elements by mode                      ;                                          ;
+;     -- normal mode                          ; 1291                                     ;
+;     -- arithmetic mode                      ; 619                                      ;
+;                                             ;                                          ;
+; Total registers                             ; 94                                       ;
+;     -- Dedicated logic registers            ; 94                                       ;
+;     -- I/O registers                        ; 0                                        ;
+;                                             ;                                          ;
+; I/O pins                                    ; 19                                       ;
+; Embedded Multiplier 9-bit elements          ; 0                                        ;
+; Maximum fan-out node                        ; codec_control:inst_codec_control|Add0~62 ;
+; Maximum fan-out                             ; 143                                      ;
+; Total fan-out                               ; 5989                                     ;
+; Average fan-out                             ; 2.96                                     ;
++---------------------------------------------+------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
-+-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
-+-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
-; |infrastructure_block             ; 4 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |infrastructure_block                              ; work         ;
-;    |sync_block:inst_sync_block_1| ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |infrastructure_block|sync_block:inst_sync_block_1 ; work         ;
-;    |sync_block:inst_sync_block_2| ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |infrastructure_block|sync_block:inst_sync_block_2 ; work         ;
-;    |takt_teiler:inst_takt_teiler| ; 4 (4)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |infrastructure_block|takt_teiler:inst_takt_teiler ; work         ;
-+-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                       ;
++-----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                      ; Library Name ;
++-----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |FPGA_infrastructure_block                          ; 1910 (0)          ; 94 (0)       ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |FPGA_infrastructure_block                                                                                                                               ; work         ;
+;    |codec_control:inst_codec_control|               ; 1803 (126)        ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|codec_control:inst_codec_control                                                                                              ; work         ;
+;       |lpm_divide:Mod0|                             ; 1677 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0                                                                              ; work         ;
+;          |lpm_divide_qlo:auto_generated|            ; 1677 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_qlo:auto_generated                                                ; work         ;
+;             |abs_divider_4dg:divider|               ; 1677 (64)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider                        ; work         ;
+;                |alt_u_div_k5f:divider|              ; 1566 (1566)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider  ; work         ;
+;                |lpm_abs_0s9:my_abs_num|             ; 47 (47)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|lpm_abs_0s9:my_abs_num ; work         ;
+;    |i2c_master:inst_i2c_master|                     ; 103 (103)         ; 52 (52)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|i2c_master:inst_i2c_master                                                                                                    ; work         ;
+;    |infrastructure_block:inst_infrastructure_block| ; 4 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|infrastructure_block:inst_infrastructure_block                                                                                ; work         ;
+;       |sync_block:inst_sync_block_1|                ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1                                                   ; work         ;
+;       |sync_block:inst_sync_block_2|                ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_2                                                   ; work         ;
+;       |takt_teiler:inst_takt_teiler|                ; 4 (4)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |FPGA_infrastructure_block|infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler                                                   ; work         ;
++-----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |FPGA_infrastructure_block|i2c_master:inst_i2c_master|fsm_state                                                                                                                                                   ;
++--------------------------------+------------------+---------------------------+----------------------+-----------------------+--------------------------------+-------------------+----------------------------+------------------+
+; Name                           ; fsm_state.S_STOP ; fsm_state.S_WAIT_FOR_STOP ; fsm_state.S_ACK_BYTE ; fsm_state.S_SEND_BYTE ; fsm_state.S_WAIT_FOR_NEXT_BYTE ; fsm_state.S_START ; fsm_state.S_WAIT_FOR_START ; fsm_state.S_IDLE ;
++--------------------------------+------------------+---------------------------+----------------------+-----------------------+--------------------------------+-------------------+----------------------------+------------------+
+; fsm_state.S_IDLE               ; 0                ; 0                         ; 0                    ; 0                     ; 0                              ; 0                 ; 0                          ; 0                ;
+; fsm_state.S_WAIT_FOR_START     ; 0                ; 0                         ; 0                    ; 0                     ; 0                              ; 0                 ; 1                          ; 1                ;
+; fsm_state.S_START              ; 0                ; 0                         ; 0                    ; 0                     ; 0                              ; 1                 ; 0                          ; 1                ;
+; fsm_state.S_WAIT_FOR_NEXT_BYTE ; 0                ; 0                         ; 0                    ; 0                     ; 1                              ; 0                 ; 0                          ; 1                ;
+; fsm_state.S_SEND_BYTE          ; 0                ; 0                         ; 0                    ; 1                     ; 0                              ; 0                 ; 0                          ; 1                ;
+; fsm_state.S_ACK_BYTE           ; 0                ; 0                         ; 1                    ; 0                     ; 0                              ; 0                 ; 0                          ; 1                ;
+; fsm_state.S_WAIT_FOR_STOP      ; 0                ; 1                         ; 0                    ; 0                     ; 0                              ; 0                 ; 0                          ; 1                ;
+; fsm_state.S_STOP               ; 1                ; 0                         ; 0                    ; 0                     ; 0                              ; 0                 ; 0                          ; 1                ;
++--------------------------------+------------------+---------------------------+----------------------+-----------------------+--------------------------------+-------------------+----------------------------+------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |FPGA_infrastructure_block|codec_control:inst_codec_control|fsm_state   ;
++-------------------------+------------------+-------------------------+------------------+
+; Name                    ; fsm_state.S_WAIT ; fsm_state.S_START_WRITE ; fsm_state.S_IDLE ;
++-------------------------+------------------+-------------------------+------------------+
+; fsm_state.S_IDLE        ; 0                ; 0                       ; 0                ;
+; fsm_state.S_START_WRITE ; 0                ; 1                       ; 1                ;
+; fsm_state.S_WAIT        ; 1                ; 0                       ; 1                ;
++-------------------------+------------------+-------------------------+------------------+
 
 
 +------------------------------------------------------+
@@ -214,23 +270,73 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 7     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 94    ;
+; Number of registers using Synchronous Clear  ; 4     ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 87    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 58    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: takt_teiler:inst_takt_teiler ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; width          ; 3     ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; i2c_master:inst_i2c_master|scl         ; 2       ;
+; i2c_master:inst_i2c_master|sda         ; 3       ;
+; Total number of inverted registers = 2 ;         ;
++----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |FPGA_infrastructure_block|i2c_master:inst_i2c_master|byte_count[1]        ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |FPGA_infrastructure_block|i2c_master:inst_i2c_master|bit_count[2]         ;
+; 8:1                ; 10 bits   ; 50 LEs        ; 10 LEs               ; 40 LEs                 ; Yes        ; |FPGA_infrastructure_block|i2c_master:inst_i2c_master|data[23]             ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |FPGA_infrastructure_block|i2c_master:inst_i2c_master|data[5]              ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |FPGA_infrastructure_block|i2c_master:inst_i2c_master|data[12]             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |FPGA_infrastructure_block|codec_control:inst_codec_control|next_fsm_state ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |FPGA_infrastructure_block|i2c_master:inst_i2c_master|Selector30           ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |FPGA_infrastructure_block|i2c_master:inst_i2c_master|Selector31           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; width          ; 3     ; Signed Integer                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: codec_control:inst_codec_control|lpm_divide:Mod0 ;
++------------------------+----------------+---------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                    ;
++------------------------+----------------+---------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                 ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                 ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                                 ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                 ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                 ;
+; CBXI_PARAMETER         ; lpm_divide_qlo ; Untyped                                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                          ;
++------------------------+----------------+---------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -239,7 +345,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -249,12 +355,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Apr 12 19:58:19 2018
+    Info: Processing started: Fri Apr 13 10:35:15 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Synthesizer -c Synthesizer
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file source/testbench_audio_synth_top.vhd
-    Info (12022): Found design unit 1: testbench_audio_synth_top-struct
-    Info (12023): Found entity 1: testbench_audio_synth_top
 Info (12021): Found 1 design units, including 0 entities, in source file source/reg_table_pkg.vhd
     Info (12022): Found design unit 1: reg_table_pkg
 Info (12021): Found 2 design units, including 1 entities, in source file source/i2c_slave_bfm.vhd
@@ -272,19 +375,68 @@ Info (12021): Found 2 design units, including 1 entities, in source file source/
 Info (12021): Found 2 design units, including 1 entities, in source file source/infrastructure_block.vhd
     Info (12022): Found design unit 1: infrastructure_block-struct
     Info (12023): Found entity 1: infrastructure_block
-Info (12127): Elaborating entity "infrastructure_block" for the top level hierarchy
-Info (12128): Elaborating entity "takt_teiler" for hierarchy "takt_teiler:inst_takt_teiler"
-Info (12128): Elaborating entity "sync_block" for hierarchy "sync_block:inst_sync_block_1"
+Info (12021): Found 2 design units, including 1 entities, in source file source/fsm.vhd
+    Info (12022): Found design unit 1: codec_control-rtl
+    Info (12023): Found entity 1: codec_control
+Info (12021): Found 2 design units, including 1 entities, in source file source/fpga_infrastructure_block.vhd
+    Info (12022): Found design unit 1: FPGA_infrastructure_block-struct
+    Info (12023): Found entity 1: FPGA_infrastructure_block
+Info (12127): Elaborating entity "FPGA_infrastructure_block" for the top level hierarchy
+Info (12128): Elaborating entity "infrastructure_block" for hierarchy "infrastructure_block:inst_infrastructure_block"
+Info (12128): Elaborating entity "takt_teiler" for hierarchy "infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler"
+Info (12128): Elaborating entity "sync_block" for hierarchy "infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1"
+Info (12128): Elaborating entity "codec_control" for hierarchy "codec_control:inst_codec_control"
+Info (12128): Elaborating entity "i2c_master" for hierarchy "i2c_master:inst_i2c_master"
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "codec_control:inst_codec_control|Mod0"
+Info (12130): Elaborated megafunction instantiation "codec_control:inst_codec_control|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "codec_control:inst_codec_control|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qlo.tdf
+    Info (12023): Found entity 1: lpm_divide_qlo
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k5f.tdf
+    Info (12023): Found entity 1: alt_u_div_k5f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_0s9.tdf
+    Info (12023): Found entity 1: lpm_abs_0s9
+Info (13014): Ignored 31 buffer(s)
+    Info (13016): Ignored 31 CARRY_SUM buffer(s)
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register codec_control:inst_codec_control|reg[31] will power up to Low
+    Critical Warning (18010): Register codec_control:inst_codec_control|reg[0] will power up to Low
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 8 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 564 megabytes
-    Info: Processing ended: Thu Apr 12 19:58:22 2018
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+Warning (21074): Design contains 10 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[2]"
+    Warning (15610): No output dependent on input pin "KEY[3]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+Info (21057): Implemented 1939 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 1920 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 596 megabytes
+    Info: Processing ended: Fri Apr 13 10:35:21 2018
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
 
 

@@ -1,0 +1,17 @@
+
+State Machine - |FPGA_infrastructure_block|i2c_master:inst_i2c_master|fsm_state
+Name fsm_state.S_STOP fsm_state.S_WAIT_FOR_STOP fsm_state.S_ACK_BYTE fsm_state.S_SEND_BYTE fsm_state.S_WAIT_FOR_NEXT_BYTE fsm_state.S_START fsm_state.S_WAIT_FOR_START fsm_state.S_IDLE 
+fsm_state.S_IDLE 0 0 0 0 0 0 0 0 
+fsm_state.S_WAIT_FOR_START 0 0 0 0 0 0 1 1 
+fsm_state.S_START 0 0 0 0 0 1 0 1 
+fsm_state.S_WAIT_FOR_NEXT_BYTE 0 0 0 0 1 0 0 1 
+fsm_state.S_SEND_BYTE 0 0 0 1 0 0 0 1 
+fsm_state.S_ACK_BYTE 0 0 1 0 0 0 0 1 
+fsm_state.S_WAIT_FOR_STOP 0 1 0 0 0 0 0 1 
+fsm_state.S_STOP 1 0 0 0 0 0 0 1 
+
+State Machine - |FPGA_infrastructure_block|codec_control:inst_codec_control|fsm_state
+Name fsm_state.S_WAIT fsm_state.S_START_WRITE fsm_state.S_IDLE 
+fsm_state.S_IDLE 0 0 0 
+fsm_state.S_START_WRITE 0 1 1 
+fsm_state.S_WAIT 1 0 1 

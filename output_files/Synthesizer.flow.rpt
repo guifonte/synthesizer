@@ -1,5 +1,5 @@
 Flow report for Synthesizer
-Thu Apr 12 19:58:36 2018
+Fri Apr 13 10:35:47 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Thu Apr 12 19:58:33 2018           ;
+; Flow Status                        ; Successful - Fri Apr 13 10:35:43 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Synthesizer                                     ;
-; Top-level Entity Name              ; infrastructure_block                            ;
+; Top-level Entity Name              ; FPGA_infrastructure_block                       ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 8 / 18,752 ( < 1 % )                            ;
-;     Total combinational functions  ; 4 / 18,752 ( < 1 % )                            ;
-;     Dedicated logic registers      ; 7 / 18,752 ( < 1 % )                            ;
-; Total registers                    ; 7                                               ;
-; Total pins                         ; 6 / 315 ( 2 % )                                 ;
+; Total logic elements               ; 1,919 / 18,752 ( 10 % )                         ;
+;     Total combinational functions  ; 1,910 / 18,752 ( 10 % )                         ;
+;     Dedicated logic registers      ; 94 / 18,752 ( < 1 % )                           ;
+; Total registers                    ; 94                                              ;
+; Total pins                         ; 19 / 315 ( 6 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                  ;
@@ -64,26 +64,26 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/12/2018 19:58:19 ;
+; Start date & time ; 04/13/2018 10:35:16 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Synthesizer         ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                         ;
-+-------------------------------------+--------------------------------+---------------+----------------------+------------+
-; Assignment Name                     ; Value                          ; Default Value ; Entity Name          ; Section Id ;
-+-------------------------------------+--------------------------------+---------------+----------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 40637554105699.152357389907256 ; --            ; --                   ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                             ; --            ; --                   ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                              ; --            ; --                   ; --         ;
-; PARTITION_COLOR                     ; 16764057                       ; --            ; infrastructure_block ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; infrastructure_block ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; infrastructure_block ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --                   ; --         ;
-; TOP_LEVEL_ENTITY                    ; infrastructure_block           ; Synthesizer   ; --                   ; --         ;
-+-------------------------------------+--------------------------------+---------------+----------------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                               ;
++-------------------------------------+---------------------------------+---------------+---------------------------+------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name               ; Section Id ;
++-------------------------------------+---------------------------------+---------------+---------------------------+------------+
+; COMPILER_SIGNATURE_ID               ; 281474976645120.152362651604760 ; --            ; --                        ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --                        ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --                        ; --         ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; FPGA_infrastructure_block ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; FPGA_infrastructure_block ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; FPGA_infrastructure_block ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --                        ; --         ;
+; TOP_LEVEL_ENTITY                    ; FPGA_infrastructure_block       ; Synthesizer   ; --                        ; --         ;
++-------------------------------------+---------------------------------+---------------+---------------------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -91,11 +91,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 564 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:06     ; 1.0                     ; 792 MB              ; 00:00:04                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 593 MB              ; 00:00:05                           ;
+; Fitter                    ; 00:00:17     ; 1.0                     ; 799 MB              ; 00:00:17                           ;
 ; Assembler                 ; 00:00:02     ; 1.0                     ; 475 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 478 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:09                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 614 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:29     ; --                      ; --                  ; 00:00:27                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -104,10 +104,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-D7IPKH9  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-D7IPKH9  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-D7IPKH9  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-D7IPKH9  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; le11-5           ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; le11-5           ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; le11-5           ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; le11-5           ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

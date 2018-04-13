@@ -30,7 +30,7 @@ END takt_teiler;
 ARCHITECTURE rtl OF takt_teiler IS
 -- Signals & Constants Declaration?
 -------------------------------------------
-signal count, next_count: unsigned(width-1 downto 0);	 
+signal count, next_count: unsigned(width-1 downto 0):= (OTHERS =>'0');	 -- exception only for simu
 
 -- Begin Architecture
 -------------------------------------------
