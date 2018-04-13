@@ -44,40 +44,45 @@ begin
 	fsm: process(event_control_i,initialize,write_done_i, reg, fsm_state)
 	begin
 
-	variable last_reg 	: std_logic;
+		variable last_reg 	: std_logic;
 
-	--Default statement
-	next_fsm_state <= fsm_state;
-	next_reg <= reg;
+		--Default statement
+		next_fsm_state <= fsm_state;
+		next_reg <= reg;
 
-	--Check if it's the last register to be written
+		--Check if it's the last register to be written
 
-	if(reg = 9) then
-		last_reg <= '1';
-	else
-		last_reg <= '0';
+		if(reg = 9) then
+			last_reg <= '1';
+		else
+			last_reg <= '0';
+		end if;
 
-	--Changes states (moore machine)
+		--Changes states (moore machine)
 
-	case fsm_state is
-		when S_IDLE =>
-			if (initialize = '1') then
-				next_fsm_state 	<= S_IDLE;
-			elsif (initialize = '0') then
-				next_fsm_state <= S_START_WRITE;
-				next_reg <= (reg + 1) mod 10;
-		
-		when S_START_WRITE =>
-			next_fsm_state <= S_WAIT;
+		case fsm_state is
+			when S_IDLE =>
+				if (initialize = '1') then
+					next_fsm_state 	<= S_IDLE;
+				end if;
+				if (initialize = '0') then
+					next_fsm_state <= S_START_WRITE;
+					next_reg <= (reg + 1) mod 10;
+				end if;
+			
+			when S_START_WRITE =>
+				next_fsm_state <= S_WAIT;
 
 
-		when S_WAIT =>
-			if (write_done_i = '1' and last_reg = '0') then
-				next_fsm_state <= S_START_WRITE;
-			if ((write_done_i = '1' and last_reg = '1') or (ack_error_i = '1')) then
-				next_fsm_state <= S_IDLE;
+			when S_WAIT =>
+				if (write_done_i = '1' and last_reg = '0') then
+					next_fsm_state <= S_START_WRITE;
+				elsif ((write_done_i = '1' and last_reg = '1') or (ack_error_i = '1')) then
+					next_fsm_state <= S_IDLE;
+				end if;
+		end case;
 
-	end fsm;
+	end process ; --fsm
 
 	--Flip-flops process
 
@@ -89,8 +94,9 @@ begin
 		elsif rising_edge(clk) then
 			fsm_state <= next_fsm_state;
 			reg <= next_reg;
+		end if;
 
-	end ff_process(fsm_state, reg, event_control_i);
+	end process; --ff_process(fsm_state, reg, event_control_i);
 
 	-- Process that defines outputs
 
@@ -109,31 +115,37 @@ begin
 					write_o <='1';
 					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_BYPASS(reg);
+				end if;
 
 				if (event_control_i = "001") then
 					write_o <='1';
 					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_LEFT(reg);
+				end if;
 				
 				if (event_control_i = "010") then
 					write_o <='1';
 					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_RIGHT(reg);
+				end if;
 
 				if (event_control_i = "010") then
 					write_o <='1';
 					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_BOTH(reg);
+				end if;
 
 				if (event_control_i = "010") then
 					write_o <='1';
 					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
 					write_data_o(8 downto 0) <= C_W8731_ADC_DAC_0DB_48K(reg);
+				end if;
 
 			when S_WAIT =>
 				write_o <= '0';
+		end case;
 
-	end outputs;
+	end process ; -- outputsssss
 
-end architecture
+end architecture;
 
