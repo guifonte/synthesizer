@@ -15,4 +15,4 @@ vcom -2008 -explicit -work work ../../source/testbench_audio_synth_top.vhd
 # run the simulation
 vsim -novopt -t 1ns -lib work work.testbench_audio_synth_top
 do ../scripts/wave.do
-run 800.0 us
+run 1500.0 us
