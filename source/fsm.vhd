@@ -53,11 +53,11 @@ begin
 
 		--Check if it's the last register to be written
 
-		if(reg = 9) then
-			last_reg := '1';
-		else
-			last_reg := '0';
-		end if;
+		--if(reg = 9) then
+		--	last_reg := '1';
+		--else
+		--	last_reg := '0';
+		--end if;
 
 		--Changes states (moore machine)
 
@@ -76,10 +76,12 @@ begin
 
 
 			when S_WAIT =>
-				if (write_done_i = '1' and last_reg = '0') then
+				if ((write_done_i = '1') and (reg /= 9)) then
 					next_fsm_state <= S_START_WRITE;
-				elsif ((write_done_i = '1' and last_reg = '1') or (ack_error_i = '1')) then
+				elsif ((write_done_i = '1' and reg = 9) or (ack_error_i = '1')) then
 					next_fsm_state <= S_IDLE;
+					--restart from register 0
+					next_reg <= 0;
 				end if;
 		end case;
 
@@ -111,6 +113,7 @@ begin
 		case fsm_state is
 			when S_IDLE =>
 				write_o <= '0';
+
 			when S_START_WRITE =>
 
 				if (event_control_i = "000") then
@@ -131,13 +134,13 @@ begin
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_RIGHT(reg);
 				end if;
 
-				if (event_control_i = "010") then
+				if (event_control_i = "011") then
 					write_o <='1';
 					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg, reg_size));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_BOTH(reg);
 				end if;
 
-				if (event_control_i = "010") then
+				if (event_control_i = "100") then
 					write_o <='1';
 					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg, reg_size));
 					write_data_o(8 downto 0) <= C_W8731_ADC_DAC_0DB_48K(reg);
