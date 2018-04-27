@@ -1,9 +1,8 @@
 -------------------------------------------
--- Block code:  takt_teiler.vhd
+-- Block code:  bclk_gen.vhd
 -- History: 	14.Nov.2012 - 1st version (dqtm)
---             15.Mar.2018 - change duty cycle from 50% to 1/80. (guifonte)
---					04.Abr.2018	- remove reset button
---									- change duty cycle to 1/4
+--            15.Mar.2018 - change duty cycle from 50% to 1/80. (guifonte)
+--					  16.Apri.2018 - changed clcok two devide frenquency by 2
 --               <date> - <changes>  (<author>)
 -- Function: modulo divider with generic width. Output MSB with 1/80 duty cycle.
 --		Can be used for clock-divider when no exact ratio required.
@@ -30,7 +29,8 @@ END bclk_gen;
 -------------------------------------------
 ARCHITECTURE rtl OF bclk_gen IS
 
--- Define Signals 
+-- Define Signals and constants
+-------------------------------------------
 signal count, next_count: std_logic;
 
 -- Begin Architecture
@@ -62,7 +62,7 @@ BEGIN
   --------------------------------------------------
   final_logic: PROCESS(count)
   BEGIN	
-	bclk_o = count;
+	bclk_o <= count;
   END PROCESS final_logic; 
   
   
