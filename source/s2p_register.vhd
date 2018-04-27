@@ -1,5 +1,5 @@
 -------------------------------------------
--- Block code:  p2s_register.vhd
+-- Block code:  s2p_register.vhd
 -- History: 	27.Apr.2018 - first version (felipe tanios)
 --				
 -- Function: paralel 16 bits to serial interface.
@@ -13,7 +13,7 @@ USE ieee.naumeric_std.all;
 
 -- Entity Declaration 
 -------------------------------------------
-ENTITY p2s_register IS
+ENTITY s2p_register IS
 GENERIC (width		: positive  := 3 );
   PORT(
     clk_12M, reset_n      : IN    std_logic;
@@ -22,11 +22,11 @@ GENERIC (width		: positive  := 3 );
 		ser_i                 : IN	  std_logic;
 		par_o	      		      : OUT   std_logic_vector(15 downto 0)
     	);
-END p2s_register;
+END s2p_register;
 
 -- Architecture Declaration
 -------------------------------------------
-ARCHITECTURE rtl OF p2s_register IS
+ARCHITECTURE rtl OF s2p_register IS
 
 -- Define Signals and constants
 -------------------------------------------
