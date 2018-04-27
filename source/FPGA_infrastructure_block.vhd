@@ -14,12 +14,12 @@ use ieee.std_logic_1164.all;
 -- Entity Declaration 
 ENTITY FPGA_infrastructure_block IS
 	PORT(
-		CLOCK_50		: IN  std_logic;		-- DE2 clock from xtal 50MHz
-		KEY			: IN  std_logic_vector( 3 downto 0);  -- DE2 low_active input buttons
-		SW				: IN	std_logic_vector(10 downto 0);	-- DE2 input switches
-		AUD_XCK		: OUT	std_logic;		-- master clock for Audio Codec
-		I2C_SCLK		: OUT	std_logic;		-- clock from I2C master block
-		I2C_SDAT		: INOUT std_logic		-- data  from I2C master block
+		CLOCK_50				: IN  std_logic;		-- DE2 clock from xtal 50MHz
+		KEY						: IN  std_logic_vector( 3 downto 0);  -- DE2 low_active input buttons
+		SW						: IN	std_logic_vector(10 downto 0);	-- DE2 input switches
+		AUD_XCK					: OUT	std_logic;		-- master clock for Audio Codec
+		I2C_SCLK				: OUT	std_logic;		-- clock from I2C master block
+		I2C_SDAT				: INOUT std_logic		-- data  from I2C master block
 	
 	);
 END FPGA_infrastructure_block ;
@@ -27,9 +27,9 @@ END FPGA_infrastructure_block ;
 -- Architecture Declaration 
 ARCHITECTURE struct OF FPGA_infrastructure_block IS
 	
-	SIGNAL top_clk_12M		:	STD_LOGIC;
-	SIGNAL top_button_1		:	STD_LOGIC;
-	SIGNAL top_initialize_n	:	STD_LOGIC;
+	SIGNAL top_clk_12M			:	STD_LOGIC;
+	SIGNAL top_button_1			:	STD_LOGIC;
+	SIGNAL top_initialize_n		:	STD_LOGIC;
 	SIGNAL write_done			:	STD_LOGIC;
 	SIGNAL ack_error			: 	STD_LOGIC;
 	SIGNAL write_buf			: 	STD_LOGIC;
@@ -39,8 +39,8 @@ ARCHITECTURE struct OF FPGA_infrastructure_block IS
 	COMPONENT infrastructure_block
 	PORT(
 		clk_50M  		:  IN			STD_LOGIC;
-		button_1			:  IN			STD_LOGIC;
-		button_2			:  IN			STD_LOGIC;
+		button_1		:  IN			STD_LOGIC;
+		button_2		:  IN			STD_LOGIC;
 		clk_12M			:	OUT		STD_LOGIC;
 		button_1sync	:	OUT		STD_LOGIC;
 		button_2sync	:	OUT		STD_LOGIC
@@ -50,31 +50,30 @@ ARCHITECTURE struct OF FPGA_infrastructure_block IS
 
 	COMPONENT codec_control 
     PORT(
-         clk         		: in    	std_logic;
-         reset_n     		: in    	std_logic;
+        clk         		: in    	std_logic;
+        reset_n     		: in    	std_logic;
 
-         write_done_i		: in    	std_logic;
-			event_control_i	: in		std_logic_vector(2 downto 0);
+        write_done_i		: in    	std_logic;
+		event_control_i		: in		std_logic_vector(2 downto 0);
 			
-			initialize_n 		: in		std_logic;
-			ack_error_i			: in		std_logic;
-
-			write_o 				: out 	std_logic;
-			write_data_o		: out 	std_logic_vector(15 downto 0)
+		initialize_n 		: in		std_logic;
+		ack_error_i			: in		std_logic;
+		write_o 			: out 		std_logic;
+		write_data_o		: out 		std_logic_vector(15 downto 0)
         );
 	END COMPONENT;
 	
 
 	COMPONENT i2c_master
     PORT(
-      clk         		: in    	std_logic;
-      reset_n     		: in   	std_logic;
+    	clk         		: in    	std_logic;
+    	reset_n     		: in   		std_logic;
 		
-      write_i     		: in    	std_logic;
+      	write_i     		: in    	std_logic;
 		write_data_i		: in		std_logic_vector(15 downto 0);
 				
-		sda_io				: inout	std_logic;
-		scl_o					: out   	std_logic;
+		sda_io				: inout		std_logic;
+		scl_o				: out   	std_logic;
 				
 		write_done_o		: out		std_logic;
 		ack_error_o			: out		std_logic
@@ -83,13 +82,13 @@ ARCHITECTURE struct OF FPGA_infrastructure_block IS
 	
 	BEGIN
 	
-		AUD_XCK 				<= top_clk_12M;
+		AUD_XCK 			<= top_clk_12M;
 		
 		inst_infrastructure_block: infrastructure_block
 		PORT MAP(
 			clk_50M  		=> CLOCK_50,
-			button_1			=> KEY(0),
-			button_2			=> KEY(1),
+			button_1		=> KEY(0),
+			button_2		=> KEY(1),
 			clk_12M			=> top_clk_12M,
 			button_1sync	=> top_button_1,--reset
 			button_2sync	=>	top_initialize_n --initialize
@@ -97,33 +96,33 @@ ARCHITECTURE struct OF FPGA_infrastructure_block IS
 		
 		inst_codec_control: codec_control
 		PORT MAP (
-			clk    				=> top_clk_12M,
-	      reset_n     		=> top_button_1,
+		clk    				=> top_clk_12M,
+	    reset_n     		=> top_button_1,
 
-	      write_done_i		=> write_done,
-			event_control_i	=> SW(2 downto 0),
+	    write_done_i		=> write_done,
+		event_control_i	=> SW(2 downto 0),
 	
-			initialize_n		=> top_initialize_n,
-			ack_error_i			=> ack_error,
+		initialize_n		=> top_initialize_n,
+		ack_error_i			=> ack_error,
 
-			write_o 				=> write_buf,
-			write_data_o		=> write_data
+		write_o 			=> write_buf,
+		write_data_o		=> write_data
 
 		);
 
 		inst_i2c_master: i2c_master
 		PORT MAP (
-			clk    				=> top_clk_12M,
-	      reset_n     		=> top_button_1,
+		clk    				=> top_clk_12M,
+	    reset_n     		=> top_button_1,
 
-	      write_i     		=> write_buf,
-			write_data_i		=> write_data,
+	    write_i     		=> write_buf,
+		write_data_i		=> write_data,
 			
-			sda_io				=> I2C_SDAT,
-			scl_o					=> I2C_SCLK,
+		sda_io				=> I2C_SDAT,
+		scl_o				=> I2C_SCLK,
 			
-			write_done_o		=> write_done,
-			ack_error_o			=> ack_error
+		write_done_o		=> write_done,
+		ack_error_o			=> ack_error
 
 		);
 		
