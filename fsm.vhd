@@ -1,9 +1,3 @@
--------------------------------------------
--- Block code:  codec_control.vhd
--- History: 	20.Apr.2018 - 1st version (Felipe Tanios)
---                 
--- Function: Final State Machine that controls input registers to I2C Master.
--------------------------------------------
 
 library ieee;
   use ieee.std_logic_1164.all;
@@ -140,13 +134,13 @@ begin
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_RIGHT(reg);
 				end if;
 
-				if (event_control_i = "011") then
+				if (event_control_i = "010") then
 					write_o <='1';
 					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg, reg_size));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_BOTH(reg);
 				end if;
 
-				if (event_control_i = "100") then
+				if (event_control_i = "010") then
 					write_o <='1';
 					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg, reg_size));
 					write_data_o(8 downto 0) <= C_W8731_ADC_DAC_0DB_48K(reg);

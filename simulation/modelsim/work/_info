@@ -4,12 +4,12 @@ K3
 cModel Technology
 dC:\altera\13.0sp1
 Ecodec_control
-Z0 w1523628903
+Z0 w1524187051
 Z1 DPx4 work 13 reg_table_pkg 0 22 9BjG6;PWbTZenHCMkKRoZ2
 Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z5 dC:\Users\ea999\Desktop\synthesizer\simulation\modelsim
+Z5 dC:\Users\felip\Downloads\synthesizer-master\synthesizer-master\simulation\modelsim
 Z6 8../../source/fsm.vhd
 Z7 F../../source/fsm.vhd
 l0
@@ -17,7 +17,7 @@ L9
 V^P0CgidVCNG_PKdKe7XHl3
 Z8 OV;C;10.1d;51
 33
-Z9 !s108 1523629645.473000
+Z9 !s108 1524187058.111000
 Z10 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/fsm.vhd|
 Z11 !s107 ../../source/fsm.vhd|
 Z12 o-2008 -explicit -work work -O0
@@ -32,7 +32,7 @@ R4
 DEx4 work 13 codec_control 0 22 ^P0CgidVCNG_PKdKe7XHl3
 l40
 L25
-VKGCSnGNeMES@UjfEa4[d?2
+VPV<0XlW?dBj;iH=?YCb@N3
 R8
 33
 R9
@@ -40,10 +40,10 @@ R10
 R11
 R12
 R13
-!s100 bT1UN8H5an]VgzQ^gUK;41
+!s100 z^PYjIOEBTAYkLYHF:J7n2
 !i10b 1
 Efpga_infrastructure_block
-Z14 w1523626514
+Z14 w1524186312
 R3
 R4
 R5
@@ -54,7 +54,7 @@ L15
 VQYSTozA<UAA[@9giic=_C1
 R8
 33
-Z17 !s108 1523629646.614000
+Z17 !s108 1524187063.781000
 Z18 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/FPGA_infrastructure_block.vhd|
 Z19 !s107 ../../source/FPGA_infrastructure_block.vhd|
 R12
@@ -65,10 +65,10 @@ Astruct
 R3
 R4
 DEx4 work 25 fpga_infrastructure_block 0 22 QYSTozA<UAA[@9giic=_C1
-l84
+l83
 L28
 VB^okPV62i>cKe=ZLcg?e83
-!s100 <?BcfP<ACUHAg;95<gF;c0
+!s100 DzKH3^;?R7J>[ELNC;T<<3
 R8
 33
 R17
@@ -78,7 +78,7 @@ R12
 R13
 !i10b 1
 Ei2c_master
-Z20 w1523585630
+Z20 w1524182557
 R2
 R3
 R4
@@ -90,7 +90,7 @@ L22
 V2U[n:e27TSZR?k0jjAemN0
 R8
 33
-Z23 !s108 1523629645.630000
+Z23 !s108 1524187058.881000
 Z24 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/i2c_master.vhd|
 Z25 !s107 ../../source/i2c_master.vhd|
 R12
@@ -127,7 +127,7 @@ L6
 Ve=7^a77iX=z=P_IZlaa>Q0
 R8
 33
-Z28 !s108 1523629645.801000
+Z28 !s108 1524187059.825000
 Z29 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/i2c_slave_bfm.vhd|
 Z30 !s107 ../../source/i2c_slave_bfm.vhd|
 R12
@@ -152,20 +152,20 @@ R13
 !s100 ]UYjKH6KWLXKkDh2Ub>R^1
 !i10b 1
 Einfrastructure_block
-Z31 w1523623570
+R20
 R3
 R4
 R5
-Z32 8../../source/infrastructure_block.vhd
-Z33 F../../source/infrastructure_block.vhd
+Z31 8../../source/infrastructure_block.vhd
+Z32 F../../source/infrastructure_block.vhd
 l0
 L15
 VlT1O2h;W`bglR[:S7@[gb2
 R8
 33
-Z34 !s108 1523629646.442000
-Z35 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/infrastructure_block.vhd|
-Z36 !s107 ../../source/infrastructure_block.vhd|
+Z33 !s108 1524187062.610000
+Z34 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/infrastructure_block.vhd|
+Z35 !s107 ../../source/infrastructure_block.vhd|
 R12
 R13
 !s100 3X@JbN3gf7hjYZX=gZne13
@@ -179,9 +179,9 @@ L27
 VP<fhPILe@ECmA<5@EQ3>P0
 R8
 33
+R33
 R34
 R35
-R36
 R12
 R13
 !s100 ;V>TSmAl>BF=Z5WdAQaX00
@@ -202,7 +202,7 @@ R12
 R13
 !s100 4=imPkiiR11[M`h?j@kM52
 !i10b 1
-!s108 1523629645.364000
+!s108 1524187057.352000
 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/reg_table_pkg.vhd|
 !s107 ../../source/reg_table_pkg.vhd|
 Esync_block
@@ -210,16 +210,16 @@ R20
 R3
 R4
 R5
-Z37 8../../source/sync_block.vhd
-Z38 F../../source/sync_block.vhd
+Z36 8../../source/sync_block.vhd
+Z37 F../../source/sync_block.vhd
 l0
 L14
 VP_Sl?i=7RUT:m`CRYgJVV3
 R8
 33
-Z39 !s108 1523629645.989000
-Z40 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/sync_block.vhd|
-Z41 !s107 ../../source/sync_block.vhd|
+Z38 !s108 1524187060.873000
+Z39 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/sync_block.vhd|
+Z40 !s107 ../../source/sync_block.vhd|
 R12
 R13
 !s100 f?zZ9:2CQe436W^R8^Caf1
@@ -233,29 +233,29 @@ L23
 VTSmHL=DV_9Kn2UF8@ZWS53
 R8
 33
+R38
 R39
 R40
-R41
 R12
 R13
 !s100 :9P6og0o3enbSUO=AASJ]1
 !i10b 1
 Etakt_teiler
-Z42 w1523629242
+Z41 w1524182558
 R2
 R3
 R4
 R5
-Z43 8../../source/takt_teiler.vhd
-Z44 F../../source/takt_teiler.vhd
+Z42 8../../source/takt_teiler.vhd
+Z43 F../../source/takt_teiler.vhd
 l0
 L20
 V014nV2dN2;7eki:ZC?`H^0
 R8
 33
-Z45 !s108 1523629646.192000
-Z46 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/takt_teiler.vhd|
-Z47 !s107 ../../source/takt_teiler.vhd|
+Z44 !s108 1524187061.726000
+Z45 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/takt_teiler.vhd|
+Z46 !s107 ../../source/takt_teiler.vhd|
 R12
 R13
 !s100 :HcYE;Z7Y6a5OAE:KGZVG3
@@ -270,20 +270,20 @@ L30
 V@W1AbR]0P>8YHCl7MX0SM2
 R8
 33
+R44
 R45
 R46
-R47
 R12
 R13
 !s100 EB4_4m^NIbC:FK;YM]<z^1
 !i10b 1
 Etestbench_audio_synth_top
-Z48 w1523629633
+R41
 R3
 R4
 R5
-Z49 8../../source/testbench_audio_synth_top.vhd
-Z50 F../../source/testbench_audio_synth_top.vhd
+Z47 8../../source/testbench_audio_synth_top.vhd
+Z48 F../../source/testbench_audio_synth_top.vhd
 l0
 L14
 VzMzIi7hT:`m3?lAmJP2g12
@@ -291,24 +291,24 @@ VzMzIi7hT:`m3?lAmJP2g12
 R8
 33
 !i10b 1
-Z51 !s108 1523629646.786000
-Z52 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/testbench_audio_synth_top.vhd|
-Z53 !s107 ../../source/testbench_audio_synth_top.vhd|
+Z49 !s108 1524187064.574000
+Z50 !s90 -reportprogress|300|-2008|-explicit|-work|work|../../source/testbench_audio_synth_top.vhd|
+Z51 !s107 ../../source/testbench_audio_synth_top.vhd|
 R12
 R13
 Astruct
 R3
 R4
-Z54 DEx4 work 25 testbench_audio_synth_top 0 22 zMzIi7hT:`m3?lAmJP2g12
+Z52 DEx4 work 25 testbench_audio_synth_top 0 22 zMzIi7hT:`m3?lAmJP2g12
 l63
 L20
-VU9AOn2?n[<fe6io9bW?IH1
-!s100 nC><UV1me^=9DKIa2?^<V1
+Z53 VU9AOn2?n[<fe6io9bW?IH1
+Z54 !s100 nC><UV1me^=9DKIa2?^<V1
 R8
 33
 !i10b 1
+R49
+R50
 R51
-R52
-R53
 R12
 R13
