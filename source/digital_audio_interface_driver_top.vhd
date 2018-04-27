@@ -1,0 +1,8 @@
+-------------------------------------------
+-- Block code:  digital_audio_interface_driver_top.vhd
+-- History: 	12.Apr.2018 - 1st version (guifonte)
+--                 <date> - <changes>  (<author>)
+-- Function: Top for the digital audio interface driver, 
+--           with the i2s_master and the audio_ctrl blocks
+--           
+-------------------------------------------
