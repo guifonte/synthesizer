@@ -16,12 +16,11 @@ USE ieee.naumeric_std.all;
 ENTITY p2s_register IS
 GENERIC (width		: positive  := 3 );
   PORT(
-    	clk_12M, reset_n    : IN    std_logic;
-		enable				: IN    std_logic;
-		shift				: IN	std_logic;
-		load				: IN	std_logic;
-		par_i				: IN	std_logic_vector(15 downto 0);
-		ser_o	      		: OUT   std_logic
+    clk_12M, reset_n      : IN    std_logic;
+		enable			   	      : IN    std_logic;
+		shift				          : IN	  std_logic;
+		ser_i                 : IN	  std_logic;
+		par_o	      		      : OUT   std_logic_vector(15 downto 0)
     	);
 END p2s_register;
 
@@ -32,6 +31,7 @@ ARCHITECTURE rtl OF p2s_register IS
 -- Define Signals and constants
 -------------------------------------------
 signal shiftreg, next_shiftreg	: std_logic_vector(15 downto 0);
+Signal counter, next_counter    : unsigned (width - 1 downto 0);
 
 -- Begin Architecture
 -------------------------------------------
@@ -40,15 +40,14 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR COMBINATORIAL LOGIC
   --------------------------------------------------
-  comb_logic: PROCESS(load, enable, shift, shiftreg)
+  comb_logic: PROCESS(load, enable, shift, shiftreg, counter)
   
   BEGIN
 		next_shiftreg <= shiftreg;
-		if (load = '1') then
-      		next_shiftreg <= par_i;
-  		end if;
+    next_counter <= counter;
   		if (enable = '1' and shift = '1') then
-  			next_shiftreg <= 1 & shiftreg(15 downto 1);
+  			next_shiftreg <= ser_i & shiftreg(15 downto 1);
+        next_counter <= counter + 1;
   		end if;
 
   END PROCESS comb_logic;   
@@ -60,17 +59,23 @@ BEGIN
   BEGIN	
     if (reset_n = '0') then
     	shiftreg <= (others => '1');
+      counter <= 0;
     elsif rising_edge(clk_12M) then
-		shiftreg <= next_shiftreg;
+  		shiftreg <= next_shiftreg;
+      counter <= next_counter;
     end if;
   END PROCESS flip_flops;		
   
   --------------------------------------------------
   -- PROCESS FOR FINAL COMBINATORIAL LOGIC
   --------------------------------------------------
-  final_logic: PROCESS(shiftreg)
+  final_logic: PROCESS(shiftreg, counter)
   BEGIN	
-	ser_o <= shiftreg(0);
+	
+  if (counter = 15) then
+      par_o = shiftreg;
+  end if ;
+
   END PROCESS final_logic; 
   
   
