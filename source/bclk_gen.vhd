@@ -31,7 +31,7 @@ END bclk_gen;
 ARCHITECTURE rtl OF bclk_gen IS
 
 -- Define Signals 
-signal count, next_count: unsigned(1 downto 0);
+signal count, next_count: std_logic;
 
 -- Begin Architecture
 -------------------------------------------
@@ -42,7 +42,7 @@ BEGIN
   --------------------------------------------------
   comb_logic: PROCESS(count)
   BEGIN
-      count <= count + 1;
+      next_count <= not(count);
   END PROCESS comb_logic;   
   
   --------------------------------------------------
@@ -52,9 +52,9 @@ BEGIN
   BEGIN	
     if (reset_n = '0') then
     count <= 0;
-    ELSIF rising_edge(clk_fast_i) THEN
+    elsif rising_edge(clk_fast_i) then
 		count <= next_count;
-    END IF;
+    end if;
   END PROCESS flip_flops;		
   
   --------------------------------------------------
@@ -62,11 +62,7 @@ BEGIN
   --------------------------------------------------
   final_logic: PROCESS(count)
   BEGIN	
-	IF (count = 0 OR count = 1) THEN
-	clk_slow_o <= '1';
-	ElSE
-	clk_slow_o <= '0';
-	END IF;
+	bclk_o = count;
   END PROCESS final_logic; 
   
   
