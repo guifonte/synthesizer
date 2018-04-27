@@ -1,20 +1,26 @@
+-------------------------------------------
+-- Block code:  codec_control.vhd
+-- History: 	20.Apr.2018 - 1st version (Felipe Tanios)
+--                 
+-- Function: Final State Machine that controls input registers to I2C Master.
+-------------------------------------------
 
 library ieee;
   use ieee.std_logic_1164.all;
   use ieee.numeric_std.all;
   LIBRARY work;
-  USE work.reg_table_pkg.all
+  USE work.reg_table_pkg.all;
 
 
 entity codec_control is
         port(
-            clk         		: in    std_logic;
-            reset_n     		: in    std_logic;
+         clk         		: in    std_logic;
+         reset_n     		: in    std_logic;
 
-            write_done_i		: in    std_logic;
-			event_control_i		: in	std_logic_vector(2 downto 0);
+         write_done_i		: in    std_logic;
+			event_control_i	: in	std_logic_vector(2 downto 0);
 			
-			initialize			: in	std_logic;
+			initialize_n 		: in	std_logic;
 			ack_error_i			: in	std_logic;
 
 			write_o 			: out 	std_logic;
@@ -29,11 +35,11 @@ constant reg_size	: natural := 7;
 type t_fsm_states is (
     S_IDLE,
     S_START_WRITE,
-    S_WAIT,
+    S_WAIT
 );
 
 signal fsm_state, next_fsm_state	: t_fsm_states;
-signal reg,next_reg					: integer;
+signal reg,next_reg					: integer  range 0 to 9;
 
 --Begining architecture 
 
@@ -41,10 +47,11 @@ begin
 	
 	--Process that controls the state machine
 
-	fsm: process(event_control_i,initialize,write_done_i, reg, fsm_state)
-	begin
-
+	fsm: process(event_control_i,initialize_n,write_done_i, reg, fsm_state, ack_error_i)
+		
 		variable last_reg 	: std_logic;
+	
+	begin
 
 		--Default statement
 		next_fsm_state <= fsm_state;
@@ -53,25 +60,25 @@ begin
 		--Check if it's the last register to be written
 
 		if(reg = 9) then
-			last_reg <= '1';
+			last_reg := '1';
 		else
-			last_reg <= '0';
+			last_reg := '0';
 		end if;
 
 		--Changes states (moore machine)
 
 		case fsm_state is
 			when S_IDLE =>
-				if (initialize = '1') then
+				if (initialize_n = '1') then
 					next_fsm_state 	<= S_IDLE;
 				end if;
-				if (initialize = '0') then
+				if (initialize_n = '0') then
 					next_fsm_state <= S_START_WRITE;
-					next_reg <= (reg + 1) mod 10;
 				end if;
 			
 			when S_START_WRITE =>
 				next_fsm_state <= S_WAIT;
+				next_reg <= (reg + 1) mod 10;
 
 
 			when S_WAIT =>
@@ -101,6 +108,7 @@ begin
 	-- Process that defines outputs
 
 	outputs: process(fsm_state,reg, event_control_i)
+	begin
 		--Default statement
 		write_o <= '0';
 		write_data_o <= (others =>'0');
@@ -113,31 +121,31 @@ begin
 
 				if (event_control_i = "000") then
 					write_o <='1';
-					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
+					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg, reg_size));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_BYPASS(reg);
 				end if;
 
 				if (event_control_i = "001") then
 					write_o <='1';
-					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
+					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg, reg_size));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_LEFT(reg);
 				end if;
 				
 				if (event_control_i = "010") then
 					write_o <='1';
-					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
+					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg, reg_size));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_RIGHT(reg);
 				end if;
 
-				if (event_control_i = "010") then
+				if (event_control_i = "011") then
 					write_o <='1';
-					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
+					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg, reg_size));
 					write_data_o(8 downto 0) <= C_W8731_ANALOG_MUTE_BOTH(reg);
 				end if;
 
-				if (event_control_i = "010") then
+				if (event_control_i = "100") then
 					write_o <='1';
-					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg));
+					write_data_o(15 downto 9) <= std_logic_vector(to_unsigned(reg, reg_size));
 					write_data_o(8 downto 0) <= C_W8731_ADC_DAC_0DB_48K(reg);
 				end if;
 

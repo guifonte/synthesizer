@@ -1,5 +1,5 @@
 -------------------------------------------
--- Block code:  FPGA_infrastructure_block.vhd
+-- Block code:  Milestone1_infrastructure_block.vhd
 -- History: 	12.Apr.2018 - 1st version (guifonte)
 --                 <date> - <changes>  (<author>)
 -- Function: Top for an infrastructure block that has a clock divisor
@@ -12,7 +12,7 @@ LIBRARY ieee;
 use ieee.std_logic_1164.all;
 
 -- Entity Declaration 
-ENTITY FPGA_infrastructure_block IS
+ENTITY Milestone1_infrastructure_block IS
 	PORT(
 		CLOCK_50		: IN  std_logic;		-- DE2 clock from xtal 50MHz
 		KEY			: IN  std_logic_vector( 3 downto 0);  -- DE2 low_active input buttons
@@ -22,10 +22,10 @@ ENTITY FPGA_infrastructure_block IS
 		I2C_SDAT		: INOUT std_logic		-- data  from I2C master block
 	
 	);
-END FPGA_infrastructure_block ;
+END Milestone1_infrastructure_block ;
 
 -- Architecture Declaration 
-ARCHITECTURE struct OF FPGA_infrastructure_block IS
+ARCHITECTURE struct OF Milestone1_infrastructure_block IS
 	
 	SIGNAL top_clk_12M		:	STD_LOGIC;
 	SIGNAL top_button_1		:	STD_LOGIC;
