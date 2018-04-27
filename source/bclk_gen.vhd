@@ -48,11 +48,11 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR REGISTERS
   --------------------------------------------------
-  flip_flops : PROCESS(clk_fast_i,next_count)
+  flip_flops : PROCESS(clk_12M_i,reset_n)
   BEGIN	
     if (reset_n = '0') then
-    count <= 0;
-    elsif rising_edge(clk_fast_i) then
+    count <= '0';
+    elsif rising_edge(clk_12M_i) then
 		count <= next_count;
     end if;
   END PROCESS flip_flops;		

@@ -56,11 +56,11 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR REGISTERS
   --------------------------------------------------
-  flip_flops : PROCESS(clk_fast_i,next_count)
+  flip_flops : PROCESS(clk_12M,reset_n)
   BEGIN	
     if (reset_n = '0') then
     	shiftreg <= (others => '1');
-    elsif rising_edge(clk_fast_i) then
+    elsif rising_edge(clk_12M) then
 		shiftreg <= next_shiftreg;
     end if;
   END PROCESS flip_flops;		
@@ -68,7 +68,7 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR FINAL COMBINATORIAL LOGIC
   --------------------------------------------------
-  final_logic: PROCESS(count)
+  final_logic: PROCESS(shiftreg)
   BEGIN	
 	ser_o <= shiftreg(0);
   END PROCESS final_logic; 
