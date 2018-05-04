@@ -22,17 +22,18 @@ ARCHITECTURE struct OF testbench_milestone2_top IS
 	-- Components Declaration
 COMPONENT i2s_master_top 
 	PORT(
-		CLK_12M		: IN  	std_logic;		-- DE2 clock from xtal 50MHz
-		INIT_N		: IN  	std_logic;  -- DE2 low_active input buttons
-		ADCDAT_s_i	: IN 	std_logic;	-- DE2 input switches
-		DACDAT_pl_i	: IN 	std_logic_vector(15 downto 0);
-		DACDAT_pr_i	: IN 	std_logic_vector(15 downto 0);
+		CLOCK_12M				: IN  std_logic;	
+		INIT_N					: IN  std_logic;
+		ADCDAT_s_i				: IN  std_logic;
+		DACDAT_pl_i				: IN  std_logic_vector(15 downto 0);
+		DACDAT_pr_i				: IN  std_logic_vector(15 downto 0);
 		
-		BCLK_o		: OUT 	std_logic;
-		STROBE		: OUT 	std_logic;
-		WS			: OUT 	std_logic;
-		DACDAT_pl_o	: OUT	std_logic_vector(15 downto 0);
-		DACDAT_pr_o	: OUT 	std_logic_vector(15 downto 0)
+		ADCDAT_pl_o				: OUT std_logic_vector(15 downto 0);
+		ADCDAT_pr_o				: OUT std_logic_vector(15 downto 0);
+		STROBE					: OUT	std_logic;
+		DACDAT_s_o				: OUT	std_logic;
+		BCLK_o					: OUT	std_logic;
+		WS							: OUT std_logic
 	);
 END COMPONENT ; --FPGA_infrastructure_block
 
@@ -45,10 +46,13 @@ END COMPONENT ; --FPGA_infrastructure_block
 	signal tb_adcdat_s_i	: std_logic;	-- DE2 input switches
 	signal tb_dacdat_pl		: std_logic_vector(15 downto 0);
 	signal tb_dacdat_pr		: std_logic_vector(15 downto 0);
+	--signal tb_adcdat_pl		: std_logic_vector(15 downto 0);
+	--signal tb_adcdat_pr		: std_logic_vector(15 downto 0);
 	signal tb_bclk_o		: std_logic;
 	signal tb_strobe		: std_logic;
+	signal tb_dacdat_s		: std_logic;
 	signal tb_ws			: std_logic;
-	signal td_data			: std_logic_vector(15 downto 0);
+	signal tb_data			: std_logic_vector(15 downto 0);
 
 	CONSTANT CST_ONE 			: std_logic := '1';
 	CONSTANT CST_ZERO			: std_logic := '0';
@@ -58,26 +62,27 @@ BEGIN
   -- Instantiations
   DUT: i2s_master_top 
 	PORT MAP(
-		CLK_12M		 =>	tb_clk_12m,
-		INIT_N		 =>	tb_init_n,
-		ADCDAT_s_i	 =>	tb_adcdat_s_i,
-		DACDAT_pl_i	 =>	tb_dacdat_pl,
-		DACDAT_pr_i	 =>	tb_dacdat_pr,
+		CLOCK_12M			 =>	tb_clk_12m,
+		INIT_N				 =>	tb_init_n,
+		ADCDAT_s_i			 =>	tb_adcdat_s_i,
+		DACDAT_pl_i			 =>	tb_dacdat_pl,
+		DACDAT_pr_i			 =>	tb_dacdat_pr,
 		
-		BCLK_o		 =>	tb_bclk_o,
-		STROBE		 =>	tb_strobe,
-		WS			 =>	tb_ws,
-		DACDAT_pl_o	 =>	tb_dacdat_pl,
-		DACDAT_pr_o	 =>	tb_dacdat_pr
-	);
+		ADCDAT_pl_o			 =>	tb_dacdat_pl,
+		ADCDAT_pr_o			 =>	tb_dacdat_pr,
+		STROBE				 =>	tb_strobe,
+		DACDAT_s_o			 =>	tb_dacdat_s,
+		BCLK_o				 =>	tb_bclk_o,
+		WS					 =>	tb_ws
+	);		
 
 		
   -- Clock Generation Process	
 	generate_clock: PROCESS
 	BEGIN
-		tb_clock_12<= '1';
+		tb_clk_12m<= '1';
 		wait for CLK_12M_HALFP;	
-		tb_clock_12<= '0';
+		tb_clk_12m<= '0';
 		wait for CLK_12M_HALFP;
 	END PROCESS generate_clock;
 	
@@ -93,22 +98,33 @@ BEGIN
   -- Stimuli Process
 	stimuli: PROCESS
 	BEGIN
+		tb_data <= "1100010011101001";   -- or in hexa x"..."
 		-- initialise with reset pulse
-		tb_init_n <= '1';
-		wait until falling_edge(tb_bclk_o);
 		tb_init_n <= '0';
+		wait until falling_edge(tb_clk_12m);
+		tb_init_n <= '1';
 
 	
 		-- send serial data left
+
 		wait until falling_edge(tb_ws);	
 		wait until falling_edge(tb_bclk_o);
-		t_data <= "1100010011101001";   -- or in hexa x"..."
+		
 		
 		for i in 15 downto 0 loop
-			t_ADCDAT_s <= t_data(i);
+			tb_adcdat_s_i <= tb_data(i);
 			wait until falling_edge(tb_bclk_o);	
 		end loop;
-
+		
+		wait until rising_edge(tb_ws);	
+		wait until falling_edge(tb_bclk_o);
+		
+		for i in 15 downto 0 loop
+			tb_adcdat_s_i <= tb_data(i);
+			wait until falling_edge(tb_bclk_o);	
+		end loop;
+		
+	wait for 1_000 * CLK_12M_HALFP;
 		
 	END PROCESS stimuli;
 	

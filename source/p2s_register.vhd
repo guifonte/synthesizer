@@ -9,7 +9,7 @@
 -------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
-USE ieee.naumeric_std.all;
+USE ieee.numeric_std.all;
 
 -- Entity Declaration 
 -------------------------------------------
@@ -40,7 +40,7 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR COMBINATORIAL LOGIC
   --------------------------------------------------
-  comb_logic: PROCESS(load, enable, shift, shiftreg)
+  comb_logic: PROCESS(load, enable, shift, shiftreg, par_i)
   
   BEGIN
 		next_shiftreg <= shiftreg;
@@ -48,7 +48,7 @@ BEGIN
       		next_shiftreg <= par_i;
   		end if;
   		if (enable = '1' and shift = '1') then
-  			next_shiftreg <= 1 & shiftreg(15 downto 1);
+  			next_shiftreg <= '1' & shiftreg(15 downto 1);
   		end if;
 
   END PROCESS comb_logic;   

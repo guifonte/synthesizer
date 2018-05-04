@@ -39,7 +39,7 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR COMBINATORIAL LOGIC
   --------------------------------------------------
-  comb_logic: PROCESS(enable, shift, shiftreg, ser_i)
+  comb_logic: PROCESS(enable, shift, shiftreg)
   
   BEGIN
 		next_shiftreg <= shiftreg;

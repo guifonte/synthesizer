@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C20F484C7
-set_global_assignment -name TOP_LEVEL_ENTITY FPGA_infrastructure_block
+set_global_assignment -name TOP_LEVEL_ENTITY Milestone2_infrastructure_block
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:15:47  APRIL 06, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
@@ -46,9 +46,6 @@ set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_location_assignment PIN_A13 -to GPIO_0[0]
 set_location_assignment PIN_B13 -to GPIO_0[1]
@@ -495,19 +492,25 @@ set_location_assignment PIN_Y7 -to SRAM_LB_N
 set_location_assignment PIN_T8 -to SRAM_OE_N
 set_location_assignment PIN_W7 -to SRAM_UB_N
 set_location_assignment PIN_AA10 -to SRAM_WE_N
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE source/Milestone2_infrastructure_block.vhd
 set_global_assignment -name VHDL_FILE source/s2p_register.vhd
 set_global_assignment -name VHDL_FILE source/p2s_register.vhd
-set_global_assignment -name VHDL_FILE source/i2s_master_top.vhd
-set_global_assignment -name VHDL_FILE source/frame_decoder.vhd
-set_global_assignment -name VHDL_FILE source/digital_audio_interface_driver_top.vhd
-set_global_assignment -name VHDL_FILE source/codec_control.vhd
-set_global_assignment -name VHDL_FILE source/bclk_gen.vhd
+set_global_assignment -name VHDL_FILE source/testbench_audio_synth_top.vhd
+set_global_assignment -name VHDL_FILE source/takt_teiler.vhd
+set_global_assignment -name VHDL_FILE source/sync_block.vhd
 set_global_assignment -name VHDL_FILE source/reg_table_pkg.vhd
+set_global_assignment -name VHDL_FILE source/Milestone1_infrastructure_block.vhd
+set_global_assignment -name VHDL_FILE source/infrastructure_block.vhd
 set_global_assignment -name VHDL_FILE source/i2c_slave_bfm.vhd
 set_global_assignment -name VHDL_FILE source/i2c_master.vhd
-set_global_assignment -name VHDL_FILE source/sync_block.vhd
-set_global_assignment -name VHDL_FILE source/takt_teiler.vhd
-set_global_assignment -name VHDL_FILE source/infrastructure_block.vhd
-set_global_assignment -name VHDL_FILE source/fsm.vhd
-set_global_assignment -name VHDL_FILE source/FPGA_infrastructure_block.vhd
+set_global_assignment -name VHDL_FILE source/frame_decoder.vhd
+set_global_assignment -name VHDL_FILE source/codec_control.vhd
+set_global_assignment -name VHDL_FILE source/bclk_gen.vhd
+set_global_assignment -name VHDL_FILE source/digital_audio_interface_driver_top.vhd
+set_global_assignment -name VHDL_FILE source/i2s_master_top.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

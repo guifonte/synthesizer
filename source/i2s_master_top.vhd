@@ -16,10 +16,10 @@ ENTITY i2s_master_top IS
 		CLOCK_12M				: IN  std_logic;	
 		INIT_N					: IN  std_logic;
 		ADCDAT_s_i				: IN  std_logic;
-		DACDAT_pl_i				: IN  std_logic_vector(15 downto 0)
-		DACDAT_pr_i				: IN  std_logic_vector(15 downto 0)
-		ADCDAT_pl_o				: OUT std_logic_vector(15 downto 0)
-		ADCDAT_pr_o				: OUT std_logic_vector(15 downto 0)
+		DACDAT_pl_i				: IN  std_logic_vector(15 downto 0);
+		DACDAT_pr_i				: IN  std_logic_vector(15 downto 0);
+		ADCDAT_pl_o				: OUT std_logic_vector(15 downto 0);
+		ADCDAT_pr_o				: OUT std_logic_vector(15 downto 0);
 		STROBE					: OUT	std_logic;
 		DACDAT_s_o				: OUT	std_logic;
 		BCLK_o					: OUT	std_logic;
@@ -99,7 +99,7 @@ ARCHITECTURE struct OF i2s_master_top IS
 			init_n					=> INIT_N,
 			shift_L					=> top_shift_l,
 			shift_R					=> top_shift_r,
-			strobe					=> STROBE,
+			strobe					=> top_strobe,
 			WS_o						=> top_WS
 		);
 
@@ -154,6 +154,6 @@ ARCHITECTURE struct OF i2s_master_top IS
 				DACDAT_s_o <= top_p2s_left_out;
 			ELSE
 				DACDAT_s_o <= top_p2s_right_out;
-			END
+			END IF;
 	  END PROCESS comb_logic; 
 END struct;	

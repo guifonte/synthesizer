@@ -1,5 +1,5 @@
 -------------------------------------------
--- Block code:  s2p_register.vhd
+-- Block code:  p2s_register.vhd
 -- History: 	27.Apr.2018 - first version (felipe tanios)
 --				
 -- Function: paralel 16 bits to serial interface.
@@ -13,20 +13,21 @@ USE ieee.numeric_std.all;
 
 -- Entity Declaration 
 -------------------------------------------
-ENTITY s2p_register IS
-GENERIC (width		: positive  := 5);
+ENTITY p2s_register IS
+GENERIC (width		: positive  := 3 );
   PORT(
-    clk_12M, reset_n      : IN    std_logic;
-		enable			   	      : IN    std_logic;
-		shift				          : IN	  std_logic;
-		ser_i                 : IN	  std_logic;
-		par_o	      		      : OUT   std_logic_vector(15 downto 0)
+    	clk_12M, reset_n    : IN    std_logic;
+		enable				: IN    std_logic;
+		shift				: IN	std_logic;
+		load				: IN	std_logic;
+		par_i				: IN	std_logic_vector(15 downto 0);
+		ser_o	      		: OUT   std_logic
     	);
-END s2p_register;
+END p2s_register;
 
 -- Architecture Declaration
 -------------------------------------------
-ARCHITECTURE rtl OF s2p_register IS
+ARCHITECTURE rtl OF p2s_register IS
 
 -- Define Signals and constants
 -------------------------------------------
@@ -39,12 +40,15 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR COMBINATORIAL LOGIC
   --------------------------------------------------
-  comb_logic: PROCESS(enable, shift, shiftreg, ser_i)
+  comb_logic: PROCESS(load, enable, shift, shiftreg)
   
   BEGIN
 		next_shiftreg <= shiftreg;
+		if (load = '1') then
+      		next_shiftreg <= par_i;
+  		end if;
   		if (enable = '1' and shift = '1') then
-  			next_shiftreg <= shiftreg(14 downto 0) & ser_i  ;
+  			next_shiftreg <= '1' & shiftreg(15 downto 1);
   		end if;
 
   END PROCESS comb_logic;   
@@ -57,14 +61,18 @@ BEGIN
     if (reset_n = '0') then
     	shiftreg <= (others => '1');
     elsif rising_edge(clk_12M) then
-  		shiftreg <= next_shiftreg;
+		shiftreg <= next_shiftreg;
     end if;
   END PROCESS flip_flops;		
   
   --------------------------------------------------
-  -- PROCESS FOR FINAL CONCURRENT ASSIGNMENTS
+  -- PROCESS FOR FINAL COMBINATORIAL LOGIC
   --------------------------------------------------
-	par_o <= shiftreg;
+  final_logic: PROCESS(shiftreg)
+  BEGIN	
+	ser_o <= shiftreg(0);
+  END PROCESS final_logic; 
+  
   
  -- End Architecture 
 ------------------------------------------- 

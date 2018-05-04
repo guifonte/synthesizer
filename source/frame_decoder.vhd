@@ -16,7 +16,7 @@ USE ieee.numeric_std.all;
 -- Entity Declaration 
 -------------------------------------------
 ENTITY frame_decoder IS
-GENERIC (width		: positive  := 6 );
+GENERIC (width		: positive  := 7 );
   PORT(
 		bclk				: IN    std_logic;
 		init_n			: IN    std_logic;
@@ -48,6 +48,7 @@ BEGIN
 	strobe <= '0';
 	shift_L <= '0';
 	shift_R <= '0';
+	next_count <= count + 1;
 	
 	IF count = 0 THEN
 		strobe <= '1';
@@ -69,7 +70,7 @@ BEGIN
   flip_flops : PROCESS(bclk,init_n,next_count)
   BEGIN	
 	IF (init_n = '0') THEN
-		count <= to_unsigned(0,width);
+		count <= to_unsigned(127,width);
 	ElSIF rising_edge(bclk) THEN
 		count <= next_count;
 	END IF;
