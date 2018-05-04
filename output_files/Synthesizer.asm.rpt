@@ -1,5 +1,5 @@
 Assembler report for Synthesizer
-Fri Apr 13 10:35:43 2018
+Fri May 04 17:48:59 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/ea999/Desktop/synthesizer/output_files/Synthesizer.sof
-  6. Assembler Device Options: C:/Users/ea999/Desktop/synthesizer/output_files/Synthesizer.pof
+  5. Assembler Device Options: C:/Users/megas/Documents/Git/Synth/output_files/Synthesizer.sof
+  6. Assembler Device Options: C:/Users/megas/Documents/Git/Synth/output_files/Synthesizer.pof
   7. Assembler Messages
 
 
@@ -38,9 +38,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Apr 13 10:35:43 2018 ;
+; Assembler Status      ; Successful - Fri May 04 17:48:59 2018 ;
 ; Revision Name         ; Synthesizer                           ;
-; Top-level Entity Name ; FPGA_infrastructure_block             ;
+; Top-level Entity Name ; Milestone2_infrastructure_block       ;
 ; Family                ; Cyclone II                            ;
 ; Device                ; EP2C20F484C7                          ;
 +-----------------------+---------------------------------------+
@@ -83,31 +83,31 @@ applicable agreement for further details.
 +-----------------------------------------------------------------+
 ; File Name                                                       ;
 +-----------------------------------------------------------------+
-; C:/Users/ea999/Desktop/synthesizer/output_files/Synthesizer.sof ;
-; C:/Users/ea999/Desktop/synthesizer/output_files/Synthesizer.pof ;
+; C:/Users/megas/Documents/Git/Synth/output_files/Synthesizer.sof ;
+; C:/Users/megas/Documents/Git/Synth/output_files/Synthesizer.pof ;
 +-----------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ea999/Desktop/synthesizer/output_files/Synthesizer.sof ;
+; Assembler Device Options: C:/Users/megas/Documents/Git/Synth/output_files/Synthesizer.sof ;
 +----------------+--------------------------------------------------------------------------+
 ; Option         ; Setting                                                                  ;
 +----------------+--------------------------------------------------------------------------+
 ; Device         ; EP2C20F484C7                                                             ;
-; JTAG usercode  ; 0x0031B0A0                                                               ;
-; Checksum       ; 0x0031B0A0                                                               ;
+; JTAG usercode  ; 0x0022D38D                                                               ;
+; Checksum       ; 0x0022D38D                                                               ;
 +----------------+--------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/ea999/Desktop/synthesizer/output_files/Synthesizer.pof ;
+; Assembler Device Options: C:/Users/megas/Documents/Git/Synth/output_files/Synthesizer.pof ;
 +--------------------+----------------------------------------------------------------------+
 ; Option             ; Setting                                                              ;
 +--------------------+----------------------------------------------------------------------+
 ; Device             ; EPCS16                                                               ;
 ; JTAG usercode      ; 0x00000000                                                           ;
-; Checksum           ; 0x1DBD1C06                                                           ;
-; Compression Ratio  ; 2                                                                    ;
+; Checksum           ; 0x1DCAD4FF                                                           ;
+; Compression Ratio  ; 3                                                                    ;
 +--------------------+----------------------------------------------------------------------+
 
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Apr 13 10:35:41 2018
+    Info: Processing started: Fri May 04 17:48:58 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Synthesizer -c Synthesizer
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 475 megabytes
-    Info: Processing ended: Fri Apr 13 10:35:43 2018
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 479 megabytes
+    Info: Processing ended: Fri May 04 17:48:59 2018
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 
 

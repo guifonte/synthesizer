@@ -38,8 +38,6 @@ ARCHITECTURE struct OF Milestone2_infrastructure_block IS
 	SIGNAL ack_error			: 	STD_LOGIC;
 	SIGNAL write_buf			: 	STD_LOGIC;
 	SIGNAL write_data			: 	std_logic_vector(15 downto 0);
-	SIGNAL top_ADCDAT_pl		:	std_logic_vector(15 downto 0);
-	SIGNAL top_ADCDAT_pr		:	std_logic_vector(15 downto 0);
 	SIGNAL top_WS				: 	STD_LOGIC;
 	
 	COMPONENT infrastructure_block
@@ -86,19 +84,14 @@ ARCHITECTURE struct OF Milestone2_infrastructure_block IS
     );
 	END COMPONENT;
 	
-	COMPONENT i2s_master_top
+	COMPONENT digital_audio_interface_driver_top
 	PORT(
-		CLOCK_12M				: IN  std_logic;	
-		INIT_N					: IN  std_logic;
-		ADCDAT_s_i				: IN  std_logic;
-		DACDAT_pl_i				: IN  std_logic_vector(15 downto 0);
-		DACDAT_pr_i				: IN  std_logic_vector(15 downto 0);
-		ADCDAT_pl_o				: OUT std_logic_vector(15 downto 0);
-		ADCDAT_pr_o				: OUT std_logic_vector(15 downto 0);
-		STROBE					: OUT	std_logic;
-		DACDAT_s_o				: OUT	std_logic;
-		BCLK_o					: OUT	std_logic;
-		WS						: OUT std_logic
+		CLK_12M					: IN  std_logic;	
+		RESET_N					: IN  std_logic;
+		ADCDAT_s_in				: IN  std_logic;
+		DACDAT_s_out			: OUT	std_logic;
+		BCLK_out					: OUT	std_logic;
+		WS_out					: OUT std_logic
 	);
 	END COMPONENT ;
 	
@@ -150,18 +143,14 @@ ARCHITECTURE struct OF Milestone2_infrastructure_block IS
 
 		);
 		
-		inst_i2s_master: i2s_master_top
-		PORT MAP (
-		CLOCK_12M				=> top_clk_12M,	
-		INIT_N					=> top_button_1,
-		ADCDAT_s_i				=> AUD_ADCDAT,
-		DACDAT_pl_i				=> top_ADCDAT_pl,
-		DACDAT_pr_i				=> top_ADCDAT_pr,
-		ADCDAT_pl_o				=> top_ADCDAT_pl,
-		ADCDAT_pr_o				=> top_ADCDAT_pr,
-		STROBE					=> OPEN,
-		DACDAT_s_o				=> AUD_DACDAT,
-		BCLK_o					=> AUD_BCLK,
-		WS							=> top_WS
+		inst_digital_audio_interface_driver_top: digital_audio_interface_driver_top
+		PORT MAP(
+		CLK_12M					=> top_clk_12M,		
+		RESET_N					=> top_button_1,	
+		ADCDAT_s_in				=> AUD_ADCDAT,	
+		DACDAT_s_out			=> AUD_DACDAT,	
+		BCLK_out					=> AUD_BCLK,	
+		WS_out					=> top_WS	
 		);
+
 END struct;	

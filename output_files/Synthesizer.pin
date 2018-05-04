@@ -71,9 +71,9 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 GND                          : A1        : gnd    :                   :         :           :                
 VCCIO3                       : A2        : power  :                   : 3.3V    : 3         :                
 I2C_SCLK                     : A3        : output : 3.3-V LVTTL       :         : 3         : Y              
-GND*                         : A4        :        :                   :         : 3         :                
-GND*                         : A5        :        :                   :         : 3         :                
-GND*                         : A6        :        :                   :         : 3         :                
+AUD_BCLK                     : A4        : output : 3.3-V LVTTL       :         : 3         : Y              
+AUD_DACLRCK                  : A5        : output : 3.3-V LVTTL       :         : 3         : Y              
+AUD_ADCLRCK                  : A6        : output : 3.3-V LVTTL       :         : 3         : Y              
 GND*                         : A7        :        :                   :         : 3         :                
 GND*                         : A8        :        :                   :         : 3         :                
 GND*                         : A9        :        :                   :         : 3         :                
@@ -138,8 +138,8 @@ VCCIO2                       : B1        : power  :                   : 3.3V    
 GND                          : B2        : gnd    :                   :         :           :                
 I2C_SDAT                     : B3        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 AUD_XCK                      : B4        : output : 3.3-V LVTTL       :         : 3         : Y              
-GND*                         : B5        :        :                   :         : 3         :                
-GND*                         : B6        :        :                   :         : 3         :                
+AUD_DACDAT                   : B5        : output : 3.3-V LVTTL       :         : 3         : Y              
+AUD_ADCDAT                   : B6        : input  : 3.3-V LVTTL       :         : 3         : Y              
 GND*                         : B7        :        :                   :         : 3         :                
 GND*                         : B8        :        :                   :         : 3         :                
 GND*                         : B9        :        :                   :         : 3         :                
@@ -208,7 +208,7 @@ VCCD_PLL3                    : E5        : power  :                   : 1.2V    
 VCCA_PLL3                    : E6        : power  :                   : 1.2V    :           :                
 GND*                         : E7        :        :                   :         : 3         :                
 GND*                         : E8        :        :                   :         : 3         :                
-SW[10]                       : E9        : input  : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : E9        :        :                   :         : 3         :                
 VCCIO3                       : E10       : power  :                   : 3.3V    : 3         :                
 GND*                         : E11       :        :                   :         : 3         :                
 GND+                         : E12       :        :                   :         : 3         :                
