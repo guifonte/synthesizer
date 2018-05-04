@@ -1,0 +1,143 @@
+-------------------------------------------
+-- Block code:  i2s_master_top.vhd
+-- History: 	12.Apr.2018 - 1st version (guifonte)
+--                 <date> - <changes>  (<author>)
+-- Function: Top for the i2s protocol controler
+--           
+-------------------------------------------
+
+-- Library & Use Statements
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+
+-- Entity Declaration 
+ENTITY i2s_master_top IS
+	PORT(
+		CLOCK_12M				: IN  std_logic;	
+		INIT_N					: IN  std_logic;
+		ADCDAT_s_i				: IN  std_logic;
+		DACDAT_pl_i				: IN  std_logic_vector(15 downto 0)
+		DACDAT_pr_i				: IN  std_logic_vector(15 downto 0)
+		ADCDAT_pl_o				: OUT std_logic_vector(15 downto 0)
+		ADCDAT_pr_o				: OUT std_logic_vector(15 downto 0)
+		STROBE					: OUT	std_logic;
+		DACDAT_s_o				: OUT	std_logic;
+		BCLK_o					: OUT	std_logic;
+		WS							: OUT std_logic
+	);
+END i2s_master_top ;
+
+-- Architecture Declaration 
+ARCHITECTURE struct OF synth_top IS
+	
+	SIGNAL top_bclk				:	STD_LOGIC;
+	SIGNAL top_shift_r			:	STD_LOGIC;
+	SIGNAL top_shift_l			:	STD_LOGIC;
+	SIGNAL top_strobe				:	STD_LOGIC;
+	
+	COMPONENT frame_decoder
+	PORT(
+		bclk				: IN    std_logic;
+		init_n			: IN    std_logic;
+		shift_L			: OUT   std_logic;
+		shift_R			: OUT   std_logic;
+		strobe			: OUT   std_logic;
+		WS_o				: OUT   std_logic
+	);
+	END COMPONENT;
+	
+	
+	COMPONENT p2s_register 
+    PORT(
+    	clk_12M, reset_n    	: IN    	std_logic;
+		enable					: IN    	std_logic;
+		shift						: IN		std_logic;
+		load						: IN		std_logic;
+		par_i						: IN		std_logic_vector(15 downto 0);
+		ser_o	      			: OUT   	std_logic
+		);
+	END COMPONENT;
+	
+
+	COMPONENT s2p_register
+    PORT(
+		clk_12M, reset_n     : IN    std_logic;
+		enable			   	: IN    std_logic;
+		shift				      : IN	  std_logic;
+		ser_i                : IN	  std_logic;
+		par_o	      		   : OUT   std_logic_vector(15 downto 0)
+    );
+	END COMPONENT;
+	
+	COMPONENT bclk_gen
+    PORT(
+		reset_n     			: IN    std_logic;
+		clk_12M_i				: IN    std_logic;
+		bclk_o      			: OUT   std_logic
+    );
+	END COMPONENT;
+	
+	BEGIN
+	
+		BCLK_o 			<= top_bclk;
+		STROBE			<= top_strobe;
+		
+		inst_bclk_gen: bclk_gen
+		PORT MAP(
+			reset_n     			=> INIT_N,
+			clk_12M_i				=> CLOCK_12M,
+			bclk_o      			=> top_bclk
+		);
+		
+		inst_frame_decoder: frame_decoder
+		PORT MAP(
+			bclk						=> top_bclk,
+			init_n					=> INIT_N,
+			shift_L					=> top_shift_l,
+			shift_R					=> top_shift_r,
+			strobe					=> STROBE,
+			WS_o						=> WS
+		);
+
+		inst_p2s_right: p2s_register 
+		PORT MAP(
+			clk_12M					=> CLOCK_12M,
+			reset_n    				=> INIT_N,
+			enable					=> top_bclk,
+			shift						=> top_shift_r,
+			load						=> top_strobe,
+			par_i						=> DACDAT_pr_i,
+			ser_o	      			=> 
+		);
+		
+		inst_p2s_left: p2s_register 
+		PORT MAP(
+			clk_12M					=> CLOCK_12M,
+			reset_n    				=> INIT_N,
+			enable					=> top_bclk,
+			shift						=> top_shift_l,
+			load						=> top_strobe,
+			par_i						=> DACDAT_pl_i,
+			ser_o	      			=> 
+		);
+		
+		inst_s2p_right: s2p_register
+		PORT MAP(
+			clk_12M					=> CLOCK_12M,
+			reset_n     			=> INIT_N,
+			enable			   	=> top_bclk,
+			shift				      => top_shift_r,
+			ser_i                => ADCDAT_s_i,
+			par_o	      		   => ADCDAT_pr_o
+		);
+		
+		inst_s2p_left: s2p_register
+		PORT MAP(
+			clk_12M					=> CLOCK_12M,
+			reset_n     			=> INIT_N,
+			enable			   	=> top_bclk,
+			shift				      => top_shift_l,
+			ser_i                => ADCDAT_s_i,
+			par_o	      		   => ADCDAT_pl_o
+		);
+END struct;	

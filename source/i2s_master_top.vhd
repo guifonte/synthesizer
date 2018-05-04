@@ -34,6 +34,9 @@ ARCHITECTURE struct OF synth_top IS
 	SIGNAL top_shift_r			:	STD_LOGIC;
 	SIGNAL top_shift_l			:	STD_LOGIC;
 	SIGNAL top_strobe				:	STD_LOGIC;
+	SIGNAL top_p2s_right_out	:  STD_LOGIC;
+	SIGNAL top_p2s_left_out		:  STD_LOGIC;
+	SIGNAL top_WS					:	STD_LOGIC;
 	
 	COMPONENT frame_decoder
 	PORT(
@@ -81,6 +84,7 @@ ARCHITECTURE struct OF synth_top IS
 	
 		BCLK_o 			<= top_bclk;
 		STROBE			<= top_strobe;
+		WS					<= top_WS;
 		
 		inst_bclk_gen: bclk_gen
 		PORT MAP(
@@ -96,7 +100,7 @@ ARCHITECTURE struct OF synth_top IS
 			shift_L					=> top_shift_l,
 			shift_R					=> top_shift_r,
 			strobe					=> STROBE,
-			WS_o						=> WS
+			WS_o						=> top_WS
 		);
 
 		inst_p2s_right: p2s_register 
@@ -106,8 +110,8 @@ ARCHITECTURE struct OF synth_top IS
 			enable					=> top_bclk,
 			shift						=> top_shift_r,
 			load						=> top_strobe,
-			par_i						=> 
-			ser_o	      			=> 
+			par_i						=> DACDAT_pr_i,
+			ser_o	      			=> top_p2s_right_out
 		);
 		
 		inst_p2s_left: p2s_register 
@@ -117,8 +121,8 @@ ARCHITECTURE struct OF synth_top IS
 			enable					=> top_bclk,
 			shift						=> top_shift_l,
 			load						=> top_strobe,
-			par_i						=> 
-			ser_o	      			=> 
+			par_i						=> DACDAT_pl_i,
+			ser_o	      			=> top_p2s_left_out
 		);
 		
 		inst_s2p_right: s2p_register
@@ -140,4 +144,16 @@ ARCHITECTURE struct OF synth_top IS
 			ser_i                => ADCDAT_s_i,
 			par_o	      		   => ADCDAT_pl_o
 		);
+		
+	  --------------------------------------------------
+	  -- PROCESS FOR COMBINATORIAL LOGIC
+	  --------------------------------------------------
+	  comb_logic: PROCESS(top_p2s_right_out,top_p2s_left_out,top_WS)
+	  BEGIN
+			IF top_WS = '1' THEN
+				DACDAT_s_o <= top_p2s_left_out;
+			ELSE
+				DACDAT_s_o <= top_p2s_right_out;
+			END
+	  END PROCESS comb_logic; 
 END struct;	
