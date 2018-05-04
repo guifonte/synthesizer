@@ -1,5 +1,5 @@
 -------------------------------------------
--- Block code:  testbench_audio_synth_top.vhd
+-- Block code:  testbench_milestone2_top.vhd
 -- History: 	22.Mar.2017 - 1st version (dqtm)
 --                 <date> - <changes>  (<author>)
 -- Function: Testbench for audio_synth_top in DTP2 project - Milestone-1
@@ -11,13 +11,13 @@ LIBRARY ieee;
 use ieee.std_logic_1164.all;
 
 -- Entity Declaration 
-ENTITY testbench_audio_synth_top IS
+ENTITY testbench_milestone2_top IS
   
-END testbench_audio_synth_top ;
+END testbench_milestone2_top ;
 
 
 -- Architecture Declaration 
-ARCHITECTURE struct OF testbench_audio_synth_top IS
+ARCHITECTURE struct OF testbench_milestone2_top IS
 
 	-- Components Declaration
 COMPONENT i2s_master_top 
