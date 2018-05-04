@@ -28,7 +28,7 @@ ENTITY i2s_master_top IS
 END i2s_master_top ;
 
 -- Architecture Declaration 
-ARCHITECTURE struct OF synth_top IS
+ARCHITECTURE struct OF i2s_master_top IS
 	
 	SIGNAL top_bclk				:	STD_LOGIC;
 	SIGNAL top_shift_r			:	STD_LOGIC;
