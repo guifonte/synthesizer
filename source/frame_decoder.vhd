@@ -18,6 +18,7 @@ USE ieee.numeric_std.all;
 ENTITY frame_decoder IS
 GENERIC (width		: positive  := 7 );
   PORT(
+		clk12M			: IN    std_logic;
 		bclk				: IN    std_logic;
 		init_n			: IN    std_logic;
 		shift_L			: OUT   std_logic;
@@ -38,17 +39,29 @@ signal count, next_count: unsigned(width-1 downto 0):= (OTHERS =>'0');	 -- excep
 -------------------------------------------
 BEGIN
 
+
   --------------------------------------------------
   -- PROCESS FOR COMBINATORIAL LOGIC
   --------------------------------------------------
-  comb_logic: PROCESS(count)
+  comb_logic: PROCESS(count,bclk)
+  BEGIN	
+	IF bclk = '1' THEN
+		next_count <= count + 1;
+	ELSE
+		next_count <= count;
+	END IF;
+  END PROCESS comb_logic;  
+  
+  --------------------------------------------------
+  -- PROCESS FOR COMBINATORIAL LOGIC
+  --------------------------------------------------
+  final_logic: PROCESS(count)
   BEGIN
 	--Default statement
 	WS_o <= '0';
 	strobe <= '0';
 	shift_L <= '0';
 	shift_R <= '0';
-	next_count <= count + 1;
 	
 	IF count = 0 THEN
 		strobe <= '1';
@@ -62,16 +75,16 @@ BEGIN
 			shift_R <= '1';
 		END IF;	
 	END IF;
-  END PROCESS comb_logic;   
+  END PROCESS final_logic;   
   
   --------------------------------------------------
   -- PROCESS FOR REGISTERS
   --------------------------------------------------
-  flip_flops : PROCESS(bclk,init_n,next_count)
+  flip_flops : PROCESS(clk12M,init_n,next_count)
   BEGIN	
 	IF (init_n = '0') THEN
 		count <= to_unsigned(127,width);
-	ElSIF rising_edge(bclk) THEN
+	ElSIF rising_edge(clk12M) THEN
 		count <= next_count;
 	END IF;
   END PROCESS flip_flops;		

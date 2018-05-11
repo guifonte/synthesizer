@@ -46,9 +46,8 @@ BEGIN
 		next_shiftreg <= shiftreg;
 		if (load = '1') then
       		next_shiftreg <= par_i;
-  		end if;
-  		if (enable = '1' and shift = '1') then
-  			next_shiftreg <= '1' & shiftreg(15 downto 1);
+  		elsif (enable = '1' and shift = '1') then
+  			next_shiftreg <= shiftreg(14 downto 0) & '1';
   		end if;
 
   END PROCESS comb_logic;   
@@ -64,14 +63,9 @@ BEGIN
 		shiftreg <= next_shiftreg;
     end if;
   END PROCESS flip_flops;		
-  
-  --------------------------------------------------
-  -- PROCESS FOR FINAL COMBINATORIAL LOGIC
-  --------------------------------------------------
-  final_logic: PROCESS(shiftreg)
-  BEGIN	
-	ser_o <= shiftreg(0);
-  END PROCESS final_logic; 
+ 
+  -- Concurrent Statement
+  ser_o <= shiftreg(15);
   
   
  -- End Architecture 

@@ -40,6 +40,7 @@ ARCHITECTURE struct OF i2s_master_top IS
 	
 	COMPONENT frame_decoder
 	PORT(
+		clk12M			: IN    std_logic;
 		bclk				: IN    std_logic;
 		init_n			: IN    std_logic;
 		shift_L			: OUT   std_logic;
@@ -95,6 +96,7 @@ ARCHITECTURE struct OF i2s_master_top IS
 		
 		inst_frame_decoder: frame_decoder
 		PORT MAP(
+			clk12M			    	=> CLOCK_12M,
 			bclk						=> top_bclk,
 			init_n					=> INIT_N,
 			shift_L					=> top_shift_l,

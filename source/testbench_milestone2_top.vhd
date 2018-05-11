@@ -119,6 +119,8 @@ BEGIN
 		wait until rising_edge(tb_ws);	
 		wait until falling_edge(tb_bclk_o);
 		
+		-- send serial data right
+		
 		for i in 15 downto 0 loop
 			tb_adcdat_s_i <= tb_data(i);
 			wait until falling_edge(tb_bclk_o);	

@@ -1,12 +1,8 @@
 -------------------------------------------
--- Block code:  takt_teiler.vhd
--- History: 	14.Nov.2012 - 1st version (dqtm)
---             15.Mar.2018 - change duty cycle from 50% to 1/80. (guifonte)
---					04.Abr.2018	- remove reset button
---									- change duty cycle to 1/4
---               <date> - <changes>  (<author>)
--- Function: modulo divider with generic width. Output MSB with 1/80 duty cycle.
---		Can be used for clock-divider when no exact ratio required.
+-- Block code:  s2p_register.vhd
+-- History: 	27.Apr.2018 - first version (felipe tanios)
+--				
+-- Function: paralel 16 bits to serial interface.
 -------------------------------------------
 
 -- Library & Use Statements
@@ -17,52 +13,58 @@ USE ieee.numeric_std.all;
 
 -- Entity Declaration 
 -------------------------------------------
-ENTITY takt_teiler IS
-GENERIC (width		: positive  := 2 );
+ENTITY s2p_register IS
+GENERIC (width		: positive  := 5);
   PORT(
-		clk_fast_i		: IN    std_logic;
-		clk_slow_o     : OUT   std_logic
+    clk_12M, reset_n      : IN    std_logic;
+		enable			   	      : IN    std_logic;
+		shift				          : IN	  std_logic;
+		ser_i                 : IN	  std_logic;
+		par_o	      		      : OUT   std_logic_vector(15 downto 0)
     	);
-END takt_teiler;
+END s2p_register;
 
 -- Architecture Declaration
 -------------------------------------------
-ARCHITECTURE rtl OF takt_teiler IS
--- Signals & Constants Declaration?
+ARCHITECTURE rtl OF s2p_register IS
+
+-- Define Signals and constants
 -------------------------------------------
-signal count, next_count: unsigned(width-1 downto 0):= (OTHERS =>'0');	 -- exception only for simu
+signal shiftreg, next_shiftreg	: std_logic_vector(15 downto 0);
 
 -- Begin Architecture
 -------------------------------------------
 BEGIN
 
-
-	
   --------------------------------------------------
   -- PROCESS FOR COMBINATORIAL LOGIC
   --------------------------------------------------
-  comb_logic: PROCESS(count)
+  comb_logic: PROCESS(enable, shift, shiftreg, ser_i)
+  
   BEGIN
-	
-		next_count <= count - 1 ;
-	
+		next_shiftreg <= shiftreg;
+  		if (enable = '1' and shift = '1') then
+  			next_shiftreg <= shiftreg(14 downto 0) & ser_i  ;
+  		end if;
+
   END PROCESS comb_logic;   
   
   --------------------------------------------------
   -- PROCESS FOR REGISTERS
   --------------------------------------------------
-  flip_flops : PROCESS(clk_fast_i,next_count)
+  flip_flops : PROCESS(clk_12M,reset_n)
   BEGIN	
-    IF rising_edge(clk_fast_i) THEN
-		count <= next_count;
-    END IF;
+    if (reset_n = '0') then
+    	shiftreg <= (others => '1');
+    elsif rising_edge(clk_12M) then
+  		shiftreg <= next_shiftreg;
+    end if;
   END PROCESS flip_flops;		
   
   --------------------------------------------------
-  -- PROCESS FOR FINAL COMBINATORIAL LOGIC
+  -- PROCESS FOR FINAL CONCURRENT ASSIGNMENTS
   --------------------------------------------------
-  clk_slow_o <= count(1);
-  
+	par_o <= shiftreg;
   
  -- End Architecture 
 ------------------------------------------- 
