@@ -23,7 +23,7 @@ ENTITY i2s_master_top IS
 		STROBE					: OUT	std_logic;
 		DACDAT_s_o				: OUT	std_logic;
 		BCLK_o					: OUT	std_logic;
-		WS							: OUT std_logic
+		WS						: OUT std_logic
 	);
 END i2s_master_top ;
 
@@ -41,12 +41,12 @@ ARCHITECTURE struct OF i2s_master_top IS
 	COMPONENT frame_decoder
 	PORT(
 		clk12M			: IN    std_logic;
-		bclk				: IN    std_logic;
+		bclk			: IN    std_logic;
 		init_n			: IN    std_logic;
 		shift_L			: OUT   std_logic;
 		shift_R			: OUT   std_logic;
 		strobe			: OUT   std_logic;
-		WS_o				: OUT   std_logic
+		WS_o			: OUT   std_logic
 	);
 	END COMPONENT;
 	
@@ -120,10 +120,10 @@ ARCHITECTURE struct OF i2s_master_top IS
 		PORT MAP(
 			clk_12M					=> CLOCK_12M,
 			reset_n    				=> INIT_N,
-			enable					=> top_bclk,
-			shift						=> top_shift_l,
-			load						=> top_strobe,
-			par_i						=> DACDAT_pl_i,
+			enable					=> op_bclk,
+			shift					=> top_shift_l,
+			load					=> top_strobe,
+			par_i					=> DACDAT_pl_i,
 			ser_o	      			=> top_p2s_left_out
 		);
 		

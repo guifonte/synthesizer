@@ -1,15 +1,15 @@
-Fitter Status : Successful - Fri May 11 11:28:15 2018
+Fitter Status : Successful - Fri May 18 10:17:14 2018
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : Synthesizer
 Top-level Entity Name : Milestone2_infrastructure_block
 Family : Cyclone II
 Device : EP2C20F484C7
 Timing Models : Final
-Total logic elements : 232 / 18,752 ( 1 % )
-    Total combinational functions : 198 / 18,752 ( 1 % )
+Total logic elements : 236 / 18,752 ( 1 % )
+    Total combinational functions : 200 / 18,752 ( 1 % )
     Dedicated logic registers : 136 / 18,752 ( < 1 % )
 Total registers : 136
-Total pins : 23 / 315 ( 7 % )
+Total pins : 67 / 315 ( 21 % )
 Total virtual pins : 0
 Total memory bits : 0 / 239,616 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 52 ( 0 % )

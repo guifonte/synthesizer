@@ -24,7 +24,9 @@ ENTITY Milestone2_infrastructure_block IS
 		AUD_BCLK					: OUT	std_logic;	
 		AUD_DACLRCK				: OUT	std_logic;	
 		AUD_ADCLRCK				: OUT	std_logic;	
-		AUD_ADCDAT				: IN  	std_logic
+		LEDR						: OUT	std_logic_vector(7 downto 0);
+		GPIO_0					: OUT	std_logic_vector(35 downto 0);
+		AUD_ADCDAT				: IN  std_logic
 	);
 END Milestone2_infrastructure_block ;
 
@@ -34,6 +36,9 @@ ARCHITECTURE struct OF Milestone2_infrastructure_block IS
 	SIGNAL top_clk_12M			:	STD_LOGIC;
 	SIGNAL top_button_reset_n	:	STD_LOGIC;
 	SIGNAL top_initialize_n		:	STD_LOGIC;
+	SIGNAL top_bclk				:	STD_LOGIC;
+	SIGNAL top_AUD_ADCDAT		:	STD_LOGIC;
+	SIGNAL top_AUD_DACDAT		:	STD_LOGIC;
 	SIGNAL write_done				:	STD_LOGIC;
 	SIGNAL ack_error				: 	STD_LOGIC;
 	SIGNAL write_buf				: 	STD_LOGIC;
@@ -43,8 +48,8 @@ ARCHITECTURE struct OF Milestone2_infrastructure_block IS
 	COMPONENT infrastructure_block
 	PORT(
 		clk_50M  		:  IN			STD_LOGIC;
-		button_1		:  IN			STD_LOGIC;
-		button_2		:  IN			STD_LOGIC;
+		button_1			:  IN			STD_LOGIC;
+		button_2			:  IN			STD_LOGIC;
 		clk_12M			:	OUT		STD_LOGIC;
 		button_1sync	:	OUT		STD_LOGIC;
 		button_2sync	:	OUT		STD_LOGIC
@@ -97,16 +102,23 @@ ARCHITECTURE struct OF Milestone2_infrastructure_block IS
 	END COMPONENT ;
 	
 	BEGIN
-	
-		AUD_XCK 			<= top_clk_12M;
+		AUD_XCK 				<= top_clk_12M;
 		AUD_DACLRCK			<= top_WS;
 		AUD_ADCLRCK			<= top_WS;
+		AUD_BCLK 			<= top_bclk;
+		AUD_DACDAT			<= top_AUD_DACDAT;
+		top_AUD_ADCDAT		<= AUD_ADCDAT;
+		GPIO_0(0)	<=	top_clk_12M;
+		GPIO_0(1)	<=	top_bclk;
+		GPIO_0(2)	<=	top_WS;
+		GPIO_0(3)	<= top_AUD_DACDAT;
+		GPIO_0(4)	<= top_AUD_ADCDAT;
 		
 		inst_infrastructure_block: infrastructure_block
 		PORT MAP(
 			clk_50M  		=> CLOCK_50,
-			button_1		=> KEY(0),
-			button_2		=> KEY(1),
+			button_1			=> KEY(0),
+			button_2			=> KEY(1),
 			clk_12M			=> top_clk_12M,
 			button_1sync	=> top_button_reset_n,--reset
 			button_2sync	=> top_initialize_n --initialize
@@ -148,11 +160,24 @@ ARCHITECTURE struct OF Milestone2_infrastructure_block IS
 		PORT MAP(
 		CLK_12M					=> top_clk_12M,		
 		RESET_N					=> top_button_reset_n,	
-		ADCDAT_s_in				=> AUD_ADCDAT,
+		ADCDAT_s_in				=> top_AUD_ADCDAT,
 		FIR_ctrl_in				=> SW(9),
-		DACDAT_s_out			=> AUD_DACDAT,	
-		BCLK_out					=> AUD_BCLK,	
+		DACDAT_s_out			=> top_AUD_DACDAT,	
+		BCLK_out					=> top_bclk,	
 		WS_out					=> top_WS	
 		);
+		  --------------------------------------------------
+		  -- PROCESS FOR COMBINATORIAL LOGIC
+		  --------------------------------------------------
+		  comb_logic: PROCESS(top_clk_12M,SW,top_bclk)
+		  BEGIN
+				IF SW(8) = '1' THEN
+					LEDR(0) <= top_clk_12M; 
+					LEDR(1) <= top_bclk;
+				ELSE
+					LEDR(0) <= '1';
+					LEDR(1) <= '1';
+				END IF;
+		  END PROCESS comb_logic;
 
 END struct;	

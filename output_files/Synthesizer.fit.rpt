@@ -1,5 +1,5 @@
 Fitter report for Synthesizer
-Fri May 11 11:28:15 2018
+Fri May 18 10:17:14 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -64,18 +64,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Fri May 11 11:28:15 2018           ;
+; Fitter Status                      ; Successful - Fri May 18 10:17:14 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Synthesizer                                     ;
 ; Top-level Entity Name              ; Milestone2_infrastructure_block                 ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 232 / 18,752 ( 1 % )                            ;
-;     Total combinational functions  ; 198 / 18,752 ( 1 % )                            ;
+; Total logic elements               ; 236 / 18,752 ( 1 % )                            ;
+;     Total combinational functions  ; 200 / 18,752 ( 1 % )                            ;
 ;     Dedicated logic registers      ; 136 / 18,752 ( < 1 % )                          ;
 ; Total registers                    ; 136                                             ;
-; Total pins                         ; 23 / 315 ( 7 % )                                ;
+; Total pins                         ; 67 / 315 ( 21 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 239,616 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 52 ( 0 % )                                  ;
@@ -226,42 +226,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Location     ;                ;              ; FL_OE_N       ; PIN_AA15      ; QSF Assignment ;
 ; Location     ;                ;              ; FL_RST_N      ; PIN_W14       ; QSF Assignment ;
 ; Location     ;                ;              ; FL_WE_N       ; PIN_Y14       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[0]     ; PIN_A13       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[10]    ; PIN_A18       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[11]    ; PIN_B18       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[12]    ; PIN_A19       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[13]    ; PIN_B19       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[14]    ; PIN_A20       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[15]    ; PIN_B20       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[16]    ; PIN_C21       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[17]    ; PIN_C22       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[18]    ; PIN_D21       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[19]    ; PIN_D22       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[1]     ; PIN_B13       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[20]    ; PIN_E21       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[21]    ; PIN_E22       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[22]    ; PIN_F21       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[23]    ; PIN_F22       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[24]    ; PIN_G21       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[25]    ; PIN_G22       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[26]    ; PIN_J21       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[27]    ; PIN_J22       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[28]    ; PIN_K21       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[29]    ; PIN_K22       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[2]     ; PIN_A14       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[30]    ; PIN_J19       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[31]    ; PIN_J20       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[32]    ; PIN_J18       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[33]    ; PIN_K20       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[34]    ; PIN_L19       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[35]    ; PIN_L18       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[3]     ; PIN_B14       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[4]     ; PIN_A15       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[5]     ; PIN_B15       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[6]     ; PIN_A16       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[7]     ; PIN_B16       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[8]     ; PIN_A17       ; QSF Assignment ;
-; Location     ;                ;              ; GPIO_0[9]     ; PIN_B17       ; QSF Assignment ;
 ; Location     ;                ;              ; GPIO_1[0]     ; PIN_H12       ; QSF Assignment ;
 ; Location     ;                ;              ; GPIO_1[10]    ; PIN_C14       ; QSF Assignment ;
 ; Location     ;                ;              ; GPIO_1[11]    ; PIN_D14       ; QSF Assignment ;
@@ -334,14 +298,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Location     ;                ;              ; LEDG[5]       ; PIN_W21       ; QSF Assignment ;
 ; Location     ;                ;              ; LEDG[6]       ; PIN_Y22       ; QSF Assignment ;
 ; Location     ;                ;              ; LEDG[7]       ; PIN_Y21       ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[0]       ; PIN_R20       ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[1]       ; PIN_R19       ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[2]       ; PIN_U19       ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[3]       ; PIN_Y19       ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[4]       ; PIN_T18       ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[5]       ; PIN_V19       ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[6]       ; PIN_Y18       ; QSF Assignment ;
-; Location     ;                ;              ; LEDR[7]       ; PIN_U18       ; QSF Assignment ;
 ; Location     ;                ;              ; LEDR[8]       ; PIN_R18       ; QSF Assignment ;
 ; Location     ;                ;              ; LEDR[9]       ; PIN_R17       ; QSF Assignment ;
 ; Location     ;                ;              ; PS2_CLK       ; PIN_H15       ; QSF Assignment ;
@@ -409,42 +365,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; I/O Standard ;                ;              ; CLOCK_24[1]   ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; CLOCK_27[1]   ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; EXT_CLOCK     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[0]     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[10]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[11]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[12]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[13]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[14]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[15]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[16]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[17]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[18]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[19]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[1]     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[20]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[21]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[22]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[23]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[24]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[25]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[26]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[27]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[28]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[29]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[2]     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[30]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[31]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[32]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[33]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[34]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[35]    ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[3]     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[4]     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[5]     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[6]     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[7]     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[8]     ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; GPIO_0[9]     ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; GPIO_1[0]     ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; GPIO_1[10]    ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; GPIO_1[11]    ; LVTTL         ; QSF Assignment ;
@@ -517,14 +437,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; I/O Standard ;                ;              ; LEDG[5]       ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDG[6]       ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDG[7]       ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[0]       ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[1]       ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[2]       ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[3]       ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[4]       ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[5]       ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[6]       ; LVTTL         ; QSF Assignment ;
-; I/O Standard ;                ;              ; LEDR[7]       ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDR[8]       ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; LEDR[9]       ; LVTTL         ; QSF Assignment ;
 ; I/O Standard ;                ;              ; PS2_CLK       ; LVTTL         ; QSF Assignment ;
@@ -558,8 +470,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 364 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 364 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 410 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 410 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -582,7 +494,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 361     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 407     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -598,28 +510,28 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 +---------------------------------------------+------------------------+
 ; Resource                                    ; Usage                  ;
 +---------------------------------------------+------------------------+
-; Total logic elements                        ; 232 / 18,752 ( 1 % )   ;
-;     -- Combinational with no register       ; 96                     ;
-;     -- Register only                        ; 34                     ;
-;     -- Combinational with a register        ; 102                    ;
+; Total logic elements                        ; 236 / 18,752 ( 1 % )   ;
+;     -- Combinational with no register       ; 100                    ;
+;     -- Register only                        ; 36                     ;
+;     -- Combinational with a register        ; 100                    ;
 ;                                             ;                        ;
 ; Logic element usage by number of LUT inputs ;                        ;
 ;     -- 4 input functions                    ; 82                     ;
 ;     -- 3 input functions                    ; 66                     ;
-;     -- <=2 input functions                  ; 50                     ;
-;     -- Register only                        ; 34                     ;
+;     -- <=2 input functions                  ; 52                     ;
+;     -- Register only                        ; 36                     ;
 ;                                             ;                        ;
 ; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 183                    ;
+;     -- normal mode                          ; 185                    ;
 ;     -- arithmetic mode                      ; 15                     ;
 ;                                             ;                        ;
 ; Total registers*                            ; 136 / 19,649 ( < 1 % ) ;
 ;     -- Dedicated logic registers            ; 136 / 18,752 ( < 1 % ) ;
 ;     -- I/O registers                        ; 0 / 897 ( 0 % )        ;
 ;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 19 / 1,172 ( 2 % )     ;
+; Total LABs:  partially or completely used   ; 20 / 1,172 ( 2 % )     ;
 ; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 23 / 315 ( 7 % )       ;
+; I/O pins                                    ; 67 / 315 ( 21 % )      ;
 ;     -- Clock pins                           ; 6 / 8 ( 75 % )         ;
 ;                                             ;                        ;
 ; Global signals                              ; 3                      ;
@@ -633,11 +545,11 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
 ; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%           ;
+; Peak interconnect usage (total/H/V)         ; 0% / 1% / 0%           ;
 ; Maximum fan-out                             ; 134                    ;
 ; Highest non-global fan-out                  ; 35                     ;
-; Total fan-out                               ; 1146                   ;
-; Average fan-out                             ; 2.97                   ;
+; Total fan-out                               ; 1158                   ;
+; Average fan-out                             ; 2.67                   ;
 +---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -650,28 +562,28 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 232 / 18752 ( 1 % )   ; 0 / 18752 ( 0 % )              ;
-;     -- Combinational with no register       ; 96                    ; 0                              ;
-;     -- Register only                        ; 34                    ; 0                              ;
-;     -- Combinational with a register        ; 102                   ; 0                              ;
+; Total logic elements                        ; 236 / 18752 ( 1 % )   ; 0 / 18752 ( 0 % )              ;
+;     -- Combinational with no register       ; 100                   ; 0                              ;
+;     -- Register only                        ; 36                    ; 0                              ;
+;     -- Combinational with a register        ; 100                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
 ;     -- 4 input functions                    ; 82                    ; 0                              ;
 ;     -- 3 input functions                    ; 66                    ; 0                              ;
-;     -- <=2 input functions                  ; 50                    ; 0                              ;
-;     -- Register only                        ; 34                    ; 0                              ;
+;     -- <=2 input functions                  ; 52                    ; 0                              ;
+;     -- Register only                        ; 36                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 183                   ; 0                              ;
+;     -- normal mode                          ; 185                   ; 0                              ;
 ;     -- arithmetic mode                      ; 15                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total registers                             ; 136                   ; 0                              ;
 ;     -- Dedicated logic registers            ; 136 / 18752 ( < 1 % ) ; 0 / 18752 ( 0 % )              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 19 / 1172 ( 2 % )     ; 0 / 1172 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 20 / 1172 ( 2 % )     ; 0 / 1172 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 23                    ; 0                              ;
+; I/O pins                                    ; 67                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 52 ( 0 % )        ; 0 / 52 ( 0 % )                 ;
 ; Total memory bits                           ; 0                     ; 0                              ;
 ; Total RAM block bits                        ; 0                     ; 0                              ;
@@ -684,8 +596,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 1146                  ; 0                              ;
-;     -- Registered Connections               ; 401                   ; 0                              ;
+;     -- Total Connections                    ; 1158                  ; 0                              ;
+;     -- Registered Connections               ; 406                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -693,7 +605,7 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
 ;     -- Input Ports                          ; 16                    ; 0                              ;
-;     -- Output Ports                         ; 6                     ; 0                              ;
+;     -- Output Ports                         ; 50                    ; 0                              ;
 ;     -- Bidir Ports                          ; 1                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -717,7 +629,7 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 +------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name       ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; AUD_ADCDAT ; B6    ; 3        ; 3            ; 27           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; AUD_ADCDAT ; B6    ; 3        ; 3            ; 27           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; CLOCK_50   ; L1    ; 2        ; 0            ; 13           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; KEY[0]     ; R22   ; 6        ; 50           ; 10           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; KEY[1]     ; R21   ; 6        ; 50           ; 10           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
@@ -731,7 +643,7 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; SW[5]      ; U12   ; 8        ; 26           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[6]      ; U11   ; 8        ; 26           ; 0            ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[7]      ; M2    ; 1        ; 0            ; 13           ; 3           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; SW[8]      ; M1    ; 1        ; 0            ; 13           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; SW[8]      ; M1    ; 1        ; 0            ; 13           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[9]      ; L2    ; 2        ; 0            ; 13           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
@@ -746,7 +658,51 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; AUD_DACDAT  ; B5    ; 3        ; 3            ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; AUD_DACLRCK ; A5    ; 3        ; 3            ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; AUD_XCK     ; B4    ; 3        ; 1            ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[0]   ; A13   ; 4        ; 26           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[10]  ; A18   ; 4        ; 46           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[11]  ; B18   ; 4        ; 46           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[12]  ; A19   ; 4        ; 46           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[13]  ; B19   ; 4        ; 46           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[14]  ; A20   ; 4        ; 48           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[15]  ; B20   ; 4        ; 48           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[16]  ; C21   ; 5        ; 50           ; 24           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[17]  ; C22   ; 5        ; 50           ; 24           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[18]  ; D21   ; 5        ; 50           ; 21           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[19]  ; D22   ; 5        ; 50           ; 22           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[1]   ; B13   ; 4        ; 26           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[20]  ; E21   ; 5        ; 50           ; 21           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[21]  ; E22   ; 5        ; 50           ; 21           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[22]  ; F21   ; 5        ; 50           ; 20           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[23]  ; F22   ; 5        ; 50           ; 20           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[24]  ; G21   ; 5        ; 50           ; 19           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[25]  ; G22   ; 5        ; 50           ; 19           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[26]  ; J21   ; 5        ; 50           ; 16           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[27]  ; J22   ; 5        ; 50           ; 16           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[28]  ; K21   ; 5        ; 50           ; 15           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[29]  ; K22   ; 5        ; 50           ; 15           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[2]   ; A14   ; 4        ; 29           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[30]  ; J19   ; 5        ; 50           ; 17           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[31]  ; J20   ; 5        ; 50           ; 16           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[32]  ; J18   ; 5        ; 50           ; 17           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[33]  ; K20   ; 5        ; 50           ; 17           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[34]  ; L19   ; 5        ; 50           ; 15           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[35]  ; L18   ; 5        ; 50           ; 15           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[3]   ; B14   ; 4        ; 29           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[4]   ; A15   ; 4        ; 33           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[5]   ; B15   ; 4        ; 33           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[6]   ; A16   ; 4        ; 33           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[7]   ; B16   ; 4        ; 33           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[8]   ; A17   ; 4        ; 37           ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; GPIO_0[9]   ; B17   ; 4        ; 37           ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; I2C_SCLK    ; A3    ; 3        ; 1            ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; LEDR[0]     ; R20   ; 6        ; 50           ; 10           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; LEDR[1]     ; R19   ; 6        ; 50           ; 8            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; LEDR[2]     ; U19   ; 6        ; 50           ; 4            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; LEDR[3]     ; Y19   ; 6        ; 50           ; 2            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; LEDR[4]     ; T18   ; 6        ; 50           ; 3            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; LEDR[5]     ; V19   ; 6        ; 50           ; 2            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; LEDR[6]     ; Y18   ; 6        ; 50           ; 2            ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; LEDR[7]     ; U18   ; 6        ; 50           ; 3            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 +-------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -759,20 +715,20 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 +----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+--------------------------------+---------------------+
 
 
-+-----------------------------------------------------------+
-; I/O Bank Usage                                            ;
-+----------+-----------------+---------------+--------------+
-; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
-+----------+-----------------+---------------+--------------+
-; 1        ; 2 / 41 ( 5 % )  ; 3.3V          ; --           ;
-; 2        ; 4 / 33 ( 12 % ) ; 3.3V          ; --           ;
-; 3        ; 8 / 43 ( 19 % ) ; 3.3V          ; --           ;
-; 4        ; 0 / 40 ( 0 % )  ; 3.3V          ; --           ;
-; 5        ; 2 / 39 ( 5 % )  ; 3.3V          ; --           ;
-; 6        ; 6 / 36 ( 17 % ) ; 3.3V          ; --           ;
-; 7        ; 2 / 40 ( 5 % )  ; 3.3V          ; --           ;
-; 8        ; 2 / 43 ( 5 % )  ; 3.3V          ; --           ;
-+----------+-----------------+---------------+--------------+
++------------------------------------------------------------+
+; I/O Bank Usage                                             ;
++----------+------------------+---------------+--------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
++----------+------------------+---------------+--------------+
+; 1        ; 2 / 41 ( 5 % )   ; 3.3V          ; --           ;
+; 2        ; 4 / 33 ( 12 % )  ; 3.3V          ; --           ;
+; 3        ; 8 / 43 ( 19 % )  ; 3.3V          ; --           ;
+; 4        ; 16 / 40 ( 40 % ) ; 3.3V          ; --           ;
+; 5        ; 22 / 39 ( 56 % ) ; 3.3V          ; --           ;
+; 6        ; 14 / 36 ( 39 % ) ; 3.3V          ; --           ;
+; 7        ; 2 / 40 ( 5 % )   ; 3.3V          ; --           ;
+; 8        ; 2 / 43 ( 5 % )   ; 3.3V          ; --           ;
++----------+------------------+---------------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -792,14 +748,14 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; A10      ; 293        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A11      ; 287        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A12      ; 283        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; A13      ; 281        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A14      ; 279        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A15      ; 273        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A16      ; 271        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A17      ; 265        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A18      ; 251        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A19      ; 249        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; A20      ; 247        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; A13      ; 281        ; 4        ; GPIO_0[0]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A14      ; 279        ; 4        ; GPIO_0[2]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A15      ; 273        ; 4        ; GPIO_0[4]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A16      ; 271        ; 4        ; GPIO_0[6]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A17      ; 265        ; 4        ; GPIO_0[8]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A18      ; 251        ; 4        ; GPIO_0[10]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A19      ; 249        ; 4        ; GPIO_0[12]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; A20      ; 247        ; 4        ; GPIO_0[14]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; A21      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A22      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AA1      ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -858,14 +814,14 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; B10      ; 292        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B11      ; 286        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B12      ; 282        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; B13      ; 280        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B14      ; 278        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B15      ; 272        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B16      ; 270        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B17      ; 264        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B18      ; 250        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B19      ; 248        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B20      ; 246        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; B13      ; 280        ; 4        ; GPIO_0[1]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; B14      ; 278        ; 4        ; GPIO_0[3]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; B15      ; 272        ; 4        ; GPIO_0[5]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; B16      ; 270        ; 4        ; GPIO_0[7]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; B17      ; 264        ; 4        ; GPIO_0[9]                                ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; B18      ; 250        ; 4        ; GPIO_0[11]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; B19      ; 248        ; 4        ; GPIO_0[13]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
+; B20      ; 246        ; 4        ; GPIO_0[15]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; B21      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; B22      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; C1       ; 8          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -888,8 +844,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; C18      ; 244        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C19      ; 238        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; C20      ; 239        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; C21      ; 236        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; C22      ; 237        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; C21      ; 236        ; 5        ; GPIO_0[16]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; C22      ; 237        ; 5        ; GPIO_0[17]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; D1       ; 14         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D2       ; 15         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D3       ; 2          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -910,8 +866,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; D18      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; D19      ; 240        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; D20      ; 241        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D21      ; 229        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; D22      ; 230        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; D21      ; 229        ; 5        ; GPIO_0[18]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; D22      ; 230        ; 5        ; GPIO_0[19]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; E1       ; 20         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E2       ; 21         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E3       ; 6          ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -932,8 +888,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; E18      ; 243        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E19      ; 242        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; E20      ; 234        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; E21      ; 227        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; E22      ; 228        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; E21      ; 227        ; 5        ; GPIO_0[20]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; E22      ; 228        ; 5        ; GPIO_0[21]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; F1       ; 22         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F2       ; 23         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; F3       ; 13         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -954,8 +910,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; F18      ;            ;          ; GND_PLL2                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; F20      ; 235        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F21      ; 223        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; F22      ; 224        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; F21      ; 223        ; 5        ; GPIO_0[22]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; F22      ; 224        ; 5        ; GPIO_0[23]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; G1       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; G2       ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; G3       ; 16         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -976,8 +932,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; G18      ; 232        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G19      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; G20      ; 233        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; G21      ; 221        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G22      ; 222        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; G21      ; 221        ; 5        ; GPIO_0[24]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; G22      ; 222        ; 5        ; GPIO_0[25]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H1       ; 24         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H2       ; 25         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H3       ; 27         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
@@ -1017,11 +973,11 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; J15      ; 220        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J16      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; J17      ; 218        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J18      ; 217        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J19      ; 216        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J20      ; 213        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J21      ; 211        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J22      ; 212        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; J18      ; 217        ; 5        ; GPIO_0[32]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J19      ; 216        ; 5        ; GPIO_0[30]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J20      ; 213        ; 5        ; GPIO_0[31]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J21      ; 211        ; 5        ; GPIO_0[26]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J22      ; 212        ; 5        ; GPIO_0[27]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; K1       ; 37         ; 2        ; ^nCE                                     ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; K2       ; 32         ; 2        ; #TCK                                     ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; K3       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
@@ -1041,9 +997,9 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; K17      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; K18      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; K19      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; K20      ; 215        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; K21      ; 209        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; K22      ; 210        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; K20      ; 215        ; 5        ; GPIO_0[33]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; K21      ; 209        ; 5        ; GPIO_0[28]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; K22      ; 210        ; 5        ; GPIO_0[29]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; L1       ; 38         ; 2        ; CLOCK_50                                 ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; L2       ; 39         ; 2        ; SW[9]                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; L3       ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -1061,8 +1017,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; L15      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; L16      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
 ; L17      ;            ;          ; NC                                       ;        ;              ;         ; --         ;                 ; --       ; --           ;
-; L18      ; 208        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; L19      ; 207        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; L18      ; 208        ; 5        ; GPIO_0[35]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; L19      ; 207        ; 5        ; GPIO_0[34]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; L20      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; L21      ; 205        ; 5        ; SW[1]                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; L22      ; 206        ; 5        ; SW[0]                                    ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
@@ -1150,8 +1106,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; R16      ; 155        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; R17      ; 177        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; R18      ; 184        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R19      ; 185        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; R20      ; 192        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; R19      ; 185        ; 6        ; LEDR[1]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; R20      ; 192        ; 6        ; LEDR[0]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; R21      ; 190        ; 6        ; KEY[1]                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; R22      ; 191        ; 6        ; KEY[0]                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; T1       ; 59         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1171,7 +1127,7 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; T15      ; 147        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T16      ; 156        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; T17      ;            ;          ; GND_PLL4                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; T18      ; 171        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; T18      ; 171        ; 6        ; LEDR[4]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; T19      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; T20      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; T21      ; 188        ; 6        ; KEY[3]                                   ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
@@ -1193,8 +1149,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; U15      ; 157        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; U16      ;            ;          ; VCCA_PLL4                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; U17      ;            ;          ; VCCD_PLL4                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; U18      ; 170        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; U19      ; 172        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; U18      ; 170        ; 6        ; LEDR[7]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; U19      ; 172        ; 6        ; LEDR[2]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; U20      ; 176        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; U21      ; 182        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; U22      ; 183        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1216,7 +1172,7 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; V16      ;            ;          ; GNDA_PLL4                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; V17      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; V18      ;            ;          ; GND_PLL4                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; V19      ; 166        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; V19      ; 166        ; 6        ; LEDR[5]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; V20      ; 173        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V21      ; 180        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; V22      ; 181        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1259,8 +1215,8 @@ The pin-out file can be found in C:/Users/ea999/Documents/GitHub/synthesizer/out
 ; Y15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; Y16      ; 154        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; Y17      ; 159        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; Y18      ; 165        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; Y19      ; 168        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; Y18      ; 165        ; 6        ; LEDR[6]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; Y19      ; 168        ; 6        ; LEDR[3]                                  ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; Y20      ; 169        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y21      ; 178        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; Y22      ; 179        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1310,21 +1266,21 @@ Note: User assignments will override these defaults. The user specified values a
 +---------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                                                                                         ; Library Name ;
 +---------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Milestone2_infrastructure_block                                                ; 232 (0)     ; 136 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 23   ; 0            ; 96 (0)       ; 34 (0)            ; 102 (0)          ; |Milestone2_infrastructure_block                                                                                                                                            ; work         ;
-;    |codec_control:inst_codec_control|                                           ; 48 (31)     ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 40 (23)      ; 0 (0)             ; 8 (7)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control                                                                                                           ; work         ;
-;       |lpm_divide:Mod0|                                                         ; 18 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (0)       ; 0 (0)             ; 1 (0)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0                                                                                           ; work         ;
-;          |lpm_divide_25m:auto_generated|                                        ; 18 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (0)       ; 0 (0)             ; 1 (0)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated                                                             ; work         ;
-;             |sign_div_unsign_9kh:divider|                                       ; 18 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (0)       ; 0 (0)             ; 1 (0)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider                                 ; work         ;
-;                |alt_u_div_kve:divider|                                          ; 18 (18)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 1 (1)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider           ; work         ;
-;    |digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top| ; 84 (0)      ; 72 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 27 (0)            ; 45 (0)           ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top                                                                 ; work         ;
-;       |i2s_master_top:inst_i2s_master|                                          ; 84 (1)      ; 72 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (0)       ; 27 (0)            ; 45 (1)           ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master                                  ; work         ;
+; |Milestone2_infrastructure_block                                                ; 236 (2)     ; 136 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 67   ; 0            ; 100 (2)      ; 36 (0)            ; 100 (0)          ; |Milestone2_infrastructure_block                                                                                                                                            ; work         ;
+;    |codec_control:inst_codec_control|                                           ; 49 (31)     ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 42 (24)      ; 1 (1)             ; 6 (6)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control                                                                                                           ; work         ;
+;       |lpm_divide:Mod0|                                                         ; 18 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0                                                                                           ; work         ;
+;          |lpm_divide_25m:auto_generated|                                        ; 18 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated                                                             ; work         ;
+;             |sign_div_unsign_9kh:divider|                                       ; 18 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider                                 ; work         ;
+;                |alt_u_div_kve:divider|                                          ; 18 (18)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 18 (18)      ; 0 (0)             ; 0 (0)            ; |Milestone2_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider           ; work         ;
+;    |digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top| ; 86 (0)      ; 72 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (0)       ; 29 (0)            ; 43 (0)           ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top                                                                 ; work         ;
+;       |i2s_master_top:inst_i2s_master|                                          ; 86 (1)      ; 72 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (1)       ; 29 (0)            ; 43 (0)           ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master                                  ; work         ;
 ;          |bclk_gen:inst_bclk_gen|                                               ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen           ; work         ;
 ;          |frame_decoder:inst_frame_decoder|                                     ; 16 (16)     ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 7 (7)            ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder ; work         ;
-;          |p2s_register:inst_p2s_left|                                           ; 19 (19)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 18 (18)          ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left       ; work         ;
+;          |p2s_register:inst_p2s_left|                                           ; 19 (19)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 17 (17)          ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left       ; work         ;
 ;          |p2s_register:inst_p2s_right|                                          ; 18 (18)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 16 (16)          ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right      ; work         ;
-;          |s2p_register:inst_s2p_left|                                           ; 16 (16)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 12 (12)           ; 4 (4)            ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left       ; work         ;
+;          |s2p_register:inst_s2p_left|                                           ; 16 (16)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 14 (14)           ; 2 (2)            ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left       ; work         ;
 ;          |s2p_register:inst_s2p_right|                                          ; 16 (16)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 15 (15)           ; 1 (1)            ; |Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right      ; work         ;
-;    |i2c_master:inst_i2c_master|                                                 ; 95 (95)     ; 51 (51)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 44 (44)      ; 3 (3)             ; 48 (48)          ; |Milestone2_infrastructure_block|i2c_master:inst_i2c_master                                                                                                                 ; work         ;
+;    |i2c_master:inst_i2c_master|                                                 ; 93 (93)     ; 51 (51)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 42 (42)      ; 2 (2)             ; 49 (49)          ; |Milestone2_infrastructure_block|i2c_master:inst_i2c_master                                                                                                                 ; work         ;
 ;    |infrastructure_block:inst_infrastructure_block|                             ; 6 (0)       ; 6 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 4 (0)             ; 2 (0)            ; |Milestone2_infrastructure_block|infrastructure_block:inst_infrastructure_block                                                                                             ; work         ;
 ;       |sync_block:inst_sync_block_1|                                            ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; |Milestone2_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1                                                                ; work         ;
 ;       |sync_block:inst_sync_block_2|                                            ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; |Milestone2_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_2                                                                ; work         ;
@@ -1346,7 +1302,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[5]       ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[6]       ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 ; SW[7]       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; SW[8]       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; SW[9]       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; AUD_XCK     ; Output   ; --            ; --            ; --                    ; --  ;
 ; I2C_SCLK    ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1354,13 +1309,58 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; AUD_BCLK    ; Output   ; --            ; --            ; --                    ; --  ;
 ; AUD_DACLRCK ; Output   ; --            ; --            ; --                    ; --  ;
 ; AUD_ADCLRCK ; Output   ; --            ; --            ; --                    ; --  ;
+; LEDR[0]     ; Output   ; --            ; --            ; --                    ; --  ;
+; LEDR[1]     ; Output   ; --            ; --            ; --                    ; --  ;
+; LEDR[2]     ; Output   ; --            ; --            ; --                    ; --  ;
+; LEDR[3]     ; Output   ; --            ; --            ; --                    ; --  ;
+; LEDR[4]     ; Output   ; --            ; --            ; --                    ; --  ;
+; LEDR[5]     ; Output   ; --            ; --            ; --                    ; --  ;
+; LEDR[6]     ; Output   ; --            ; --            ; --                    ; --  ;
+; LEDR[7]     ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[0]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[1]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[2]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[3]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[4]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[5]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[6]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[7]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[8]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[9]   ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[10]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[11]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[12]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[13]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[14]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[15]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[16]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[17]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[18]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[19]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[20]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[21]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[22]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[23]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[24]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[25]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[26]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[27]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[28]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[29]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[30]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[31]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[32]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[33]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[34]  ; Output   ; --            ; --            ; --                    ; --  ;
+; GPIO_0[35]  ; Output   ; --            ; --            ; --                    ; --  ;
+; SW[8]       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; AUD_ADCDAT  ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 ; CLOCK_50    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; SW[0]       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; SW[1]       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; SW[2]       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; KEY[0]      ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; KEY[1]      ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
-; AUD_ADCDAT  ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 +-------------+----------+---------------+---------------+-----------------------+-----+
 
 
@@ -1380,19 +1380,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[5]                                                                                                                                                      ;                   ;         ;
 ; SW[6]                                                                                                                                                      ;                   ;         ;
 ; SW[7]                                                                                                                                                      ;                   ;         ;
-; SW[8]                                                                                                                                                      ;                   ;         ;
 ; SW[9]                                                                                                                                                      ;                   ;         ;
+; SW[8]                                                                                                                                                      ;                   ;         ;
+; AUD_ADCDAT                                                                                                                                                 ;                   ;         ;
+;      - digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[0]~0  ; 0                 ; 6       ;
+;      - digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[0]~0 ; 0                 ; 6       ;
+;      - GPIO_0[4]                                                                                                                                           ; 0                 ; 6       ;
 ; CLOCK_50                                                                                                                                                   ;                   ;         ;
 ; SW[0]                                                                                                                                                      ;                   ;         ;
 ; SW[1]                                                                                                                                                      ;                   ;         ;
 ; SW[2]                                                                                                                                                      ;                   ;         ;
 ; KEY[0]                                                                                                                                                     ;                   ;         ;
-;      - infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1|shiftreg[2]~feeder                                                      ; 0                 ; 6       ;
+;      - infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1|shiftreg[2]~feeder                                                      ; 1                 ; 6       ;
 ; KEY[1]                                                                                                                                                     ;                   ;         ;
 ;      - infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_2|shiftreg[2]~feeder                                                      ; 0                 ; 6       ;
-; AUD_ADCDAT                                                                                                                                                 ;                   ;         ;
-;      - digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[0]~0  ; 0                 ; 6       ;
-;      - digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[0]~0 ; 0                 ; 6       ;
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 
 
@@ -1402,32 +1403,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                                                                                                ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; CLOCK_50                                                                                                                                            ; PIN_L1             ; 2       ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; codec_control:inst_codec_control|reg[0]~0                                                                                                           ; LCCOMB_X44_Y12_N2  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen|count              ; LCFF_X5_Y25_N19    ; 11      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|comb_logic~1   ; LCCOMB_X4_Y26_N20  ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[14]~0 ; LCCOMB_X4_Y26_N22  ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|comb_logic~0  ; LCCOMB_X5_Y25_N10  ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[8]~0 ; LCCOMB_X5_Y25_N16  ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; i2c_master:inst_i2c_master|Equal2~0                                                                                                                 ; LCCOMB_X47_Y13_N6  ; 21      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; i2c_master:inst_i2c_master|bit_count[2]~0                                                                                                           ; LCCOMB_X45_Y13_N18 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; i2c_master:inst_i2c_master|byte_count[1]~0                                                                                                          ; LCCOMB_X45_Y13_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; i2c_master:inst_i2c_master|data[22]~1                                                                                                               ; LCCOMB_X45_Y12_N30 ; 20      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; i2c_master:inst_i2c_master|fsm_state.S_SEND_BYTE                                                                                                    ; LCFF_X45_Y13_N13   ; 17      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; i2c_master:inst_i2c_master|fsm_state.S_STOP                                                                                                         ; LCFF_X47_Y13_N17   ; 5       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1|shiftreg[1]                                                             ; LCFF_X49_Y14_N1    ; 130     ; Async. clear ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]                                                                ; LCFF_X24_Y26_N1    ; 134     ; Clock        ; yes    ; Global Clock         ; GCLK11           ; --                        ;
+; codec_control:inst_codec_control|reg[1]~0                                                                                                           ; LCCOMB_X20_Y19_N16 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen|count              ; LCFF_X14_Y24_N19   ; 13      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|comb_logic~1   ; LCCOMB_X11_Y24_N16 ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[15]~0 ; LCCOMB_X13_Y24_N4  ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|comb_logic~0  ; LCCOMB_X13_Y24_N2  ; 17      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[4]~0 ; LCCOMB_X13_Y24_N0  ; 15      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; i2c_master:inst_i2c_master|Equal2~0                                                                                                                 ; LCCOMB_X21_Y20_N14 ; 21      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; i2c_master:inst_i2c_master|bit_count[1]~0                                                                                                           ; LCCOMB_X22_Y20_N30 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; i2c_master:inst_i2c_master|byte_count[1]~0                                                                                                          ; LCCOMB_X22_Y20_N0  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; i2c_master:inst_i2c_master|data[21]~1                                                                                                               ; LCCOMB_X24_Y20_N16 ; 20      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; i2c_master:inst_i2c_master|fsm_state.S_SEND_BYTE                                                                                                    ; LCFF_X21_Y20_N25   ; 17      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; i2c_master:inst_i2c_master|fsm_state.S_STOP                                                                                                         ; LCFF_X21_Y20_N11   ; 5       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1|shiftreg[1]                                                             ; LCFF_X27_Y1_N29    ; 130     ; Async. clear ; yes    ; Global Clock         ; GCLK14           ; --                        ;
+; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]                                                                ; LCFF_X24_Y23_N23   ; 134     ; Clock        ; yes    ; Global Clock         ; GCLK9            ; --                        ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                               ;
-+-----------------------------------------------------------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
-; Name                                                                                    ; Location        ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------------------------------------------------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50                                                                                ; PIN_L1          ; 2       ; Global Clock         ; GCLK2            ; --                        ;
-; infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1|shiftreg[1] ; LCFF_X49_Y14_N1 ; 130     ; Global Clock         ; GCLK5            ; --                        ;
-; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]    ; LCFF_X24_Y26_N1 ; 134     ; Global Clock         ; GCLK11           ; --                        ;
-+-----------------------------------------------------------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                                ;
++-----------------------------------------------------------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
+; Name                                                                                    ; Location         ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------------------------------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
+; CLOCK_50                                                                                ; PIN_L1           ; 2       ; Global Clock         ; GCLK2            ; --                        ;
+; infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1|shiftreg[1] ; LCFF_X27_Y1_N29  ; 130     ; Global Clock         ; GCLK14           ; --                        ;
+; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]    ; LCFF_X24_Y23_N23 ; 134     ; Global Clock         ; GCLK9            ; --                        ;
++-----------------------------------------------------------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1438,24 +1439,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|Equal0~1        ; 35      ;
 ; i2c_master:inst_i2c_master|fsm_state.S_IDLE                                                                                                                ; 34      ;
 ; i2c_master:inst_i2c_master|Equal2~0                                                                                                                        ; 21      ;
-; i2c_master:inst_i2c_master|data[22]~1                                                                                                                      ; 20      ;
+; i2c_master:inst_i2c_master|data[21]~1                                                                                                                      ; 20      ;
 ; codec_control:inst_codec_control|reg[1]                                                                                                                    ; 18      ;
 ; codec_control:inst_codec_control|reg[0]                                                                                                                    ; 17      ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|comb_logic~0         ; 17      ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|comb_logic~1          ; 17      ;
 ; i2c_master:inst_i2c_master|fsm_state.S_SEND_BYTE                                                                                                           ; 17      ;
 ; codec_control:inst_codec_control|reg[2]                                                                                                                    ; 15      ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[8]~0        ; 15      ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[14]~0        ; 15      ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[4]~0        ; 15      ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[15]~0        ; 15      ;
 ; codec_control:inst_codec_control|reg[3]                                                                                                                    ; 13      ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen|count                     ; 13      ;
 ; codec_control:inst_codec_control|fsm_state.S_START_WRITE                                                                                                   ; 11      ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen|count                     ; 11      ;
 ; codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider|add_sub_3_result_int[4]~6 ; 11      ;
 ; SW[2]                                                                                                                                                      ; 10      ;
 ; SW[1]                                                                                                                                                      ; 10      ;
 ; SW[0]                                                                                                                                                      ; 10      ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[6]        ; 10      ;
 ; i2c_master:inst_i2c_master|Equal0~0                                                                                                                        ; 9       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[6]        ; 9       ;
 ; codec_control:inst_codec_control|fsm_state.S_WAIT                                                                                                          ; 8       ;
 ; i2c_master:inst_i2c_master|fsm_state.S_ACK_BYTE                                                                                                            ; 7       ;
 ; i2c_master:inst_i2c_master|clk_edge_mask[0]                                                                                                                ; 7       ;
@@ -1471,19 +1472,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; i2c_master:inst_i2c_master|data[2]                                                                                                                         ; 4       ;
 ; i2c_master:inst_i2c_master|Selector24~1                                                                                                                    ; 4       ;
 ; i2c_master:inst_i2c_master|data[3]                                                                                                                         ; 4       ;
-; codec_control:inst_codec_control|reg[0]~0                                                                                                                  ; 4       ;
+; codec_control:inst_codec_control|reg[1]~0                                                                                                                  ; 4       ;
 ; i2c_master:inst_i2c_master|fsm_state.S_START                                                                                                               ; 4       ;
 ; i2c_master:inst_i2c_master|Selector28~2                                                                                                                    ; 4       ;
 ; i2c_master:inst_i2c_master|bit_count[0]                                                                                                                    ; 4       ;
 ; i2c_master:inst_i2c_master|fsm_state.S_WAIT_FOR_STOP                                                                                                       ; 4       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|comb_logic~0          ; 4       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|Equal0~0        ; 4       ;
+; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]                                                                       ; 4       ;
+; AUD_ADCDAT                                                                                                                                                 ; 3       ;
 ; I2C_SDAT~0                                                                                                                                                 ; 3       ;
 ; i2c_master:inst_i2c_master|Selector20~0                                                                                                                    ; 3       ;
 ; i2c_master:inst_i2c_master|data[4]                                                                                                                         ; 3       ;
 ; codec_control:inst_codec_control|Equal1~0                                                                                                                  ; 3       ;
 ; i2c_master:inst_i2c_master|ack_error                                                                                                                       ; 3       ;
-; i2c_master:inst_i2c_master|bit_count[2]~0                                                                                                                  ; 3       ;
+; i2c_master:inst_i2c_master|bit_count[1]~0                                                                                                                  ; 3       ;
 ; codec_control:inst_codec_control|fsm_state.S_IDLE                                                                                                          ; 3       ;
 ; i2c_master:inst_i2c_master|fsm_state.S_WAIT_FOR_NEXT_BYTE                                                                                                  ; 3       ;
 ; i2c_master:inst_i2c_master|ack                                                                                                                             ; 3       ;
@@ -1497,7 +1500,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; i2c_master:inst_i2c_master|bit_count[1]                                                                                                                    ; 3       ;
 ; i2c_master:inst_i2c_master|clk_divider[4]                                                                                                                  ; 3       ;
 ; i2c_master:inst_i2c_master|clk_divider[3]                                                                                                                  ; 3       ;
-; AUD_ADCDAT                                                                                                                                                 ; 2       ;
+; SW[8]                                                                                                                                                      ; 2       ;
 ; i2c_master:inst_i2c_master|data[0]                                                                                                                         ; 2       ;
 ; i2c_master:inst_i2c_master|data[1]                                                                                                                         ; 2       ;
 ; i2c_master:inst_i2c_master|Selector18~0                                                                                                                    ; 2       ;
@@ -1549,8 +1552,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[3]        ; 2       ;
 ; i2c_master:inst_i2c_master|next_scl~0                                                                                                                      ; 2       ;
 ; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[0]                                                                       ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|DACDAT_s_o~0                                     ; 2       ;
 ; i2c_master:inst_i2c_master|scl                                                                                                                             ; 2       ;
-; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]                                                                       ; 2       ;
 ; codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider|add_sub_3_result_int[0]~8 ; 2       ;
 ; codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider|add_sub_3_result_int[2]~2 ; 2       ;
 ; codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider|add_sub_3_result_int[1]~0 ; 2       ;
@@ -1684,7 +1687,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|next_shiftreg[11]~4   ; 1       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[10]          ; 1       ;
 ; i2c_master:inst_i2c_master|next_ack_error~0                                                                                                                ; 1       ;
-; i2c_master:inst_i2c_master|data[22]~0                                                                                                                      ; 1       ;
+; i2c_master:inst_i2c_master|data[21]~0                                                                                                                      ; 1       ;
 ; i2c_master:inst_i2c_master|Selector1~0                                                                                                                     ; 1       ;
 ; i2c_master:inst_i2c_master|data[22]                                                                                                                        ; 1       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|next_shiftreg[12]~3  ; 1       ;
@@ -1727,8 +1730,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; i2c_master:inst_i2c_master|Selector35~0                                                                                                                    ; 1       ;
 ; codec_control:inst_codec_control|Selector1~1                                                                                                               ; 1       ;
 ; codec_control:inst_codec_control|Selector1~0                                                                                                               ; 1       ;
-; i2c_master:inst_i2c_master|Selector30~2                                                                                                                    ; 1       ;
 ; i2c_master:inst_i2c_master|Selector30~1                                                                                                                    ; 1       ;
+; i2c_master:inst_i2c_master|Selector30~0                                                                                                                    ; 1       ;
 ; i2c_master:inst_i2c_master|Selector29~0                                                                                                                    ; 1       ;
 ; i2c_master:inst_i2c_master|Selector31~2                                                                                                                    ; 1       ;
 ; i2c_master:inst_i2c_master|Selector28~1                                                                                                                    ; 1       ;
@@ -1739,11 +1742,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[13]          ; 1       ;
 ; infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1|shiftreg[2]                                                                    ; 1       ;
 ; i2c_master:inst_i2c_master|Selector25~0                                                                                                                    ; 1       ;
+; i2c_master:inst_i2c_master|Selector26~4                                                                                                                    ; 1       ;
 ; i2c_master:inst_i2c_master|Selector26~3                                                                                                                    ; 1       ;
-; i2c_master:inst_i2c_master|Selector26~2                                                                                                                    ; 1       ;
 ; codec_control:inst_codec_control|write_o~0                                                                                                                 ; 1       ;
+; i2c_master:inst_i2c_master|Selector26~2                                                                                                                    ; 1       ;
 ; i2c_master:inst_i2c_master|Selector26~1                                                                                                                    ; 1       ;
-; i2c_master:inst_i2c_master|Selector26~0                                                                                                                    ; 1       ;
 ; i2c_master:inst_i2c_master|Equal3~0                                                                                                                        ; 1       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|Equal0~2        ; 1       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|next_shiftreg[15]~0  ; 1       ;
@@ -1755,7 +1758,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; i2c_master:inst_i2c_master|next_scl~2                                                                                                                      ; 1       ;
 ; i2c_master:inst_i2c_master|next_scl~1                                                                                                                      ; 1       ;
 ; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|Add0~0                                                                         ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|DACDAT_s_o~0                                     ; 1       ;
+; LEDR~1                                                                                                                                                     ; 1       ;
+; LEDR~0                                                                                                                                                     ; 1       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[15]         ; 1       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[15]          ; 1       ;
 ; codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider|add_sub_4_result_int[4]~7 ; 1       ;
@@ -1797,48 +1801,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 226 / 54,004 ( < 1 % ) ;
-; C16 interconnects           ; 6 / 2,100 ( < 1 % )    ;
-; C4 interconnects            ; 45 / 36,000 ( < 1 % )  ;
-; Direct links                ; 103 / 54,004 ( < 1 % ) ;
+; Block interconnects         ; 209 / 54,004 ( < 1 % ) ;
+; C16 interconnects           ; 5 / 2,100 ( < 1 % )    ;
+; C4 interconnects            ; 56 / 36,000 ( < 1 % )  ;
+; Direct links                ; 100 / 54,004 ( < 1 % ) ;
 ; Global clocks               ; 3 / 16 ( 19 % )        ;
-; Local interconnects         ; 159 / 18,752 ( < 1 % ) ;
-; R24 interconnects           ; 14 / 1,900 ( < 1 % )   ;
-; R4 interconnects            ; 86 / 46,920 ( < 1 % )  ;
+; Local interconnects         ; 171 / 18,752 ( < 1 % ) ;
+; R24 interconnects           ; 16 / 1,900 ( < 1 % )   ;
+; R4 interconnects            ; 98 / 46,920 ( < 1 % )  ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.21) ; Number of LABs  (Total = 19) ;
+; Number of Logic Elements  (Average = 11.80) ; Number of LABs  (Total = 20) ;
 +---------------------------------------------+------------------------------+
 ; 1                                           ; 0                            ;
-; 2                                           ; 2                            ;
-; 3                                           ; 1                            ;
+; 2                                           ; 3                            ;
+; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
+; 5                                           ; 1                            ;
 ; 6                                           ; 1                            ;
 ; 7                                           ; 0                            ;
 ; 8                                           ; 1                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 0                            ;
+; 10                                          ; 1                            ;
 ; 11                                          ; 0                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 2                            ;
-; 14                                          ; 1                            ;
-; 15                                          ; 1                            ;
-; 16                                          ; 9                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 2                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 10                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.11) ; Number of LABs  (Total = 19) ;
+; LAB-wide Signals  (Average = 2.10) ; Number of LABs  (Total = 20) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 15                           ;
-; 1 Clock                            ; 17                           ;
+; 1 Async. clear                     ; 16                           ;
+; 1 Clock                            ; 18                           ;
 ; 1 Clock enable                     ; 5                            ;
 ; 1 Sync. clear                      ; 1                            ;
 ; 2 Clock enables                    ; 2                            ;
@@ -1848,38 +1852,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 18.74) ; Number of LABs  (Total = 19) ;
+; Number of Signals Sourced  (Average = 17.95) ; Number of LABs  (Total = 20) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 2                            ;
-; 5                                            ; 1                            ;
+; 4                                            ; 3                            ;
+; 5                                            ; 0                            ;
 ; 6                                            ; 1                            ;
-; 7                                            ; 0                            ;
+; 7                                            ; 1                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 0                            ;
+; 12                                           ; 1                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 1                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 0                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 1                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 2                            ;
-; 22                                           ; 1                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 0                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 0                            ;
 ; 23                                           ; 1                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
-; 26                                           ; 0                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 1                            ;
 ; 27                                           ; 1                            ;
 ; 28                                           ; 1                            ;
-; 29                                           ; 1                            ;
+; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
 ; 31                                           ; 0                            ;
 ; 32                                           ; 2                            ;
@@ -1889,57 +1893,56 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.16) ; Number of LABs  (Total = 19) ;
+; Number of Signals Sourced Out  (Average = 6.05) ; Number of LABs  (Total = 20) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
 ; 1                                               ; 4                            ;
-; 2                                               ; 0                            ;
-; 3                                               ; 2                            ;
-; 4                                               ; 1                            ;
-; 5                                               ; 0                            ;
-; 6                                               ; 4                            ;
-; 7                                               ; 0                            ;
-; 8                                               ; 1                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 0                            ;
+; 5                                               ; 4                            ;
+; 6                                               ; 5                            ;
+; 7                                               ; 1                            ;
+; 8                                               ; 0                            ;
 ; 9                                               ; 0                            ;
-; 10                                              ; 2                            ;
-; 11                                              ; 1                            ;
-; 12                                              ; 1                            ;
+; 10                                              ; 1                            ;
+; 11                                              ; 0                            ;
+; 12                                              ; 0                            ;
 ; 13                                              ; 0                            ;
-; 14                                              ; 1                            ;
-; 15                                              ; 1                            ;
-; 16                                              ; 0                            ;
-; 17                                              ; 0                            ;
-; 18                                              ; 1                            ;
+; 14                                              ; 0                            ;
+; 15                                              ; 2                            ;
+; 16                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
-+-----------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                         ;
-+----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 11.53) ; Number of LABs  (Total = 19) ;
-+----------------------------------------------+------------------------------+
-; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
-; 2                                            ; 1                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 1                            ;
-; 6                                            ; 0                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 2                            ;
-; 9                                            ; 0                            ;
-; 10                                           ; 1                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 2                            ;
-; 13                                           ; 2                            ;
-; 14                                           ; 1                            ;
-; 15                                           ; 0                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 1                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 1                            ;
-; 20                                           ; 2                            ;
-+----------------------------------------------+------------------------------+
++----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 9.75) ; Number of LABs  (Total = 20) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 1                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 1                            ;
+; 8                                           ; 4                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 1                            ;
+; 11                                          ; 1                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 0                            ;
+; 15                                          ; 3                            ;
+; 16                                          ; 0                            ;
+; 17                                          ; 0                            ;
+; 18                                          ; 0                            ;
+; 19                                          ; 0                            ;
+; 20                                          ; 2                            ;
+; 21                                          ; 1                            ;
++---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -1996,8 +1999,10 @@ Info (176353): Automatically promoted node CLOCK_50 (placed in PIN L1 (CLK0, LVD
 Info (176353): Automatically promoted node infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1] 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
+        Info (176357): Destination node LEDR~0
         Info (176357): Destination node infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|Add0~0
         Info (176357): Destination node AUD_XCK
+        Info (176357): Destination node GPIO_0[0]
 Info (176353): Automatically promoted node infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1|shiftreg[1] 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
 Info (176233): Starting register packing
@@ -2008,42 +2013,6 @@ Warning (15709): Ignored I/O standard assignments to the following nodes
     Warning (15710): Ignored I/O standard assignment to node "CLOCK_24[1]"
     Warning (15710): Ignored I/O standard assignment to node "CLOCK_27[1]"
     Warning (15710): Ignored I/O standard assignment to node "EXT_CLOCK"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[0]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[10]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[11]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[12]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[13]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[14]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[15]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[16]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[17]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[18]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[19]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[1]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[20]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[21]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[22]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[23]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[24]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[25]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[26]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[27]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[28]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[29]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[2]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[30]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[31]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[32]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[33]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[34]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[35]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[3]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[4]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[5]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[6]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[7]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[8]"
-    Warning (15710): Ignored I/O standard assignment to node "GPIO_0[9]"
     Warning (15710): Ignored I/O standard assignment to node "GPIO_1[0]"
     Warning (15710): Ignored I/O standard assignment to node "GPIO_1[10]"
     Warning (15710): Ignored I/O standard assignment to node "GPIO_1[11]"
@@ -2116,14 +2085,6 @@ Warning (15709): Ignored I/O standard assignments to the following nodes
     Warning (15710): Ignored I/O standard assignment to node "LEDG[5]"
     Warning (15710): Ignored I/O standard assignment to node "LEDG[6]"
     Warning (15710): Ignored I/O standard assignment to node "LEDG[7]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[0]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[1]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[2]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[3]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[4]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[5]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[6]"
-    Warning (15710): Ignored I/O standard assignment to node "LEDR[7]"
     Warning (15710): Ignored I/O standard assignment to node "LEDR[8]"
     Warning (15710): Ignored I/O standard assignment to node "LEDR[9]"
     Warning (15710): Ignored I/O standard assignment to node "PS2_CLK"
@@ -2225,42 +2186,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "FL_OE_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "FL_RST_N" is assigned to location or region, but does not exist in design
     Warning (15706): Node "FL_WE_N" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[10]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[11]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[12]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[13]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[14]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[15]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[16]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[17]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[18]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[19]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[20]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[21]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[22]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[23]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[24]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[25]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[26]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[27]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[28]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[29]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[30]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[31]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[32]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[33]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[34]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[35]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[8]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "GPIO_0[9]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO_1[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO_1[10]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "GPIO_1[11]" is assigned to location or region, but does not exist in design
@@ -2333,14 +2258,6 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "LEDG[5]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDG[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDG[7]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[0]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[1]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[2]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[3]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[4]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[5]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[6]" is assigned to location or region, but does not exist in design
-    Warning (15706): Node "LEDR[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDR[8]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "LEDR[9]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "PS2_CLK" is assigned to location or region, but does not exist in design
@@ -2404,7 +2321,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_R[3]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -2412,13 +2329,13 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X38_Y0 to location X50_Y13
+    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X12_Y14 to location X24_Y27
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.34 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.52 seconds.
 Info (306004): Started post-fitting delay annotation
-Warning (306006): Found 7 output pins without output pin load capacitance assignment
+Warning (306006): Found 51 output pins without output pin load capacitance assignment
     Info (306007): Pin "I2C_SDAT" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "AUD_XCK" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "I2C_SCLK" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2426,17 +2343,61 @@ Warning (306006): Found 7 output pins without output pin load capacitance assign
     Info (306007): Pin "AUD_BCLK" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "AUD_DACLRCK" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
     Info (306007): Pin "AUD_ADCLRCK" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "LEDR[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[1]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[2]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[3]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[4]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[5]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[6]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[7]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[8]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[9]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[10]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[11]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[12]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[13]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[14]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[15]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[16]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[17]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[18]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[19]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[20]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[21]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[22]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[23]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[24]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[25]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[26]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[27]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[28]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[29]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[30]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[31]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[32]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[33]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[34]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
+    Info (306007): Pin "GPIO_0[35]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file C:/Users/ea999/Documents/GitHub/synthesizer/output_files/Synthesizer.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 407 warnings
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 319 warnings
     Info: Peak virtual memory: 759 megabytes
-    Info: Processing ended: Fri May 11 11:28:15 2018
-    Info: Elapsed time: 00:00:05
+    Info: Processing ended: Fri May 18 10:17:15 2018
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:05
 
 

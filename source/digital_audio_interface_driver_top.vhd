@@ -98,18 +98,18 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		BCLK_o					=> BCLK_out,
 		WS							=> WS_out
 		);
-	  -- --------------------------------------------------
-	  -- -- PROCESS FOR COMBINATORIAL LOGIC
-	  -- --------------------------------------------------
-	  -- comb_logic: PROCESS(FIR_ctrl_in,top_ADCDAT_pr,top_ADCDAT_pl,top_DACDAT_pl_fir,top_DACDAT_pr_fir)
-	  -- BEGIN
-			-- IF FIR_ctrl_in = '1' THEN
-				-- top_DACDAT_pl_sig <= top_DACDAT_pl_fir;
-				-- top_DACDAT_pr_sig <= top_DACDAT_pr_fir;
-			-- ELSE
-				-- top_DACDAT_pl_sig <= top_ADCDAT_pl;
-				-- top_DACDAT_pr_sig <= top_ADCDAT_pr;
-			-- END IF;
-	  -- END PROCESS comb_logic; 
+	  --------------------------------------------------
+	  -- PROCESS FOR COMBINATORIAL LOGIC
+	  --------------------------------------------------
+	  comb_logic: PROCESS(FIR_ctrl_in,top_ADCDAT_pr,top_ADCDAT_pl,top_DACDAT_pl_fir,top_DACDAT_pr_fir)
+	  BEGIN
+			IF FIR_ctrl_in = '1' THEN
+				top_DACDAT_pl_sig <= top_DACDAT_pl_fir;
+				top_DACDAT_pr_sig <= top_DACDAT_pr_fir;
+			ELSE
+				top_DACDAT_pl_sig <= top_ADCDAT_pl;
+				top_DACDAT_pr_sig <= top_ADCDAT_pr;
+			END IF;
+	  END PROCESS comb_logic; 
 		
 END struct;	
