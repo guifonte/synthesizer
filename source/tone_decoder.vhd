@@ -13,11 +13,11 @@ library ieee;
 
 
 entity tone_decoder is
-        port(
-			tone_cmd_i		: in	std_logic_vector(1 downto 0);
-			phi_incr_o		: out 	std_logic_vector(N_CUM-1 downto 0);
-			tone_on_o		: out	std_logic
-        );
+	port(
+		tone_cmd_i		: in	std_logic_vector(1 downto 0);
+		phi_incr_o		: out 	std_logic_vector(N_CUM-1 downto 0);
+		tone_on_o		: out	std_logic
+	);
 end entity;
 
 architecture rtl of tone_decoder is

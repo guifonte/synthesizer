@@ -1,4 +1,4 @@
-|Milestone2_infrastructure_block
+|Milestone3_infrastructure_block
 CLOCK_50 => infrastructure_block:inst_infrastructure_block.clk_50M
 KEY[0] => infrastructure_block:inst_infrastructure_block.button_1
 KEY[1] => infrastructure_block:inst_infrastructure_block.button_2
@@ -9,10 +9,10 @@ SW[1] => codec_control:inst_codec_control.event_control_i[1]
 SW[2] => codec_control:inst_codec_control.event_control_i[2]
 SW[3] => ~NO_FANOUT~
 SW[4] => ~NO_FANOUT~
-SW[5] => ~NO_FANOUT~
-SW[6] => ~NO_FANOUT~
+SW[5] => digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top.TONE_ctrl_in[0]
+SW[6] => digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top.TONE_ctrl_in[1]
 SW[7] => ~NO_FANOUT~
-SW[8] => ~NO_FANOUT~
+SW[8] => digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top.DDS_on_in
 SW[9] => digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top.FIR_ctrl_in
 AUD_XCK <= infrastructure_block:inst_infrastructure_block.clk_12M
 I2C_SCLK <= i2c_master:inst_i2c_master.scl_o
@@ -24,7 +24,7 @@ AUD_ADCLRCK <= digital_audio_interface_driver_top:inst_digital_audio_interface_d
 AUD_ADCDAT => digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top.ADCDAT_s_in
 
 
-|Milestone2_infrastructure_block|infrastructure_block:inst_infrastructure_block
+|Milestone3_infrastructure_block|infrastructure_block:inst_infrastructure_block
 clk_50M => takt_teiler:inst_takt_teiler.clk_fast_i
 button_1 => sync_block:inst_sync_block_1.async_i
 button_2 => sync_block:inst_sync_block_2.async_i
@@ -33,27 +33,27 @@ button_1sync <= sync_block:inst_sync_block_1.syncd_o
 button_2sync <= sync_block:inst_sync_block_2.syncd_o
 
 
-|Milestone2_infrastructure_block|infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler
+|Milestone3_infrastructure_block|infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler
 clk_fast_i => count[0].CLK
 clk_fast_i => count[1].CLK
 clk_slow_o <= count[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1
+|Milestone3_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1
 async_i => shiftreg[2].DATAIN
 clk => shiftreg[1].CLK
 clk => shiftreg[2].CLK
 syncd_o <= shiftreg[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_2
+|Milestone3_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_2
 async_i => shiftreg[2].DATAIN
 clk => shiftreg[1].CLK
 clk => shiftreg[2].CLK
 syncd_o <= shiftreg[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|codec_control:inst_codec_control
+|Milestone3_infrastructure_block|codec_control:inst_codec_control
 clk => reg[0].CLK
 clk => reg[1].CLK
 clk => reg[2].CLK
@@ -107,7 +107,7 @@ write_data_o[14] <= <GND>
 write_data_o[15] <= <GND>
 
 
-|Milestone2_infrastructure_block|i2c_master:inst_i2c_master
+|Milestone3_infrastructure_block|i2c_master:inst_i2c_master
 clk => write_done.CLK
 clk => ack_error.CLK
 clk => byte_count[0].CLK
@@ -252,13 +252,15 @@ write_done_o <= write_done.DB_MAX_OUTPUT_PORT_TYPE
 ack_error_o <= ack_error.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top
 CLK_12M => fir_core:inst_fir_core_l.clk
 CLK_12M => fir_core:inst_fir_core_r.clk
 CLK_12M => i2s_master_top:inst_i2s_master.CLOCK_12M
+CLK_12M => dds_top:inst_dds_top.clock
 RESET_N => fir_core:inst_fir_core_l.reset_n
 RESET_N => fir_core:inst_fir_core_r.reset_n
 RESET_N => i2s_master_top:inst_i2s_master.INIT_N
+RESET_N => dds_top:inst_dds_top.rst_n
 ADCDAT_s_in => i2s_master_top:inst_i2s_master.ADCDAT_s_i
 FIR_ctrl_in => top_DACDAT_pl_sig[15].OUTPUTSELECT
 FIR_ctrl_in => top_DACDAT_pl_sig[14].OUTPUTSELECT
@@ -292,12 +294,46 @@ FIR_ctrl_in => top_DACDAT_pr_sig[3].OUTPUTSELECT
 FIR_ctrl_in => top_DACDAT_pr_sig[2].OUTPUTSELECT
 FIR_ctrl_in => top_DACDAT_pr_sig[1].OUTPUTSELECT
 FIR_ctrl_in => top_DACDAT_pr_sig[0].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[15].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[14].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[13].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[12].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[11].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[10].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[9].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[8].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[7].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[6].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[5].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[4].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[3].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[2].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[1].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pl_pure[0].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[15].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[14].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[13].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[12].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[11].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[10].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[9].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[8].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[7].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[6].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[5].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[4].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[3].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[2].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[1].OUTPUTSELECT
+DDS_on_in => top_DACDAT_pr_pure[0].OUTPUTSELECT
+TONE_ctrl_in[0] => dds_top:inst_dds_top.tone_cmd[0]
+TONE_ctrl_in[1] => dds_top:inst_dds_top.tone_cmd[1]
 DACDAT_s_out <= i2s_master_top:inst_i2s_master.DACDAT_s_o
 BCLK_out <= i2s_master_top:inst_i2s_master.BCLK_o
 WS_out <= i2s_master_top:inst_i2s_master.WS
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l
 clk => single_port_ram:tap_line.clk
 clk => addr_offset[0].CLK
 clk => addr_offset[1].CLK
@@ -460,7 +496,7 @@ fdata_o[14] <= fir_reg_o[14].DB_MAX_OUTPUT_PORT_TYPE
 fdata_o[15] <= fir_reg_o[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line
 clk => ram~40.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -635,7 +671,7 @@ data_o[30] <= ram.DATAOUT30
 data_o[31] <= ram.DATAOUT31
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r
 clk => single_port_ram:tap_line.clk
 clk => addr_offset[0].CLK
 clk => addr_offset[1].CLK
@@ -798,7 +834,7 @@ fdata_o[14] <= fir_reg_o[14].DB_MAX_OUTPUT_PORT_TYPE
 fdata_o[15] <= fir_reg_o[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line
 clk => ram~40.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -973,7 +1009,7 @@ data_o[30] <= ram.DATAOUT30
 data_o[31] <= ram.DATAOUT31
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master
 CLOCK_12M => bclk_gen:inst_bclk_gen.clk_12M_i
 CLOCK_12M => frame_decoder:inst_frame_decoder.clk12M
 CLOCK_12M => p2s_register:inst_p2s_right.clk_12M
@@ -1052,19 +1088,19 @@ ADCDAT_pr_o[12] <= s2p_register:inst_s2p_right.par_o[12]
 ADCDAT_pr_o[13] <= s2p_register:inst_s2p_right.par_o[13]
 ADCDAT_pr_o[14] <= s2p_register:inst_s2p_right.par_o[14]
 ADCDAT_pr_o[15] <= s2p_register:inst_s2p_right.par_o[15]
-STROBE <= frame_decoder:inst_frame_decoder.strobe
+STROBE <= STROBE.DB_MAX_OUTPUT_PORT_TYPE
 DACDAT_s_o <= DACDAT_s_o.DB_MAX_OUTPUT_PORT_TYPE
 BCLK_o <= bclk_gen:inst_bclk_gen.bclk_o
 WS <= frame_decoder:inst_frame_decoder.WS_o
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen
 reset_n => count.ACLR
 clk_12M_i => count.CLK
 bclk_o <= count.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder
 clk12M => count[0].CLK
 clk12M => count[1].CLK
 clk12M => count[2].CLK
@@ -1092,7 +1128,7 @@ strobe <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 WS_o <= WS_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right
 clk_12M => shiftreg[0].CLK
 clk_12M => shiftreg[1].CLK
 clk_12M => shiftreg[2].CLK
@@ -1162,7 +1198,7 @@ par_i[15] => next_shiftreg[15].DATAB
 ser_o <= shiftreg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left
 clk_12M => shiftreg[0].CLK
 clk_12M => shiftreg[1].CLK
 clk_12M => shiftreg[2].CLK
@@ -1232,7 +1268,7 @@ par_i[15] => next_shiftreg[15].DATAB
 ser_o <= shiftreg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right
 clk_12M => shiftreg[0].CLK
 clk_12M => shiftreg[1].CLK
 clk_12M => shiftreg[2].CLK
@@ -1286,7 +1322,7 @@ par_o[14] <= shiftreg[14].DB_MAX_OUTPUT_PORT_TYPE
 par_o[15] <= shiftreg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left
 clk_12M => shiftreg[0].CLK
 clk_12M => shiftreg[1].CLK
 clk_12M => shiftreg[2].CLK
@@ -1338,5 +1374,181 @@ par_o[12] <= shiftreg[12].DB_MAX_OUTPUT_PORT_TYPE
 par_o[13] <= shiftreg[13].DB_MAX_OUTPUT_PORT_TYPE
 par_o[14] <= shiftreg[14].DB_MAX_OUTPUT_PORT_TYPE
 par_o[15] <= shiftreg[15].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top
+tone_cmd[0] => tone_decoder:inst_tone_decoder.tone_cmd_i[0]
+tone_cmd[1] => tone_decoder:inst_tone_decoder.tone_cmd_i[1]
+clock => DDS:inst_dds.clk
+strobe_i => DDS:inst_dds.strobe_in
+rst_n => DDS:inst_dds.reset_n
+dacdat_g_out[0] <= DDS:inst_dds.dacdat_g_o[0]
+dacdat_g_out[1] <= DDS:inst_dds.dacdat_g_o[1]
+dacdat_g_out[2] <= DDS:inst_dds.dacdat_g_o[2]
+dacdat_g_out[3] <= DDS:inst_dds.dacdat_g_o[3]
+dacdat_g_out[4] <= DDS:inst_dds.dacdat_g_o[4]
+dacdat_g_out[5] <= DDS:inst_dds.dacdat_g_o[5]
+dacdat_g_out[6] <= DDS:inst_dds.dacdat_g_o[6]
+dacdat_g_out[7] <= DDS:inst_dds.dacdat_g_o[7]
+dacdat_g_out[8] <= DDS:inst_dds.dacdat_g_o[8]
+dacdat_g_out[9] <= DDS:inst_dds.dacdat_g_o[9]
+dacdat_g_out[10] <= DDS:inst_dds.dacdat_g_o[10]
+dacdat_g_out[11] <= DDS:inst_dds.dacdat_g_o[11]
+dacdat_g_out[12] <= DDS:inst_dds.dacdat_g_o[12]
+dacdat_g_out[13] <= DDS:inst_dds.dacdat_g_o[13]
+dacdat_g_out[14] <= DDS:inst_dds.dacdat_g_o[14]
+dacdat_g_out[15] <= DDS:inst_dds.dacdat_g_o[15]
+
+
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|tone_decoder:inst_tone_decoder
+tone_cmd_i[0] => Mux0.IN5
+tone_cmd_i[0] => Mux1.IN5
+tone_cmd_i[0] => Mux2.IN5
+tone_cmd_i[0] => Mux3.IN5
+tone_cmd_i[0] => Mux4.IN5
+tone_cmd_i[0] => Mux5.IN5
+tone_cmd_i[0] => Mux6.IN5
+tone_cmd_i[0] => Mux7.IN5
+tone_cmd_i[0] => phi_incr_o[8].DATAIN
+tone_cmd_i[1] => Mux0.IN4
+tone_cmd_i[1] => Mux1.IN4
+tone_cmd_i[1] => Mux2.IN4
+tone_cmd_i[1] => Mux3.IN4
+tone_cmd_i[1] => Mux4.IN4
+tone_cmd_i[1] => Mux5.IN4
+tone_cmd_i[1] => Mux6.IN4
+tone_cmd_i[1] => Mux7.IN4
+tone_cmd_i[1] => phi_incr_o[9].DATAIN
+phi_incr_o[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+phi_incr_o[1] <= <GND>
+phi_incr_o[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+phi_incr_o[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+phi_incr_o[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+phi_incr_o[5] <= <GND>
+phi_incr_o[6] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+phi_incr_o[7] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+phi_incr_o[8] <= tone_cmd_i[0].DB_MAX_OUTPUT_PORT_TYPE
+phi_incr_o[9] <= tone_cmd_i[1].DB_MAX_OUTPUT_PORT_TYPE
+phi_incr_o[10] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+phi_incr_o[11] <= <GND>
+phi_incr_o[12] <= <GND>
+phi_incr_o[13] <= <GND>
+phi_incr_o[14] <= <GND>
+phi_incr_o[15] <= <GND>
+phi_incr_o[16] <= <GND>
+phi_incr_o[17] <= <GND>
+phi_incr_o[18] <= <GND>
+tone_on_o <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+tone_on_i => dacdat_g_o.OUTPUTSELECT
+phi_incr_i[0] => Add0.IN19
+phi_incr_i[1] => Add0.IN18
+phi_incr_i[2] => Add0.IN17
+phi_incr_i[3] => Add0.IN16
+phi_incr_i[4] => Add0.IN15
+phi_incr_i[5] => Add0.IN14
+phi_incr_i[6] => Add0.IN13
+phi_incr_i[7] => Add0.IN12
+phi_incr_i[8] => Add0.IN11
+phi_incr_i[9] => Add0.IN10
+phi_incr_i[10] => Add0.IN9
+phi_incr_i[11] => Add0.IN8
+phi_incr_i[12] => Add0.IN7
+phi_incr_i[13] => Add0.IN6
+phi_incr_i[14] => Add0.IN5
+phi_incr_i[15] => Add0.IN4
+phi_incr_i[16] => Add0.IN3
+phi_incr_i[17] => Add0.IN2
+phi_incr_i[18] => Add0.IN1
+strobe_in => phi_cum[18].ENA
+strobe_in => phi_cum[17].ENA
+strobe_in => phi_cum[16].ENA
+strobe_in => phi_cum[15].ENA
+strobe_in => phi_cum[14].ENA
+strobe_in => phi_cum[13].ENA
+strobe_in => phi_cum[12].ENA
+strobe_in => phi_cum[11].ENA
+strobe_in => phi_cum[10].ENA
+strobe_in => phi_cum[9].ENA
+strobe_in => phi_cum[8].ENA
+strobe_in => phi_cum[7].ENA
+strobe_in => phi_cum[6].ENA
+strobe_in => phi_cum[5].ENA
+strobe_in => phi_cum[4].ENA
+strobe_in => phi_cum[3].ENA
+strobe_in => phi_cum[2].ENA
+strobe_in => phi_cum[1].ENA
+strobe_in => phi_cum[0].ENA
+clk => phi_cum[0].CLK
+clk => phi_cum[1].CLK
+clk => phi_cum[2].CLK
+clk => phi_cum[3].CLK
+clk => phi_cum[4].CLK
+clk => phi_cum[5].CLK
+clk => phi_cum[6].CLK
+clk => phi_cum[7].CLK
+clk => phi_cum[8].CLK
+clk => phi_cum[9].CLK
+clk => phi_cum[10].CLK
+clk => phi_cum[11].CLK
+clk => phi_cum[12].CLK
+clk => phi_cum[13].CLK
+clk => phi_cum[14].CLK
+clk => phi_cum[15].CLK
+clk => phi_cum[16].CLK
+clk => phi_cum[17].CLK
+clk => phi_cum[18].CLK
+reset_n => phi_cum[0].ACLR
+reset_n => phi_cum[1].ACLR
+reset_n => phi_cum[2].ACLR
+reset_n => phi_cum[3].ACLR
+reset_n => phi_cum[4].ACLR
+reset_n => phi_cum[5].ACLR
+reset_n => phi_cum[6].ACLR
+reset_n => phi_cum[7].ACLR
+reset_n => phi_cum[8].ACLR
+reset_n => phi_cum[9].ACLR
+reset_n => phi_cum[10].ACLR
+reset_n => phi_cum[11].ACLR
+reset_n => phi_cum[12].ACLR
+reset_n => phi_cum[13].ACLR
+reset_n => phi_cum[14].ACLR
+reset_n => phi_cum[15].ACLR
+reset_n => phi_cum[16].ACLR
+reset_n => phi_cum[17].ACLR
+reset_n => phi_cum[18].ACLR
+dacdat_g_o[0] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[1] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[2] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[3] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[4] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[5] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[6] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[7] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[8] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[9] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[10] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[11] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[12] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[13] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
+dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 

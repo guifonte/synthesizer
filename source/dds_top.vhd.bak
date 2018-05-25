@@ -15,7 +15,6 @@ entity dds_top is
 	port(
 		tone_cmd		: in    std_logic_vector(1 downto 0);
 		clock			: in    std_logic;
-		strobe_i		: in 	  std_logic;
 		rst_n			: in    std_logic;
 		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0)
 	);
@@ -38,7 +37,7 @@ ARCHITECTURE struct OF dds_top IS
 		port(
 			tone_on_i		: in    std_logic;
 			phi_incr_i		: in    std_logic_vector(N_CUM-1 downto 0);
-			strobe_in		: in    std_logic;
+			--strobe_i		: in    std_logic;
 			clk, reset_n	: in	std_logic;
 			dacdat_g_o		: out 	std_logic_vector(N_AUDIO - 1 downto 0)
 		);
@@ -57,7 +56,6 @@ ARCHITECTURE struct OF dds_top IS
 		port map(
 			tone_on_i		=> top_tone_on,
 			phi_incr_i		=> top_phi_incr,
-			strobe_in		=> strobe_i,
 			clk				=> clock,
 			reset_n			=> rst_n,
 			dacdat_g_o		=> dacdat_g_out

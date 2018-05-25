@@ -84,7 +84,7 @@ ARCHITECTURE struct OF i2s_master_top IS
 	BEGIN
 	
 		BCLK_o 			<= top_bclk;
-		STROBE			<= top_strobe;
+		STROBE			<= top_strobe AND top_bclk;
 		WS					<= top_WS;
 		
 		inst_bclk_gen: bclk_gen

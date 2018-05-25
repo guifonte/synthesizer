@@ -17,8 +17,10 @@ ENTITY digital_audio_interface_driver_top IS
 		RESET_N					: IN  std_logic;
 		ADCDAT_s_in				: IN  std_logic;
 		FIR_ctrl_in				: IN 	std_logic;
+		DDS_on_in				: IN std_logic;
+		TONE_ctrl_in			: IN std_logic_vector(1 downto 0);
 		DACDAT_s_out			: OUT	std_logic;
-		BCLK_out					: OUT	std_logic;
+		BCLK_out				: OUT	std_logic;
 		WS_out					: OUT std_logic
 	);
 END digital_audio_interface_driver_top ;
@@ -31,8 +33,11 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 	SIGNAL top_ADCDAT_pr			:	std_logic_vector(15 downto 0);
 	SIGNAL top_DACDAT_pl_fir		:	std_logic_vector(15 downto 0);
 	SIGNAL top_DACDAT_pr_fir		:	std_logic_vector(15 downto 0);
-	SIGNAL top_DACDAT_pl_sig	:	std_logic_vector(15 downto 0);
-	SIGNAL top_DACDAT_pr_sig	:	std_logic_vector(15 downto 0);
+	SIGNAL top_DACDAT_pl_sig		:	std_logic_vector(15 downto 0);
+	SIGNAL top_DACDAT_pr_sig		:	std_logic_vector(15 downto 0);
+	SIGNAL top_DDS_DACDAT			: 	std_logic_vector(15 downto 0);
+	SIGNAL top_DACDAT_pl_pure		:	std_logic_vector(15 downto 0);
+	SIGNAL top_DACDAT_pr_pure		:	std_logic_vector(15 downto 0);
 	
 	COMPONENT fir_core
 	--generic(
@@ -62,14 +67,24 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 	);
 	END COMPONENT ;
 	
+	COMPONENT dds_top 
+	PORT(
+		tone_cmd		: in    std_logic_vector(1 downto 0);
+		clock			: in    std_logic;
+		strobe_i		: in	  std_logic;
+		rst_n			: in    std_logic;
+		dacdat_g_out	: out 	std_logic_vector(15 downto 0)
+	);
+	END COMPONENT;
+	
 	BEGIN
 		
 		inst_fir_core_l: fir_core
 		PORT MAP (
 		clk         		=> CLK_12M,
 		reset_n     		=> RESET_N,
-		strobe_i			=> top_strobe,
-		adata_i				=> top_ADCDAT_pl,
+		strobe_i				=> top_strobe,
+		adata_i				=> top_DACDAT_pl_pure,
 		fdata_o				=> top_DACDAT_pl_fir
 		);
 		
@@ -78,7 +93,7 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		clk         		=> CLK_12M,
 		reset_n     		=> RESET_N,
 		strobe_i			=> top_strobe,
-		adata_i				=> top_ADCDAT_pr,
+		adata_i				=> top_DACDAT_pr_pure,
 		fdata_o				=> top_DACDAT_pr_fir
 		);
 		
@@ -94,20 +109,44 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		STROBE					=> top_strobe,
 		DACDAT_s_o				=> DACDAT_s_out,
 		BCLK_o					=> BCLK_out,
-		WS							=> WS_out
+		WS						=> WS_out
 		);
+		
+		inst_dds_top: dds_top 
+		PORT MAP(
+			tone_cmd		=> TONE_ctrl_in,
+			clock			=> CLK_12M,
+			strobe_i		=> top_strobe,
+			rst_n			=> RESET_N,
+			dacdat_g_out	=> top_DDS_DACDAT
+		);
+		
 	  --------------------------------------------------
 	  -- PROCESS FOR COMBINATORIAL LOGIC
 	  --------------------------------------------------
-	  comb_logic: PROCESS(FIR_ctrl_in,top_ADCDAT_pr,top_ADCDAT_pl,top_DACDAT_pl_fir,top_DACDAT_pr_fir)
+	  comb_logic: PROCESS(FIR_ctrl_in,top_DACDAT_pr_pure,top_DACDAT_pl_pure,top_DACDAT_pl_fir,top_DACDAT_pr_fir)
 	  BEGIN
 			IF FIR_ctrl_in = '1' THEN
 				top_DACDAT_pl_sig <= top_DACDAT_pl_fir;
 				top_DACDAT_pr_sig <= top_DACDAT_pr_fir;
 			ELSE
-				top_DACDAT_pl_sig <= top_ADCDAT_pl;
-				top_DACDAT_pr_sig <= top_ADCDAT_pr;
+				top_DACDAT_pl_sig <= top_DACDAT_pl_pure;
+				top_DACDAT_pr_sig <= top_DACDAT_pr_pure;
 			END IF;
 	  END PROCESS comb_logic; 
+	  
+	  	  --------------------------------------------------
+	  -- PROCESS FOR COMBINATORIAL LOGIC
+	  --------------------------------------------------
+	  dds_on_logic: PROCESS(DDS_on_in,top_ADCDAT_pr,top_ADCDAT_pl,top_DDS_DACDAT)
+	  BEGIN
+			IF DDS_on_in = '1' THEN
+				top_DACDAT_pl_pure <= top_DDS_DACDAT;
+				top_DACDAT_pr_pure <= top_DDS_DACDAT;
+			ELSE
+				top_DACDAT_pl_pure <= top_ADCDAT_pl;
+				top_DACDAT_pr_pure <= top_ADCDAT_pr;
+			END IF;
+	  END PROCESS dds_on_logic; 
 		
 END struct;	
