@@ -152,7 +152,7 @@ ARCHITECTURE struct OF i2s_master_top IS
 	  --------------------------------------------------
 	  comb_logic: PROCESS(top_p2s_right_out,top_p2s_left_out,top_WS)
 	  BEGIN
-			IF top_WS = '1' THEN
+			IF top_WS = '0' THEN
 				DACDAT_s_o <= top_p2s_left_out;
 			ELSE
 				DACDAT_s_o <= top_p2s_right_out;
