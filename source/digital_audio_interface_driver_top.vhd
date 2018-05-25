@@ -87,10 +87,8 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		CLOCK_12M				=> CLK_12M,	
 		INIT_N					=> RESET_N,
 		ADCDAT_s_i				=> ADCDAT_s_in,
-		-- DACDAT_pl_i				=> top_DACDAT_pl_sig,
-		-- DACDAT_pr_i				=> top_DACDAT_pr_sig,
-		DACDAT_pl_i				=> top_ADCDAT_pl,
-		DACDAT_pr_i				=> top_ADCDAT_pr,
+		DACDAT_pl_i				=> top_DACDAT_pl_sig,
+		DACDAT_pr_i				=> top_DACDAT_pr_sig,
 		ADCDAT_pl_o				=> top_ADCDAT_pl,
 		ADCDAT_pr_o				=> top_ADCDAT_pr,
 		STROBE					=> top_strobe,
@@ -98,18 +96,18 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		BCLK_o					=> BCLK_out,
 		WS							=> WS_out
 		);
-	  -- --------------------------------------------------
-	  -- -- PROCESS FOR COMBINATORIAL LOGIC
-	  -- --------------------------------------------------
-	  -- comb_logic: PROCESS(FIR_ctrl_in,top_ADCDAT_pr,top_ADCDAT_pl,top_DACDAT_pl_fir,top_DACDAT_pr_fir)
-	  -- BEGIN
-			-- IF FIR_ctrl_in = '1' THEN
-				-- top_DACDAT_pl_sig <= top_DACDAT_pl_fir;
-				-- top_DACDAT_pr_sig <= top_DACDAT_pr_fir;
-			-- ELSE
-				-- top_DACDAT_pl_sig <= top_ADCDAT_pl;
-				-- top_DACDAT_pr_sig <= top_ADCDAT_pr;
-			-- END IF;
-	  -- END PROCESS comb_logic; 
+	  --------------------------------------------------
+	  -- PROCESS FOR COMBINATORIAL LOGIC
+	  --------------------------------------------------
+	  comb_logic: PROCESS(FIR_ctrl_in,top_ADCDAT_pr,top_ADCDAT_pl,top_DACDAT_pl_fir,top_DACDAT_pr_fir)
+	  BEGIN
+			IF FIR_ctrl_in = '1' THEN
+				top_DACDAT_pl_sig <= top_DACDAT_pl_fir;
+				top_DACDAT_pr_sig <= top_DACDAT_pr_fir;
+			ELSE
+				top_DACDAT_pl_sig <= top_ADCDAT_pl;
+				top_DACDAT_pr_sig <= top_ADCDAT_pr;
+			END IF;
+	  END PROCESS comb_logic; 
 		
 END struct;	

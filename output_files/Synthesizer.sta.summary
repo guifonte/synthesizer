@@ -3,11 +3,11 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -4.862
-TNS   : -382.105
+Slack : -15.026
+TNS   : -2147.819
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : 0.137
+Slack : 0.140
 TNS   : 0.000
 
 Type  : Slow Model Hold 'CLOCK_50'
@@ -19,27 +19,27 @@ Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -1.799
-TNS   : -232.964
+Slack : -2.577
+TNS   : -433.243
 
 Type  : Slow Model Removal 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : 2.535
+Slack : 2.662
 TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
+Slack : -2.064
+TNS   : -1021.154
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
 Slack : -1.631
 TNS   : -4.075
 
-Type  : Slow Model Minimum Pulse Width 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -0.611
-TNS   : -163.748
-
 Type  : Fast Model Setup 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -1.150
-TNS   : -77.031
+Slack : -4.057
+TNS   : -628.296
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : 0.641
+Slack : 0.644
 TNS   : 0.000
 
 Type  : Fast Model Hold 'CLOCK_50'
@@ -51,19 +51,19 @@ Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -0.732
-TNS   : -94.335
+Slack : -0.960
+TNS   : -165.037
 
 Type  : Fast Model Removal 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : 1.598
+Slack : 1.609
 TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
+Slack : -2.000
+TNS   : -940.216
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
 Slack : -1.380
 TNS   : -3.380
-
-Type  : Fast Model Minimum Pulse Width 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -0.500
-TNS   : -134.000
 
 ------------------------------------------------------------

@@ -2,5 +2,10 @@
 <LOG_ROOT>
 	<PROJECT NAME="Synthesizer">
 		<CBX_INST_ENTRY INSTANCE_NAME="|Milestone2_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_25m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|lpm_mult:Mult1" CBX_FILE_NAME="mult_i1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_m9a1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_a5m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|lpm_mult:Mult1" CBX_FILE_NAME="mult_i1t.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Milestone2_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_m9a1.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

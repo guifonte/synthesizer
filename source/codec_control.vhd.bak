@@ -57,6 +57,13 @@ begin
 		next_fsm_state <= fsm_state;
 		next_reg <= reg;
 
+		--Check if it's the last register to be written
+
+		--if(reg = 9) then
+		--	last_reg := '1';
+		--else
+		--	last_reg := '0';
+		--end if;
 
 		--Changes states (moore machine)
 

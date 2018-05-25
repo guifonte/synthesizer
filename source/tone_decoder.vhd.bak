@@ -33,7 +33,7 @@ architecture rtl of tone_decoder is
 
 			--Default statement
 			phi_incr_o <= (others =>'0');
-			tone_on_o <= '0';
+			tone_on_o <= '0'
 
 
 			case tone_cmd_i is
