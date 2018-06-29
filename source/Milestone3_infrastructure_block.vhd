@@ -93,6 +93,7 @@ ARCHITECTURE struct OF Milestone3_infrastructure_block IS
 		FIR_ctrl_in				: IN  std_logic;
 		DDS_on_in				: IN  std_logic;
 		TONE_ctrl_in			: IN  std_logic_vector(1 downto 0);
+		WAVE_ctrl_in			: IN std_logic_vector(1 downto 0);
 		DACDAT_s_out			: OUT std_logic;
 		BCLK_out				: OUT std_logic;
 		WS_out					: OUT std_logic
@@ -155,6 +156,7 @@ ARCHITECTURE struct OF Milestone3_infrastructure_block IS
 		FIR_ctrl_in				=> SW(9),
 		DDS_on_in				=> SW(8),
 		TONE_ctrl_in			=> SW(6 downto 5),
+		WAVE_ctrl_in			=> SW (4 downto 3),
 		DACDAT_s_out			=> AUD_DACDAT,	
 		BCLK_out				=> AUD_BCLK,	
 		WS_out					=> top_WS	
