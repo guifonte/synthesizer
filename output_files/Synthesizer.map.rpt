@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Synthesizer
-Fri Jun 29 16:44:19 2018
+Fri Jun 29 17:43:56 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -80,13 +80,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 29 16:44:19 2018           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 29 17:43:56 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Synthesizer                                     ;
 ; Top-level Entity Name              ; Milestone3_infrastructure_block                 ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 1,341                                           ;
-;     Total combinational functions  ; 1,248                                           ;
+; Total logic elements               ; 1,352                                           ;
+;     Total combinational functions  ; 1,259                                           ;
 ;     Dedicated logic registers      ; 293                                             ;
 ; Total registers                    ; 293                                             ;
 ; Total pins                         ; 59                                              ;
@@ -267,16 +267,16 @@ applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,341                                                                                ;
+; Estimated Total logic elements              ; 1,352                                                                                ;
 ;                                             ;                                                                                      ;
-; Total combinational functions               ; 1248                                                                                 ;
+; Total combinational functions               ; 1259                                                                                 ;
 ; Logic element usage by number of LUT inputs ;                                                                                      ;
-;     -- 4 input functions                    ; 865                                                                                  ;
-;     -- 3 input functions                    ; 234                                                                                  ;
-;     -- <=2 input functions                  ; 149                                                                                  ;
+;     -- 4 input functions                    ; 878                                                                                  ;
+;     -- 3 input functions                    ; 227                                                                                  ;
+;     -- <=2 input functions                  ; 154                                                                                  ;
 ;                                             ;                                                                                      ;
 ; Logic elements by mode                      ;                                                                                      ;
-;     -- normal mode                          ; 1104                                                                                 ;
+;     -- normal mode                          ; 1115                                                                                 ;
 ;     -- arithmetic mode                      ; 144                                                                                  ;
 ;                                             ;                                                                                      ;
 ; Total registers                             ; 293                                                                                  ;
@@ -288,7 +288,7 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 4                                                                                    ;
 ; Maximum fan-out node                        ; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1] ;
 ; Maximum fan-out                             ; 332                                                                                  ;
-; Total fan-out                               ; 6317                                                                                 ;
+; Total fan-out                               ; 6358                                                                                 ;
 ; Average fan-out                             ; 3.79                                                                                 ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 
@@ -298,15 +298,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                  ; Library Name ;
 +---------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Milestone3_infrastructure_block                                                ; 1248 (1)          ; 293 (0)      ; 16320       ; 4            ; 0       ; 2         ; 59   ; 0            ; |Milestone3_infrastructure_block                                                                                                                                                                                                     ; work         ;
+; |Milestone3_infrastructure_block                                                ; 1259 (1)          ; 293 (0)      ; 16320       ; 4            ; 0       ; 2         ; 59   ; 0            ; |Milestone3_infrastructure_block                                                                                                                                                                                                     ; work         ;
 ;    |codec_control:inst_codec_control|                                           ; 46 (27)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control                                                                                                                                                                    ; work         ;
 ;       |lpm_divide:Mod0|                                                         ; 19 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0                                                                                                                                                    ; work         ;
 ;          |lpm_divide_25m:auto_generated|                                        ; 19 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated                                                                                                                      ; work         ;
 ;             |sign_div_unsign_9kh:divider|                                       ; 19 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider                                                                                          ; work         ;
 ;                |alt_u_div_kve:divider|                                          ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider                                                                    ; work         ;
-;    |digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top| ; 1106 (68)         ; 229 (0)      ; 16320       ; 4            ; 0       ; 2         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top                                                                                                                          ; work         ;
-;       |dds_top:inst_dds_top|                                                    ; 486 (139)         ; 72 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top                                                                                                     ; work         ;
-;          |DDS:inst_dds|                                                         ; 282 (282)         ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds                                                                                        ; work         ;
+;    |digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top| ; 1117 (59)         ; 229 (0)      ; 16320       ; 4            ; 0       ; 2         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top                                                                                                                          ; work         ;
+;       |dds_top:inst_dds_top|                                                    ; 505 (139)         ; 72 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top                                                                                                     ; work         ;
+;          |DDS:inst_dds|                                                         ; 301 (301)         ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds                                                                                        ; work         ;
 ;          |midi_fsm:inst_midi_fsm|                                               ; 17 (17)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm                                                                              ; work         ;
 ;          |uart_rx_only_top:inst_uart_rx_only_top|                               ; 48 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top                                                              ; work         ;
 ;             |fsm:inst_fsm|                                                      ; 16 (16)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm                                                 ; work         ;
@@ -330,10 +330,10 @@ applicable agreement for further details.
 ;          |single_port_ram:tap_line|                                             ; 0 (0)             ; 0 (0)        ; 8160        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line                                                                        ; work         ;
 ;             |altsyncram:ram_rtl_0|                                              ; 0 (0)             ; 0 (0)        ; 8160        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line|altsyncram:ram_rtl_0                                                   ; work         ;
 ;                |altsyncram_m9a1:auto_generated|                                 ; 0 (0)             ; 0 (0)        ; 8160        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line|altsyncram:ram_rtl_0|altsyncram_m9a1:auto_generated                    ; work         ;
-;       |i2s_master_top:inst_i2s_master|                                          ; 92 (2)            ; 72 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master                                                                                           ; work         ;
+;       |i2s_master_top:inst_i2s_master|                                          ; 93 (2)            ; 72 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master                                                                                           ; work         ;
 ;          |bclk_gen:inst_bclk_gen|                                               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen                                                                    ; work         ;
 ;          |frame_decoder:inst_frame_decoder|                                     ; 15 (15)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder                                                          ; work         ;
-;          |p2s_register:inst_p2s_left|                                           ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left                                                                ; work         ;
+;          |p2s_register:inst_p2s_left|                                           ; 37 (37)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left                                                                ; work         ;
 ;          |p2s_register:inst_p2s_right|                                          ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right                                                               ; work         ;
 ;          |s2p_register:inst_s2p_left|                                           ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left                                                                ; work         ;
 ;          |s2p_register:inst_s2p_right|                                          ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right                                                               ; work         ;
@@ -520,7 +520,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Inverted Register                                                                                                                                                                               ; Fan out ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; i2c_master:inst_i2c_master|scl                                                                                                                                                                  ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[6]                                             ; 8       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[6]                                             ; 9       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[15]                                              ; 1       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[15]                                               ; 1       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[5]                                             ; 3       ;
@@ -563,11 +563,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[10]                                              ; 1       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[11]                                               ; 2       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[10]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[0]                                               ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[0]                                               ; 2       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[1]                                               ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[2]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[3]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[4]                                               ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[2]                                               ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[3]                                               ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[4]                                               ; 3       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[5]                                               ; 2       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[6]                                               ; 2       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[7]                                               ; 2       ;
@@ -575,11 +575,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[9]                                               ; 2       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[10]                                              ; 2       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[9]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[0]                                                ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[0]                                                ; 2       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[1]                                                ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[2]                                                ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[3]                                                ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[4]                                                ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[2]                                                ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[3]                                                ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[4]                                                ; 3       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[5]                                                ; 2       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[6]                                                ; 2       ;
 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[7]                                                ; 2       ;
@@ -625,26 +625,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator|count[4] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|reg[0]                                                                                                                                            ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|data1_reg[5]                                                ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|reg[1]                                                                                                                                            ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|data1_reg[6]                                                ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|count[3]                       ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|byte_count[0]                                                                                                                                           ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|byte_count[1]                                                                                                                                           ;
 ; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|bit_count[1]                                                                                                                                            ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|data1_reg[0]                                                ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[7]                                                                 ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[5]                                                                 ;
-; 8:1                ; 13 bits   ; 65 LEs        ; 13 LEs               ; 52 LEs                 ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[7]                                                                                                                                                 ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[6]                                                                                                                                                 ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[10]                                                                                                                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[15]                                 ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[3]                                   ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|data1_reg[1]                                                ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[0]                                                                 ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[4]                                                                 ;
+; 8:1                ; 13 bits   ; 65 LEs        ; 13 LEs               ; 52 LEs                 ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[13]                                                                                                                                                ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[5]                                                                                                                                                 ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[12]                                                                                                                                                ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[14]                                 ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[10]                                  ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|next_fsm_state                                                                                                                                    ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds|dacdat_g_o[15]                                                        ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds|dacdat_g_o[5]                                                         ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds|dacdat_g_o[11]                                                        ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|Selector0                      ;
+; 5:1                ; 13 bits   ; 39 LEs        ; 26 LEs               ; 13 LEs                 ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds|dacdat_g_o[15]                                                        ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|Selector2                      ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|Selector30                                                                                                                                              ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|Selector28                                                                                                                                              ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|Selector31                                                                                                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1180,7 +1178,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -1190,7 +1188,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jun 29 16:44:06 2018
+    Info: Processing started: Fri Jun 29 17:43:45 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Synthesizer -c Synthesizer
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file source/uart_tick_generator.vhd
@@ -1459,17 +1457,17 @@ Warning (21074): Design contains 40 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO_0[33]"
     Warning (15610): No output dependent on input pin "GPIO_0[34]"
     Warning (15610): No output dependent on input pin "GPIO_0[35]"
-Info (21057): Implemented 1499 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1506 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 52 input pins
     Info (21059): Implemented 6 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 1372 logic cells
+    Info (21061): Implemented 1379 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21062): Implemented 4 DSP elements
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 55 warnings
-    Info: Peak virtual memory: 607 megabytes
-    Info: Processing ended: Fri Jun 29 16:44:19 2018
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:10
+    Info: Peak virtual memory: 600 megabytes
+    Info: Processing ended: Fri Jun 29 17:43:56 2018
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:11
 
 

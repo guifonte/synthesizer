@@ -50,6 +50,9 @@ architecture rtl of tone_decoder is
 				when "11" =>
 					tone_on_o 	<= '1';
 					phi_incr_o	<= E3_MI;
+				when others =>
+					phi_incr_o <= (others =>'0');
+					tone_on_o <= '0';
 			end case;
 
 		end process ; --decoder

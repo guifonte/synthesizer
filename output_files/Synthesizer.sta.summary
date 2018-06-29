@@ -3,51 +3,51 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -15.191
-TNS   : -2535.970
+Slack : -15.064
+TNS   : -2601.161
 
 Type  : Slow Model Setup 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
-Slack : -2.609
-TNS   : -46.608
+Slack : -2.485
+TNS   : -45.483
 
 Type  : Slow Model Setup 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[0]'
-Slack : -2.268
-TNS   : -3.978
+Slack : -1.695
+TNS   : -3.063
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : 0.138
+Slack : 0.140
 TNS   : 0.000
+
+Type  : Slow Model Hold 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
+Slack : -3.147
+TNS   : -3.147
 
 Type  : Slow Model Hold 'CLOCK_50'
 Slack : -2.695
 TNS   : -2.695
 
-Type  : Slow Model Hold 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
-Slack : -2.640
-TNS   : -2.640
-
 Type  : Slow Model Hold 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -1.780
-TNS   : -25.227
+Slack : -2.122
+TNS   : -23.530
 
 Type  : Slow Model Hold 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[0]'
-Slack : -0.193
-TNS   : -0.193
+Slack : -0.809
+TNS   : -1.209
 
 Type  : Slow Model Recovery 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -3.424
-TNS   : -499.426
+Slack : -3.019
+TNS   : -496.070
 
 Type  : Slow Model Recovery 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
-Slack : -1.335
-TNS   : -20.559
+Slack : -0.844
+TNS   : -12.628
 
 Type  : Slow Model Removal 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
-Slack : 1.553
+Slack : 1.243
 TNS   : 0.000
 
 Type  : Slow Model Removal 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : 2.534
+Slack : 2.535
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
@@ -67,51 +67,51 @@ Slack : 0.500
 TNS   : 0.000
 
 Type  : Fast Model Setup 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -4.148
-TNS   : -744.690
+Slack : -4.093
+TNS   : -769.597
 
 Type  : Fast Model Setup 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
-Slack : -0.896
-TNS   : -6.731
+Slack : -0.905
+TNS   : -5.624
 
 Type  : Fast Model Setup 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[0]'
-Slack : -0.271
-TNS   : -0.299
+Slack : -0.047
+TNS   : -0.047
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : 0.643
+Slack : 0.644
 TNS   : 0.000
+
+Type  : Fast Model Hold 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
+Slack : -1.787
+TNS   : -1.787
 
 Type  : Fast Model Hold 'CLOCK_50'
 Slack : -1.725
 TNS   : -1.725
 
-Type  : Fast Model Hold 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
-Slack : -1.537
-TNS   : -1.537
-
 Type  : Fast Model Hold 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -1.277
-TNS   : -20.412
+Slack : -1.420
+TNS   : -20.702
 
 Type  : Fast Model Hold 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[0]'
-Slack : 0.006
-TNS   : 0.000
+Slack : -0.193
+TNS   : -0.221
 
 Type  : Fast Model Recovery 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : -1.809
-TNS   : -202.843
+Slack : -1.659
+TNS   : -201.178
 
 Type  : Fast Model Recovery 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
-Slack : -1.017
-TNS   : -9.993
+Slack : -0.855
+TNS   : -6.999
 
 Type  : Fast Model Removal 'digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0]'
-Slack : 1.254
+Slack : 1.136
 TNS   : 0.000
 
 Type  : Fast Model Removal 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
-Slack : 1.597
+Slack : 1.598
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1]'
