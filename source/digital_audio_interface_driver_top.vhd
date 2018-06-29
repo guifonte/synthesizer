@@ -9,6 +9,8 @@
 -- Library & Use Statements
 LIBRARY ieee;
 use ieee.std_logic_1164.all;
+LIBRARY work;
+USE work.tone_gen_pkg.all;
 
 -- Entity Declaration 
 ENTITY digital_audio_interface_driver_top IS
@@ -26,7 +28,7 @@ ENTITY digital_audio_interface_driver_top IS
 	);
 END digital_audio_interface_driver_top ;
 
--- Architecture Declaration 
+-- Architecture DeclarationÂ 
 ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 	
 	SIGNAL top_strobe				:	STD_LOGIC;

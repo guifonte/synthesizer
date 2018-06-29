@@ -115,8 +115,8 @@ begin
 		if (note_update = '1') then
 			if (t_note_rec_reg.valid = '0' AND note_action_reg(6 downto 4) = NOTE_ON) then
 				next_t_note_rec_reg.valid <= '1';
-				next_t_note_rec_reg.number <= data1_reg;
-				next_t_note_rec_reg.velocity <= data2_reg;
+				next_t_note_rec_reg.number <= data1_reg(6 downto 0);
+				next_t_note_rec_reg.velocity <= data2_reg(6 downto 0);
 			end if;
 		end if;	
 	end process;

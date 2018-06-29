@@ -8,6 +8,7 @@
 -- Library & Use Statements
 LIBRARY ieee;
 use ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
 LIBRARY work;
 USE work.tone_gen_pkg.all;
 
@@ -84,7 +85,7 @@ ARCHITECTURE struct OF dds_top IS
 		inst_dds: DDS
 		port map(
 			tone_on_i		=> top_t_note_record.valid,
-			phi_incr_i		=> '0'&top_t_note_record.number,
+			phi_incr_i		=> LUT_midi2dds(to_integer(unsigned(top_t_note_record.number))),
 			strobe_in		=> strobe_i,
 			clk				=> clock,
 			reset_n			=> rst_n,

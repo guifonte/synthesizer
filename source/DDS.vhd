@@ -62,6 +62,8 @@ begin
 				dacdat_g_o <= std_logic_vector(to_signed(SAWTOOTH(addr),N_AUDIO));
 				when "10" =>
 				dacdat_g_o <= std_logic_vector(to_signed(TRIANGULAR(addr),N_AUDIO));
+				when "11" =>
+				dacdat_g_o <= std_logic_vector(to_signed(LUT(addr),N_AUDIO));
 			end case;
 		else 
 			dacdat_g_o <= (others=>'0');
