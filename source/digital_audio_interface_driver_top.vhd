@@ -19,6 +19,7 @@ ENTITY digital_audio_interface_driver_top IS
 		FIR_ctrl_in				: IN 	std_logic;
 		DDS_on_in				: IN std_logic;
 		TONE_ctrl_in			: IN std_logic_vector(1 downto 0);
+		WAVE_ctrl_in			: IN std_logic_vector(1 downto 0);
 		DACDAT_s_out			: OUT	std_logic;
 		BCLK_out				: OUT	std_logic;
 		WS_out					: OUT std_logic
@@ -70,10 +71,11 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 	COMPONENT dds_top 
 	PORT(
 		tone_cmd		: in    std_logic_vector(1 downto 0);
+		wave_ctrl		: in 	std_logic_vector(1 downto 0);
 		clock			: in    std_logic;
-		strobe_i		: in	  std_logic;
+		strobe_i		: in 	std_logic;
 		rst_n			: in    std_logic;
-		dacdat_g_out	: out 	std_logic_vector(15 downto 0)
+		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0)
 	);
 	END COMPONENT;
 	
@@ -115,6 +117,7 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		inst_dds_top: dds_top 
 		PORT MAP(
 			tone_cmd		=> TONE_ctrl_in,
+			wave_ctrl		=> WAVE_ctrl_in,
 			clock			=> CLK_12M,
 			strobe_i		=> top_strobe,
 			rst_n			=> RESET_N,

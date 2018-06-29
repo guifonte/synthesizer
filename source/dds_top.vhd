@@ -14,6 +14,7 @@ USE work.tone_gen_pkg.all;
 entity dds_top is
 	port(
 		tone_cmd		: in    std_logic_vector(1 downto 0);
+		wave_ctrl		: in 	std_logic_vector(1 downto 0);
 		clock			: in    std_logic;
 		strobe_i		: in 	  std_logic;
 		rst_n			: in    std_logic;
@@ -40,6 +41,7 @@ ARCHITECTURE struct OF dds_top IS
 			phi_incr_i		: in    std_logic_vector(N_CUM-1 downto 0);
 			strobe_in		: in    std_logic;
 			clk, reset_n	: in	std_logic;
+			wave_i			: in 	std_logic_vector(1 downto 0);
 			dacdat_g_o		: out 	std_logic_vector(N_AUDIO - 1 downto 0)
 		);
 	end COMPONENT;
@@ -60,6 +62,7 @@ ARCHITECTURE struct OF dds_top IS
 			strobe_in		=> strobe_i,
 			clk				=> clock,
 			reset_n			=> rst_n,
+			wave_i			=> wave_ctrl,
 			dacdat_g_o		=> dacdat_g_out
 		);
 
