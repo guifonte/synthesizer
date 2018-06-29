@@ -16,8 +16,9 @@ entity DDS is
 	port(
 		tone_on_i		: in    std_logic;
 		phi_incr_i		: in    std_logic_vector(N_CUM-1 downto 0);
-		strobe_in			: in    std_logic;
+		strobe_in		: in    std_logic;
 		clk, reset_n	: in	std_logic;
+		wave_i			: in 	std_logic_vector(1 downto 0);
 		dacdat_g_o		: out 	std_logic_vector(N_AUDIO - 1 downto 0)
 
 	);
@@ -50,9 +51,18 @@ begin
 
 	synth_tone: process (phi_cum, tone_on_i, addr)
 	begin 
+
+
 		addr <= to_integer(phi_cum(N_CUM - 1 downto N_CUM - N_ADDR_LUT_DDS));
 		if (tone_on_i = '1') then
-			dacdat_g_o <= std_logic_vector(to_signed(LUT(addr),N_AUDIO));
+			case wave_i is
+				when "00" =>
+				dacdat_g_o <= std_logic_vector(to_signed(LUT(addr),N_AUDIO));
+				when "01" =>
+				dacdat_g_o <= std_logic_vector(to_signed(SAWTOOTH(addr),N_AUDIO));
+				when "10" =>
+				dacdat_g_o <= std_logic_vector(to_signed(TRIANGULAR(addr),N_AUDIO));
+			end case;
 		else 
 			dacdat_g_o <= (others=>'0');
 		end if;
