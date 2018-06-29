@@ -15,9 +15,9 @@ USE ieee.std_logic_1164.all;
 ENTITY rx_register_s2p IS
   PORT( clk,reset_n: 						IN    std_logic;			-- Attention, this block has a set_n input for initialisation!!
   		activator: 								IN    std_logic;
-  		par_bit0_o, par_bit1_o: 			OUT   std_logic_vector(3 downto 0);
-    	ser_i: 									IN   	std_logic;
-		led_o: 									OUT	std_logic
+  		midi_o: 			            OUT   std_logic_vector(7 downto 0);
+      data_valid_out:           OUT   std_logic;
+    	ser_i: 									  IN   	std_logic
     	);
 END rx_register_s2p;
 
@@ -46,7 +46,7 @@ BEGIN
   shift_dffs : PROCESS(clk, reset_n)
   BEGIN	
 	IF reset_n = '0' THEN
-		shiftreg <= (others=>'0');
+		shiftreg <= (others=>'1');
    ELSIF rising_edge(clk) THEN
 		shiftreg <= next_shiftreg ;
    END IF;
@@ -58,15 +58,15 @@ BEGIN
   -- take LSB of shiftreg as serial output
   led_comb : PROCESS(shiftreg)
   BEGIN
-	IF (shiftreg(9) = '1' AND shiftreg(0) = '0') THEN
-		par_bit0_o <= shiftreg(4 downto 1);
-		par_bit1_o <= shiftreg(8 downto 5);
-		led_o <= '0';
-	ELSE
-		led_o <= '1';
-		par_bit0_o <= (others=> '0');
-		par_bit1_o <= (others=> '0');
-	END IF;
+
+  data_valid_out <= '0';
+  midi_o <= (others => '0');
+
+  	IF (shiftreg(9) = '0' AND shiftreg(0) = '1') THEN
+  		midi_o <= shiftreg (8 downto 1);
+      data_valid_out <= '1';
+  	END IF;
+
   END PROCESS led_comb;
 
 END rtl;

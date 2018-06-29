@@ -13,7 +13,7 @@ USE work.tone_gen_pkg.all;
 
 entity dds_top is
 	port(
-		tone_cmd		: in    std_logic_vector(1 downto 0);
+		midi_serial_i	: in    std_logic;
 		wave_ctrl		: in 	std_logic_vector(1 downto 0);
 		clock			: in    std_logic;
 		strobe_i		: in 	  std_logic;
@@ -26,14 +26,9 @@ ARCHITECTURE struct OF dds_top IS
 
 	SIGNAL top_phi_incr 	: std_logic_vector(N_CUM-1 downto 0);
 	SIGNAL top_tone_on  	: std_logic;
-
-	COMPONENT tone_decoder is
-        port(
-			tone_cmd_i		: in	std_logic_vector(1 downto 0);
-			phi_incr_o		: out 	std_logic_vector(N_CUM-1 downto 0);
-			tone_on_o		: out	std_logic
-        );
-	end COMPONENT;
+	SIGNAL top_midi_data	: std_logic_vector(7 downto 0);
+	SIGNAL top_midi_signal 	: std_logic;
+	SIGNAL top_t_note_record: t_note_record;
 	
 	COMPONENT DDS is
 		port(
@@ -45,25 +40,59 @@ ARCHITECTURE struct OF dds_top IS
 			dacdat_g_o		: out 	std_logic_vector(N_AUDIO - 1 downto 0)
 		);
 	end COMPONENT;
+
+	COMPONENT uart_rx_only_top IS
+		PORT(
+			CLOCK_50 :  	IN   STD_LOGIC;
+			RESET_N :		IN 	 STD_LOGIC;
+			GPIO_1 :  		IN   STD_LOGIC;
+			DATA_VALID_O :	OUT  STD_LOGIC;
+			DATA_O :		OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	COMPONENT midi_fsm is
+		port(
+			rx_data_valid_in		: in    std_logic;
+			rx_data_in				: in    std_logic_vector(7 downto 0);
+			clk						: in	  std_logic;
+			reset_n					: in	  std_logic;
+			t_note_record_out		: out	  t_note_record
+		);
+	end COMPONENT;
 	
 	BEGIN
-	
-		inst_tone_decoder: tone_decoder
+
+        inst_uart_rx_only_top: uart_rx_only_top
         port map(
-			tone_cmd_i		=> tone_cmd,
-			phi_incr_o		=> top_phi_incr,
-			tone_on_o		=> top_tone_on
+        	CLOCK_50 		=> clock,
+			RESET_N			=> rst_n,
+			GPIO_1   		=> midi_serial_i,
+			DATA_VALID_O 	=> top_midi_signal,
+			DATA_O 			=> top_midi_data
         );
+
+        inst_midi_fsm: midi_fsm
+        port map(
+        	rx_data_valid_in	=>top_midi_signal,
+			rx_data_in			=>top_midi_data,
+			clk					=>clock,
+			reset_n				=>rst_n,
+			t_note_record_out	=> top_t_note_record
+    	);
 	
 		inst_dds: DDS
 		port map(
-			tone_on_i		=> top_tone_on,
-			phi_incr_i		=> top_phi_incr,
+			tone_on_i		=> top_t_note_record.valid,
+			phi_incr_i		=> '0'&top_t_note_record.number,
 			strobe_in		=> strobe_i,
 			clk				=> clock,
 			reset_n			=> rst_n,
 			wave_i			=> wave_ctrl,
 			dacdat_g_o		=> dacdat_g_out
 		);
+
+
+
 
 END struct;	

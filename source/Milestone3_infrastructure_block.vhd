@@ -15,14 +15,15 @@ use ieee.std_logic_1164.all;
 -- Entity Declaration 
 ENTITY Milestone3_infrastructure_block IS
 	PORT(
-		CLOCK_50					: IN  std_logic;		-- DE2 clock from xtal 50MHz
-		KEY						: IN  std_logic_vector( 3 downto 0);  -- DE2 low_active input buttons
-		SW							: IN	std_logic_vector(9 downto 0);	-- DE2 input switches
+		CLOCK_50				: IN  	std_logic;		-- DE2 clock from xtal 50MHz
+		KEY						: IN  	std_logic_vector( 3 downto 0);  -- DE2 low_active input buttons
+		SW						: IN	std_logic_vector(9 downto 0);	-- DE2 input switches
+		GPIO_0					: IN 	std_logic_vector(35 downto 0);
 		AUD_XCK					: OUT	std_logic;		-- master clock for Audio Codec
-		I2C_SCLK					: OUT	std_logic;		-- clock from I2C master block
-		I2C_SDAT					: INOUT std_logic;		-- data  from I2C master block
+		I2C_SCLK				: OUT	std_logic;		-- clock from I2C master block
+		I2C_SDAT				: INOUT std_logic;		-- data  from I2C master block
 		AUD_DACDAT				: OUT	std_logic;	
-		AUD_BCLK					: OUT	std_logic;	
+		AUD_BCLK				: OUT	std_logic;	
 		AUD_DACLRCK				: OUT	std_logic;	
 		AUD_ADCLRCK				: OUT	std_logic;	
 		AUD_ADCDAT				: IN  	std_logic
@@ -87,16 +88,16 @@ ARCHITECTURE struct OF Milestone3_infrastructure_block IS
 	
 	COMPONENT digital_audio_interface_driver_top
 	PORT(
-		CLK_12M					: IN  std_logic;	
-		RESET_N					: IN  std_logic;
-		ADCDAT_s_in				: IN  std_logic;
-		FIR_ctrl_in				: IN  std_logic;
-		DDS_on_in				: IN  std_logic;
-		TONE_ctrl_in			: IN  std_logic_vector(1 downto 0);
-		WAVE_ctrl_in			: IN std_logic_vector(1 downto 0);
-		DACDAT_s_out			: OUT std_logic;
-		BCLK_out				: OUT std_logic;
-		WS_out					: OUT std_logic
+		CLK_12M					: IN  	std_logic;	
+		RESET_N					: IN  	std_logic;
+		ADCDAT_s_in				: IN  	std_logic;
+		FIR_ctrl_in				: IN 	std_logic;
+		DDS_on_in				: IN 	std_logic;
+		MIDI_SERIAL_in			: IN 	std_logic;
+		WAVE_ctrl_in			: IN 	std_logic_vector(1 downto 0);
+		DACDAT_s_out			: OUT	std_logic;
+		BCLK_out				: OUT	std_logic;
+		WS_out					: OUT 	std_logic
 	);
 	END COMPONENT ;
 	
@@ -122,7 +123,7 @@ ARCHITECTURE struct OF Milestone3_infrastructure_block IS
 	    reset_n     		=> top_button_reset_n,
 
 	    write_done_i		=> write_done,
-		event_control_i	=> SW(2 downto 0),
+		event_control_i		=> SW(2 downto 0),
 	
 		initialize_n		=> top_initialize_n,
 		ack_error_i			=> ack_error,
@@ -155,7 +156,7 @@ ARCHITECTURE struct OF Milestone3_infrastructure_block IS
 		ADCDAT_s_in				=> AUD_ADCDAT,
 		FIR_ctrl_in				=> SW(9),
 		DDS_on_in				=> SW(8),
-		TONE_ctrl_in			=> SW(6 downto 5),
+		MIDI_SERIAL_in			=> GPIO_0(0),
 		WAVE_ctrl_in			=> SW (4 downto 3),
 		DACDAT_s_out			=> AUD_DACDAT,	
 		BCLK_out				=> AUD_BCLK,	
