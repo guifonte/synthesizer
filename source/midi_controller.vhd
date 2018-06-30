@@ -70,10 +70,9 @@ begin
         next_note_action    <=  note_action;
         next_num_buf        <=  num_buf;
         next_vel_buf        <=  vel_buf;
-
-        case midi_state is
-            when wait_status =>
-                if rx_data_valid_in then
+        if rx_data_valid_in then
+            case midi_state is
+                when wait_status =>
                     if (rx_data_in(7)='1') then
                         next_midi_state <= wait_data1;
                         if (rx_data_in(6 downto 4) = "001") then
@@ -83,23 +82,13 @@ begin
                         else
                             next_note_action <= NUL_NOTE;
                         end if ;
-                    else
-                        next_midi_state <= wait_data2;
-                        next_num_buf    <= rx_data_in(6 downto 0);
-                    end if ;
-                end if ;      
-            when wait_data1 =>
-                if rx_data_valid_in then
+                    end if ;    
+                when wait_data1 =>
                     if (rx_data_in(7)='0') then
                         next_midi_state <= wait_data2;
                         next_num_buf    <= rx_data_in(6 downto 0);
-                    else
-                        next_midi_state     <= wait_status;
-                        next_note_action    <= NUL_NOTE;
                     end if ;        
-                end if ;
-            when wait_data2 =>
-                if rx_data_valid_in then
+                when wait_data2 =>
                     if (rx_data_in(7)='0') then
                         next_midi_state     <= wait_status;
                         next_vel_buf        <= rx_data_in(6 downto 0);
@@ -107,14 +96,11 @@ begin
                         if ((note_action = SET_NOTE) AND (unsigned(rx_data_in(6 downto 0)) = 0)) then
                             next_note_action <= DEL_NOTE;
                         end if ;
-                    else
-                        next_midi_state     <= wait_status;
-                        next_note_action    <= NUL_NOTE;
-                    end if ;
-                end if ;
-            when others =>
-                next_midi_state <= wait_status;
-        end case ;
+                    end if;
+                when others =>
+                    next_midi_state <= wait_status;
+            end case ;
+        end if;
     end process fsm_comb_in;
 
     fsm_comb_out : process(all)

@@ -16,6 +16,7 @@ vcom -2008 -explicit -work work ../../source/frame_decoder.vhd
 vcom -2008 -explicit -work work ../../source/i2c_master.vhd
 vcom -2008 -explicit -work work ../../source/i2c_slave_bfm.vhd
 vcom -2008 -explicit -work work ../../source/midi_controler.vhd
+vcom -2008 -explicit -work work ../../source/midi_controller.vhd
 vcom -2008 -explicit -work work ../../source/p2s_register.vhd
 
 vcom -2008 -explicit -work work ../../source/s2p_register.vhd
