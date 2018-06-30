@@ -47,39 +47,37 @@ begin
 	begin
 
 		--Default statement
-		next_fsm_state	<= next_fsm_state;
+		next_fsm_state	<= fsm_state;
 		next_note_action_reg	<= note_action_reg;
 		next_data1_reg <= data1_reg;
 		next_data2_reg <= data2_reg;
 		note_update <= '0';
 		
 		--Changes states (moore machine)
-
-		case fsm_state is
-			when S_WAIT_STATUS =>
-				if (rx_data_valid_in = '1') then
+		if (rx_data_valid_in = '1') then
+			case fsm_state is
+				when S_WAIT_STATUS =>
 					if (rx_data_in(7) = '1') then
-						next_fsm_state 		<= S_WAIT_DATA1;
-						next_note_action_reg <= rx_data_in;
-					else --Running Status
-						next_fsm_state	<= S_WAIT_DATA2;
-						next_data1_reg <= rx_data_in;
+							next_fsm_state 		<= S_WAIT_DATA1;
+							next_note_action_reg <= rx_data_in;
+					--else --Running Status
+					--	next_fsm_state	<= S_WAIT_DATA2;
+					--	next_data1_reg <= rx_data_in;
 					end if;
-				end if;
-			
-			when S_WAIT_DATA1 =>
-				if (rx_data_valid_in = '1') then
-					next_fsm_state 	<= S_WAIT_DATA2;
-					next_data1_reg 	<= rx_data_in;
-				end if;
+				when S_WAIT_DATA1 =>
+					if (rx_data_in(7) = '0') then
+						next_fsm_state 	<= S_WAIT_DATA2;
+						next_data1_reg 	<= rx_data_in;
+					end if;
 
-			when S_WAIT_DATA2 =>
-				if (rx_data_valid_in = '1') then
-					next_fsm_state 	<= S_WAIT_STATUS;
-					next_data2_reg 	<= rx_data_in;
-					note_update 		<= '1';
-				end if;
-		end case;
+				when S_WAIT_DATA2 =>
+					if (rx_data_in(7) = '0') then
+						next_fsm_state 	<= S_WAIT_STATUS;
+						next_data2_reg 	<= rx_data_in;
+						note_update 		<= '1';
+					end if;
+			end case;
+		end if;
 		
 	end process ; --fsm
 
