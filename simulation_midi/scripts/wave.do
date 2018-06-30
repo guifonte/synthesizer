@@ -19,25 +19,35 @@ add wave -noupdate -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/strobe_i
 add wave -noupdate -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/rst_n
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/CLOCK_50
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/RESET_N
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/GPIO_1
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/DATA_VALID_O
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/DATA_O
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/sync2fsm
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/sync2rx
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/tick_top
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/activator_top
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/halfsize_top
-add wave -noupdate -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/mod_clk
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/CLOCK_50
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/RESET_N
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/GPIO_1
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/DATA_VALID_O
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/DATA_O
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/sync2fsm
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/sync2rx
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/tick_top
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/activator_top
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/halfsize_top
+add wave -noupdate -expand -group UART -color Cyan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/mod_clk
 add wave -noupdate -expand -group UART_sync_n_edge -color Yellow /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_sync_n_edgeDetector/data_in
 add wave -noupdate -expand -group UART_sync_n_edge -color Yellow /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_sync_n_edgeDetector/clock
 add wave -noupdate -expand -group UART_sync_n_edge -color Yellow /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_sync_n_edgeDetector/reset_n
 add wave -noupdate -expand -group UART_sync_n_edge -color Yellow /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_sync_n_edgeDetector/data_out
 add wave -noupdate -expand -group UART_sync_n_edge -color Yellow /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_sync_n_edgeDetector/rise
 add wave -noupdate -expand -group UART_sync_n_edge -color Yellow /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_sync_n_edgeDetector/fall
+add wave -noupdate -expand -group UART_FSM /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/clk
+add wave -noupdate -expand -group UART_FSM /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/reset_n
+add wave -noupdate -expand -group UART_FSM /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/tick
+add wave -noupdate -expand -group UART_FSM /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/fall
+add wave -noupdate -expand -group UART_FSM /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/tick_halfsize
+add wave -noupdate -expand -group UART_FSM /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/tick_activator
+add wave -noupdate -expand -group UART_FSM /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/s_state
+add wave -noupdate -expand -group UART_FSM /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/s_nextstate
+add wave -noupdate -expand -group UART_FSM -radix unsigned /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/count
+add wave -noupdate -expand -group UART_FSM -radix unsigned /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_fsm/next_count
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {0 ns} 0}
+WaveRestoreCursors {{Cursor 1} {8704180 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 199
 configure wave -valuecolwidth 100
@@ -53,4 +63,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {1475274 ns} {2458794 ns}
+WaveRestoreZoom {8065656 ns} {9049176 ns}
