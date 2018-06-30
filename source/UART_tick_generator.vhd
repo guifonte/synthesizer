@@ -43,7 +43,7 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR COMBINATORIAL LOGIC
   --------------------------------------------------
-  comb_logic: PROCESS(ativo,count)
+  comb_logic: PROCESS(ativo,count,half)
   BEGIN	
 	next_count <= count;
 	-- check if the down counter is active

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Synthesizer
-Fri Jun 29 17:43:56 2018
+Sat Jun 30 18:15:18 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -15,46 +15,56 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis DSP Block Usage Summary
- 10. State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|fsm_state
- 11. State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state
- 12. State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state
- 13. State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state
- 14. State Machine - |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|fsm_state
- 15. State Machine - |Milestone3_infrastructure_block|codec_control:inst_codec_control|fsm_state
- 16. User-Specified and Inferred Latches
+ 10. State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_action
+ 11. State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_state
+ 12. State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state
+ 13. State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state
+ 14. State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state
+ 15. State Machine - |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|fsm_state
+ 16. State Machine - |Milestone3_infrastructure_block|codec_control:inst_codec_control|fsm_state
  17. Registers Removed During Synthesis
- 18. General Register Statistics
- 19. Inverted Register Statistics
- 20. Registers Packed Into Inferred Megafunctions
- 21. Multiplexer Restructuring Statistics (Restructuring Performed)
- 22. Source assignments for digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line|altsyncram:ram_rtl_0|altsyncram_m9a1:auto_generated
- 23. Source assignments for digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line|altsyncram:ram_rtl_0|altsyncram_m9a1:auto_generated
- 24. Parameter Settings for User Entity Instance: infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler
- 25. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l
- 26. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line
- 27. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r
- 28. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line
- 29. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen
- 30. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder
- 31. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right
- 32. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left
- 33. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right
- 34. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left
- 35. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider
- 36. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator
- 37. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line|altsyncram:ram_rtl_0
- 38. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line|altsyncram:ram_rtl_0
- 39. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|lpm_mult:Mult1
- 40. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|lpm_divide:Mod0
- 41. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|lpm_mult:Mult1
- 42. Parameter Settings for Inferred Entity Instance: codec_control:inst_codec_control|lpm_divide:Mod0
- 43. altsyncram Parameter Settings by Entity Instance
- 44. lpm_mult Parameter Settings by Entity Instance
- 45. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds"
- 46. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm"
- 47. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector"
- 48. Elapsed Time Per Partition
- 49. Analysis & Synthesis Messages
+ 18. Removed Registers Triggering Further Register Optimizations
+ 19. General Register Statistics
+ 20. Inverted Register Statistics
+ 21. Registers Packed Into Inferred Megafunctions
+ 22. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 23. Source assignments for digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line|altsyncram:ram_rtl_0|altsyncram_m9a1:auto_generated
+ 24. Source assignments for digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line|altsyncram:ram_rtl_0|altsyncram_m9a1:auto_generated
+ 25. Parameter Settings for User Entity Instance: infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler
+ 26. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l
+ 27. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line
+ 28. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r
+ 29. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line
+ 30. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen
+ 31. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder
+ 32. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right
+ 33. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left
+ 34. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right
+ 35. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left
+ 36. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider
+ 37. Parameter Settings for User Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator
+ 38. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line|altsyncram:ram_rtl_0
+ 39. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line|altsyncram:ram_rtl_0
+ 40. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|lpm_mult:Mult1
+ 41. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|lpm_divide:Mod0
+ 42. Parameter Settings for Inferred Entity Instance: digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|lpm_mult:Mult1
+ 43. Parameter Settings for Inferred Entity Instance: codec_control:inst_codec_control|lpm_divide:Mod0
+ 44. altsyncram Parameter Settings by Entity Instance
+ 45. lpm_mult Parameter Settings by Entity Instance
+ 46. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:9:inst_dds"
+ 47. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:8:inst_dds"
+ 48. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:7:inst_dds"
+ 49. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:6:inst_dds"
+ 50. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:5:inst_dds"
+ 51. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:4:inst_dds"
+ 52. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:3:inst_dds"
+ 53. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:2:inst_dds"
+ 54. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:1:inst_dds"
+ 55. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:0:inst_dds"
+ 56. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller"
+ 57. Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector"
+ 58. Elapsed Time Per Partition
+ 59. Analysis & Synthesis Messages
 
 
 
@@ -80,15 +90,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 29 17:43:56 2018           ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 30 18:15:17 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Synthesizer                                     ;
 ; Top-level Entity Name              ; Milestone3_infrastructure_block                 ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 1,352                                           ;
-;     Total combinational functions  ; 1,259                                           ;
-;     Dedicated logic registers      ; 293                                             ;
-; Total registers                    ; 293                                             ;
+; Total logic elements               ; 794                                             ;
+;     Total combinational functions  ; 721                                             ;
+;     Dedicated logic registers      ; 221                                             ;
+; Total registers                    ; 221                                             ;
 ; Total pins                         ; 59                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 16,320                                          ;
@@ -183,83 +193,77 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+---------------------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                      ;
-+------------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                     ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                     ; Library ;
-+------------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------+---------+
-; source/UART_tick_generator.vhd                       ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/UART_tick_generator.vhd                       ;         ;
-; source/UART_sync_n_edgeDetector.vhd                  ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/UART_sync_n_edgeDetector.vhd                  ;         ;
-; source/UART_rx_register_s2p.vhd                      ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/UART_rx_register_s2p.vhd                      ;         ;
-; source/UART_modulo_divider.vhd                       ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/UART_modulo_divider.vhd                       ;         ;
-; source/UART_fsm.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/UART_fsm.vhd                                  ;         ;
-; source/UART__rx_only_top.vhd                         ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/UART__rx_only_top.vhd                         ;         ;
-; source/Milestone3_infrastructure_block.vhd           ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/Milestone3_infrastructure_block.vhd           ;         ;
-; source/dds_top.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/dds_top.vhd                                   ;         ;
-; source/tone_gen_pkg.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/tone_gen_pkg.vhd                              ;         ;
-; source/DDS.vhd                                       ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/DDS.vhd                                       ;         ;
-; source/single_port_ram.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/single_port_ram.vhd                           ;         ;
-; source/fir_core.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/fir_core.vhd                                  ;         ;
-; source/audio_filter_pkg.vhd                          ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/audio_filter_pkg.vhd                          ;         ;
-; source/s2p_register.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/s2p_register.vhd                              ;         ;
-; source/p2s_register.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/p2s_register.vhd                              ;         ;
-; source/takt_teiler.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/takt_teiler.vhd                               ;         ;
-; source/sync_block.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/sync_block.vhd                                ;         ;
-; source/reg_table_pkg.vhd                             ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/reg_table_pkg.vhd                             ;         ;
-; source/infrastructure_block.vhd                      ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/infrastructure_block.vhd                      ;         ;
-; source/i2c_master.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/i2c_master.vhd                                ;         ;
-; source/frame_decoder.vhd                             ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/frame_decoder.vhd                             ;         ;
-; source/codec_control.vhd                             ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/codec_control.vhd                             ;         ;
-; source/bclk_gen.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/bclk_gen.vhd                                  ;         ;
-; source/digital_audio_interface_driver_top.vhd        ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/digital_audio_interface_driver_top.vhd        ;         ;
-; source/i2s_master_top.vhd                            ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/i2s_master_top.vhd                            ;         ;
-; source/midi_controler.vhd                            ; yes             ; User VHDL File                                        ; C:/Users/ea999/Documents/GitHub/synthesizer/source/midi_controler.vhd                            ;         ;
-; altsyncram.tdf                                       ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                                 ;         ;
-; stratix_ram_block.inc                                ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                          ;         ;
-; lpm_mux.inc                                          ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                                    ;         ;
-; lpm_decode.inc                                       ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                                 ;         ;
-; aglobal130.inc                                       ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                                 ;         ;
-; a_rdenreg.inc                                        ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                                  ;         ;
-; altrom.inc                                           ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                                     ;         ;
-; altram.inc                                           ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                                     ;         ;
-; altdpram.inc                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                                   ;         ;
-; db/altsyncram_m9a1.tdf                               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/altsyncram_m9a1.tdf                               ;         ;
-; db/synthesizer.ram0_single_port_ram_f2db2a46.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/ea999/Documents/GitHub/synthesizer/db/synthesizer.ram0_single_port_ram_f2db2a46.hdl.mif ;         ;
-; lpm_mult.tdf                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf                                   ;         ;
-; lpm_add_sub.inc                                      ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                                ;         ;
-; multcore.inc                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc                                   ;         ;
-; bypassff.inc                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                                   ;         ;
-; altshift.inc                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                                   ;         ;
-; db/mult_i1t.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/mult_i1t.tdf                                      ;         ;
-; lpm_divide.tdf                                       ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf                                 ;         ;
-; abs_divider.inc                                      ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc                                ;         ;
-; sign_div_unsign.inc                                  ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc                            ;         ;
-; db/lpm_divide_a5m.tdf                                ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/lpm_divide_a5m.tdf                                ;         ;
-; db/sign_div_unsign_hkh.tdf                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/sign_div_unsign_hkh.tdf                           ;         ;
-; db/alt_u_div_40f.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/alt_u_div_40f.tdf                                 ;         ;
-; db/add_sub_lkc.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/add_sub_lkc.tdf                                   ;         ;
-; db/add_sub_mkc.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/add_sub_mkc.tdf                                   ;         ;
-; db/lpm_divide_25m.tdf                                ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/lpm_divide_25m.tdf                                ;         ;
-; db/sign_div_unsign_9kh.tdf                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/sign_div_unsign_9kh.tdf                           ;         ;
-; db/alt_u_div_kve.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/ea999/Documents/GitHub/synthesizer/db/alt_u_div_kve.tdf                                 ;         ;
-+------------------------------------------------------+-----------------+-------------------------------------------------------+--------------------------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                             ;
++------------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                     ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                            ; Library ;
++------------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------+---------+
+; source/midi_controller.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/midi_controller.vhd                           ;         ;
+; source/UART_tick_generator.vhd                       ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/UART_tick_generator.vhd                       ;         ;
+; source/UART_sync_n_edgeDetector.vhd                  ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/UART_sync_n_edgeDetector.vhd                  ;         ;
+; source/UART_rx_register_s2p.vhd                      ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/UART_rx_register_s2p.vhd                      ;         ;
+; source/UART_modulo_divider.vhd                       ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/UART_modulo_divider.vhd                       ;         ;
+; source/UART_fsm.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/UART_fsm.vhd                                  ;         ;
+; source/UART__rx_only_top.vhd                         ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/UART__rx_only_top.vhd                         ;         ;
+; source/Milestone3_infrastructure_block.vhd           ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/Milestone3_infrastructure_block.vhd           ;         ;
+; source/dds_top.vhd                                   ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/dds_top.vhd                                   ;         ;
+; source/tone_gen_pkg.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/tone_gen_pkg.vhd                              ;         ;
+; source/DDS.vhd                                       ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/DDS.vhd                                       ;         ;
+; source/single_port_ram.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/single_port_ram.vhd                           ;         ;
+; source/fir_core.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/fir_core.vhd                                  ;         ;
+; source/audio_filter_pkg.vhd                          ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/audio_filter_pkg.vhd                          ;         ;
+; source/s2p_register.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/s2p_register.vhd                              ;         ;
+; source/p2s_register.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/p2s_register.vhd                              ;         ;
+; source/takt_teiler.vhd                               ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/takt_teiler.vhd                               ;         ;
+; source/sync_block.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/sync_block.vhd                                ;         ;
+; source/reg_table_pkg.vhd                             ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/reg_table_pkg.vhd                             ;         ;
+; source/infrastructure_block.vhd                      ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/infrastructure_block.vhd                      ;         ;
+; source/i2c_master.vhd                                ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/i2c_master.vhd                                ;         ;
+; source/frame_decoder.vhd                             ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/frame_decoder.vhd                             ;         ;
+; source/codec_control.vhd                             ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/codec_control.vhd                             ;         ;
+; source/bclk_gen.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/bclk_gen.vhd                                  ;         ;
+; source/digital_audio_interface_driver_top.vhd        ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/digital_audio_interface_driver_top.vhd        ;         ;
+; source/i2s_master_top.vhd                            ; yes             ; User VHDL File                                        ; C:/Users/megas/Documents/Git/Synth/source/i2s_master_top.vhd                            ;         ;
+; altsyncram.tdf                                       ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                        ;         ;
+; stratix_ram_block.inc                                ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc                 ;         ;
+; lpm_mux.inc                                          ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                           ;         ;
+; lpm_decode.inc                                       ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                        ;         ;
+; aglobal130.inc                                       ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                        ;         ;
+; a_rdenreg.inc                                        ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                         ;         ;
+; altrom.inc                                           ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                            ;         ;
+; altram.inc                                           ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                            ;         ;
+; altdpram.inc                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                          ;         ;
+; db/altsyncram_m9a1.tdf                               ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/altsyncram_m9a1.tdf                               ;         ;
+; db/synthesizer.ram0_single_port_ram_f2db2a46.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/megas/Documents/Git/Synth/db/synthesizer.ram0_single_port_ram_f2db2a46.hdl.mif ;         ;
+; lpm_mult.tdf                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf                          ;         ;
+; lpm_add_sub.inc                                      ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc                       ;         ;
+; multcore.inc                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/multcore.inc                          ;         ;
+; bypassff.inc                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                          ;         ;
+; altshift.inc                                         ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                          ;         ;
+; db/mult_i1t.tdf                                      ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/mult_i1t.tdf                                      ;         ;
+; lpm_divide.tdf                                       ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf                        ;         ;
+; abs_divider.inc                                      ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc                       ;         ;
+; sign_div_unsign.inc                                  ; yes             ; Megafunction                                          ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc                   ;         ;
+; db/lpm_divide_a5m.tdf                                ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/lpm_divide_a5m.tdf                                ;         ;
+; db/sign_div_unsign_hkh.tdf                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/sign_div_unsign_hkh.tdf                           ;         ;
+; db/alt_u_div_40f.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/alt_u_div_40f.tdf                                 ;         ;
+; db/add_sub_lkc.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/add_sub_lkc.tdf                                   ;         ;
+; db/add_sub_mkc.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/add_sub_mkc.tdf                                   ;         ;
+; db/lpm_divide_25m.tdf                                ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/lpm_divide_25m.tdf                                ;         ;
+; db/sign_div_unsign_9kh.tdf                           ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/sign_div_unsign_9kh.tdf                           ;         ;
+; db/alt_u_div_kve.tdf                                 ; yes             ; Auto-Generated Megafunction                           ; C:/Users/megas/Documents/Git/Synth/db/alt_u_div_kve.tdf                                 ;         ;
++------------------------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -267,29 +271,29 @@ applicable agreement for further details.
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,352                                                                                ;
+; Estimated Total logic elements              ; 794                                                                                  ;
 ;                                             ;                                                                                      ;
-; Total combinational functions               ; 1259                                                                                 ;
+; Total combinational functions               ; 721                                                                                  ;
 ; Logic element usage by number of LUT inputs ;                                                                                      ;
-;     -- 4 input functions                    ; 878                                                                                  ;
-;     -- 3 input functions                    ; 227                                                                                  ;
-;     -- <=2 input functions                  ; 154                                                                                  ;
+;     -- 4 input functions                    ; 430                                                                                  ;
+;     -- 3 input functions                    ; 157                                                                                  ;
+;     -- <=2 input functions                  ; 134                                                                                  ;
 ;                                             ;                                                                                      ;
 ; Logic elements by mode                      ;                                                                                      ;
-;     -- normal mode                          ; 1115                                                                                 ;
-;     -- arithmetic mode                      ; 144                                                                                  ;
+;     -- normal mode                          ; 605                                                                                  ;
+;     -- arithmetic mode                      ; 116                                                                                  ;
 ;                                             ;                                                                                      ;
-; Total registers                             ; 293                                                                                  ;
-;     -- Dedicated logic registers            ; 293                                                                                  ;
+; Total registers                             ; 221                                                                                  ;
+;     -- Dedicated logic registers            ; 221                                                                                  ;
 ;     -- I/O registers                        ; 0                                                                                    ;
 ;                                             ;                                                                                      ;
 ; I/O pins                                    ; 59                                                                                   ;
 ; Total memory bits                           ; 16320                                                                                ;
 ; Embedded Multiplier 9-bit elements          ; 4                                                                                    ;
 ; Maximum fan-out node                        ; infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler|count[1] ;
-; Maximum fan-out                             ; 332                                                                                  ;
-; Total fan-out                               ; 6358                                                                                 ;
-; Average fan-out                             ; 3.79                                                                                 ;
+; Maximum fan-out                             ; 285                                                                                  ;
+; Total fan-out                               ; 4057                                                                                 ;
+; Average fan-out                             ; 3.80                                                                                 ;
 +---------------------------------------------+--------------------------------------------------------------------------------------+
 
 
@@ -298,22 +302,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                  ; Library Name ;
 +---------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |Milestone3_infrastructure_block                                                ; 1259 (1)          ; 293 (0)      ; 16320       ; 4            ; 0       ; 2         ; 59   ; 0            ; |Milestone3_infrastructure_block                                                                                                                                                                                                     ; work         ;
-;    |codec_control:inst_codec_control|                                           ; 46 (27)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control                                                                                                                                                                    ; work         ;
-;       |lpm_divide:Mod0|                                                         ; 19 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0                                                                                                                                                    ; work         ;
-;          |lpm_divide_25m:auto_generated|                                        ; 19 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated                                                                                                                      ; work         ;
-;             |sign_div_unsign_9kh:divider|                                       ; 19 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider                                                                                          ; work         ;
-;                |alt_u_div_kve:divider|                                          ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider                                                                    ; work         ;
-;    |digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top| ; 1117 (59)         ; 229 (0)      ; 16320       ; 4            ; 0       ; 2         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top                                                                                                                          ; work         ;
-;       |dds_top:inst_dds_top|                                                    ; 505 (139)         ; 72 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top                                                                                                     ; work         ;
-;          |DDS:inst_dds|                                                         ; 301 (301)         ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds                                                                                        ; work         ;
-;          |midi_fsm:inst_midi_fsm|                                               ; 17 (17)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm                                                                              ; work         ;
-;          |uart_rx_only_top:inst_uart_rx_only_top|                               ; 48 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top                                                              ; work         ;
-;             |fsm:inst_fsm|                                                      ; 16 (16)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm                                                 ; work         ;
-;             |modulo_divider:inst_modulo_divider|                                ; 14 (14)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider                           ; work         ;
-;             |rx_register_s2p:inst_rx_register_s2p|                              ; 4 (4)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p                         ; work         ;
-;             |sync_n_edgeDetector:inst_sync_n_edgeDetector|                      ; 1 (1)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector                 ; work         ;
-;             |tick_generator:inst_tick_generator|                                ; 13 (13)           ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator                           ; work         ;
+; |Milestone3_infrastructure_block                                                ; 721 (1)           ; 221 (0)      ; 16320       ; 4            ; 0       ; 2         ; 59   ; 0            ; |Milestone3_infrastructure_block                                                                                                                                                                                                     ; work         ;
+;    |codec_control:inst_codec_control|                                           ; 45 (27)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control                                                                                                                                                                    ; work         ;
+;       |lpm_divide:Mod0|                                                         ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0                                                                                                                                                    ; work         ;
+;          |lpm_divide_25m:auto_generated|                                        ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated                                                                                                                      ; work         ;
+;             |sign_div_unsign_9kh:divider|                                       ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider                                                                                          ; work         ;
+;                |alt_u_div_kve:divider|                                          ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider                                                                    ; work         ;
+;    |digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top| ; 580 (32)          ; 157 (0)      ; 16320       ; 4            ; 0       ; 2         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top                                                                                                                          ; work         ;
 ;       |fir_core:inst_fir_core_l|                                                ; 91 (91)           ; 53 (53)      ; 8160        ; 2            ; 0       ; 1         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l                                                                                                 ; work         ;
 ;          |lpm_mult:Mult1|                                                       ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|lpm_mult:Mult1                                                                                  ; work         ;
 ;             |mult_i1t:auto_generated|                                           ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|lpm_mult:Mult1|mult_i1t:auto_generated                                                          ; work         ;
@@ -330,11 +325,11 @@ applicable agreement for further details.
 ;          |single_port_ram:tap_line|                                             ; 0 (0)             ; 0 (0)        ; 8160        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line                                                                        ; work         ;
 ;             |altsyncram:ram_rtl_0|                                              ; 0 (0)             ; 0 (0)        ; 8160        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line|altsyncram:ram_rtl_0                                                   ; work         ;
 ;                |altsyncram_m9a1:auto_generated|                                 ; 0 (0)             ; 0 (0)        ; 8160        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line|altsyncram:ram_rtl_0|altsyncram_m9a1:auto_generated                    ; work         ;
-;       |i2s_master_top:inst_i2s_master|                                          ; 93 (2)            ; 72 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master                                                                                           ; work         ;
+;       |i2s_master_top:inst_i2s_master|                                          ; 88 (1)            ; 72 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master                                                                                           ; work         ;
 ;          |bclk_gen:inst_bclk_gen|                                               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen                                                                    ; work         ;
 ;          |frame_decoder:inst_frame_decoder|                                     ; 15 (15)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder                                                          ; work         ;
-;          |p2s_register:inst_p2s_left|                                           ; 37 (37)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left                                                                ; work         ;
-;          |p2s_register:inst_p2s_right|                                          ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right                                                               ; work         ;
+;          |p2s_register:inst_p2s_left|                                           ; 34 (34)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left                                                                ; work         ;
+;          |p2s_register:inst_p2s_right|                                          ; 35 (35)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right                                                               ; work         ;
 ;          |s2p_register:inst_s2p_left|                                           ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left                                                                ; work         ;
 ;          |s2p_register:inst_s2p_right|                                          ; 1 (1)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right                                                               ; work         ;
 ;    |i2c_master:inst_i2c_master|                                                 ; 93 (93)           ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master                                                                                                                                                                          ; work         ;
@@ -375,15 +370,27 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 
 
 Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|fsm_state ;
-+-------------------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------+
-; Name                    ; fsm_state.S_WAIT_DATA2 ; fsm_state.S_WAIT_DATA1 ; fsm_state.S_WAIT_STATUS                                                                               ;
-+-------------------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------+
-; fsm_state.S_WAIT_STATUS ; 0                      ; 0                      ; 0                                                                                                     ;
-; fsm_state.S_WAIT_DATA1  ; 0                      ; 1                      ; 1                                                                                                     ;
-; fsm_state.S_WAIT_DATA2  ; 1                      ; 0                      ; 1                                                                                                     ;
-+-------------------------+------------------------+------------------------+-------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_action ;
++----------------------+----------------------+----------------------+------------------------------------------------------------------------------------------------------------------------------+
+; Name                 ; note_action.DEL_NOTE ; note_action.SET_NOTE ; note_action.NUL_NOTE                                                                                                         ;
++----------------------+----------------------+----------------------+------------------------------------------------------------------------------------------------------------------------------+
+; note_action.NUL_NOTE ; 0                    ; 0                    ; 0                                                                                                                            ;
+; note_action.SET_NOTE ; 0                    ; 1                    ; 1                                                                                                                            ;
+; note_action.DEL_NOTE ; 1                    ; 0                    ; 1                                                                                                                            ;
++----------------------+----------------------+----------------------+------------------------------------------------------------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_state ;
++------------------------+-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------+
+; Name                   ; midi_state.wait_data2 ; midi_state.wait_data1 ; midi_state.wait_status                                                                                                  ;
++------------------------+-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------+
+; midi_state.wait_status ; 0                     ; 0                     ; 0                                                                                                                       ;
+; midi_state.wait_data1  ; 0                     ; 1                     ; 1                                                                                                                       ;
+; midi_state.wait_data2  ; 1                     ; 0                     ; 1                                                                                                                       ;
++------------------------+-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -455,48 +462,105 @@ Encoding Type:  One-Hot
 +-------------------------+------------------+-------------------------+----------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                                                                                                                                                                                                                                                           ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-; Latch Name                                                                                                                                              ; Latch Enable Signal                                                                                                                                                                        ; Free of Timing Hazards ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|next_fsm_state.S_WAIT_DATA2_393  ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|data_valid_out ; yes                    ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|next_fsm_state.S_WAIT_STATUS_415 ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|data_valid_out ; yes                    ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|next_fsm_state.S_WAIT_DATA1_404  ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|data_valid_out ; yes                    ;
-; Number of user-specified and inferred latches = 3                                                                                                       ;                                                                                                                                                                                            ;                        ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                     ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                                                     ; Reason for Removal                                                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_regs[9].valid                                           ; Stuck at GND due to stuck port data_in                                                                                                             ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_update                                                  ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:9:inst_dds|phi_cum[0..18]                                                       ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_regs[9].number[0..6]                                    ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|num_buf[0..6]                                                ; Lost fanout                                                                                                                                        ;
+; i2c_master:inst_i2c_master|clk_divider[0]                                                                                                                                                         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen|count ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|count[1..3]           ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[1..8]        ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|count[1..3]                                   ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator|count[0..4]             ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector|shiftreg[0,1] ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|count[0]              ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[0]           ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|count[0]                                      ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector|shiftreg[2]   ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0..6]             ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_action.NUL_NOTE                                         ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_action.SET_NOTE                                         ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_action.DEL_NOTE                                         ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_state.wait_status                                       ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_state.wait_data1                                        ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_state.wait_data2                                        ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state.not_begining                          ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state.begining                              ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state.receiving                             ; Lost fanout                                                                                                                                        ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.tap_0                                                                               ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.tap_0                    ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.tap_x_mac                                                                           ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.tap_x_mac                ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[7]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[7]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[6]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[6]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[5]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[5]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[4]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[4]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[3]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[3]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[2]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[2]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[1]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[1]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[0]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[0]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[7]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[7]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[6]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[6]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[5]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[5]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[4]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[4]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[3]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[3]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[2]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[2]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[1]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[1]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[0]                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[0]                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.idle                                                                                ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.idle                     ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.tap_x_waitrd                                                                        ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.tap_x_waitrd             ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.sample_rdy                                                                          ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.sample_rdy               ;
+; Total Number of Removed Registers = 98                                                                                                                                                            ;                                                                                                                                                    ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                                                              ;
-+----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                              ; Reason for Removal                                                                                                                                 ;
-+----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; i2c_master:inst_i2c_master|clk_divider[0]                                                                                  ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen|count ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.tap_0        ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.tap_0                    ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.tap_x_mac    ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.tap_x_mac                ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[7]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[7]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[6]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[6]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[5]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[5]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[4]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[4]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[3]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[3]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[2]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[2]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[1]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[1]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[0]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[0]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[7]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[7]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[6]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[6]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[5]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[5]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[4]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[4]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[3]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[3]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[2]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[2]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[1]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[1]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|addr_offset[0]         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|addr_offset[0]                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.idle         ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.idle                     ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.tap_x_waitrd ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.tap_x_waitrd             ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state.sample_rdy   ; Merged with digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state.sample_rdy               ;
-; Total Number of Removed Registers = 22                                                                                     ;                                                                                                                                                    ;
-+----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                                                                                                                                                    ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                                                   ; Reason for Removal        ; Registers Removed due to This Register                                                                                                                                                           ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|count[3]            ; Lost Fanouts              ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|count[2],            ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|count[1],            ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator|count[0],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator|count[4],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator|count[3],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator|count[2],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator|count[1],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|count[0],            ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[6],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[5],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[4],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[3],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[2],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[1],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider|count[0],              ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state.not_begining                         ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_regs[9].valid                                         ; Stuck at GND              ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_update,                                                ;
+;                                                                                                                                                                                                 ; due to stuck port data_in ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|num_buf[6],                                                 ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|num_buf[5],                                                 ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|num_buf[4],                                                 ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|num_buf[3],                                                 ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|num_buf[2],                                                 ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[8],         ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[6],         ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[7],         ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[4],         ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[3],         ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[5]          ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|count[3]                                    ; Lost Fanouts              ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|count[2],                                    ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|count[1],                                    ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|count[0],                                    ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state.begining,                            ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state.receiving                            ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|num_buf[0]                                                 ; Lost Fanouts              ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[1],         ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[0]          ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector|shiftreg[0] ; Lost Fanouts              ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector|shiftreg[1], ;
+;                                                                                                                                                                                                 ;                           ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector|shiftreg[2]  ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|num_buf[1]                                                 ; Lost Fanouts              ; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[2]          ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -504,109 +568,96 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 293   ;
+; Total registers                              ; 221   ;
 ; Number of registers using Synchronous Clear  ; 11    ;
 ; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 287   ;
+; Number of registers using Asynchronous Clear ; 215   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 229   ;
+; Number of registers using Clock Enable       ; 179   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Inverted Register Statistics                                                                                                                                                                              ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; Inverted Register                                                                                                                                                                               ; Fan out ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; i2c_master:inst_i2c_master|scl                                                                                                                                                                  ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[6]                                             ; 9       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[15]                                              ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[15]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[5]                                             ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[4]                                             ; 4       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[3]                                             ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[2]                                             ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[0]                                             ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[1]                                             ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[15]                                              ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[14]                                              ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[15]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[14]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[9]         ; 13      ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[0]         ; 14      ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[14]                                              ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[13]                                              ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[14]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[13]                                               ; 1       ;
-; i2c_master:inst_i2c_master|sda                                                                                                                                                                  ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[8]         ; 5       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector|shiftreg[1] ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[7]         ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[6]         ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[5]         ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[13]                                              ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[12]                                              ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[13]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[12]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector|shiftreg[0] ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector|shiftreg[2] ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[4]         ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[1]         ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[3]         ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|shiftreg[2]         ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[12]                                              ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[11]                                              ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[12]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[11]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[11]                                              ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[10]                                              ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[11]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[10]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[0]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[1]                                               ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[2]                                               ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[3]                                               ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[4]                                               ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[5]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[6]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[7]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[8]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[9]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[10]                                              ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[9]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[0]                                                ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[1]                                                ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[2]                                                ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[3]                                                ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[4]                                                ; 3       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[5]                                                ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[6]                                                ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[7]                                                ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[8]                                                ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[9]                                                ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[10]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[9]                                                ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[8]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[8]                                                ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[7]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[7]                                                ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[6]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[6]                                                ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[5]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[5]                                                ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[4]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[4]                                                ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[3]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[3]                                                ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[2]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[2]                                                ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[1]                                               ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[1]                                                ; 1       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[0]                                               ; 2       ;
-; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[0]                                                ; 2       ;
-; Total number of inverted registers = 86                                                                                                                                                         ;         ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                  ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                   ; Fan out ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; i2c_master:inst_i2c_master|scl                                                                                                                      ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[6] ; 8       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[15]  ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[15]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[5] ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[4] ; 4       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[3] ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[2] ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[0] ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[1] ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[15]  ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[14]  ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[15]   ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[14]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[14]  ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[13]  ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[14]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[13]   ; 1       ;
+; i2c_master:inst_i2c_master|sda                                                                                                                      ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[13]  ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[12]  ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[13]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[12]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[12]  ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[11]  ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[12]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[11]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[11]  ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[10]  ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[11]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[10]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[0]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[1]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[2]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[3]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[4]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[5]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[6]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[7]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[8]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[9]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right|shiftreg[10]  ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[9]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[0]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[1]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[2]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[3]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[4]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[5]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[6]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[7]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[8]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[9]    ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left|shiftreg[10]   ; 3       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[9]    ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[8]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[8]    ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[7]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[7]    ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[6]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[6]    ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[5]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[5]    ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[4]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[4]    ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[3]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[3]    ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[2]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[2]    ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[1]   ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[1]    ; 1       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[0]   ; 2       ;
+; digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[0]    ; 2       ;
+; Total number of inverted registers = 73                                                                                                             ;         ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -619,31 +670,30 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator|count[4] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|reg[1]                                                                                                                                            ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|data1_reg[6]                                                ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|count[3]                       ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|byte_count[1]                                                                                                                                           ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|bit_count[1]                                                                                                                                            ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|data1_reg[1]                                                ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[0]                                                                 ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[4]                                                                 ;
-; 8:1                ; 13 bits   ; 65 LEs        ; 13 LEs               ; 52 LEs                 ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[13]                                                                                                                                                ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[5]                                                                                                                                                 ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[12]                                                                                                                                                ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[14]                                 ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[10]                                  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|next_fsm_state                                                                                                                                    ;
-; 5:1                ; 13 bits   ; 39 LEs        ; 26 LEs               ; 13 LEs                 ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds|dacdat_g_o[15]                                                        ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|Selector2                      ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|Selector30                                                                                                                                              ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|Selector31                                                                                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator|count[4]   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p|count[1] ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|reg[0]                                                                                                                                              ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|byte_count[0]                                                                                                                                             ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 3 LEs                ; 9 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|bit_count[0]                                                                                                                                              ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|tap_counter[1]                                                                   ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|tap_counter[3]                                                                   ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|count[3]                         ;
+; 8:1                ; 13 bits   ; 65 LEs        ; 13 LEs               ; 52 LEs                 ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[18]                                                                                                                                                  ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[5]                                                                                                                                                   ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; Yes        ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|data[10]                                                                                                                                                  ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right|shiftreg[4]                                    ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left|shiftreg[4]                                     ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Milestone3_infrastructure_block|codec_control:inst_codec_control|next_fsm_state                                                                                                                                      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|Selector3                                       ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 9 LEs                ; 6 LEs                  ; No         ; |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|Selector2                        ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|Selector30                                                                                                                                                ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|Selector31                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1146,22 +1196,121 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds" ;
-+--------------------+-------+----------+--------------------------------------------------------------------------------------------------+
-; Port               ; Type  ; Severity ; Details                                                                                          ;
-+--------------------+-------+----------+--------------------------------------------------------------------------------------------------+
-; phi_incr_i[18..17] ; Input ; Info     ; Stuck at GND                                                                                     ;
-+--------------------+-------+----------+--------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:9:inst_dds" ;
++--------------------+-------+----------+------------------------------------------------------------------------------------------------------------------+
+; Port               ; Type  ; Severity ; Details                                                                                                          ;
++--------------------+-------+----------+------------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input ; Info     ; Stuck at GND                                                                                                     ;
++--------------------+-------+----------+------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm" ;
-+----------------------------+--------+----------+---------------------------------------------------------------------------------------------------+
-; Port                       ; Type   ; Severity ; Details                                                                                           ;
-+----------------------------+--------+----------+---------------------------------------------------------------------------------------------------+
-; t_note_record_out.velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.               ;
-+----------------------------+--------+----------+---------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:8:inst_dds" ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                         ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input  ; Info     ; Stuck at GND                                                                                                    ;
+; dacdat_g_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                             ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:7:inst_dds" ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                         ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input  ; Info     ; Stuck at GND                                                                                                    ;
+; dacdat_g_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                             ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:6:inst_dds" ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                         ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input  ; Info     ; Stuck at GND                                                                                                    ;
+; dacdat_g_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                             ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:5:inst_dds" ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                         ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input  ; Info     ; Stuck at GND                                                                                                    ;
+; dacdat_g_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                             ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:4:inst_dds" ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                         ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input  ; Info     ; Stuck at GND                                                                                                    ;
+; dacdat_g_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                             ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:3:inst_dds" ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                         ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input  ; Info     ; Stuck at GND                                                                                                    ;
+; dacdat_g_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                             ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:2:inst_dds" ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                         ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input  ; Info     ; Stuck at GND                                                                                                    ;
+; dacdat_g_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                             ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:1:inst_dds" ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                         ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input  ; Info     ; Stuck at GND                                                                                                    ;
+; dacdat_g_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                             ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:0:inst_dds" ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                                                         ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+; phi_incr_i[18..17] ; Input  ; Info     ; Stuck at GND                                                                                                    ;
+; dacdat_g_o         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                             ;
++--------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller" ;
++-----------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------+
+; Port                  ; Type   ; Severity ; Details                                                                                                              ;
++-----------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------+
+; midi_cmds[0].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
+; midi_cmds[1].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
+; midi_cmds[2].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
+; midi_cmds[3].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
+; midi_cmds[4].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
+; midi_cmds[5].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
+; midi_cmds[6].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
+; midi_cmds[7].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
+; midi_cmds[8].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
+; midi_cmds[9].velocity ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                  ;
++-----------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1178,7 +1327,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:08     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -1188,9 +1337,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jun 29 17:43:45 2018
+    Info: Processing started: Sat Jun 30 18:15:10 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Synthesizer -c Synthesizer
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file source/midi_controller.vhd
+    Info (12022): Found design unit 1: midi_controller-rtl
+    Info (12023): Found entity 1: midi_controller
 Info (12021): Found 2 design units, including 1 entities, in source file source/uart_tick_generator.vhd
     Info (12022): Found design unit 1: tick_generator-rtl
     Info (12023): Found entity 1: tick_generator
@@ -1306,17 +1458,10 @@ Info (12128): Elaborating entity "uart_rx_only_top" for hierarchy "digital_audio
 Info (12128): Elaborating entity "sync_n_edgeDetector" for hierarchy "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|sync_n_edgeDetector:inst_sync_n_edgeDetector"
 Info (12128): Elaborating entity "modulo_divider" for hierarchy "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|modulo_divider:inst_modulo_divider"
 Info (12128): Elaborating entity "tick_generator" for hierarchy "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|tick_generator:inst_tick_generator"
-Warning (10492): VHDL Process Statement warning at UART_tick_generator.vhd(54): signal "half" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "fsm" for hierarchy "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm"
 Info (12128): Elaborating entity "rx_register_s2p" for hierarchy "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|rx_register_s2p:inst_rx_register_s2p"
-Info (12128): Elaborating entity "midi_fsm" for hierarchy "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm"
-Warning (10492): VHDL Process Statement warning at midi_controler.vhd(50): signal "next_fsm_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at midi_controler.vhd(46): inferring latch(es) for signal or variable "next_fsm_state", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "next_fsm_state.S_WAIT_DATA2" at midi_controler.vhd(46)
-Info (10041): Inferred latch for "next_fsm_state.S_WAIT_DATA1" at midi_controler.vhd(46)
-Info (10041): Inferred latch for "next_fsm_state.S_WAIT_STATUS" at midi_controler.vhd(46)
-Info (12128): Elaborating entity "DDS" for hierarchy "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:inst_dds"
-Warning (10492): VHDL Process Statement warning at DDS.vhd(58): signal "wave_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "midi_controller" for hierarchy "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller"
+Info (12128): Elaborating entity "DDS" for hierarchy "digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:0:inst_dds"
 Warning (113028): 1 out of 256 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported.
     Warning (113026): Memory Initialization File Address 255 is not initialized
 Info (19000): Inferred 2 megafunctions from design logic
@@ -1412,13 +1557,14 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[2] will power up to High
     Critical Warning (18010): Register digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[0] will power up to High
     Critical Warning (18010): Register digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder|count[1] will power up to High
-Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "codec_control:inst_codec_control|lpm_divide:Mod0|lpm_divide_25m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_kve:divider|add_sub_4_result_int[0]~10"
+Info (17049): 75 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 40 input pin(s) that do not drive logic
+Warning (21074): Design contains 43 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
     Warning (15610): No output dependent on input pin "SW[5]"
     Warning (15610): No output dependent on input pin "SW[6]"
     Warning (15610): No output dependent on input pin "SW[7]"
@@ -1457,17 +1603,18 @@ Warning (21074): Design contains 40 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO_0[33]"
     Warning (15610): No output dependent on input pin "GPIO_0[34]"
     Warning (15610): No output dependent on input pin "GPIO_0[35]"
-Info (21057): Implemented 1506 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "GPIO_0[0]"
+Info (21057): Implemented 923 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 52 input pins
     Info (21059): Implemented 6 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 1379 logic cells
+    Info (21061): Implemented 796 logic cells
     Info (21064): Implemented 64 RAM segments
     Info (21062): Implemented 4 DSP elements
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 55 warnings
-    Info: Peak virtual memory: 600 megabytes
-    Info: Processing ended: Fri Jun 29 17:43:56 2018
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:11
+    Info: Peak virtual memory: 4698 megabytes
+    Info: Processing ended: Sat Jun 30 18:15:18 2018
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 

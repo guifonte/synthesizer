@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C20F484) Path("C:/Users/ea999/Documents/GitHub/synthesizer/output_files/") File("Synthesizer.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C20F484) Path("C:/Users/megas/Documents/Git/Synth/output_files/") File("Synthesizer.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

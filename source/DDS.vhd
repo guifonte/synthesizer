@@ -49,7 +49,7 @@ begin
 		end if;
 	end process;
 
-	synth_tone: process (phi_cum, tone_on_i, addr)
+	synth_tone: process (phi_cum, tone_on_i, addr,wave_i)
 	begin 
 
 

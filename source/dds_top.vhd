@@ -25,12 +25,16 @@ end dds_top;
 
 ARCHITECTURE struct OF dds_top IS
 
-	SIGNAL top_phi_incr 	: std_logic_vector(N_CUM-1 downto 0);
-	SIGNAL top_tone_on  	: std_logic;
-	SIGNAL top_midi_data	: std_logic_vector(7 downto 0);
-	SIGNAL top_midi_signal 	: std_logic;
-	SIGNAL top_t_note_record: t_note_record;
-	
+	TYPE   NAUDIO_array_type  IS ARRAY (0 TO 9) OF std_logic_vector(N_AUDIO - 1 downto 0);
+	SIGNAL top_phi_incr 		: std_logic_vector(N_CUM-1 downto 0);
+	SIGNAL top_tone_on  		: std_logic;
+	SIGNAL top_midi_data		: std_logic_vector(7 downto 0);
+	SIGNAL top_midi_signal 		: std_logic;
+	SIGNAL top_t_note_record	: t_note_record;
+	SIGNAL dacdata_array		: NAUDIO_array_type;
+	SIGNAL top_midi_cmds		: t_midi_array;
+	SIGNAL top_dacdat_g_out		: std_logic_vector(N_AUDIO - 1 downto 0);
+
 	COMPONENT DDS is
 		port(
 			tone_on_i		: in    std_logic;
@@ -52,13 +56,13 @@ ARCHITECTURE struct OF dds_top IS
 		);
 	END COMPONENT;
 
-	COMPONENT midi_fsm is
+	COMPONENT midi_controller is
 		port(
 			rx_data_valid_in		: in    std_logic;
-			rx_data_in				: in    std_logic_vector(7 downto 0);
-			clk						: in	  std_logic;
-			reset_n					: in	  std_logic;
-			t_note_record_out		: out	  t_note_record
+			rx_data_in				: in	std_logic_vector(7 downto 0);
+			clk						: in	std_logic;
+			reset_n					: in	std_logic;
+			midi_cmds       		: out	t_midi_array
 		);
 	end COMPONENT;
 	
@@ -73,27 +77,50 @@ ARCHITECTURE struct OF dds_top IS
 			DATA_O 			=> top_midi_data
         );
 
-        inst_midi_fsm: midi_fsm
+        inst_midi_controller: midi_controller
         port map(
         	rx_data_valid_in	=>top_midi_signal,
 			rx_data_in			=>top_midi_data,
 			clk					=>clock,
 			reset_n				=>rst_n,
-			t_note_record_out	=> top_t_note_record
+			midi_cmds			=> top_midi_cmds
     	);
-	
-		inst_dds: DDS
-		port map(
-			tone_on_i		=> top_t_note_record.valid,
-			phi_incr_i		=> LUT_midi2dds(to_integer(unsigned(top_t_note_record.number))),
-			strobe_in		=> strobe_i,
-			clk				=> clock,
-			reset_n			=> rst_n,
-			wave_i			=> wave_ctrl,
-			dacdat_g_o		=> dacdat_g_out
-		);
+		
+		dds_inst_gen : FOR i IN 0 to 9 GENERATE
+			inst_dds:	DDS
+			PORT MAP(
+				clk         =>  clock,
+				reset_n     =>  rst_n,
+				phi_incr_i	=>  LUT_midi2dds(to_integer(unsigned(top_midi_cmds(i).number))),       -- Pick corresponding phi_incr in LUT
+				tone_on_i	=>  top_midi_cmds(i).valid,	                -- Note on/off
+				strobe_in	=>  strobe_i,		                -- pulse with 1clk-cycle width
+				--attenu_i	=>  note_attenu(i),	 				-- can derive from velocity parameter
+				wave_i		=> 	wave_ctrl,               
+				dacdat_g_o =>  dacdata_array(i)             -- collect output of each DDS to sum afterwards
+			);
+		END GENERATE dds_inst_gen;
 
 
+		--inst_dds: DDS
+		--port map(
+		--	tone_on_i		=> top_t_note_record.valid,
+		--	phi_incr_i		=> LUT_midi2dds(to_integer(unsigned(top_t_note_record.number))),
+		--	strobe_in		=> strobe_i,
+		--	clk				=> clock,
+		--	reset_n			=> rst_n,
+		--	wave_i			=> wave_ctrl,
+		--	dacdat_g_o		=> dacdat_g_out
+		--);
+		
+		out_comb: process(dacdata_array, top_dacdat_g_out)
+		Begin
+			dacdat_loop : for i in 0 to 9 loop
+			
+				top_dacdat_g_out <= std_logic_vector(signed(top_dacdat_g_out) + signed(dacdata_array(i)));
 
+			end loop dacdat_loop;
+		end process;
+
+		dacdat_g_out <= top_dacdat_g_out;
 
 END struct;	

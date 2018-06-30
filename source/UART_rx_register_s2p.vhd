@@ -32,7 +32,7 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR COMBINATIONAL LOGIC
   --------------------------------------------------
-  shift_comb: PROCESS(shiftreg, ser_i, activator)
+  shift_comb: PROCESS(shiftreg, ser_i, activator, count)
   BEGIN	
   next_shiftreg <= shiftreg;
   next_count <= count;
@@ -66,7 +66,7 @@ BEGIN
   -- CONCURRENT ASSIGNMENTS
   --------------------------------------------------
   -- take LSB of shiftreg as serial output
-  led_comb : PROCESS(shiftreg)
+  led_comb : PROCESS(shiftreg,count)
   BEGIN
 
   data_valid_out <= '0';

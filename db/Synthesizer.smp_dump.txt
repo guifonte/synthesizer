@@ -1,9 +1,15 @@
 
-State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_fsm:inst_midi_fsm|fsm_state
-Name fsm_state.S_WAIT_DATA2 fsm_state.S_WAIT_DATA1 fsm_state.S_WAIT_STATUS 
-fsm_state.S_WAIT_STATUS 0 0 0 
-fsm_state.S_WAIT_DATA1 0 1 1 
-fsm_state.S_WAIT_DATA2 1 0 1 
+State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_action
+Name note_action.DEL_NOTE note_action.SET_NOTE note_action.NUL_NOTE 
+note_action.NUL_NOTE 0 0 0 
+note_action.SET_NOTE 0 1 1 
+note_action.DEL_NOTE 1 0 1 
+
+State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_state
+Name midi_state.wait_data2 midi_state.wait_data1 midi_state.wait_status 
+midi_state.wait_status 0 0 0 
+midi_state.wait_data1 0 1 1 
+midi_state.wait_data2 1 0 1 
 
 State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state
 Name s_state.receiving s_state.begining s_state.not_begining 

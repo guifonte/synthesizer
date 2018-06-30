@@ -31,7 +31,7 @@ package tone_gen_pkg is
 	type t_note_record is
 		record
 						valid						: std_logic;
-						number					: std_logic_vector(6 downto 0);
+						number						: std_logic_vector(6 downto 0);
 						velocity					: std_logic_vector(6 downto 0);
 		end record;
 
