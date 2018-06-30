@@ -39,6 +39,6 @@ vcom -2008 -explicit -work work ../../source/midi_testbench.vhd
 
 
 # run the simulation
-vsim -novopt -t 1ns -lib work work.testbench_milestone2_top
+vsim -novopt -t 1ns -lib work work.midi_testbench
 do ../scripts/wave.do
-run 1500.0 us
+run 9000.0 us

@@ -64,8 +64,8 @@ END COMPONENT ;
 	CONSTANT clk_50M_halfp 	: time := 10 ns;  		-- Half-Period of Clock 50MHz
 	CONSTANT baud_31k250_per : time := 32 us;		-- One-Period of Baud Rate 31.25KHz
 	
-	SIGNAL tb_reg0_hi	: std_logic_vector(3 downto 0); -- to check DUT-internal signal
-	SIGNAL tb_reg0_lo	: std_logic_vector(3 downto 0);
+	--SIGNAL tb_reg0_hi	: std_logic_vector(3 downto 0); -- to check DUT-internal signal
+	--SIGNAL tb_reg0_lo	: std_logic_vector(3 downto 0);
 
 	SIGNAL tb_test_vector1 : std_logic_vector(9 downto 0); -- (start-bit)+(data-byte)+(stop-bit) to shift in serial_in
 	SIGNAL tb_test_vector2 : std_logic_vector(9 downto 0); -- (start-bit)+(data-byte)+(stop-bit) to shift in serial_in
@@ -74,15 +74,15 @@ END COMPONENT ;
 	
 BEGIN
   -- Instantiations
-  DUT: uart_rx_only_top
+  DUT: Milestone3_infrastructure_block
   PORT MAP (
 
-  	CLOCK_50		=>	tb_clock ,	
+  	CLOCK_50		=>	tb_clock,	
 	KEY				=>	tb_key,
 	SW				=>  tb_sw,
 	GPIO_0			=> 	tb_gpio_0,
 	AUD_XCK			=> 	tb_aud_xck,
-	I2C_SCLK		=> 	tb_i2c_sclk
+	I2C_SCLK		=> 	tb_i2c_sclk,
 	I2C_SDAT		=> 	tb_i2c_sdat,
 	AUD_DACDAT		=> 	tb_aud_dacdat,
 	AUD_BCLK		=> 	tb_aud_bclk,
@@ -105,8 +105,8 @@ BEGIN
 	-- VHDL-2008 Syntax allowing to bind 
 	--           internal signals to a debug signal in the testbench
 	-------------------------------------------
-	tb_reg0_hi <= <<signal DUT.hexa_hi : std_logic_vector(3 downto 0) >>;
-	tb_reg0_lo <= <<signal DUT.hexa_lo : std_logic_vector(3 downto 0) >>;
+	--tb_reg0_hi <= <<signal DUT.hexa_hi : std_logic_vector(3 downto 0) >>;
+	--tb_reg0_lo <= <<signal DUT.hexa_lo : std_logic_vector(3 downto 0) >>;
 	
 	
   -- Stimuli Process
@@ -126,6 +126,20 @@ BEGIN
 		tb_test_vector2 <= B"0_0011_1100_1";
 		--speed: very loud
 		tb_test_vector3 <= B"0_0111_1111_1";
+
+		--ativando o I2S
+		tb_sw(0) <= '0';
+		tb_sw(1) <= '0';
+		tb_sw(2) <= '1';
+
+		--ativando o DDS
+		tb_sw(8) <= '1';
+		--desativando o FIR
+		tb_sw(9) <= '0';
+		--ativando a onda senoidal
+		tb_sw(3) <= '0';
+		tb_sw(4) <= '0';
+
 
 		--Reseting
 		----------------
