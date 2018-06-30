@@ -73,7 +73,7 @@ BEGIN
 
 			IF (fall ='1') AND (count >= 10) THEN
 				s_nextstate <= begining ;
-    			next_count <= to_unsigned(1,4);
+    			next_count <= to_unsigned(0,4);
     		END IF; 
 
   		WHEN OTHERS => 

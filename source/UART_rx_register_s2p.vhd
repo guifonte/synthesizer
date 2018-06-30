@@ -60,7 +60,7 @@ BEGIN
   BEGIN
 
   data_valid_out <= '0';
-  midi_o <= (others => '0');
+  midi_o <= (others => '1');
 
   	IF (shiftreg(9) = '0' AND shiftreg(0) = '1') THEN
   		midi_o <= shiftreg (8 downto 1);

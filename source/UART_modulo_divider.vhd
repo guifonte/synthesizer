@@ -38,7 +38,7 @@ BEGIN
   --------------------------------------------------
   comb_logic: PROCESS(count)
   BEGIN	
-	IF count = 20 THEN
+	IF count = 19 THEN
 	next_count <= to_unsigned(0,width);
 	ElSE	
 	next_count <= count + 1 ;
@@ -60,7 +60,7 @@ BEGIN
 	
   final_logic: PROCESS(count)
   BEGIN	
-	IF (count >10) THEN
+	IF (count >9) THEN
 	clk_div <= '1';
 	ElSE
 	clk_div <= '0';
