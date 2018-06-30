@@ -82,6 +82,7 @@ add wave -noupdate -group UART_S2P -color {Violet Red} /midi_testbench/DUT/inst_
 add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/rx_data_valid_in
 add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/rx_data_in
 add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/clk
+add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/receiving_control
 add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/reset_n
 add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/midi_cmds
 add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/midi_state
@@ -97,7 +98,7 @@ add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digit
 add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/note_update
 add wave -noupdate -expand -group MIDI_CONTROLLER /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/next_note_update
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {8170067 ns} 0}
+WaveRestoreCursors {{Cursor 1} {527622 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 199
 configure wave -valuecolwidth 100
@@ -113,4 +114,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {7131312 ns} {9098352 ns}
+WaveRestoreZoom {0 ns} {1967040 ns}

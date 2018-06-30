@@ -72,7 +72,7 @@ BEGIN
   data_valid_out <= '0';
   midi_o <= (others => '1');
 
-  	IF (count >= 10) THEN
+  	IF (count = 10) THEN
   		midi_o <= shiftreg (8 downto 1);
       data_valid_out <= '1';
   	END IF;
