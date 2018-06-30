@@ -41,8 +41,8 @@ BEGIN
 		next_shiftreg <=  shiftreg(8 downto 0 ) &  ser_i; -- LSB='0' is the start_bit
     next_count <= count + 1; 
 	END IF;  
-  IF (count >= 10) THEN
-    next_count <= to_unsigned(0,4);
+  IF (count > 10) THEN
+    next_count <= to_unsigned(1,4);
 
 	END IF;
 
