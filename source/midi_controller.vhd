@@ -25,8 +25,11 @@ architecture rtl of midi_controller is
 	
 	type t_midi_fsm_states is (
     wait_status,
+    receiving_status,
     wait_data1,
-    wait_data2
+    receiving_data1,
+    wait_data2,
+    receiving_data2
 	);
 	
 	type t_note_action is (
@@ -70,37 +73,68 @@ begin
         next_note_action    <=  note_action;
         next_num_buf        <=  num_buf;
         next_vel_buf        <=  vel_buf;
-        if rx_data_valid_in then
-            case midi_state is
-                when wait_status =>
-                    if (rx_data_in(7)='1') then
-                        next_midi_state <= wait_data1;
-                        if (rx_data_in(6 downto 4) = "001") then
-                            next_note_action <= SET_NOTE;
-                        elsif (rx_data_in(6 downto 4) = "000")  then
-                            next_note_action <= DEL_NOTE;
-                        else
-                            next_note_action <= NUL_NOTE;
-                        end if ;
-                    end if ;    
-                when wait_data1 =>
-                    if (rx_data_in(7)='0') then
-                        next_midi_state <= wait_data2;
-                        next_num_buf    <= rx_data_in(6 downto 0);
-                    end if ;        
-                when wait_data2 =>
-                    if (rx_data_in(7)='0') then
-                        next_midi_state     <= wait_status;
-                        next_vel_buf        <= rx_data_in(6 downto 0);
-                        next_note_update    <= '1';
-                        if ((note_action = SET_NOTE) AND (unsigned(rx_data_in(6 downto 0)) = 0)) then
-                            next_note_action <= DEL_NOTE;
-                        end if ;
-                    end if;
-                when others =>
+        case midi_state is
+            when wait_status =>
+                if (rx_data_valid_in = '1') then
+                    next_midi_state <= receiving_status;   
+                end if;
+            
+            when receiving_status =>
+                if (rx_data_in(7)='1') then
+                    if (rx_data_in(6 downto 4) = "001") then
+                        next_note_action <= SET_NOTE;
+                    elsif (rx_data_in(6 downto 4) = "000")  then
+                        next_note_action <= DEL_NOTE;
+                    else
+                        next_note_action <= NUL_NOTE;
+                    end if ;
+                elsif (rx_data_in(7)='0') then
                     next_midi_state <= wait_status;
-            end case ;
-        end if;
+                end if ;
+
+                if (rx_data_valid_in = '0') then
+                    next_midi_state <= wait_data1;
+                end if;
+
+            when wait_data1 =>
+                if (rx_data_valid_in = '1') then
+                    next_midi_state <= receiving_data1;   
+                end if;
+            
+            when receiving_data1 =>
+                
+                if (rx_data_in(7)='0') then
+                    next_num_buf    <= rx_data_in(6 downto 0);
+                elsif (rx_data_in(7)='1') then
+                    next_midi_state <= wait_status;
+                end if ; 
+
+                if (rx_data_valid_in = '0') then
+                    next_midi_state <= wait_data2;
+                end if;     
+            
+            when wait_data2 =>
+                if (rx_data_valid_in = '1') then
+                    next_midi_state <= receiving_data2;   
+                end if;
+
+            when receiving_data2 =>
+                if (rx_data_in(7)='0') then
+                    next_vel_buf        <= rx_data_in(6 downto 0);
+                    next_note_update    <= '1';
+                    if ((note_action = SET_NOTE) AND (unsigned(rx_data_in(6 downto 0)) = 0)) then
+                        next_note_action <= DEL_NOTE;
+                    end if ;
+                elsif (rx_data_in(7)='0') then
+                    next_midi_state <= wait_status;
+                end if;
+
+                if (rx_data_valid_in = '0') then
+                    next_midi_state <= wait_status;   
+                end if;
+            when others =>
+                next_midi_state <= wait_status;
+        end case ;
     end process fsm_comb_in;
 
     fsm_comb_out : process(all)

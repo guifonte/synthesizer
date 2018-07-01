@@ -188,8 +188,29 @@ BEGIN
 		end loop;
 
 
+		wait for 400 * clk_50M_halfp;
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= tb_test_vector1(I);
+			wait for baud_31k250_per;
+		end loop;
+		
 		wait for 200 * clk_50M_halfp;
 
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= tb_test_vector2(I);
+			wait for baud_31k250_per;
+		end loop;
+
+		wait for 200 * clk_50M_halfp;
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= tb_test_vector3(I);
+			wait for baud_31k250_per;
+		end loop;
+
+		wait for 400 * clk_50M_halfp;
 		
 	END PROCESS stimuli;
 	
