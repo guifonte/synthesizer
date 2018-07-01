@@ -58,13 +58,13 @@ ARCHITECTURE struct OF dds_top IS
 		);
 	END COMPONENT;
 
-	COMPONENT midi_controller is
+	COMPONENT midi_controler is
 		port(
 			rx_data_valid_in		: in    std_logic;
-			rx_data_in				: in	std_logic_vector(7 downto 0);
-			clk						: in	std_logic;
-			reset_n					: in	std_logic;
-			midi_cmds       		: out	t_midi_array
+			rx_data_in				: in    std_logic_vector(7 downto 0);
+			clk						: in	  std_logic;
+			reset_n					: in	  std_logic;
+			t_note_record_out		: out	  t_note_record
 		);
 	end COMPONENT;
 	
@@ -80,29 +80,25 @@ ARCHITECTURE struct OF dds_top IS
 			DATA_O 			=> top_midi_data
         );
 
-        inst_midi_controller: midi_controller
+        inst_midi_controler: midi_controler
         port map(
         	rx_data_valid_in	=>top_midi_signal,
 			rx_data_in			=>top_midi_data,
 			clk					=>clock,
 			reset_n				=>rst_n,
-			midi_cmds			=> top_midi_cmds
+			t_note_record_out	=> top_t_note_record
     	);
 		
-		dds_inst_gen : FOR i IN 0 to 9 GENERATE
-			inst_dds:	DDS
-			PORT MAP(
-				clk         =>  clock,
-				reset_n     =>  rst_n,
-				phi_incr_i	=>  LUT_midi2dds(to_integer(unsigned(top_midi_cmds(i).number))),       -- Pick corresponding phi_incr in LUT
-				tone_on_i	=>  top_midi_cmds(i).valid,	                -- Note on/off
-				strobe_in	=>  strobe_i,		                -- pulse with 1clk-cycle width
-				--attenu_i	=>  note_attenu(i),	 				-- can derive from velocity parameter
-				wave_i		=> 	wave_ctrl,               
-				dacdat_g_o =>  dacdata_array(i)             -- collect output of each DDS to sum afterwards
-			);
-		END GENERATE dds_inst_gen;
-
+		inst_dds:	DDS
+		PORT MAP(
+			clk         =>  clock,
+			reset_n     =>  rst_n,
+			phi_incr_i	=>  LUT_midi2dds(to_integer(unsigned(top_t_note_record.number))),       -- Pick corresponding phi_incr in LUT
+			tone_on_i	=>  top_t_note_record.valid,	                -- Note on/off
+			strobe_in	=>  strobe_i,		                -- pulse with 1clk-cycle width
+			wave_i		=> 	wave_ctrl,               
+			dacdat_g_o 	=>  top_dacdat_g_out            -- collect output of each DDS to sum afterwards
+		);
 
 		--inst_dds: DDS
 		--port map(
@@ -115,15 +111,5 @@ ARCHITECTURE struct OF dds_top IS
 		--	dacdat_g_o		=> dacdat_g_out
 		--);
 		
-		out_comb: process(dacdata_array, top_dacdat_g_out)
-		Begin
-			dacdat_loop : for i in 0 to 9 loop
-			
-				top_dacdat_g_out <= std_logic_vector(signed(top_dacdat_g_out) + signed(dacdata_array(i)));
-
-			end loop dacdat_loop;
-		end process;
-
-		dacdat_g_out <= top_dacdat_g_out;
-
+		
 END struct;	

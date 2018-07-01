@@ -20,25 +20,19 @@ add wave -noupdate -expand -group {DDS_TOP
 add wave -noupdate -expand -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/rst_n
 add wave -noupdate -expand -group {DDS_TOP
-} -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/dacdat_g_out
-add wave -noupdate -expand -group {DDS_TOP
-} -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_phi_incr
-add wave -noupdate -expand -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_tone_on
 add wave -noupdate -expand -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_midi_data
 add wave -noupdate -expand -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_midi_signal
 add wave -noupdate -expand -group {DDS_TOP
-} -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_t_note_record
-add wave -noupdate -expand -group {DDS_TOP
-} -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/dacdata_array
-add wave -noupdate -expand -group {DDS_TOP
-} -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_midi_cmds
-add wave -noupdate -expand -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_dacdat_g_out
 add wave -noupdate -expand -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/led_out
+add wave -noupdate -expand -group {DDS_TOP
+} -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_midi_signal
+add wave -noupdate -expand -group {DDS_TOP
+} -color {Medium Orchid} -expand -subitemconfig {/midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_t_note_record.valid {-color {Medium Orchid} -height 15} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_t_note_record.number {-color {Medium Orchid} -height 15} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_t_note_record.velocity {-color {Medium Orchid} -height 15}} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_t_note_record
 add wave -noupdate -group {UART
 } -color Yellow /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/CLOCK_50
 add wave -noupdate -group {UART
@@ -99,25 +93,24 @@ add wave -noupdate -group UART_S2P -color {Violet Red} /midi_testbench/DUT/inst_
 add wave -noupdate -group UART_S2P -color {Violet Red} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_rx_register_s2p/next_shiftreg
 add wave -noupdate -group UART_S2P -color {Violet Red} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_rx_register_s2p/count
 add wave -noupdate -group UART_S2P -color {Violet Red} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/inst_rx_register_s2p/next_count
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/rx_data_valid_in
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/rx_data_in
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/clk
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/reset_n
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/midi_cmds
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/midi_state
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/next_midi_state
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/note_action
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/next_note_action
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/num_buf
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/next_num_buf
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/vel_buf
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/next_vel_buf
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/midi_regs
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/next_midi_regs
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/note_update
-add wave -noupdate -group MIDI_CONTROLLER -color {Light Steel Blue} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controller/next_note_update
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/rx_data_valid_in
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/rx_data_in
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/clk
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/reset_n
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/t_note_record_out
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/midi_state
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/next_midi_state
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/note_action_reg
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/next_note_action_reg
+add wave -noupdate -expand -group {MIDI_CONTROLLER} -color Tan /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/data1_reg
+add wave -noupdate -expand -group {MIDI_CONTROLLER} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/next_data1_reg
+add wave -noupdate -expand -group {MIDI_CONTROLLER} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/data2_reg
+add wave -noupdate -expand -group {MIDI_CONTROLLER} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/next_data2_reg
+add wave -noupdate -expand -group {MIDI_CONTROLLER} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/t_note_rec_reg
+add wave -noupdate -expand -group {MIDI_CONTROLLER} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/next_t_note_rec_reg
+add wave -noupdate -expand -group {MIDI_CONTROLLER} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_midi_controler/note_update
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {1172310 ns} 0}
+WaveRestoreCursors {{Cursor 1} {41220 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 199
 configure wave -valuecolwidth 100
@@ -133,4 +126,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {16131312 ns} {18098352 ns}
+WaveRestoreZoom {0 ns} {1967040 ns}
