@@ -17,7 +17,8 @@ entity midi_controller is
 		rx_data_in					: in        std_logic_vector(7 downto 0);
 		clk							: in        std_logic;
 		reset_n						: in        std_logic;
-		midi_cmds       			: out       t_midi_array
+        midi_cmds       			: out       t_midi_array;
+        led_r_out                   : out       std_logic_vector(9 downto 0)
 	);
 end entity;
 
@@ -44,6 +45,7 @@ architecture rtl of midi_controller is
 	signal vel_buf, next_vel_buf				    	:	std_logic_vector(6 downto 0);
 	signal midi_regs, next_midi_regs        	        :	t_midi_array;
 	signal note_update, next_note_update				:	std_logic;
+	signal led_r_reg, next_led_r_reg						: std_logic_vector(9 downto 0);
 	
 begin
 
@@ -56,6 +58,7 @@ begin
             note_action <=  NUL_NOTE;
             num_buf     <=  (others=>'0');
             vel_buf     <=  (others=>'0');
+				led_r_reg	<=  (others=>'0');		
         elsif rising_edge(clk) then
             midi_state  <=  next_midi_state;
             midi_regs   <=  next_midi_regs;
@@ -63,6 +66,7 @@ begin
             note_action <=  next_note_action;
             num_buf     <=  next_num_buf;
             vel_buf     <=  next_vel_buf;
+				led_r_reg	<=  next_led_r_reg;
         end if ;
     end process all_flipflops;
 
@@ -141,17 +145,19 @@ begin
         variable set_done : boolean;
     begin
         next_midi_regs  <=  midi_regs;
-
+		  next_led_r_reg  <=  led_r_reg;
+		  
         if (note_update) then
             set_done := false;
             case (note_action) is
                 when SET_NOTE =>
-                    set_loop : for i in 0 to 0 loop
-                        if not(set_done) then
+                    set_loop : for i in 0 to 9 loop
+                        if NOT(set_done) then
                             if ((midi_regs(i).valid = '0') OR (i = 9)) then
                                 next_midi_regs(i).valid     <=  '1';
                                 next_midi_regs(i).number    <= num_buf;
                                 next_midi_regs(i).velocity  <= vel_buf;
+                                next_led_r_reg(i)           <=  '1';
                                 set_done := true;
                             end if ;
                         end if ;
@@ -160,6 +166,7 @@ begin
                     del_loop : for i in 0 to 9 loop
                         if ((midi_regs(i).valid = '1') AND (midi_regs(i).number = num_buf)) then
                             next_midi_regs(i).valid <= '0';
+                            next_led_r_reg(i)       <= '0';
                         end if ;
                     end loop ; -- del_loop
                 when others => null;
@@ -168,5 +175,6 @@ begin
     end process fsm_comb_out;
 
 midi_cmds <= midi_regs;
+led_r_out <= led_r_reg;
 
 end rtl;

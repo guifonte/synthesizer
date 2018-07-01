@@ -20,13 +20,13 @@ entity dds_top is
 		strobe_i		: in 	  std_logic;
 		rst_n			: in    std_logic;
 		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0);
-		led_out			: out 	std_logic
+		led_out			: out 	std_logic;
+		led_red_out		: out	std_logic_vector(9 downto 0)
 	);
 end dds_top;
 
 ARCHITECTURE struct OF dds_top IS
 
-	TYPE   NAUDIO_array_type  IS ARRAY (0 TO 9) OF std_logic_vector(N_AUDIO - 1 downto 0);
 	SIGNAL top_phi_incr 		: std_logic_vector(N_CUM-1 downto 0);
 	SIGNAL top_tone_on  		: std_logic;
 	SIGNAL top_midi_data		: std_logic_vector(7 downto 0);
@@ -64,10 +64,21 @@ ARCHITECTURE struct OF dds_top IS
 			rx_data_in				: in	std_logic_vector(7 downto 0);
 			clk						: in	std_logic;
 			reset_n					: in	std_logic;
-			midi_cmds       		: out	t_midi_array
+			midi_cmds       		: out	t_midi_array;
+			led_r_out				: out	std_logic_vector(9 downto 0)
 		);
 	end COMPONENT;
 	
+	COMPONENT dacdat_sum is
+		port(
+			dacdat_in       		    : in        NAUDIO_array_type;
+			dacdat_sum_out              : out       std_logic_vector(N_AUDIO - 1 downto 0);
+			strobe_in                    : in        std_logic;
+			clk							: in        std_logic;
+			reset_n                     : in        std_logic
+		);
+	end COMPONENT;
+
 	BEGIN
 
         inst_uart_rx_only_top: uart_rx_only_top
@@ -86,7 +97,8 @@ ARCHITECTURE struct OF dds_top IS
 			rx_data_in			=>top_midi_data,
 			clk					=>clock,
 			reset_n				=>rst_n,
-			midi_cmds			=> top_midi_cmds
+			midi_cmds			=> top_midi_cmds,
+			led_r_out			=> led_red_out
     	);
 		
 		dds_inst_gen : FOR i IN 0 to 9 GENERATE
@@ -103,6 +115,14 @@ ARCHITECTURE struct OF dds_top IS
 			);
 		END GENERATE dds_inst_gen;
 
+		inst_dacdat_sum: dacdat_sum
+		port map(
+			dacdat_in       		    => dacdata_array,
+			dacdat_sum_out              => dacdat_g_out,
+			strobe_in                   => strobe_i,
+			clk							=> clock,
+			reset_n                     => rst_n
+		);
 
 		--inst_dds: DDS
 		--port map(
@@ -115,15 +135,15 @@ ARCHITECTURE struct OF dds_top IS
 		--	dacdat_g_o		=> dacdat_g_out
 		--);
 		
-		out_comb: process(dacdata_array, top_dacdat_g_out)
-		Begin
-			dacdat_loop : for i in 0 to 9 loop
-			
-				top_dacdat_g_out <= std_logic_vector(signed(top_dacdat_g_out) + signed(dacdata_array(i)));
+		--out_comb: process(dacdata_array, top_dacdat_g_out)
+		--Begin
+		--	dacdat_loop : for i in 0 to 9 loop
+		--	
+		--		top_dacdat_g_out <= std_logic_vector(signed(top_dacdat_g_out) + signed(dacdata_array(i)));
+--
+		--	end loop dacdat_loop;
+		--end process;
 
-			end loop dacdat_loop;
-		end process;
-
-		dacdat_g_out <= top_dacdat_g_out;
+		--dacdat_g_out <= dacdata_array(0);
 
 END struct;	

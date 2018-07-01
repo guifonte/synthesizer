@@ -20,6 +20,7 @@ ENTITY Milestone3_infrastructure_block IS
 		SW						: IN	std_logic_vector(9 downto 0);	-- DE2 input switches
 		GPIO_0					: IN 	std_logic_vector(35 downto 0);
 		LEDG					: OUT 	std_logic_vector(7 downto 0);
+		LEDR					: out	std_logic_vector(9 downto 0);
 		AUD_XCK					: OUT	std_logic;		-- master clock for Audio Codec
 		I2C_SCLK				: OUT	std_logic;		-- clock from I2C master block
 		I2C_SDAT				: INOUT std_logic;		-- data  from I2C master block
@@ -99,7 +100,8 @@ ARCHITECTURE struct OF Milestone3_infrastructure_block IS
 		DACDAT_s_out			: OUT	std_logic;
 		BCLK_out				: OUT	std_logic;
 		WS_out					: OUT std_logic;
-		LED_out 				: OUT std_logic
+		LED_out 				: OUT std_logic;
+		LED_R_out				: OUT std_logic_vector(9 downto 0)
 	);
 	END COMPONENT ;
 	
@@ -163,7 +165,8 @@ ARCHITECTURE struct OF Milestone3_infrastructure_block IS
 		DACDAT_s_out			=> AUD_DACDAT,	
 		BCLK_out				=> AUD_BCLK,	
 		WS_out					=> top_WS,
-		LED_out 				=> LEDG(0)
+		LED_out 				=> LEDG(0),
+		LED_R_out				=> LEDR
 		);
 
 END struct;	

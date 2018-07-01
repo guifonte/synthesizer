@@ -41,7 +41,6 @@ package tone_gen_pkg is
 								velocity => (others => '0'));
 
 	type t_midi_array is array (0 to 9) of t_note_record; -- 10x note_record
-
    -------------------------------------------------------------------------------
 	-- CONSTANT DECLARATION FOR SEVERAL BLOCKS (DDS, TONE_GENERATOR, ...)
 	-------------------------------------------------------------------------------
@@ -56,7 +55,8 @@ package tone_gen_pkg is
     subtype t_audio_range is integer range -(2**(N_RESOL-1)) to (2**(N_RESOL-1))-1;  -- range : [-2^12; +(2^12)-1]
 
 	type t_lut_rom is array (0 to L-1) of t_audio_range;
-
+	
+	TYPE   NAUDIO_array_type  IS ARRAY (0 TO 9) OF std_logic_vector(N_AUDIO - 1 downto 0);
 	constant LUT : t_lut_rom :=(
 	0, 101, 201, 301, 401, 501, 601, 700, 799, 897, 995, 1092, 1189, 1285, 1380, 1474, 1567,
 	1660, 1751, 1842, 1931, 2019, 2106, 2191, 2276, 2359, 2440, 2520, 2598, 2675, 2751, 2824,
