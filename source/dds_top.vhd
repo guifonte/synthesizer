@@ -20,14 +20,13 @@ entity dds_top is
 		strobe_i		: in 	  std_logic;
 		rst_n			: in    std_logic;
 		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0);
-		led_out			: out 	std_logic;
+		led_green_out   : out 	std_logic_vector(7 downto 0);
 		led_red_out		: out	std_logic_vector(9 downto 0)
 	);
 end dds_top;
 
 ARCHITECTURE struct OF dds_top IS
 
-	SIGNAL top_phi_incr 		: std_logic_vector(N_CUM-1 downto 0);
 	SIGNAL top_tone_on  		: std_logic;
 	SIGNAL top_midi_data		: std_logic_vector(7 downto 0);
 	SIGNAL top_midi_signal 		: std_logic;
@@ -65,7 +64,8 @@ ARCHITECTURE struct OF dds_top IS
 			clk						: in	std_logic;
 			reset_n					: in	std_logic;
 			midi_cmds       		: out	t_midi_array;
-			led_r_out				: out	std_logic_vector(9 downto 0)
+			led_r_out				: out	std_logic_vector(9 downto 0);
+			led_g_out				: out	std_logic_vector(6 downto 0)
 		);
 	end COMPONENT;
 	
@@ -86,7 +86,7 @@ ARCHITECTURE struct OF dds_top IS
         	CLOCK_50 		=> clock,
 			RESET_N			=> rst_n,
 			GPIO_1   		=> midi_serial_i,
-			LED_O			=> led_out,
+			LED_O			=> led_green_out(0),
 			DATA_VALID_O 	=> top_midi_signal,
 			DATA_O 			=> top_midi_data
         );
@@ -98,7 +98,8 @@ ARCHITECTURE struct OF dds_top IS
 			clk					=>clock,
 			reset_n				=>rst_n,
 			midi_cmds			=> top_midi_cmds,
-			led_r_out			=> led_red_out
+			led_r_out			=> led_red_out,
+			led_g_out			=> led_green_out(7 downto 1)
     	);
 		
 		dds_inst_gen : FOR i IN 0 to 9 GENERATE

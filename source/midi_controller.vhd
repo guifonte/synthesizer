@@ -18,7 +18,8 @@ entity midi_controller is
 		clk							: in        std_logic;
 		reset_n						: in        std_logic;
         midi_cmds       			: out       t_midi_array;
-        led_r_out                   : out       std_logic_vector(9 downto 0)
+        led_r_out                   : out       std_logic_vector(9 downto 0);
+        led_g_out                   : out       std_logic_vector(6 downto 0)
 	);
 end entity;
 
@@ -30,7 +31,8 @@ architecture rtl of midi_controller is
     wait_data1,
     receiving_data1,
     wait_data2,
-    receiving_data2
+    receiving_data2,
+    waiting_after_data2
 	);
 	
 	type t_note_action is (
@@ -45,8 +47,8 @@ architecture rtl of midi_controller is
 	signal vel_buf, next_vel_buf				    	:	std_logic_vector(6 downto 0);
 	signal midi_regs, next_midi_regs        	        :	t_midi_array;
 	signal note_update, next_note_update				:	std_logic;
-	signal led_r_reg, next_led_r_reg						: std_logic_vector(9 downto 0);
-	
+	signal led_r_reg, next_led_r_reg					:   std_logic_vector(9 downto 0);
+	signal led_g_reg, next_led_g_reg                    :   std_logic_vector(6 downto 0);
 begin
 
     all_flipflops: PROCESS(clk, reset_n)
@@ -58,7 +60,8 @@ begin
             note_action <=  NUL_NOTE;
             num_buf     <=  (others=>'0');
             vel_buf     <=  (others=>'0');
-				led_r_reg	<=  (others=>'0');		
+            led_r_reg	<=  (others=>'0');
+            led_g_reg	<=  (others=>'0');		
         elsif rising_edge(clk) then
             midi_state  <=  next_midi_state;
             midi_regs   <=  next_midi_regs;
@@ -66,7 +69,8 @@ begin
             note_action <=  next_note_action;
             num_buf     <=  next_num_buf;
             vel_buf     <=  next_vel_buf;
-				led_r_reg	<=  next_led_r_reg;
+            led_r_reg	<=  next_led_r_reg;
+            led_g_reg	<=  next_led_g_reg;
         end if ;
     end process all_flipflops;
 
@@ -74,9 +78,13 @@ begin
     begin
         next_midi_state    <=  midi_state;
         next_note_update    <=  '0';
+		  next_led_g_reg(1)	<= '0';
         next_note_action    <=  note_action;
         next_num_buf        <=  num_buf;
         next_vel_buf        <=  vel_buf;
+
+        next_led_g_reg      <=  led_g_reg;
+
         case midi_state is
             when wait_status =>
                 if (rx_data_valid_in = '1') then
@@ -126,16 +134,22 @@ begin
                 if (rx_data_in(7)='0') then
                     next_vel_buf        <= rx_data_in(6 downto 0);
                     next_note_update    <= '1';
+						  next_led_g_reg(1)	<= '1';
                     if ((note_action = SET_NOTE) AND (unsigned(rx_data_in(6 downto 0)) = 0)) then
                         next_note_action <= DEL_NOTE;
                     end if ;
-                elsif (rx_data_in(7)='0') then
+                    next_midi_state <= waiting_after_data2;
+                end if;
+                if (rx_data_in(7)='0') then
                     next_midi_state <= wait_status;
                 end if;
 
+
+            when waiting_after_data2 =>
                 if (rx_data_valid_in = '0') then
                     next_midi_state <= wait_status;   
                 end if;
+
             when others =>
                 next_midi_state <= wait_status;
         end case ;
@@ -145,7 +159,7 @@ begin
         variable set_done : boolean;
     begin
         next_midi_regs  <=  midi_regs;
-		  next_led_r_reg  <=  led_r_reg;
+		next_led_r_reg  <=  led_r_reg;
 		  
         if (note_update) then
             set_done := false;
@@ -176,5 +190,6 @@ begin
 
 midi_cmds <= midi_regs;
 led_r_out <= led_r_reg;
+led_g_out <= led_g_reg;
 
 end rtl;

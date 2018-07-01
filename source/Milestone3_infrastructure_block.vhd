@@ -100,7 +100,7 @@ ARCHITECTURE struct OF Milestone3_infrastructure_block IS
 		DACDAT_s_out			: OUT	std_logic;
 		BCLK_out				: OUT	std_logic;
 		WS_out					: OUT std_logic;
-		LED_out 				: OUT std_logic;
+		LED_G_out 				: OUT std_logic_vector(7 downto 0);
 		LED_R_out				: OUT std_logic_vector(9 downto 0)
 	);
 	END COMPONENT ;
@@ -165,7 +165,7 @@ ARCHITECTURE struct OF Milestone3_infrastructure_block IS
 		DACDAT_s_out			=> AUD_DACDAT,	
 		BCLK_out				=> AUD_BCLK,	
 		WS_out					=> top_WS,
-		LED_out 				=> LEDG(0),
+		LED_G_out 				=> LEDG,
 		LED_R_out				=> LEDR
 		);
 

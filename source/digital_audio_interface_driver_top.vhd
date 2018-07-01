@@ -25,7 +25,7 @@ ENTITY digital_audio_interface_driver_top IS
 		DACDAT_s_out			: OUT	std_logic;
 		BCLK_out				: OUT	std_logic;
 		WS_out					: OUT std_logic;
-		LED_out 				: OUT std_logic;
+		LED_G_out 				: OUT std_logic_vector(7 downto 0);
 		LED_R_out				: OUT std_logic_vector(9 downto 0)
 	);
 END digital_audio_interface_driver_top ;
@@ -80,7 +80,7 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		strobe_i		: in 	  std_logic;
 		rst_n			: in    std_logic;
 		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0);
-		led_out			: out 	std_logic;
+		led_green_out	: out 	std_logic_vector(7 downto 0)		;
 		led_red_out		: out	std_logic_vector(9 downto 0)		
 	);
 	END COMPONENT;
@@ -122,14 +122,14 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		
 		inst_dds_top: dds_top 
 		PORT MAP(
-			midi_serial_i	=> MIDI_SERIAL_in,
-			wave_ctrl		=> WAVE_ctrl_in,
-			clock			=> CLK_12M,
-			strobe_i		=> top_strobe,
-			rst_n			=> RESET_N,
-			dacdat_g_out	=> top_DDS_DACDAT,
-			led_out 		=> LED_out,
-			led_red_out		=> LED_R_out
+			midi_serial_i		=> MIDI_SERIAL_in,
+			wave_ctrl			=> WAVE_ctrl_in,
+			clock				=> CLK_12M,
+			strobe_i			=> top_strobe,
+			rst_n				=> RESET_N,
+			dacdat_g_out		=> top_DDS_DACDAT,
+			led_green_out	 	=> LED_G_out,
+			led_red_out			=> LED_R_out
 		);
 		
 	  --------------------------------------------------
