@@ -59,13 +59,13 @@ ARCHITECTURE struct OF dds_top IS
 
 	COMPONENT midi_controller is
 		port(
-			rx_data_valid_in		: in    std_logic;
-			rx_data_in				: in	std_logic_vector(7 downto 0);
-			clk						: in	std_logic;
-			reset_n					: in	std_logic;
-			midi_cmds       		: out	t_midi_array;
-			led_r_out				: out	std_logic_vector(9 downto 0);
-			led_g_out				: out	std_logic_vector(6 downto 0)
+			rx_data_valid_in		: in        std_logic;
+			rx_data_in					: in        std_logic_vector(7 downto 0);
+			clk							: in        std_logic;
+			reset_n						: in        std_logic;
+	        midi_cmds       			: out       t_midi_array;
+	        led_r_out                   : out       std_logic_vector(9 downto 0);
+	        led_g_out                   : out       std_logic_vector(6 downto 0)
 		);
 	end COMPONENT;
 	

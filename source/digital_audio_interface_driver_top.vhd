@@ -80,7 +80,7 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		strobe_i		: in 	  std_logic;
 		rst_n			: in    std_logic;
 		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0);
-		led_green_out	: out 	std_logic_vector(7 downto 0)		;
+		led_green_out   : out 	std_logic_vector(7 downto 0);
 		led_red_out		: out	std_logic_vector(9 downto 0)		
 	);
 	END COMPONENT;
