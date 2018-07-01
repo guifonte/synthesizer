@@ -24,7 +24,8 @@ ENTITY digital_audio_interface_driver_top IS
 		WAVE_ctrl_in			: IN std_logic_vector(1 downto 0);
 		DACDAT_s_out			: OUT	std_logic;
 		BCLK_out				: OUT	std_logic;
-		WS_out					: OUT std_logic
+		WS_out					: OUT std_logic;
+		LED_out 				: OUT std_logic
 	);
 END digital_audio_interface_driver_top ;
 
@@ -75,9 +76,10 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 		midi_serial_i	: in    std_logic;
 		wave_ctrl		: in 	std_logic_vector(1 downto 0);
 		clock			: in    std_logic;
-		strobe_i		: in 	std_logic;
+		strobe_i		: in 	  std_logic;
 		rst_n			: in    std_logic;
-		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0)
+		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0);
+		led_out			: out 	std_logic
 	);
 	END COMPONENT;
 	
@@ -123,7 +125,8 @@ ARCHITECTURE struct OF digital_audio_interface_driver_top IS
 			clock			=> CLK_12M,
 			strobe_i		=> top_strobe,
 			rst_n			=> RESET_N,
-			dacdat_g_out	=> top_DDS_DACDAT
+			dacdat_g_out	=> top_DDS_DACDAT,
+			led_out 		=> LED_out
 		);
 		
 	  --------------------------------------------------

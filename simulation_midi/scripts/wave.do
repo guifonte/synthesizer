@@ -37,6 +37,8 @@ add wave -noupdate -expand -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_midi_cmds
 add wave -noupdate -expand -group {DDS_TOP
 } -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/top_dacdat_g_out
+add wave -noupdate -expand -group {DDS_TOP
+} -color {Medium Orchid} /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/led_out
 add wave -noupdate -group {UART
 } -color Yellow /midi_testbench/DUT/inst_digital_audio_interface_driver_top/inst_dds_top/inst_uart_rx_only_top/CLOCK_50
 add wave -noupdate -group {UART
@@ -131,4 +133,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {1967040 ns}
+WaveRestoreZoom {16131312 ns} {18098352 ns}

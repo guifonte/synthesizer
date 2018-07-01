@@ -7,6 +7,7 @@ ENTITY uart_rx_only_top IS
 	CLOCK_50 :  	IN   STD_LOGIC;
 	RESET_N :		IN 	 STD_LOGIC;
 	GPIO_1 :  		IN   STD_LOGIC;
+	LED_O 	:		OUT  STD_LOGIC;
 	DATA_VALID_O :	OUT  STD_LOGIC;
 	DATA_O :		OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
@@ -45,7 +46,8 @@ ARCHITECTURE struct OF uart_rx_only_top IS
 		clk,reset_n: 						IN    std_logic;			-- Attention, this block has a set_n input for initialisation!!
   		activator: 								IN    std_logic;
   		midi_o: 			            OUT   std_logic_vector(7 downto 0);
-      	data_valid_out:           OUT   std_logic;
+  		data_valid_out:           OUT   std_logic;
+     	led_o:                    OUT   std_logic;
     	ser_i: 									  IN   	std_logic
 	);
 	END COMPONENT;
@@ -111,7 +113,8 @@ ARCHITECTURE struct OF uart_rx_only_top IS
 					activator 		=> 		tick_top,
 					midi_o			=> 		DATA_O,
 					data_valid_out 	=> 		DATA_VALID_O,
-					ser_i	 		=>		sync2rx	
+					ser_i	 		=>		sync2rx,
+					led_o 			=> 		LED_O
 				);
 					
 					

@@ -19,7 +19,8 @@ entity dds_top is
 		clock			: in    std_logic;
 		strobe_i		: in 	  std_logic;
 		rst_n			: in    std_logic;
-		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0)
+		dacdat_g_out	: out 	std_logic_vector(N_AUDIO - 1 downto 0);
+		led_out			: out 	std_logic
 	);
 end dds_top;
 
@@ -51,6 +52,7 @@ ARCHITECTURE struct OF dds_top IS
 			CLOCK_50 :  	IN   STD_LOGIC;
 			RESET_N :		IN 	 STD_LOGIC;
 			GPIO_1 :  		IN   STD_LOGIC;
+			LED_O 	:		OUT  STD_LOGIC;
 			DATA_VALID_O :	OUT  STD_LOGIC;
 			DATA_O :		OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
 		);
@@ -73,6 +75,7 @@ ARCHITECTURE struct OF dds_top IS
         	CLOCK_50 		=> clock,
 			RESET_N			=> rst_n,
 			GPIO_1   		=> midi_serial_i,
+			LED_O			=> led_out,
 			DATA_VALID_O 	=> top_midi_signal,
 			DATA_O 			=> top_midi_data
         );

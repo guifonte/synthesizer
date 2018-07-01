@@ -18,6 +18,7 @@ ENTITY rx_register_s2p IS
   		activator: 								IN    std_logic;
   		midi_o: 			            OUT   std_logic_vector(7 downto 0);
       data_valid_out:           OUT   std_logic;
+      led_o:                     OUT   std_logic;
     	ser_i: 									  IN   	std_logic
     	);
 END rx_register_s2p;
@@ -27,6 +28,7 @@ ARCHITECTURE rtl OF rx_register_s2p IS
 -------------------------------------------
 	SIGNAL 		shiftreg, next_shiftreg: 	std_logic_vector(9 downto 0);	 -- add one FF for start_bit 0
   SIGNAL    count, next_count : unsigned(3 downto 0); -- bitcounter (message = 10 bits)
+  SIGNAL    led, next_led     : std_logic;
 BEGIN
 
   --------------------------------------------------
@@ -36,12 +38,16 @@ BEGIN
   BEGIN	
   next_shiftreg <= shiftreg;
   next_count <= count;
+  next_led <= led;
   --loading 1 bit (serial)
 	IF (activator = '1') THEN			  -- load serial data (startbit 0)
 		next_shiftreg <=  shiftreg(8 downto 0 ) &  ser_i; -- LSB='0' is the start_bit
     next_count <= count + 1; 
 	END IF;  
   IF (count > 10) THEN
+    if (shiftreg(9) = '0') THEN
+      next_led <= '1';
+    end if;
     next_count <= to_unsigned(1,4);
 
 	END IF;
@@ -56,9 +62,11 @@ BEGIN
 	IF reset_n = '0' THEN
 		shiftreg <= (others=>'1');
     count <= (others => '0');
+    led <= '0';
    ELSIF rising_edge(clk) THEN
 		shiftreg <= next_shiftreg ;
     count <= next_count;
+    led <= next_led;
    END IF;
   END PROCESS shift_dffs;		
   
@@ -66,13 +74,15 @@ BEGIN
   -- CONCURRENT ASSIGNMENTS
   --------------------------------------------------
   -- take LSB of shiftreg as serial output
-  led_comb : PROCESS(shiftreg,count)
+  led_comb : PROCESS(shiftreg,count, led)
   BEGIN
 
   data_valid_out <= '0';
   midi_o <= (others => '1');
+  led_o <= led;
 
   	IF (count = 10) THEN
+
   		midi_o <= shiftreg (8 downto 1);
       data_valid_out <= '1';
   	END IF;

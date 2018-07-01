@@ -26,6 +26,7 @@ COMPONENT Milestone3_infrastructure_block IS
 		KEY						: IN  	std_logic_vector( 3 downto 0);  -- DE2 low_active input buttons
 		SW						: IN	std_logic_vector(9 downto 0);	-- DE2 input switches
 		GPIO_0					: IN 	std_logic_vector(35 downto 0);
+		LEDG					: OUT 	std_logic_vector(7 downto 0);
 		AUD_XCK					: OUT	std_logic;		-- master clock for Audio Codec
 		I2C_SCLK				: OUT	std_logic;		-- clock from I2C master block
 		I2C_SDAT				: INOUT std_logic;		-- data  from I2C master block
@@ -48,6 +49,7 @@ END COMPONENT ;
 	SIGNAL tb_key						: std_logic_vector( 3 downto 0);  -- DE2 low_active input buttons
 	SIGNAL tb_sw						: std_logic_vector(9 downto 0);	-- DE2 input switches
 	SIGNAL tb_gpio_0					: std_logic_vector(35 downto 0);
+	SIGNAL tb_ledg						:std_logic_vector(7 downto 0);
 	SIGNAL tb_aud_xck					: std_logic;		-- master clock for Audio Codec
 	SIGNAL tb_i2c_sclk					: std_logic;		-- clock from I2C master block
 	SIGNAL tb_i2c_sdat					: std_logic;		-- data  from I2C master block
@@ -56,6 +58,7 @@ END COMPONENT ;
 	SIGNAL tb_aud_daclrck				: std_logic;	
 	SIGNAL tb_aud_adclrck				: std_logic;	
 	SIGNAL tb_aud_adcdat				: std_logic;
+
 
 
 	-- Outputs
@@ -81,6 +84,7 @@ BEGIN
 	KEY				=>	tb_key,
 	SW				=>  tb_sw,
 	GPIO_0			=> 	tb_gpio_0,
+	LEDG 			=> 	tb_ledg,
 	AUD_XCK			=> 	tb_aud_xck,
 	I2C_SCLK		=> 	tb_i2c_sclk,
 	I2C_SDAT		=> 	tb_i2c_sdat,
