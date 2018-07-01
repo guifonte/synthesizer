@@ -4,7 +4,7 @@ USE ieee.numeric_std.all;
 
 ENTITY uart_rx_only_top IS
 	PORT(
-	CLOCK_50 :  	IN   STD_LOGIC;
+	CLOCK_12 :  	IN   STD_LOGIC;
 	RESET_N :		IN 	 STD_LOGIC;
 	GPIO_1 :  		IN   STD_LOGIC;
 	LED_O 	:		OUT  STD_LOGIC;
@@ -34,12 +34,12 @@ ARCHITECTURE struct OF uart_rx_only_top IS
 	);
 	END COMPONENT;
 	
-	COMPONENT modulo_divider
-	PORT( 
-		clk,reset_n						:	IN    std_logic;
-		clk_div     					: 	OUT   std_logic
-	);
-	END COMPONENT;
+	--COMPONENT modulo_divider
+	--PORT( 
+	--	clk,reset_n						:	IN    std_logic;
+	--	clk_div     					: 	OUT   std_logic
+	--);
+	--END COMPONENT;
 	
 	COMPONENT rx_register_s2p
 	PORT( 
@@ -73,23 +73,23 @@ ARCHITECTURE struct OF uart_rx_only_top IS
 		inst_sync_n_edgeDetector: sync_n_edgeDetector
 		PORT MAP( 
 					data_in 		=>		GPIO_1,					
-					clock			=>		mod_clk,
+					clock			=>		CLOCK_12,
 					reset_n			=>		RESET_N,	
 					data_out		=>		sync2rx,	
 					--rise   						 	
 					fall     		=>		sync2fsm	
 				);
 					
-		inst_modulo_divider : modulo_divider
-		PORT MAP( 
-					clk				=>		CLOCK_50,
-					reset_n			=>		RESET_N,						
-					clk_div     	=>		mod_clk					
-				);
+		--inst_modulo_divider : modulo_divider
+		--PORT MAP( 
+		--			clk				=>		CLOCK_12,
+		--			reset_n			=>		RESET_N,						
+		--			clk_div     	=>		mod_clk					
+		--		);
 					
 		inst_tick_generator : tick_generator
 		PORT MAP(
-					clk				=>		mod_clk,
+					clk				=>		CLOCK_12,
 					reset_n			=>		RESET_N,					
 					ativo			=>		activator_top,					
 					half			=> 		halfsize_top,
@@ -98,7 +98,7 @@ ARCHITECTURE struct OF uart_rx_only_top IS
 		
 		inst_fsm : fsm
 		PORT MAP (
-					clk				=>		mod_clk,
+					clk				=>		CLOCK_12,
 					reset_n 		=>		RESET_N,					
 					tick			=>		tick_top,
 					fall 			=>		sync2fsm,	
@@ -108,7 +108,7 @@ ARCHITECTURE struct OF uart_rx_only_top IS
 					
 		inst_rx_register_s2p : rx_register_s2p
 		PORT MAP( 
-					clk 			=>		mod_clk,
+					clk 			=>		CLOCK_12,
 					reset_n 		=>		RESET_N,
 					activator 		=> 		tick_top,
 					midi_o			=> 		DATA_O,

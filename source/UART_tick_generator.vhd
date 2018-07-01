@@ -19,7 +19,7 @@ USE ieee.numeric_std.all;
 -- Entity Declaration 
 -------------------------------------------
 ENTITY tick_generator IS
-GENERIC (width : positive := 5);
+GENERIC (width : positive := 9);
   PORT( clk,reset_n				: IN    	std_logic; 		
 		ativo							: IN		std_logic; --continuos signal to set the working of the down counter
 		half						: IN		std_logic;
@@ -54,7 +54,7 @@ BEGIN
 			IF (half = '0')  THEN
 				IF(count = 0) THEN
 					tick_o <= '1';
-					next_count <= to_unsigned(19,width);
+					next_count <= to_unsigned(399,width);
 				ELSE
 					next_count <= count - 1;
 					tick_o <= '0';
@@ -62,7 +62,7 @@ BEGIN
 			ELSE
 				IF(count = 0) THEN
 					tick_o <= '1';
-					next_count <= to_unsigned(19,width);
+					next_count <= to_unsigned(399,width);
 				ELSE
 					next_count <= count - 1;
 					tick_o <= '0';
@@ -70,7 +70,7 @@ BEGIN
 			END IF;
 		WHEN '0' =>
 			tick_o <= '0';
-			next_count <= to_unsigned(9,width);
+			next_count <= to_unsigned(199,width);
 		when others =>
 			next_count <= count;
 			tick_o <= '0';

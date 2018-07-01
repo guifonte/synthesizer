@@ -48,7 +48,7 @@ ARCHITECTURE struct OF dds_top IS
 
 	COMPONENT uart_rx_only_top IS
 		PORT(
-			CLOCK_50 :  	IN   STD_LOGIC;
+			CLOCK_12 :  	IN   STD_LOGIC;
 			RESET_N :		IN 	 STD_LOGIC;
 			GPIO_1 :  		IN   STD_LOGIC;
 			LED_O 	:		OUT  STD_LOGIC;
@@ -83,7 +83,7 @@ ARCHITECTURE struct OF dds_top IS
 
         inst_uart_rx_only_top: uart_rx_only_top
         port map(
-        	CLOCK_50 		=> clock,
+        	CLOCK_12 		=> clock,
 			RESET_N			=> rst_n,
 			GPIO_1   		=> midi_serial_i,
 			LED_O			=> led_green_out(0),
