@@ -71,7 +71,7 @@ END COMPONENT ;
 	--SIGNAL tb_reg0_lo	: std_logic_vector(3 downto 0);
 
 	SIGNAL tb_test_note_on, tb_test_note_off : std_logic_vector(9 downto 0); -- (start-bit)+(data-byte)+(stop-bit) to shift in serial_in
-	SIGNAL tb_test_c4 : std_logic_vector(9 downto 0); -- (start-bit)+(data-byte)+(stop-bit) to shift in serial_in
+	SIGNAL tb_test_c4, tb_test_d4 : std_logic_vector(9 downto 0); -- (start-bit)+(data-byte)+(stop-bit) to shift in serial_in
 	SIGNAL tb_test_velocity : std_logic_vector(9 downto 0); -- (start-bit)+(data-byte)+(stop-bit) to shift in serial_in
 	
 	
@@ -130,6 +130,8 @@ BEGIN
 		tb_test_note_off <= B"0_1000_0100_1"; -- (stop-bit)+(data-byte)+(start-bit)
 		--note: c4
 		tb_test_c4 <= B"0_0011_1100_1";
+		--note: d4
+		tb_test_d4 <= B"0_0011_1110_1";
 		--velocity: very loud
 		tb_test_velocity <= B"0_0111_1111_1";
 
@@ -174,7 +176,7 @@ BEGIN
 		-- STOP-BIT
 		-- SERDATA BACK TO INACTIVE
 
-		-- note on C3
+		-- note on C4
 		for I in 9 downto 0 loop
 			tb_gpio_0(0) <= tb_test_note_on(I);
 			wait for baud_31k250_per;
@@ -197,6 +199,19 @@ BEGIN
 
 
 		wait for 400 * clk_50M_halfp;
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
 
 
 
@@ -221,6 +236,95 @@ BEGIN
 		end loop;
 
 		wait for 400 * clk_50M_halfp;
+
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+
+		-- note on d4
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= tb_test_note_on(I);
+			wait for baud_31k250_per;
+		end loop;
+		
+		wait for 200 * clk_50M_halfp;
+
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= tb_test_d4(I);
+			wait for baud_31k250_per;
+		end loop;
+
+		wait for 200 * clk_50M_halfp;
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= tb_test_velocity(I);
+			wait for baud_31k250_per;
+		end loop;
+
+
+		wait for 400 * clk_50M_halfp;
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+
+
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= tb_test_note_off(I);
+			wait for baud_31k250_per;
+		end loop;
+		
+		wait for 200 * clk_50M_halfp;
+
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= tb_test_d4(I);
+			wait for baud_31k250_per;
+		end loop;
+
+		wait for 200 * clk_50M_halfp;
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= tb_test_velocity(I);
+			wait for baud_31k250_per;
+		end loop;
+
+		wait for 400 * clk_50M_halfp;
+
+
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
+		for I in 9 downto 0 loop
+			tb_gpio_0(0) <= '1';
+			wait for baud_31k250_per;
+		end loop;
 
 
 		

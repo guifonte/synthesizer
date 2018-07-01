@@ -65,16 +65,16 @@ BEGIN
 			IF (tick = '1') AND (count < 10) THEN
 				next_count <= count + 1;
 				
-			--if the message is already sent
-			ELSIF (tick = '1') AND (count >= 10) THEN 
+			--if the message is already sent (tick = '1') AND 
+			ELSIF (count >= 10) THEN 
 				s_nextstate <= not_begining;
 			
 			END IF;
 
-			IF (fall ='1') AND (count >= 10) THEN
-				s_nextstate <= begining ;
-    			next_count <= to_unsigned(0,4);
-    		END IF; 
+			--IF (fall ='1') AND (count >= 10) THEN
+			--	s_nextstate <= begining ;
+    		--	next_count <= to_unsigned(0,4);
+    		--END IF; 
 
   		WHEN OTHERS => 
 			s_nextstate <= s_state;
