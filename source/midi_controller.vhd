@@ -85,8 +85,8 @@ begin
                         next_note_action <= SET_NOTE;
                     elsif (rx_data_in(6 downto 4) = "000")  then
                         next_note_action <= DEL_NOTE;
-                    else
-                        next_note_action <= NUL_NOTE;
+                    --else
+                        --next_note_action <= NUL_NOTE;
                     end if ;
                 elsif (rx_data_in(7)='0') then
                     next_midi_state <= wait_status;
