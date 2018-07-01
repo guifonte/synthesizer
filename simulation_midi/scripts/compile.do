@@ -42,4 +42,4 @@ vcom -2008 -explicit -work work ../../source/midi_testbench.vhd
 # run the simulation
 vsim -novopt -t 1ns -lib work work.midi_testbench
 do ../scripts/wave.do
-run 9000.0 us
+run 18000.0 us
