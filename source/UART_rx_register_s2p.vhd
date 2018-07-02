@@ -29,6 +29,7 @@ ARCHITECTURE rtl OF rx_register_s2p IS
   SIGNAL    shiftreg, next_shiftreg:  std_logic_vector(9 downto 0);  -- add one FF for start_bit 0
   SIGNAL    count, next_count : unsigned(3 downto 0); -- bitcounter (message = 10 bits)
   SIGNAL    led, next_led     : std_logic;
+  Signal    midi_output, next_midi_output : std_logic_vector(7 downto 0);
 BEGIN
 
   --------------------------------------------------
@@ -80,9 +81,11 @@ BEGIN
   data_valid_out <= '0';
   midi_o <= (others => '1');
   led_o <= led;
+  next_midi_output <= midi_output;
+  midi_o <= midi_output;
 
     IF (count = 10) THEN
-
+      next_midi_output <= shiftreg (8 downto 1);
       midi_o <= shiftreg (8 downto 1);
       data_valid_out <= '1';
     END IF;
