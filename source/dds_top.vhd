@@ -46,16 +46,27 @@ ARCHITECTURE struct OF dds_top IS
 		);
 	end COMPONENT;
 
-	COMPONENT uart_rx_only_top IS
-		PORT(
-			CLOCK_12 :  	IN   STD_LOGIC;
-			RESET_N :		IN 	 STD_LOGIC;
-			GPIO_1 :  		IN   STD_LOGIC;
-			LED_O 	:		OUT  STD_LOGIC;
-			DATA_VALID_O :	OUT  STD_LOGIC;
-			DATA_O :		OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
+	component uart 
+		PORT
+		(
+		CLOCK_12M5  :  IN  STD_LOGIC;
+		DATA_IN     :  IN  STD_LOGIC;
+		RESET_N     :  IN  STD_LOGIC;
+		NEW_DATA    :  OUT STD_LOGIC;
+		DATA_OUT    :  OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
 		);
-	END COMPONENT;
+  	END component;
+
+	--COMPONENT uart_rx_only_top IS
+	--	PORT(
+	--		CLOCK_12 :  	IN   STD_LOGIC;
+	--		RESET_N :		IN 	 STD_LOGIC;
+	--		GPIO_1 :  		IN   STD_LOGIC;
+	--		LED_O 	:		OUT  STD_LOGIC;
+	--		DATA_VALID_O :	OUT  STD_LOGIC;
+	--		DATA_O :		OUT  STD_LOGIC_VECTOR(7 DOWNTO 0)
+	--	);
+	--END COMPONENT;
 
 	COMPONENT midi_controller is
 		port(
@@ -81,15 +92,25 @@ ARCHITECTURE struct OF dds_top IS
 
 	BEGIN
 
-        inst_uart_rx_only_top: uart_rx_only_top
-        port map(
-        	CLOCK_12 		=> clock,
-			RESET_N			=> rst_n,
-			GPIO_1   		=> midi_serial_i,
-			LED_O			=> led_green_out(0),
-			DATA_VALID_O 	=> top_midi_signal,
-			DATA_O 			=> top_midi_data
-        );
+        --inst_uart_rx_only_top: uart_rx_only_top
+        --port map(
+        --	CLOCK_12 		=> clock,
+		--	RESET_N			=> rst_n,
+		--	GPIO_1   		=> midi_serial_i,
+		--	LED_O			=> led_green_out(0),
+		--	DATA_VALID_O 	=> top_midi_signal,
+		--	DATA_O 			=> top_midi_data
+        --);
+
+		uart_receiver : uart
+		port map(
+			CLOCK_12M5  => clock,
+			DATA_IN     => midi_serial_i,
+			RESET_N     => rst_n,
+			NEW_DATA    => top_midi_signal,
+			DATA_OUT    => top_midi_data
+
+			);
 
         inst_midi_controller: midi_controller
         port map(

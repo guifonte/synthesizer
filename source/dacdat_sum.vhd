@@ -44,7 +44,7 @@ begin
 		  --temp_sum <= (others=>'0');
 		  
         if (strobe_in) then
-            next_sum <= std_logic_vector(signed(dacdat_in(1)) + signed(dacdat_in(2))+ signed(dacdat_in(3))+ signed(dacdat_in(4))+ signed(dacdat_in(5)) + signed(dacdat_in(6)) + signed(dacdat_in(7)) + signed(dacdat_in(8)) + signed(dacdat_in(9)));
+            next_sum <= std_logic_vector(signed(dacdat_in(0))+signed(dacdat_in(1)) + signed(dacdat_in(2))+ signed(dacdat_in(3))+ signed(dacdat_in(4))+ signed(dacdat_in(5)) + signed(dacdat_in(6)) + signed(dacdat_in(7)) + signed(dacdat_in(8)) + signed(dacdat_in(9)));
             --sum_loop : for i in 0 to 9 loop
             --    temp_sum <= std_logic_vector(signed(dacdat_in(i)) + signed(temp_sum));
             --end loop sum_loop;
