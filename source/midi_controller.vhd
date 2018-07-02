@@ -79,74 +79,65 @@ begin
         next_num_buf        <=  num_buf;
         next_vel_buf        <=  vel_buf;
         next_led_g_reg      <=  led_g_reg;
-        --next_led_r_reg      <=  led_r_reg;
+        next_led_r_reg      <=  led_r_reg;
 
         if rx_data_valid_in then
             case midi_state is
                 when wait_status =>
-                    next_led_g_reg(0)   <= '0';
-                    next_led_g_reg(1)   <= '1';
-                    next_led_g_reg(2)   <= '0';
-                    next_led_g_reg(3)   <= '0';
+                    next_led_r_reg(7 downto 0) <= rx_data_in(7 downto 0); 
                     if (rx_data_in(7)='1') then
+                        next_led_g_reg(0)   <= '0';
+                        next_led_g_reg(1)   <= '1';
+                        next_led_g_reg(2)   <= '0';
+                        next_led_g_reg(3)   <= '0'; 
                         next_midi_state <= wait_data1;
                         if (rx_data_in(6 downto 4) = "001") then
-                            next_led_g_reg(4)   <= '1';
-                            next_led_g_reg(5)   <= '0';
-                            next_led_g_reg(6)   <= '0';
                             next_note_action <= SET_NOTE;
                         elsif (rx_data_in(6 downto 4) = "000")  then
-                            next_led_g_reg(5)   <= '1';
-                            next_led_g_reg(4)   <= '0';
-                            next_led_g_reg(6)   <= '0';
                             next_note_action <= DEL_NOTE;
                         else
-                            next_led_g_reg(6)   <= '1';
-                            next_led_g_reg(5)   <= '0';
-                            next_led_g_reg(4)   <= '0';
                             next_note_action <= NUL_NOTE;
                         end if ;
-                    end if ;    
-                when wait_data1 =>        
-                    next_led_g_reg(0)   <= '0';
-                    next_led_g_reg(1)   <= '0';
-                    next_led_g_reg(2)   <= '1';
-                    next_led_g_reg(3)   <= '0';    
-                    --next_led_r_reg(7 downto 0) <= rx_data_in(7 downto 0);
-                    if (rx_data_in(7)='0') then
+                    else -- running status
+                        next_led_g_reg(0)   <= '0';                               
+                        next_led_g_reg(1)   <= '0';
+                        next_led_g_reg(2)   <= '1';
+                        next_led_g_reg(3)   <= '0';
                         next_midi_state <= wait_data2;
                         next_num_buf    <= rx_data_in(6 downto 0);
-                    end if ;        
-                when wait_data2 =>                               
-                    next_led_g_reg(1)   <= '0';
-                    next_led_g_reg(2)   <= '0';
-                    next_led_g_reg(3)   <= '1';
+                    end if ;    
+                when wait_data1 =>           
                     if (rx_data_in(7)='0') then
-                        --next_midi_state     <= wait_status;
-                        next_vel_buf        <= rx_data_in(6 downto 0);
-                        next_note_update    <= '1';
-                        next_led_g_reg(0)   <= '1';
-                        if ((note_action = SET_NOTE) AND (unsigned(rx_data_in(6 downto 0)) = 0)) then
-                            next_note_action <= DEL_NOTE;
-                        end if ;
+                        next_led_g_reg(0)   <= '0';                               
+                        next_led_g_reg(1)   <= '0';
+                        next_led_g_reg(2)   <= '1';
+                        next_led_g_reg(3)   <= '0';          
+                        
+                        next_midi_state <= wait_data2;
+                        next_num_buf    <= rx_data_in(6 downto 0);
                     else
-                        next_midi_state     <= wait_data1;
-                        if (rx_data_in(6 downto 4) = "001") then
-                            next_led_g_reg(4)   <= '1';
-                            next_led_g_reg(5)   <= '0';
-                            next_led_g_reg(6)   <= '0';
-                            next_note_action <= SET_NOTE;
-                        elsif (rx_data_in(6 downto 4) = "000")  then
-                            next_led_g_reg(5)   <= '1';
-                            next_led_g_reg(4)   <= '0';
-                            next_led_g_reg(6)   <= '0';
-                            next_note_action <= DEL_NOTE;
-                        else
-                            next_led_g_reg(6)   <= '1';
-                            next_led_g_reg(5)   <= '0';
-                            next_led_g_reg(4)   <= '0';
-                            next_note_action <= NUL_NOTE;
-                        end if ;
+                        next_led_g_reg(0)   <= '1';
+                        next_led_g_reg(1)   <= '0';
+                        next_led_g_reg(2)   <= '0';
+                        next_led_g_reg(3)   <= '0';
+                        next_midi_state <= wait_status;
+                        next_note_action <= NUL_NOTE;    
+                    end if ;        
+                when wait_data2 => 
+                    if (rx_data_in(7)='0') then
+                        next_midi_state     <= wait_status;
+                        next_led_g_reg(0)   <= '1';
+                        next_led_g_reg(1)   <= '0';
+                        next_led_g_reg(2)   <= '0';
+                        next_led_g_reg(3)   <= '0';
+                        next_note_update    <=  '1';
+                        next_vel_buf        <= rx_data_in(6 downto 0);
+                        --if ((note_action = SET_NOTE) AND (unsigned(rx_data_in(6 downto 0)) = 0)) then
+                        --    next_note_action <= DEL_NOTE;
+                        --end if ;
+                    else
+                        next_midi_state <= wait_status;
+                        next_note_action <= NUL_NOTE;
                     end if;
                 when others =>
                     next_midi_state <= wait_status;
@@ -158,28 +149,40 @@ begin
         variable set_done : boolean;
     begin
         next_midi_regs  <=  midi_regs;
-        next_led_r_reg  <=  led_r_reg;
+        --next_led_r_reg  <=  led_r_reg;
 
         if (note_update) then
             set_done := false;
+            --next_led_r_reg(6 downto 0) <= num_buf;
             case (note_action) is
                 when SET_NOTE =>
-                    set_loop : for i in 0 to 9 loop
-                        if not(set_done) then
-                            if ((midi_regs(i).valid = '0') OR (i = 9)) then
-                                next_midi_regs(i).valid     <=  '1';
-                                next_midi_regs(i).number    <= num_buf;
-                                next_midi_regs(i).velocity  <= vel_buf;
-                                next_led_r_reg(i)           <=  '1';
-                                set_done := true;
+                    if not(unsigned(rx_data_in(6 downto 0)) = 0) then
+                        set_loop : for i in 0 to 9 loop
+                            if not(set_done) then
+                                if ((midi_regs(i).valid = '0') OR (i = 9)) then
+                                    next_midi_regs(i).valid     <=  '1';
+                                    next_midi_regs(i).number    <= num_buf;
+                                    
+                                    
+                                    next_midi_regs(i).velocity  <= vel_buf;
+                                    --next_led_r_reg(i)           <=  '1';
+                                    set_done := true;
+                                end if ;
                             end if ;
-                        end if ;
-                    end loop set_loop;
+                        end loop set_loop;
+                    else
+                        del_loop : for i in 0 to 9 loop
+                            if ((midi_regs(i).valid = '1') AND (midi_regs(i).number = num_buf)) then
+                                next_midi_regs(i).valid <= '0';
+                                --next_led_r_reg(i)       <= '0';
+                            end if ;
+                        end loop ; -- del_loop    
+                    end if;
                 when DEL_NOTE =>
-                    del_loop : for i in 0 to 9 loop
+                    del_loop2 : for i in 0 to 9 loop
                         if ((midi_regs(i).valid = '1') AND (midi_regs(i).number = num_buf)) then
                             next_midi_regs(i).valid <= '0';
-                            next_led_r_reg(i)       <= '0';
+                            --next_led_r_reg(i)       <= '0';
                         end if ;
                     end loop ; -- del_loop
                 when others => null;
