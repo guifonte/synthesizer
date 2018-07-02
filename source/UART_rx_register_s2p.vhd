@@ -34,7 +34,7 @@ BEGIN
   --------------------------------------------------
   -- PROCESS FOR COMBINATIONAL LOGIC
   --------------------------------------------------
-  shift_comb: PROCESS(shiftreg, ser_i, activator, count)
+  shift_comb: PROCESS(shiftreg, ser_i, activator, count,led)
   BEGIN 
   next_shiftreg <= shiftreg;
   next_count <= count;

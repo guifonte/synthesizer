@@ -73,34 +73,61 @@ begin
 
     fsm_comb_in: process(all)
     begin
-        next_midi_state    <=  midi_state;
+        next_midi_state     <=  midi_state;
         next_note_update    <=  '0';
         next_note_action    <=  note_action;
         next_num_buf        <=  num_buf;
         next_vel_buf        <=  vel_buf;
+        next_led_g_reg      <=  led_g_reg;
+        next_led_r_reg      <=  led_r_reg;
+
         if rx_data_valid_in then
+            next_led_r_reg(9) <= '1';
+            next_led_r_reg(8) <= '0';
+            next_led_r_reg(7 downto 0) <= rx_data_in(7 downto 0);
             case midi_state is
                 when wait_status =>
+                    next_led_g_reg(0)   <= '0';
+                    next_led_g_reg(1)   <= '1';
+                    next_led_g_reg(2)   <= '0';
+                    next_led_g_reg(3)   <= '0';
                     if (rx_data_in(7)='1') then
                         next_midi_state <= wait_data1;
                         if (rx_data_in(6 downto 4) = "001") then
+                            next_led_g_reg(4)   <= '1';
+                            next_led_g_reg(5)   <= '0';
+                            next_led_g_reg(6)   <= '0';
                             next_note_action <= SET_NOTE;
                         elsif (rx_data_in(6 downto 4) = "000")  then
+                            next_led_g_reg(5)   <= '1';
+                            next_led_g_reg(4)   <= '0';
+                            next_led_g_reg(6)   <= '0';
                             next_note_action <= DEL_NOTE;
                         else
+                            next_led_g_reg(6)   <= '1';
+                            next_led_g_reg(5)   <= '0';
+                            next_led_g_reg(4)   <= '0';
                             next_note_action <= NUL_NOTE;
                         end if ;
                     end if ;    
-                when wait_data1 =>
+                when wait_data1 =>        
+                    next_led_g_reg(0)   <= '0';
+                    next_led_g_reg(1)   <= '0';
+                    next_led_g_reg(2)   <= '1';
+                    next_led_g_reg(3)   <= '0';
                     if (rx_data_in(7)='0') then
                         next_midi_state <= wait_data2;
                         next_num_buf    <= rx_data_in(6 downto 0);
                     end if ;        
-                when wait_data2 =>
+                when wait_data2 =>                               
+                    next_led_g_reg(1)   <= '0';
+                    next_led_g_reg(2)   <= '0';
+                    next_led_g_reg(3)   <= '1';
                     if (rx_data_in(7)='0') then
                         next_midi_state     <= wait_status;
                         next_vel_buf        <= rx_data_in(6 downto 0);
                         next_note_update    <= '1';
+                        next_led_g_reg(0)   <= '1';
                         if ((note_action = SET_NOTE) AND (unsigned(rx_data_in(6 downto 0)) = 0)) then
                             next_note_action <= DEL_NOTE;
                         end if ;
@@ -108,6 +135,9 @@ begin
                 when others =>
                     next_midi_state <= wait_status;
             end case ;
+        else
+            next_led_r_reg(8) <= '1';
+            next_led_r_reg(9) <= '0';   
         end if;
     end process fsm_comb_in;
 
@@ -115,17 +145,19 @@ begin
         variable set_done : boolean;
     begin
         next_midi_regs  <=  midi_regs;
+        --next_led_r_reg  <=  led_r_reg;
 
         if (note_update) then
             set_done := false;
             case (note_action) is
                 when SET_NOTE =>
-                    set_loop : for i in 0 to 0 loop
+                    set_loop : for i in 0 to 9 loop
                         if not(set_done) then
                             if ((midi_regs(i).valid = '0') OR (i = 9)) then
                                 next_midi_regs(i).valid     <=  '1';
                                 next_midi_regs(i).number    <= num_buf;
                                 next_midi_regs(i).velocity  <= vel_buf;
+                                --next_led_r_reg(i)           <=  '1';
                                 set_done := true;
                             end if ;
                         end if ;
@@ -134,6 +166,7 @@ begin
                     del_loop : for i in 0 to 9 loop
                         if ((midi_regs(i).valid = '1') AND (midi_regs(i).number = num_buf)) then
                             next_midi_regs(i).valid <= '0';
+                            --next_led_r_reg(i)       <= '0';
                         end if ;
                     end loop ; -- del_loop
                 when others => null;
