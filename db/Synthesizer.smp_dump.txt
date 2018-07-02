@@ -11,19 +11,11 @@ midi_state.wait_status 0 0 0
 midi_state.wait_data1 0 1 1 
 midi_state.wait_data2 1 0 1 
 
-State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|fsm_midi:b2v_inst4|s_state
-Name s_state.s_end s_state.s_wait s_state.s_data7 s_state.s_data6 s_state.s_data5 s_state.s_data4 s_state.s_data3 s_state.s_data2 s_state.s_data1 s_state.s_data0 s_state.s_null 
-s_state.s_null 0 0 0 0 0 0 0 0 0 0 0 
-s_state.s_data0 0 0 0 0 0 0 0 0 0 1 1 
-s_state.s_data1 0 0 0 0 0 0 0 0 1 0 1 
-s_state.s_data2 0 0 0 0 0 0 0 1 0 0 1 
-s_state.s_data3 0 0 0 0 0 0 1 0 0 0 1 
-s_state.s_data4 0 0 0 0 0 1 0 0 0 0 1 
-s_state.s_data5 0 0 0 0 1 0 0 0 0 0 1 
-s_state.s_data6 0 0 0 1 0 0 0 0 0 0 1 
-s_state.s_data7 0 0 1 0 0 0 0 0 0 0 1 
-s_state.s_wait 0 1 0 0 0 0 0 0 0 0 1 
-s_state.s_end 1 0 0 0 0 0 0 0 0 0 1 
+State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart_rx_only_top:inst_uart_rx_only_top|fsm:inst_fsm|s_state
+Name s_state.receiving s_state.begining s_state.not_begining 
+s_state.not_begining 0 0 0 
+s_state.begining 0 1 1 
+s_state.receiving 1 0 1 
 
 State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state
 Name fir_state.sample_rdy fir_state.tap_x_mac fir_state.tap_x_waitrd fir_state.tap_0 fir_state.idle 
