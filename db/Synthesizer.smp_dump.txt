@@ -1,17 +1,17 @@
 
-State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_action
+State Machine - |midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|note_action
 Name note_action.DEL_NOTE note_action.SET_NOTE note_action.NUL_NOTE 
 note_action.NUL_NOTE 0 0 0 
 note_action.SET_NOTE 0 1 1 
 note_action.DEL_NOTE 1 0 1 
 
-State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|midi_state
-Name midi_state.wait_data2 midi_state.wait_data1 midi_state.wait_status 
-midi_state.wait_status 0 0 0 
-midi_state.wait_data1 0 1 1 
-midi_state.wait_data2 1 0 1 
+State Machine - |midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller|fsm_state
+Name fsm_state.wait_data2 fsm_state.wait_data1 fsm_state.wait_status 
+fsm_state.wait_status 0 0 0 
+fsm_state.wait_data1 0 1 1 
+fsm_state.wait_data2 1 0 1 
 
-State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|fsm_midi:b2v_inst4|s_state
+State Machine - |midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|fsm_midi:b2v_inst4|s_state
 Name s_state.s_end s_state.s_wait s_state.s_data7 s_state.s_data6 s_state.s_data5 s_state.s_data4 s_state.s_data3 s_state.s_data2 s_state.s_data1 s_state.s_data0 s_state.s_null 
 s_state.s_null 0 0 0 0 0 0 0 0 0 0 0 
 s_state.s_data0 0 0 0 0 0 0 0 0 0 1 1 
@@ -25,7 +25,7 @@ s_state.s_data7 0 0 1 0 0 0 0 0 0 0 1
 s_state.s_wait 0 1 0 0 0 0 0 0 0 0 1 
 s_state.s_end 1 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state
+State Machine - |midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|fir_state
 Name fir_state.sample_rdy fir_state.tap_x_mac fir_state.tap_x_waitrd fir_state.tap_0 fir_state.idle 
 fir_state.idle 0 0 0 0 0 
 fir_state.tap_0 0 0 0 1 1 
@@ -33,7 +33,7 @@ fir_state.tap_x_waitrd 0 0 1 0 1
 fir_state.tap_x_mac 0 1 0 0 1 
 fir_state.sample_rdy 1 0 0 0 1 
 
-State Machine - |Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state
+State Machine - |midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|fir_state
 Name fir_state.sample_rdy fir_state.tap_x_mac fir_state.tap_x_waitrd fir_state.tap_0 fir_state.idle 
 fir_state.idle 0 0 0 0 0 
 fir_state.tap_0 0 0 0 1 1 
@@ -41,7 +41,7 @@ fir_state.tap_x_waitrd 0 0 1 0 1
 fir_state.tap_x_mac 0 1 0 0 1 
 fir_state.sample_rdy 1 0 0 0 1 
 
-State Machine - |Milestone3_infrastructure_block|i2c_master:inst_i2c_master|fsm_state
+State Machine - |midi_synth_top|i2c_master:inst_i2c_master|fsm_state
 Name fsm_state.S_STOP fsm_state.S_WAIT_FOR_STOP fsm_state.S_ACK_BYTE fsm_state.S_SEND_BYTE fsm_state.S_WAIT_FOR_NEXT_BYTE fsm_state.S_START fsm_state.S_WAIT_FOR_START fsm_state.S_IDLE 
 fsm_state.S_IDLE 0 0 0 0 0 0 0 0 
 fsm_state.S_WAIT_FOR_START 0 0 0 0 0 0 1 1 
@@ -52,7 +52,7 @@ fsm_state.S_ACK_BYTE 0 0 1 0 0 0 0 1
 fsm_state.S_WAIT_FOR_STOP 0 1 0 0 0 0 0 1 
 fsm_state.S_STOP 1 0 0 0 0 0 0 1 
 
-State Machine - |Milestone3_infrastructure_block|codec_control:inst_codec_control|fsm_state
+State Machine - |midi_synth_top|codec_control:inst_codec_control|fsm_state
 Name fsm_state.S_WAIT fsm_state.S_START_WRITE fsm_state.S_IDLE 
 fsm_state.S_IDLE 0 0 0 
 fsm_state.S_START_WRITE 0 1 1 

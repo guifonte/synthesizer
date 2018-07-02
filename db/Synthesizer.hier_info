@@ -1,4 +1,4 @@
-|Milestone3_infrastructure_block
+|midi_synth_top
 CLOCK_50 => infrastructure_block:inst_infrastructure_block.clk_50M
 KEY[0] => infrastructure_block:inst_infrastructure_block.button_1
 KEY[1] => infrastructure_block:inst_infrastructure_block.button_2
@@ -78,7 +78,7 @@ AUD_ADCLRCK <= digital_audio_interface_driver_top:inst_digital_audio_interface_d
 AUD_ADCDAT => digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top.ADCDAT_s_in
 
 
-|Milestone3_infrastructure_block|infrastructure_block:inst_infrastructure_block
+|midi_synth_top|infrastructure_block:inst_infrastructure_block
 clk_50M => takt_teiler:inst_takt_teiler.clk_fast_i
 button_1 => sync_block:inst_sync_block_1.async_i
 button_2 => sync_block:inst_sync_block_2.async_i
@@ -87,27 +87,27 @@ button_1sync <= sync_block:inst_sync_block_1.syncd_o
 button_2sync <= sync_block:inst_sync_block_2.syncd_o
 
 
-|Milestone3_infrastructure_block|infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler
+|midi_synth_top|infrastructure_block:inst_infrastructure_block|takt_teiler:inst_takt_teiler
 clk_fast_i => count[0].CLK
 clk_fast_i => count[1].CLK
 clk_slow_o <= count[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1
+|midi_synth_top|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_1
 async_i => shiftreg[2].DATAIN
 clk => shiftreg[1].CLK
 clk => shiftreg[2].CLK
 syncd_o <= shiftreg[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_2
+|midi_synth_top|infrastructure_block:inst_infrastructure_block|sync_block:inst_sync_block_2
 async_i => shiftreg[2].DATAIN
 clk => shiftreg[1].CLK
 clk => shiftreg[2].CLK
 syncd_o <= shiftreg[1].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|codec_control:inst_codec_control
+|midi_synth_top|codec_control:inst_codec_control
 clk => reg[0].CLK
 clk => reg[1].CLK
 clk => reg[2].CLK
@@ -161,7 +161,7 @@ write_data_o[14] <= <GND>
 write_data_o[15] <= <GND>
 
 
-|Milestone3_infrastructure_block|i2c_master:inst_i2c_master
+|midi_synth_top|i2c_master:inst_i2c_master
 clk => write_done.CLK
 clk => ack_error.CLK
 clk => byte_count[0].CLK
@@ -306,7 +306,7 @@ write_done_o <= write_done.DB_MAX_OUTPUT_PORT_TYPE
 ack_error_o <= ack_error.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top
 CLK_12M => fir_core:inst_fir_core_l.clk
 CLK_12M => fir_core:inst_fir_core_r.clk
 CLK_12M => i2s_master_top:inst_i2s_master.CLOCK_12M
@@ -406,7 +406,7 @@ LED_R_out[8] <= dds_top:inst_dds_top.led_red_out[8]
 LED_R_out[9] <= dds_top:inst_dds_top.led_red_out[9]
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l
 clk => single_port_ram:tap_line.clk
 clk => addr_offset[0].CLK
 clk => addr_offset[1].CLK
@@ -569,7 +569,7 @@ fdata_o[14] <= fir_reg_o[14].DB_MAX_OUTPUT_PORT_TYPE
 fdata_o[15] <= fir_reg_o[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_l|single_port_ram:tap_line
 clk => ram~40.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -744,7 +744,7 @@ data_o[30] <= ram.DATAOUT30
 data_o[31] <= ram.DATAOUT31
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r
 clk => single_port_ram:tap_line.clk
 clk => addr_offset[0].CLK
 clk => addr_offset[1].CLK
@@ -907,7 +907,7 @@ fdata_o[14] <= fir_reg_o[14].DB_MAX_OUTPUT_PORT_TYPE
 fdata_o[15] <= fir_reg_o[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|fir_core:inst_fir_core_r|single_port_ram:tap_line
 clk => ram~40.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -1082,7 +1082,7 @@ data_o[30] <= ram.DATAOUT30
 data_o[31] <= ram.DATAOUT31
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master
 CLOCK_12M => bclk_gen:inst_bclk_gen.clk_12M_i
 CLOCK_12M => frame_decoder:inst_frame_decoder.clk12M
 CLOCK_12M => p2s_register:inst_p2s_right.clk_12M
@@ -1167,13 +1167,13 @@ BCLK_o <= bclk_gen:inst_bclk_gen.bclk_o
 WS <= frame_decoder:inst_frame_decoder.WS_o
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|bclk_gen:inst_bclk_gen
 reset_n => count.ACLR
 clk_12M_i => count.CLK
 bclk_o <= count.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|frame_decoder:inst_frame_decoder
 clk12M => count[0].CLK
 clk12M => count[1].CLK
 clk12M => count[2].CLK
@@ -1201,7 +1201,7 @@ strobe <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 WS_o <= WS_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_right
 clk_12M => shiftreg[0].CLK
 clk_12M => shiftreg[1].CLK
 clk_12M => shiftreg[2].CLK
@@ -1271,7 +1271,7 @@ par_i[15] => next_shiftreg[15].DATAB
 ser_o <= shiftreg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|p2s_register:inst_p2s_left
 clk_12M => shiftreg[0].CLK
 clk_12M => shiftreg[1].CLK
 clk_12M => shiftreg[2].CLK
@@ -1341,7 +1341,7 @@ par_i[15] => next_shiftreg[15].DATAB
 ser_o <= shiftreg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_right
 clk_12M => shiftreg[0].CLK
 clk_12M => shiftreg[1].CLK
 clk_12M => shiftreg[2].CLK
@@ -1395,7 +1395,7 @@ par_o[14] <= shiftreg[14].DB_MAX_OUTPUT_PORT_TYPE
 par_o[15] <= shiftreg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|i2s_master_top:inst_i2s_master|s2p_register:inst_s2p_left
 clk_12M => shiftreg[0].CLK
 clk_12M => shiftreg[1].CLK
 clk_12M => shiftreg[2].CLK
@@ -1449,7 +1449,7 @@ par_o[14] <= shiftreg[14].DB_MAX_OUTPUT_PORT_TYPE
 par_o[15] <= shiftreg[15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top
 midi_serial_i => uart:uart_receiver.DATA_IN
 wave_ctrl[0] => DDS:dds_inst_gen:0:inst_dds.wave_i[0]
 wave_ctrl[0] => DDS:dds_inst_gen:1:inst_dds.wave_i[0]
@@ -1544,7 +1544,7 @@ led_red_out[8] <= midi_controller:inst_midi_controller.led_r_out[8]
 led_red_out[9] <= midi_controller:inst_midi_controller.led_r_out[9]
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver
 CLOCK_12M5 => rx_reg:b2v_inst.clk
 CLOCK_12M5 => tick_generator:b2v_inst1.clk
 CLOCK_12M5 => fsm_midi:b2v_inst4.clk
@@ -1563,7 +1563,7 @@ DATA_OUT[6] <= bus_divider:b2v_inst5.data_out[6]
 DATA_OUT[7] <= bus_divider:b2v_inst5.data_out[7]
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|rx_reg:b2v_inst
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|rx_reg:b2v_inst
 tick => next_shift_reg[8].OUTPUTSELECT
 tick => next_shift_reg[7].OUTPUTSELECT
 tick => next_shift_reg[6].OUTPUTSELECT
@@ -1640,7 +1640,7 @@ reset => count[2].ACLR
 reset => count[3].ACLR
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|tick_generator:b2v_inst1
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|tick_generator:b2v_inst1
 enable => half_period_logic.IN1
 enable => half_period_logic.IN1
 enable => half_count[0].ACLR
@@ -1694,7 +1694,7 @@ clk => count[11].CLK
 tick <= full_period_logic.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|fsm_midi:b2v_inst4
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|fsm_midi:b2v_inst4
 clk => count[0].CLK
 clk => count[1].CLK
 clk => s_state~1.DATAIN
@@ -1730,7 +1730,7 @@ tick => Selector8.IN1
 enable <= Selector11.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|bus_divider:b2v_inst5
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|bus_divider:b2v_inst5
 data_in[0] => data_out[7].DATAIN
 data_in[1] => data_out[6].DATAIN
 data_in[2] => data_out[5].DATAIN
@@ -1749,7 +1749,7 @@ data_out[6] <= data_in[1].DB_MAX_OUTPUT_PORT_TYPE
 data_out[7] <= data_in[0].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|sync_n_edgeDetector:reset_inst
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|uart:uart_receiver|sync_n_edgeDetector:reset_inst
 data_in => shiftreg[2].DATAIN
 clock => shiftreg[0].CLK
 clock => shiftreg[1].CLK
@@ -1762,115 +1762,99 @@ rise <= rise.DB_MAX_OUTPUT_PORT_TYPE
 fall <= fall.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller
-rx_data_valid_in => next_midi_state.wait_status.OUTPUTSELECT
-rx_data_valid_in => next_midi_state.wait_data1.OUTPUTSELECT
-rx_data_valid_in => next_midi_state.wait_data2.OUTPUTSELECT
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|midi_controller:inst_midi_controller
+rx_data_valid_in => next_fsm_state.wait_status.OUTPUTSELECT
+rx_data_valid_in => next_fsm_state.wait_data1.OUTPUTSELECT
+rx_data_valid_in => next_fsm_state.wait_data2.OUTPUTSELECT
 rx_data_valid_in => next_note_action.DEL_NOTE.OUTPUTSELECT
 rx_data_valid_in => next_note_action.SET_NOTE.OUTPUTSELECT
 rx_data_valid_in => next_note_action.NUL_NOTE.OUTPUTSELECT
 rx_data_valid_in => next_note_update.OUTPUTSELECT
-rx_data_valid_in => num_buf[6].ENA
-rx_data_valid_in => num_buf[5].ENA
-rx_data_valid_in => num_buf[4].ENA
-rx_data_valid_in => num_buf[3].ENA
-rx_data_valid_in => num_buf[2].ENA
-rx_data_valid_in => num_buf[1].ENA
-rx_data_valid_in => num_buf[0].ENA
-rx_data_valid_in => vel_buf[6].ENA
-rx_data_valid_in => vel_buf[5].ENA
-rx_data_valid_in => vel_buf[4].ENA
-rx_data_valid_in => vel_buf[3].ENA
-rx_data_valid_in => vel_buf[2].ENA
-rx_data_valid_in => vel_buf[1].ENA
-rx_data_valid_in => vel_buf[0].ENA
-rx_data_valid_in => led_r_reg[7].ENA
-rx_data_valid_in => led_r_reg[6].ENA
-rx_data_valid_in => led_r_reg[5].ENA
-rx_data_valid_in => led_r_reg[4].ENA
-rx_data_valid_in => led_r_reg[3].ENA
-rx_data_valid_in => led_r_reg[2].ENA
-rx_data_valid_in => led_r_reg[1].ENA
-rx_data_valid_in => led_r_reg[0].ENA
+rx_data_valid_in => note_num[6].ENA
+rx_data_valid_in => note_num[5].ENA
+rx_data_valid_in => note_num[4].ENA
+rx_data_valid_in => note_num[3].ENA
+rx_data_valid_in => note_num[2].ENA
+rx_data_valid_in => note_num[1].ENA
+rx_data_valid_in => note_num[0].ENA
+rx_data_valid_in => note_speed[6].ENA
+rx_data_valid_in => note_speed[5].ENA
+rx_data_valid_in => note_speed[4].ENA
+rx_data_valid_in => note_speed[3].ENA
+rx_data_valid_in => note_speed[2].ENA
+rx_data_valid_in => note_speed[1].ENA
+rx_data_valid_in => note_speed[0].ENA
 rx_data_valid_in => led_g_reg[3].ENA
 rx_data_valid_in => led_g_reg[2].ENA
 rx_data_valid_in => led_g_reg[1].ENA
 rx_data_valid_in => led_g_reg[0].ENA
-rx_data_in[0] => next_num_buf.DATAA
-rx_data_in[0] => next_num_buf.DATAB
-rx_data_in[0] => next_vel_buf.DATAB
-rx_data_in[0] => next_led_r_reg.DATAB
+rx_data_in[0] => next_note_num.DATAA
+rx_data_in[0] => next_note_num.DATAB
+rx_data_in[0] => next_note_speed.DATAB
 rx_data_in[0] => Equal2.IN13
-rx_data_in[1] => next_num_buf.DATAA
-rx_data_in[1] => next_num_buf.DATAB
-rx_data_in[1] => next_vel_buf.DATAB
-rx_data_in[1] => next_led_r_reg.DATAB
+rx_data_in[1] => next_note_num.DATAA
+rx_data_in[1] => next_note_num.DATAB
+rx_data_in[1] => next_note_speed.DATAB
 rx_data_in[1] => Equal2.IN12
-rx_data_in[2] => next_num_buf.DATAA
-rx_data_in[2] => next_num_buf.DATAB
-rx_data_in[2] => next_vel_buf.DATAB
-rx_data_in[2] => next_led_r_reg.DATAB
+rx_data_in[2] => next_note_num.DATAA
+rx_data_in[2] => next_note_num.DATAB
+rx_data_in[2] => next_note_speed.DATAB
 rx_data_in[2] => Equal2.IN11
-rx_data_in[3] => next_num_buf.DATAA
-rx_data_in[3] => next_num_buf.DATAB
-rx_data_in[3] => next_vel_buf.DATAB
-rx_data_in[3] => next_led_r_reg.DATAB
+rx_data_in[3] => next_note_num.DATAA
+rx_data_in[3] => next_note_num.DATAB
+rx_data_in[3] => next_note_speed.DATAB
 rx_data_in[3] => Equal2.IN10
-rx_data_in[4] => next_num_buf.DATAA
-rx_data_in[4] => next_num_buf.DATAB
-rx_data_in[4] => next_vel_buf.DATAB
-rx_data_in[4] => next_led_r_reg.DATAB
+rx_data_in[4] => next_note_num.DATAA
+rx_data_in[4] => next_note_num.DATAB
+rx_data_in[4] => next_note_speed.DATAB
 rx_data_in[4] => Equal2.IN9
 rx_data_in[4] => Equal0.IN2
 rx_data_in[4] => Equal1.IN2
-rx_data_in[5] => next_num_buf.DATAA
-rx_data_in[5] => next_num_buf.DATAB
-rx_data_in[5] => next_vel_buf.DATAB
-rx_data_in[5] => next_led_r_reg.DATAB
+rx_data_in[5] => next_note_num.DATAA
+rx_data_in[5] => next_note_num.DATAB
+rx_data_in[5] => next_note_speed.DATAB
 rx_data_in[5] => Equal2.IN8
 rx_data_in[5] => Equal0.IN1
 rx_data_in[5] => Equal1.IN1
-rx_data_in[6] => next_num_buf.DATAA
-rx_data_in[6] => next_num_buf.DATAB
-rx_data_in[6] => next_vel_buf.DATAB
-rx_data_in[6] => next_led_r_reg.DATAB
+rx_data_in[6] => next_note_num.DATAA
+rx_data_in[6] => next_note_num.DATAB
+rx_data_in[6] => next_note_speed.DATAB
 rx_data_in[6] => Equal2.IN7
 rx_data_in[6] => Equal0.IN0
 rx_data_in[6] => Equal1.IN0
 rx_data_in[7] => next_note_action.OUTPUTSELECT
 rx_data_in[7] => next_note_action.OUTPUTSELECT
 rx_data_in[7] => next_note_action.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_led_r_reg.DATAB
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
 rx_data_in[7] => Selector1.IN2
 rx_data_in[7] => Selector2.IN2
 rx_data_in[7] => Selector3.IN2
-rx_data_in[7] => next_midi_state.DATAB
+rx_data_in[7] => next_fsm_state.DATAB
 rx_data_in[7] => next_led_g_reg.OUTPUTSELECT
 rx_data_in[7] => next_led_g_reg.OUTPUTSELECT
 rx_data_in[7] => next_led_g_reg.OUTPUTSELECT
 rx_data_in[7] => next_led_g_reg.OUTPUTSELECT
-rx_data_in[7] => next_vel_buf.OUTPUTSELECT
-rx_data_in[7] => next_vel_buf.OUTPUTSELECT
-rx_data_in[7] => next_vel_buf.OUTPUTSELECT
-rx_data_in[7] => next_vel_buf.OUTPUTSELECT
-rx_data_in[7] => next_vel_buf.OUTPUTSELECT
-rx_data_in[7] => next_vel_buf.OUTPUTSELECT
-rx_data_in[7] => next_vel_buf.OUTPUTSELECT
+rx_data_in[7] => next_note_speed.OUTPUTSELECT
+rx_data_in[7] => next_note_speed.OUTPUTSELECT
+rx_data_in[7] => next_note_speed.OUTPUTSELECT
+rx_data_in[7] => next_note_speed.OUTPUTSELECT
+rx_data_in[7] => next_note_speed.OUTPUTSELECT
+rx_data_in[7] => next_note_speed.OUTPUTSELECT
+rx_data_in[7] => next_note_speed.OUTPUTSELECT
 rx_data_in[7] => next_note_update.DATAB
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
-rx_data_in[7] => next_num_buf.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
+rx_data_in[7] => next_note_num.OUTPUTSELECT
 rx_data_in[7] => next_note_action.OUTPUTSELECT
 rx_data_in[7] => next_note_action.OUTPUTSELECT
 rx_data_in[7] => next_note_action.OUTPUTSELECT
@@ -1893,173 +1877,173 @@ clk => led_r_reg[6].CLK
 clk => led_r_reg[7].CLK
 clk => led_r_reg[8].CLK
 clk => led_r_reg[9].CLK
-clk => vel_buf[0].CLK
-clk => vel_buf[1].CLK
-clk => vel_buf[2].CLK
-clk => vel_buf[3].CLK
-clk => vel_buf[4].CLK
-clk => vel_buf[5].CLK
-clk => vel_buf[6].CLK
-clk => num_buf[0].CLK
-clk => num_buf[1].CLK
-clk => num_buf[2].CLK
-clk => num_buf[3].CLK
-clk => num_buf[4].CLK
-clk => num_buf[5].CLK
-clk => num_buf[6].CLK
+clk => note_speed[0].CLK
+clk => note_speed[1].CLK
+clk => note_speed[2].CLK
+clk => note_speed[3].CLK
+clk => note_speed[4].CLK
+clk => note_speed[5].CLK
+clk => note_speed[6].CLK
+clk => note_num[0].CLK
+clk => note_num[1].CLK
+clk => note_num[2].CLK
+clk => note_num[3].CLK
+clk => note_num[4].CLK
+clk => note_num[5].CLK
+clk => note_num[6].CLK
 clk => note_update.CLK
-clk => midi_regs[9].velocity[0].CLK
-clk => midi_regs[9].velocity[1].CLK
-clk => midi_regs[9].velocity[2].CLK
-clk => midi_regs[9].velocity[3].CLK
-clk => midi_regs[9].velocity[4].CLK
-clk => midi_regs[9].velocity[5].CLK
-clk => midi_regs[9].velocity[6].CLK
-clk => midi_regs[9].number[0].CLK
-clk => midi_regs[9].number[1].CLK
-clk => midi_regs[9].number[2].CLK
-clk => midi_regs[9].number[3].CLK
-clk => midi_regs[9].number[4].CLK
-clk => midi_regs[9].number[5].CLK
-clk => midi_regs[9].number[6].CLK
-clk => midi_regs[9].valid.CLK
-clk => midi_regs[8].velocity[0].CLK
-clk => midi_regs[8].velocity[1].CLK
-clk => midi_regs[8].velocity[2].CLK
-clk => midi_regs[8].velocity[3].CLK
-clk => midi_regs[8].velocity[4].CLK
-clk => midi_regs[8].velocity[5].CLK
-clk => midi_regs[8].velocity[6].CLK
-clk => midi_regs[8].number[0].CLK
-clk => midi_regs[8].number[1].CLK
-clk => midi_regs[8].number[2].CLK
-clk => midi_regs[8].number[3].CLK
-clk => midi_regs[8].number[4].CLK
-clk => midi_regs[8].number[5].CLK
-clk => midi_regs[8].number[6].CLK
-clk => midi_regs[8].valid.CLK
-clk => midi_regs[7].velocity[0].CLK
-clk => midi_regs[7].velocity[1].CLK
-clk => midi_regs[7].velocity[2].CLK
-clk => midi_regs[7].velocity[3].CLK
-clk => midi_regs[7].velocity[4].CLK
-clk => midi_regs[7].velocity[5].CLK
-clk => midi_regs[7].velocity[6].CLK
-clk => midi_regs[7].number[0].CLK
-clk => midi_regs[7].number[1].CLK
-clk => midi_regs[7].number[2].CLK
-clk => midi_regs[7].number[3].CLK
-clk => midi_regs[7].number[4].CLK
-clk => midi_regs[7].number[5].CLK
-clk => midi_regs[7].number[6].CLK
-clk => midi_regs[7].valid.CLK
-clk => midi_regs[6].velocity[0].CLK
-clk => midi_regs[6].velocity[1].CLK
-clk => midi_regs[6].velocity[2].CLK
-clk => midi_regs[6].velocity[3].CLK
-clk => midi_regs[6].velocity[4].CLK
-clk => midi_regs[6].velocity[5].CLK
-clk => midi_regs[6].velocity[6].CLK
-clk => midi_regs[6].number[0].CLK
-clk => midi_regs[6].number[1].CLK
-clk => midi_regs[6].number[2].CLK
-clk => midi_regs[6].number[3].CLK
-clk => midi_regs[6].number[4].CLK
-clk => midi_regs[6].number[5].CLK
-clk => midi_regs[6].number[6].CLK
-clk => midi_regs[6].valid.CLK
-clk => midi_regs[5].velocity[0].CLK
-clk => midi_regs[5].velocity[1].CLK
-clk => midi_regs[5].velocity[2].CLK
-clk => midi_regs[5].velocity[3].CLK
-clk => midi_regs[5].velocity[4].CLK
-clk => midi_regs[5].velocity[5].CLK
-clk => midi_regs[5].velocity[6].CLK
-clk => midi_regs[5].number[0].CLK
-clk => midi_regs[5].number[1].CLK
-clk => midi_regs[5].number[2].CLK
-clk => midi_regs[5].number[3].CLK
-clk => midi_regs[5].number[4].CLK
-clk => midi_regs[5].number[5].CLK
-clk => midi_regs[5].number[6].CLK
-clk => midi_regs[5].valid.CLK
-clk => midi_regs[4].velocity[0].CLK
-clk => midi_regs[4].velocity[1].CLK
-clk => midi_regs[4].velocity[2].CLK
-clk => midi_regs[4].velocity[3].CLK
-clk => midi_regs[4].velocity[4].CLK
-clk => midi_regs[4].velocity[5].CLK
-clk => midi_regs[4].velocity[6].CLK
-clk => midi_regs[4].number[0].CLK
-clk => midi_regs[4].number[1].CLK
-clk => midi_regs[4].number[2].CLK
-clk => midi_regs[4].number[3].CLK
-clk => midi_regs[4].number[4].CLK
-clk => midi_regs[4].number[5].CLK
-clk => midi_regs[4].number[6].CLK
-clk => midi_regs[4].valid.CLK
-clk => midi_regs[3].velocity[0].CLK
-clk => midi_regs[3].velocity[1].CLK
-clk => midi_regs[3].velocity[2].CLK
-clk => midi_regs[3].velocity[3].CLK
-clk => midi_regs[3].velocity[4].CLK
-clk => midi_regs[3].velocity[5].CLK
-clk => midi_regs[3].velocity[6].CLK
-clk => midi_regs[3].number[0].CLK
-clk => midi_regs[3].number[1].CLK
-clk => midi_regs[3].number[2].CLK
-clk => midi_regs[3].number[3].CLK
-clk => midi_regs[3].number[4].CLK
-clk => midi_regs[3].number[5].CLK
-clk => midi_regs[3].number[6].CLK
-clk => midi_regs[3].valid.CLK
-clk => midi_regs[2].velocity[0].CLK
-clk => midi_regs[2].velocity[1].CLK
-clk => midi_regs[2].velocity[2].CLK
-clk => midi_regs[2].velocity[3].CLK
-clk => midi_regs[2].velocity[4].CLK
-clk => midi_regs[2].velocity[5].CLK
-clk => midi_regs[2].velocity[6].CLK
-clk => midi_regs[2].number[0].CLK
-clk => midi_regs[2].number[1].CLK
-clk => midi_regs[2].number[2].CLK
-clk => midi_regs[2].number[3].CLK
-clk => midi_regs[2].number[4].CLK
-clk => midi_regs[2].number[5].CLK
-clk => midi_regs[2].number[6].CLK
-clk => midi_regs[2].valid.CLK
-clk => midi_regs[1].velocity[0].CLK
-clk => midi_regs[1].velocity[1].CLK
-clk => midi_regs[1].velocity[2].CLK
-clk => midi_regs[1].velocity[3].CLK
-clk => midi_regs[1].velocity[4].CLK
-clk => midi_regs[1].velocity[5].CLK
-clk => midi_regs[1].velocity[6].CLK
-clk => midi_regs[1].number[0].CLK
-clk => midi_regs[1].number[1].CLK
-clk => midi_regs[1].number[2].CLK
-clk => midi_regs[1].number[3].CLK
-clk => midi_regs[1].number[4].CLK
-clk => midi_regs[1].number[5].CLK
-clk => midi_regs[1].number[6].CLK
-clk => midi_regs[1].valid.CLK
-clk => midi_regs[0].velocity[0].CLK
-clk => midi_regs[0].velocity[1].CLK
-clk => midi_regs[0].velocity[2].CLK
-clk => midi_regs[0].velocity[3].CLK
-clk => midi_regs[0].velocity[4].CLK
-clk => midi_regs[0].velocity[5].CLK
-clk => midi_regs[0].velocity[6].CLK
-clk => midi_regs[0].number[0].CLK
-clk => midi_regs[0].number[1].CLK
-clk => midi_regs[0].number[2].CLK
-clk => midi_regs[0].number[3].CLK
-clk => midi_regs[0].number[4].CLK
-clk => midi_regs[0].number[5].CLK
-clk => midi_regs[0].number[6].CLK
-clk => midi_regs[0].valid.CLK
+clk => midi_out_regs[9].velocity[0].CLK
+clk => midi_out_regs[9].velocity[1].CLK
+clk => midi_out_regs[9].velocity[2].CLK
+clk => midi_out_regs[9].velocity[3].CLK
+clk => midi_out_regs[9].velocity[4].CLK
+clk => midi_out_regs[9].velocity[5].CLK
+clk => midi_out_regs[9].velocity[6].CLK
+clk => midi_out_regs[9].number[0].CLK
+clk => midi_out_regs[9].number[1].CLK
+clk => midi_out_regs[9].number[2].CLK
+clk => midi_out_regs[9].number[3].CLK
+clk => midi_out_regs[9].number[4].CLK
+clk => midi_out_regs[9].number[5].CLK
+clk => midi_out_regs[9].number[6].CLK
+clk => midi_out_regs[9].valid.CLK
+clk => midi_out_regs[8].velocity[0].CLK
+clk => midi_out_regs[8].velocity[1].CLK
+clk => midi_out_regs[8].velocity[2].CLK
+clk => midi_out_regs[8].velocity[3].CLK
+clk => midi_out_regs[8].velocity[4].CLK
+clk => midi_out_regs[8].velocity[5].CLK
+clk => midi_out_regs[8].velocity[6].CLK
+clk => midi_out_regs[8].number[0].CLK
+clk => midi_out_regs[8].number[1].CLK
+clk => midi_out_regs[8].number[2].CLK
+clk => midi_out_regs[8].number[3].CLK
+clk => midi_out_regs[8].number[4].CLK
+clk => midi_out_regs[8].number[5].CLK
+clk => midi_out_regs[8].number[6].CLK
+clk => midi_out_regs[8].valid.CLK
+clk => midi_out_regs[7].velocity[0].CLK
+clk => midi_out_regs[7].velocity[1].CLK
+clk => midi_out_regs[7].velocity[2].CLK
+clk => midi_out_regs[7].velocity[3].CLK
+clk => midi_out_regs[7].velocity[4].CLK
+clk => midi_out_regs[7].velocity[5].CLK
+clk => midi_out_regs[7].velocity[6].CLK
+clk => midi_out_regs[7].number[0].CLK
+clk => midi_out_regs[7].number[1].CLK
+clk => midi_out_regs[7].number[2].CLK
+clk => midi_out_regs[7].number[3].CLK
+clk => midi_out_regs[7].number[4].CLK
+clk => midi_out_regs[7].number[5].CLK
+clk => midi_out_regs[7].number[6].CLK
+clk => midi_out_regs[7].valid.CLK
+clk => midi_out_regs[6].velocity[0].CLK
+clk => midi_out_regs[6].velocity[1].CLK
+clk => midi_out_regs[6].velocity[2].CLK
+clk => midi_out_regs[6].velocity[3].CLK
+clk => midi_out_regs[6].velocity[4].CLK
+clk => midi_out_regs[6].velocity[5].CLK
+clk => midi_out_regs[6].velocity[6].CLK
+clk => midi_out_regs[6].number[0].CLK
+clk => midi_out_regs[6].number[1].CLK
+clk => midi_out_regs[6].number[2].CLK
+clk => midi_out_regs[6].number[3].CLK
+clk => midi_out_regs[6].number[4].CLK
+clk => midi_out_regs[6].number[5].CLK
+clk => midi_out_regs[6].number[6].CLK
+clk => midi_out_regs[6].valid.CLK
+clk => midi_out_regs[5].velocity[0].CLK
+clk => midi_out_regs[5].velocity[1].CLK
+clk => midi_out_regs[5].velocity[2].CLK
+clk => midi_out_regs[5].velocity[3].CLK
+clk => midi_out_regs[5].velocity[4].CLK
+clk => midi_out_regs[5].velocity[5].CLK
+clk => midi_out_regs[5].velocity[6].CLK
+clk => midi_out_regs[5].number[0].CLK
+clk => midi_out_regs[5].number[1].CLK
+clk => midi_out_regs[5].number[2].CLK
+clk => midi_out_regs[5].number[3].CLK
+clk => midi_out_regs[5].number[4].CLK
+clk => midi_out_regs[5].number[5].CLK
+clk => midi_out_regs[5].number[6].CLK
+clk => midi_out_regs[5].valid.CLK
+clk => midi_out_regs[4].velocity[0].CLK
+clk => midi_out_regs[4].velocity[1].CLK
+clk => midi_out_regs[4].velocity[2].CLK
+clk => midi_out_regs[4].velocity[3].CLK
+clk => midi_out_regs[4].velocity[4].CLK
+clk => midi_out_regs[4].velocity[5].CLK
+clk => midi_out_regs[4].velocity[6].CLK
+clk => midi_out_regs[4].number[0].CLK
+clk => midi_out_regs[4].number[1].CLK
+clk => midi_out_regs[4].number[2].CLK
+clk => midi_out_regs[4].number[3].CLK
+clk => midi_out_regs[4].number[4].CLK
+clk => midi_out_regs[4].number[5].CLK
+clk => midi_out_regs[4].number[6].CLK
+clk => midi_out_regs[4].valid.CLK
+clk => midi_out_regs[3].velocity[0].CLK
+clk => midi_out_regs[3].velocity[1].CLK
+clk => midi_out_regs[3].velocity[2].CLK
+clk => midi_out_regs[3].velocity[3].CLK
+clk => midi_out_regs[3].velocity[4].CLK
+clk => midi_out_regs[3].velocity[5].CLK
+clk => midi_out_regs[3].velocity[6].CLK
+clk => midi_out_regs[3].number[0].CLK
+clk => midi_out_regs[3].number[1].CLK
+clk => midi_out_regs[3].number[2].CLK
+clk => midi_out_regs[3].number[3].CLK
+clk => midi_out_regs[3].number[4].CLK
+clk => midi_out_regs[3].number[5].CLK
+clk => midi_out_regs[3].number[6].CLK
+clk => midi_out_regs[3].valid.CLK
+clk => midi_out_regs[2].velocity[0].CLK
+clk => midi_out_regs[2].velocity[1].CLK
+clk => midi_out_regs[2].velocity[2].CLK
+clk => midi_out_regs[2].velocity[3].CLK
+clk => midi_out_regs[2].velocity[4].CLK
+clk => midi_out_regs[2].velocity[5].CLK
+clk => midi_out_regs[2].velocity[6].CLK
+clk => midi_out_regs[2].number[0].CLK
+clk => midi_out_regs[2].number[1].CLK
+clk => midi_out_regs[2].number[2].CLK
+clk => midi_out_regs[2].number[3].CLK
+clk => midi_out_regs[2].number[4].CLK
+clk => midi_out_regs[2].number[5].CLK
+clk => midi_out_regs[2].number[6].CLK
+clk => midi_out_regs[2].valid.CLK
+clk => midi_out_regs[1].velocity[0].CLK
+clk => midi_out_regs[1].velocity[1].CLK
+clk => midi_out_regs[1].velocity[2].CLK
+clk => midi_out_regs[1].velocity[3].CLK
+clk => midi_out_regs[1].velocity[4].CLK
+clk => midi_out_regs[1].velocity[5].CLK
+clk => midi_out_regs[1].velocity[6].CLK
+clk => midi_out_regs[1].number[0].CLK
+clk => midi_out_regs[1].number[1].CLK
+clk => midi_out_regs[1].number[2].CLK
+clk => midi_out_regs[1].number[3].CLK
+clk => midi_out_regs[1].number[4].CLK
+clk => midi_out_regs[1].number[5].CLK
+clk => midi_out_regs[1].number[6].CLK
+clk => midi_out_regs[1].valid.CLK
+clk => midi_out_regs[0].velocity[0].CLK
+clk => midi_out_regs[0].velocity[1].CLK
+clk => midi_out_regs[0].velocity[2].CLK
+clk => midi_out_regs[0].velocity[3].CLK
+clk => midi_out_regs[0].velocity[4].CLK
+clk => midi_out_regs[0].velocity[5].CLK
+clk => midi_out_regs[0].velocity[6].CLK
+clk => midi_out_regs[0].number[0].CLK
+clk => midi_out_regs[0].number[1].CLK
+clk => midi_out_regs[0].number[2].CLK
+clk => midi_out_regs[0].number[3].CLK
+clk => midi_out_regs[0].number[4].CLK
+clk => midi_out_regs[0].number[5].CLK
+clk => midi_out_regs[0].number[6].CLK
+clk => midi_out_regs[0].valid.CLK
 clk => note_action~1.DATAIN
-clk => midi_state~1.DATAIN
+clk => fsm_state~1.DATAIN
 reset_n => led_g_reg[0].ACLR
 reset_n => led_g_reg[1].ACLR
 reset_n => led_g_reg[2].ACLR
@@ -2077,323 +2061,323 @@ reset_n => led_r_reg[6].ACLR
 reset_n => led_r_reg[7].ACLR
 reset_n => led_r_reg[8].ACLR
 reset_n => led_r_reg[9].ACLR
-reset_n => vel_buf[0].ACLR
-reset_n => vel_buf[1].ACLR
-reset_n => vel_buf[2].ACLR
-reset_n => vel_buf[3].ACLR
-reset_n => vel_buf[4].ACLR
-reset_n => vel_buf[5].ACLR
-reset_n => vel_buf[6].ACLR
-reset_n => num_buf[0].ACLR
-reset_n => num_buf[1].ACLR
-reset_n => num_buf[2].ACLR
-reset_n => num_buf[3].ACLR
-reset_n => num_buf[4].ACLR
-reset_n => num_buf[5].ACLR
-reset_n => num_buf[6].ACLR
+reset_n => note_speed[0].ACLR
+reset_n => note_speed[1].ACLR
+reset_n => note_speed[2].ACLR
+reset_n => note_speed[3].ACLR
+reset_n => note_speed[4].ACLR
+reset_n => note_speed[5].ACLR
+reset_n => note_speed[6].ACLR
+reset_n => note_num[0].ACLR
+reset_n => note_num[1].ACLR
+reset_n => note_num[2].ACLR
+reset_n => note_num[3].ACLR
+reset_n => note_num[4].ACLR
+reset_n => note_num[5].ACLR
+reset_n => note_num[6].ACLR
 reset_n => note_update.ACLR
-reset_n => midi_regs[9].velocity[0].ACLR
-reset_n => midi_regs[9].velocity[1].ACLR
-reset_n => midi_regs[9].velocity[2].ACLR
-reset_n => midi_regs[9].velocity[3].ACLR
-reset_n => midi_regs[9].velocity[4].ACLR
-reset_n => midi_regs[9].velocity[5].ACLR
-reset_n => midi_regs[9].velocity[6].ACLR
-reset_n => midi_regs[9].number[0].ACLR
-reset_n => midi_regs[9].number[1].ACLR
-reset_n => midi_regs[9].number[2].ACLR
-reset_n => midi_regs[9].number[3].ACLR
-reset_n => midi_regs[9].number[4].ACLR
-reset_n => midi_regs[9].number[5].ACLR
-reset_n => midi_regs[9].number[6].ACLR
-reset_n => midi_regs[9].valid.ACLR
-reset_n => midi_regs[8].velocity[0].ACLR
-reset_n => midi_regs[8].velocity[1].ACLR
-reset_n => midi_regs[8].velocity[2].ACLR
-reset_n => midi_regs[8].velocity[3].ACLR
-reset_n => midi_regs[8].velocity[4].ACLR
-reset_n => midi_regs[8].velocity[5].ACLR
-reset_n => midi_regs[8].velocity[6].ACLR
-reset_n => midi_regs[8].number[0].ACLR
-reset_n => midi_regs[8].number[1].ACLR
-reset_n => midi_regs[8].number[2].ACLR
-reset_n => midi_regs[8].number[3].ACLR
-reset_n => midi_regs[8].number[4].ACLR
-reset_n => midi_regs[8].number[5].ACLR
-reset_n => midi_regs[8].number[6].ACLR
-reset_n => midi_regs[8].valid.ACLR
-reset_n => midi_regs[7].velocity[0].ACLR
-reset_n => midi_regs[7].velocity[1].ACLR
-reset_n => midi_regs[7].velocity[2].ACLR
-reset_n => midi_regs[7].velocity[3].ACLR
-reset_n => midi_regs[7].velocity[4].ACLR
-reset_n => midi_regs[7].velocity[5].ACLR
-reset_n => midi_regs[7].velocity[6].ACLR
-reset_n => midi_regs[7].number[0].ACLR
-reset_n => midi_regs[7].number[1].ACLR
-reset_n => midi_regs[7].number[2].ACLR
-reset_n => midi_regs[7].number[3].ACLR
-reset_n => midi_regs[7].number[4].ACLR
-reset_n => midi_regs[7].number[5].ACLR
-reset_n => midi_regs[7].number[6].ACLR
-reset_n => midi_regs[7].valid.ACLR
-reset_n => midi_regs[6].velocity[0].ACLR
-reset_n => midi_regs[6].velocity[1].ACLR
-reset_n => midi_regs[6].velocity[2].ACLR
-reset_n => midi_regs[6].velocity[3].ACLR
-reset_n => midi_regs[6].velocity[4].ACLR
-reset_n => midi_regs[6].velocity[5].ACLR
-reset_n => midi_regs[6].velocity[6].ACLR
-reset_n => midi_regs[6].number[0].ACLR
-reset_n => midi_regs[6].number[1].ACLR
-reset_n => midi_regs[6].number[2].ACLR
-reset_n => midi_regs[6].number[3].ACLR
-reset_n => midi_regs[6].number[4].ACLR
-reset_n => midi_regs[6].number[5].ACLR
-reset_n => midi_regs[6].number[6].ACLR
-reset_n => midi_regs[6].valid.ACLR
-reset_n => midi_regs[5].velocity[0].ACLR
-reset_n => midi_regs[5].velocity[1].ACLR
-reset_n => midi_regs[5].velocity[2].ACLR
-reset_n => midi_regs[5].velocity[3].ACLR
-reset_n => midi_regs[5].velocity[4].ACLR
-reset_n => midi_regs[5].velocity[5].ACLR
-reset_n => midi_regs[5].velocity[6].ACLR
-reset_n => midi_regs[5].number[0].ACLR
-reset_n => midi_regs[5].number[1].ACLR
-reset_n => midi_regs[5].number[2].ACLR
-reset_n => midi_regs[5].number[3].ACLR
-reset_n => midi_regs[5].number[4].ACLR
-reset_n => midi_regs[5].number[5].ACLR
-reset_n => midi_regs[5].number[6].ACLR
-reset_n => midi_regs[5].valid.ACLR
-reset_n => midi_regs[4].velocity[0].ACLR
-reset_n => midi_regs[4].velocity[1].ACLR
-reset_n => midi_regs[4].velocity[2].ACLR
-reset_n => midi_regs[4].velocity[3].ACLR
-reset_n => midi_regs[4].velocity[4].ACLR
-reset_n => midi_regs[4].velocity[5].ACLR
-reset_n => midi_regs[4].velocity[6].ACLR
-reset_n => midi_regs[4].number[0].ACLR
-reset_n => midi_regs[4].number[1].ACLR
-reset_n => midi_regs[4].number[2].ACLR
-reset_n => midi_regs[4].number[3].ACLR
-reset_n => midi_regs[4].number[4].ACLR
-reset_n => midi_regs[4].number[5].ACLR
-reset_n => midi_regs[4].number[6].ACLR
-reset_n => midi_regs[4].valid.ACLR
-reset_n => midi_regs[3].velocity[0].ACLR
-reset_n => midi_regs[3].velocity[1].ACLR
-reset_n => midi_regs[3].velocity[2].ACLR
-reset_n => midi_regs[3].velocity[3].ACLR
-reset_n => midi_regs[3].velocity[4].ACLR
-reset_n => midi_regs[3].velocity[5].ACLR
-reset_n => midi_regs[3].velocity[6].ACLR
-reset_n => midi_regs[3].number[0].ACLR
-reset_n => midi_regs[3].number[1].ACLR
-reset_n => midi_regs[3].number[2].ACLR
-reset_n => midi_regs[3].number[3].ACLR
-reset_n => midi_regs[3].number[4].ACLR
-reset_n => midi_regs[3].number[5].ACLR
-reset_n => midi_regs[3].number[6].ACLR
-reset_n => midi_regs[3].valid.ACLR
-reset_n => midi_regs[2].velocity[0].ACLR
-reset_n => midi_regs[2].velocity[1].ACLR
-reset_n => midi_regs[2].velocity[2].ACLR
-reset_n => midi_regs[2].velocity[3].ACLR
-reset_n => midi_regs[2].velocity[4].ACLR
-reset_n => midi_regs[2].velocity[5].ACLR
-reset_n => midi_regs[2].velocity[6].ACLR
-reset_n => midi_regs[2].number[0].ACLR
-reset_n => midi_regs[2].number[1].ACLR
-reset_n => midi_regs[2].number[2].ACLR
-reset_n => midi_regs[2].number[3].ACLR
-reset_n => midi_regs[2].number[4].ACLR
-reset_n => midi_regs[2].number[5].ACLR
-reset_n => midi_regs[2].number[6].ACLR
-reset_n => midi_regs[2].valid.ACLR
-reset_n => midi_regs[1].velocity[0].ACLR
-reset_n => midi_regs[1].velocity[1].ACLR
-reset_n => midi_regs[1].velocity[2].ACLR
-reset_n => midi_regs[1].velocity[3].ACLR
-reset_n => midi_regs[1].velocity[4].ACLR
-reset_n => midi_regs[1].velocity[5].ACLR
-reset_n => midi_regs[1].velocity[6].ACLR
-reset_n => midi_regs[1].number[0].ACLR
-reset_n => midi_regs[1].number[1].ACLR
-reset_n => midi_regs[1].number[2].ACLR
-reset_n => midi_regs[1].number[3].ACLR
-reset_n => midi_regs[1].number[4].ACLR
-reset_n => midi_regs[1].number[5].ACLR
-reset_n => midi_regs[1].number[6].ACLR
-reset_n => midi_regs[1].valid.ACLR
-reset_n => midi_regs[0].velocity[0].ACLR
-reset_n => midi_regs[0].velocity[1].ACLR
-reset_n => midi_regs[0].velocity[2].ACLR
-reset_n => midi_regs[0].velocity[3].ACLR
-reset_n => midi_regs[0].velocity[4].ACLR
-reset_n => midi_regs[0].velocity[5].ACLR
-reset_n => midi_regs[0].velocity[6].ACLR
-reset_n => midi_regs[0].number[0].ACLR
-reset_n => midi_regs[0].number[1].ACLR
-reset_n => midi_regs[0].number[2].ACLR
-reset_n => midi_regs[0].number[3].ACLR
-reset_n => midi_regs[0].number[4].ACLR
-reset_n => midi_regs[0].number[5].ACLR
-reset_n => midi_regs[0].number[6].ACLR
-reset_n => midi_regs[0].valid.ACLR
+reset_n => midi_out_regs[9].velocity[0].ACLR
+reset_n => midi_out_regs[9].velocity[1].ACLR
+reset_n => midi_out_regs[9].velocity[2].ACLR
+reset_n => midi_out_regs[9].velocity[3].ACLR
+reset_n => midi_out_regs[9].velocity[4].ACLR
+reset_n => midi_out_regs[9].velocity[5].ACLR
+reset_n => midi_out_regs[9].velocity[6].ACLR
+reset_n => midi_out_regs[9].number[0].ACLR
+reset_n => midi_out_regs[9].number[1].ACLR
+reset_n => midi_out_regs[9].number[2].ACLR
+reset_n => midi_out_regs[9].number[3].ACLR
+reset_n => midi_out_regs[9].number[4].ACLR
+reset_n => midi_out_regs[9].number[5].ACLR
+reset_n => midi_out_regs[9].number[6].ACLR
+reset_n => midi_out_regs[9].valid.ACLR
+reset_n => midi_out_regs[8].velocity[0].ACLR
+reset_n => midi_out_regs[8].velocity[1].ACLR
+reset_n => midi_out_regs[8].velocity[2].ACLR
+reset_n => midi_out_regs[8].velocity[3].ACLR
+reset_n => midi_out_regs[8].velocity[4].ACLR
+reset_n => midi_out_regs[8].velocity[5].ACLR
+reset_n => midi_out_regs[8].velocity[6].ACLR
+reset_n => midi_out_regs[8].number[0].ACLR
+reset_n => midi_out_regs[8].number[1].ACLR
+reset_n => midi_out_regs[8].number[2].ACLR
+reset_n => midi_out_regs[8].number[3].ACLR
+reset_n => midi_out_regs[8].number[4].ACLR
+reset_n => midi_out_regs[8].number[5].ACLR
+reset_n => midi_out_regs[8].number[6].ACLR
+reset_n => midi_out_regs[8].valid.ACLR
+reset_n => midi_out_regs[7].velocity[0].ACLR
+reset_n => midi_out_regs[7].velocity[1].ACLR
+reset_n => midi_out_regs[7].velocity[2].ACLR
+reset_n => midi_out_regs[7].velocity[3].ACLR
+reset_n => midi_out_regs[7].velocity[4].ACLR
+reset_n => midi_out_regs[7].velocity[5].ACLR
+reset_n => midi_out_regs[7].velocity[6].ACLR
+reset_n => midi_out_regs[7].number[0].ACLR
+reset_n => midi_out_regs[7].number[1].ACLR
+reset_n => midi_out_regs[7].number[2].ACLR
+reset_n => midi_out_regs[7].number[3].ACLR
+reset_n => midi_out_regs[7].number[4].ACLR
+reset_n => midi_out_regs[7].number[5].ACLR
+reset_n => midi_out_regs[7].number[6].ACLR
+reset_n => midi_out_regs[7].valid.ACLR
+reset_n => midi_out_regs[6].velocity[0].ACLR
+reset_n => midi_out_regs[6].velocity[1].ACLR
+reset_n => midi_out_regs[6].velocity[2].ACLR
+reset_n => midi_out_regs[6].velocity[3].ACLR
+reset_n => midi_out_regs[6].velocity[4].ACLR
+reset_n => midi_out_regs[6].velocity[5].ACLR
+reset_n => midi_out_regs[6].velocity[6].ACLR
+reset_n => midi_out_regs[6].number[0].ACLR
+reset_n => midi_out_regs[6].number[1].ACLR
+reset_n => midi_out_regs[6].number[2].ACLR
+reset_n => midi_out_regs[6].number[3].ACLR
+reset_n => midi_out_regs[6].number[4].ACLR
+reset_n => midi_out_regs[6].number[5].ACLR
+reset_n => midi_out_regs[6].number[6].ACLR
+reset_n => midi_out_regs[6].valid.ACLR
+reset_n => midi_out_regs[5].velocity[0].ACLR
+reset_n => midi_out_regs[5].velocity[1].ACLR
+reset_n => midi_out_regs[5].velocity[2].ACLR
+reset_n => midi_out_regs[5].velocity[3].ACLR
+reset_n => midi_out_regs[5].velocity[4].ACLR
+reset_n => midi_out_regs[5].velocity[5].ACLR
+reset_n => midi_out_regs[5].velocity[6].ACLR
+reset_n => midi_out_regs[5].number[0].ACLR
+reset_n => midi_out_regs[5].number[1].ACLR
+reset_n => midi_out_regs[5].number[2].ACLR
+reset_n => midi_out_regs[5].number[3].ACLR
+reset_n => midi_out_regs[5].number[4].ACLR
+reset_n => midi_out_regs[5].number[5].ACLR
+reset_n => midi_out_regs[5].number[6].ACLR
+reset_n => midi_out_regs[5].valid.ACLR
+reset_n => midi_out_regs[4].velocity[0].ACLR
+reset_n => midi_out_regs[4].velocity[1].ACLR
+reset_n => midi_out_regs[4].velocity[2].ACLR
+reset_n => midi_out_regs[4].velocity[3].ACLR
+reset_n => midi_out_regs[4].velocity[4].ACLR
+reset_n => midi_out_regs[4].velocity[5].ACLR
+reset_n => midi_out_regs[4].velocity[6].ACLR
+reset_n => midi_out_regs[4].number[0].ACLR
+reset_n => midi_out_regs[4].number[1].ACLR
+reset_n => midi_out_regs[4].number[2].ACLR
+reset_n => midi_out_regs[4].number[3].ACLR
+reset_n => midi_out_regs[4].number[4].ACLR
+reset_n => midi_out_regs[4].number[5].ACLR
+reset_n => midi_out_regs[4].number[6].ACLR
+reset_n => midi_out_regs[4].valid.ACLR
+reset_n => midi_out_regs[3].velocity[0].ACLR
+reset_n => midi_out_regs[3].velocity[1].ACLR
+reset_n => midi_out_regs[3].velocity[2].ACLR
+reset_n => midi_out_regs[3].velocity[3].ACLR
+reset_n => midi_out_regs[3].velocity[4].ACLR
+reset_n => midi_out_regs[3].velocity[5].ACLR
+reset_n => midi_out_regs[3].velocity[6].ACLR
+reset_n => midi_out_regs[3].number[0].ACLR
+reset_n => midi_out_regs[3].number[1].ACLR
+reset_n => midi_out_regs[3].number[2].ACLR
+reset_n => midi_out_regs[3].number[3].ACLR
+reset_n => midi_out_regs[3].number[4].ACLR
+reset_n => midi_out_regs[3].number[5].ACLR
+reset_n => midi_out_regs[3].number[6].ACLR
+reset_n => midi_out_regs[3].valid.ACLR
+reset_n => midi_out_regs[2].velocity[0].ACLR
+reset_n => midi_out_regs[2].velocity[1].ACLR
+reset_n => midi_out_regs[2].velocity[2].ACLR
+reset_n => midi_out_regs[2].velocity[3].ACLR
+reset_n => midi_out_regs[2].velocity[4].ACLR
+reset_n => midi_out_regs[2].velocity[5].ACLR
+reset_n => midi_out_regs[2].velocity[6].ACLR
+reset_n => midi_out_regs[2].number[0].ACLR
+reset_n => midi_out_regs[2].number[1].ACLR
+reset_n => midi_out_regs[2].number[2].ACLR
+reset_n => midi_out_regs[2].number[3].ACLR
+reset_n => midi_out_regs[2].number[4].ACLR
+reset_n => midi_out_regs[2].number[5].ACLR
+reset_n => midi_out_regs[2].number[6].ACLR
+reset_n => midi_out_regs[2].valid.ACLR
+reset_n => midi_out_regs[1].velocity[0].ACLR
+reset_n => midi_out_regs[1].velocity[1].ACLR
+reset_n => midi_out_regs[1].velocity[2].ACLR
+reset_n => midi_out_regs[1].velocity[3].ACLR
+reset_n => midi_out_regs[1].velocity[4].ACLR
+reset_n => midi_out_regs[1].velocity[5].ACLR
+reset_n => midi_out_regs[1].velocity[6].ACLR
+reset_n => midi_out_regs[1].number[0].ACLR
+reset_n => midi_out_regs[1].number[1].ACLR
+reset_n => midi_out_regs[1].number[2].ACLR
+reset_n => midi_out_regs[1].number[3].ACLR
+reset_n => midi_out_regs[1].number[4].ACLR
+reset_n => midi_out_regs[1].number[5].ACLR
+reset_n => midi_out_regs[1].number[6].ACLR
+reset_n => midi_out_regs[1].valid.ACLR
+reset_n => midi_out_regs[0].velocity[0].ACLR
+reset_n => midi_out_regs[0].velocity[1].ACLR
+reset_n => midi_out_regs[0].velocity[2].ACLR
+reset_n => midi_out_regs[0].velocity[3].ACLR
+reset_n => midi_out_regs[0].velocity[4].ACLR
+reset_n => midi_out_regs[0].velocity[5].ACLR
+reset_n => midi_out_regs[0].velocity[6].ACLR
+reset_n => midi_out_regs[0].number[0].ACLR
+reset_n => midi_out_regs[0].number[1].ACLR
+reset_n => midi_out_regs[0].number[2].ACLR
+reset_n => midi_out_regs[0].number[3].ACLR
+reset_n => midi_out_regs[0].number[4].ACLR
+reset_n => midi_out_regs[0].number[5].ACLR
+reset_n => midi_out_regs[0].number[6].ACLR
+reset_n => midi_out_regs[0].valid.ACLR
 reset_n => note_action~3.DATAIN
-reset_n => midi_state~3.DATAIN
-midi_cmds[9].velocity[0] <= midi_regs[9].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].velocity[1] <= midi_regs[9].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].velocity[2] <= midi_regs[9].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].velocity[3] <= midi_regs[9].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].velocity[4] <= midi_regs[9].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].velocity[5] <= midi_regs[9].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].velocity[6] <= midi_regs[9].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].number[0] <= midi_regs[9].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].number[1] <= midi_regs[9].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].number[2] <= midi_regs[9].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].number[3] <= midi_regs[9].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].number[4] <= midi_regs[9].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].number[5] <= midi_regs[9].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].number[6] <= midi_regs[9].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[9].valid <= midi_regs[9].valid.DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].velocity[0] <= midi_regs[8].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].velocity[1] <= midi_regs[8].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].velocity[2] <= midi_regs[8].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].velocity[3] <= midi_regs[8].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].velocity[4] <= midi_regs[8].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].velocity[5] <= midi_regs[8].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].velocity[6] <= midi_regs[8].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].number[0] <= midi_regs[8].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].number[1] <= midi_regs[8].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].number[2] <= midi_regs[8].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].number[3] <= midi_regs[8].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].number[4] <= midi_regs[8].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].number[5] <= midi_regs[8].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].number[6] <= midi_regs[8].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[8].valid <= midi_regs[8].valid.DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].velocity[0] <= midi_regs[7].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].velocity[1] <= midi_regs[7].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].velocity[2] <= midi_regs[7].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].velocity[3] <= midi_regs[7].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].velocity[4] <= midi_regs[7].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].velocity[5] <= midi_regs[7].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].velocity[6] <= midi_regs[7].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].number[0] <= midi_regs[7].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].number[1] <= midi_regs[7].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].number[2] <= midi_regs[7].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].number[3] <= midi_regs[7].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].number[4] <= midi_regs[7].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].number[5] <= midi_regs[7].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].number[6] <= midi_regs[7].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[7].valid <= midi_regs[7].valid.DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].velocity[0] <= midi_regs[6].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].velocity[1] <= midi_regs[6].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].velocity[2] <= midi_regs[6].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].velocity[3] <= midi_regs[6].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].velocity[4] <= midi_regs[6].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].velocity[5] <= midi_regs[6].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].velocity[6] <= midi_regs[6].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].number[0] <= midi_regs[6].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].number[1] <= midi_regs[6].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].number[2] <= midi_regs[6].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].number[3] <= midi_regs[6].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].number[4] <= midi_regs[6].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].number[5] <= midi_regs[6].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].number[6] <= midi_regs[6].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[6].valid <= midi_regs[6].valid.DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].velocity[0] <= midi_regs[5].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].velocity[1] <= midi_regs[5].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].velocity[2] <= midi_regs[5].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].velocity[3] <= midi_regs[5].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].velocity[4] <= midi_regs[5].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].velocity[5] <= midi_regs[5].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].velocity[6] <= midi_regs[5].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].number[0] <= midi_regs[5].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].number[1] <= midi_regs[5].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].number[2] <= midi_regs[5].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].number[3] <= midi_regs[5].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].number[4] <= midi_regs[5].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].number[5] <= midi_regs[5].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].number[6] <= midi_regs[5].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[5].valid <= midi_regs[5].valid.DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].velocity[0] <= midi_regs[4].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].velocity[1] <= midi_regs[4].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].velocity[2] <= midi_regs[4].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].velocity[3] <= midi_regs[4].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].velocity[4] <= midi_regs[4].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].velocity[5] <= midi_regs[4].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].velocity[6] <= midi_regs[4].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].number[0] <= midi_regs[4].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].number[1] <= midi_regs[4].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].number[2] <= midi_regs[4].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].number[3] <= midi_regs[4].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].number[4] <= midi_regs[4].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].number[5] <= midi_regs[4].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].number[6] <= midi_regs[4].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[4].valid <= midi_regs[4].valid.DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].velocity[0] <= midi_regs[3].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].velocity[1] <= midi_regs[3].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].velocity[2] <= midi_regs[3].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].velocity[3] <= midi_regs[3].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].velocity[4] <= midi_regs[3].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].velocity[5] <= midi_regs[3].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].velocity[6] <= midi_regs[3].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].number[0] <= midi_regs[3].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].number[1] <= midi_regs[3].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].number[2] <= midi_regs[3].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].number[3] <= midi_regs[3].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].number[4] <= midi_regs[3].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].number[5] <= midi_regs[3].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].number[6] <= midi_regs[3].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[3].valid <= midi_regs[3].valid.DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].velocity[0] <= midi_regs[2].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].velocity[1] <= midi_regs[2].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].velocity[2] <= midi_regs[2].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].velocity[3] <= midi_regs[2].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].velocity[4] <= midi_regs[2].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].velocity[5] <= midi_regs[2].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].velocity[6] <= midi_regs[2].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].number[0] <= midi_regs[2].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].number[1] <= midi_regs[2].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].number[2] <= midi_regs[2].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].number[3] <= midi_regs[2].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].number[4] <= midi_regs[2].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].number[5] <= midi_regs[2].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].number[6] <= midi_regs[2].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[2].valid <= midi_regs[2].valid.DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].velocity[0] <= midi_regs[1].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].velocity[1] <= midi_regs[1].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].velocity[2] <= midi_regs[1].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].velocity[3] <= midi_regs[1].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].velocity[4] <= midi_regs[1].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].velocity[5] <= midi_regs[1].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].velocity[6] <= midi_regs[1].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].number[0] <= midi_regs[1].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].number[1] <= midi_regs[1].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].number[2] <= midi_regs[1].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].number[3] <= midi_regs[1].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].number[4] <= midi_regs[1].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].number[5] <= midi_regs[1].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].number[6] <= midi_regs[1].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[1].valid <= midi_regs[1].valid.DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].velocity[0] <= midi_regs[0].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].velocity[1] <= midi_regs[0].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].velocity[2] <= midi_regs[0].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].velocity[3] <= midi_regs[0].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].velocity[4] <= midi_regs[0].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].velocity[5] <= midi_regs[0].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].velocity[6] <= midi_regs[0].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].number[0] <= midi_regs[0].number[0].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].number[1] <= midi_regs[0].number[1].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].number[2] <= midi_regs[0].number[2].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].number[3] <= midi_regs[0].number[3].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].number[4] <= midi_regs[0].number[4].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].number[5] <= midi_regs[0].number[5].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].number[6] <= midi_regs[0].number[6].DB_MAX_OUTPUT_PORT_TYPE
-midi_cmds[0].valid <= midi_regs[0].valid.DB_MAX_OUTPUT_PORT_TYPE
+reset_n => fsm_state~3.DATAIN
+midi_note_o[9].velocity[0] <= midi_out_regs[9].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].velocity[1] <= midi_out_regs[9].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].velocity[2] <= midi_out_regs[9].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].velocity[3] <= midi_out_regs[9].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].velocity[4] <= midi_out_regs[9].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].velocity[5] <= midi_out_regs[9].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].velocity[6] <= midi_out_regs[9].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].number[0] <= midi_out_regs[9].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].number[1] <= midi_out_regs[9].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].number[2] <= midi_out_regs[9].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].number[3] <= midi_out_regs[9].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].number[4] <= midi_out_regs[9].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].number[5] <= midi_out_regs[9].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].number[6] <= midi_out_regs[9].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[9].valid <= midi_out_regs[9].valid.DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].velocity[0] <= midi_out_regs[8].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].velocity[1] <= midi_out_regs[8].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].velocity[2] <= midi_out_regs[8].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].velocity[3] <= midi_out_regs[8].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].velocity[4] <= midi_out_regs[8].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].velocity[5] <= midi_out_regs[8].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].velocity[6] <= midi_out_regs[8].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].number[0] <= midi_out_regs[8].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].number[1] <= midi_out_regs[8].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].number[2] <= midi_out_regs[8].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].number[3] <= midi_out_regs[8].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].number[4] <= midi_out_regs[8].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].number[5] <= midi_out_regs[8].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].number[6] <= midi_out_regs[8].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[8].valid <= midi_out_regs[8].valid.DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].velocity[0] <= midi_out_regs[7].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].velocity[1] <= midi_out_regs[7].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].velocity[2] <= midi_out_regs[7].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].velocity[3] <= midi_out_regs[7].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].velocity[4] <= midi_out_regs[7].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].velocity[5] <= midi_out_regs[7].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].velocity[6] <= midi_out_regs[7].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].number[0] <= midi_out_regs[7].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].number[1] <= midi_out_regs[7].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].number[2] <= midi_out_regs[7].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].number[3] <= midi_out_regs[7].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].number[4] <= midi_out_regs[7].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].number[5] <= midi_out_regs[7].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].number[6] <= midi_out_regs[7].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[7].valid <= midi_out_regs[7].valid.DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].velocity[0] <= midi_out_regs[6].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].velocity[1] <= midi_out_regs[6].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].velocity[2] <= midi_out_regs[6].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].velocity[3] <= midi_out_regs[6].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].velocity[4] <= midi_out_regs[6].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].velocity[5] <= midi_out_regs[6].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].velocity[6] <= midi_out_regs[6].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].number[0] <= midi_out_regs[6].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].number[1] <= midi_out_regs[6].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].number[2] <= midi_out_regs[6].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].number[3] <= midi_out_regs[6].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].number[4] <= midi_out_regs[6].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].number[5] <= midi_out_regs[6].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].number[6] <= midi_out_regs[6].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[6].valid <= midi_out_regs[6].valid.DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].velocity[0] <= midi_out_regs[5].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].velocity[1] <= midi_out_regs[5].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].velocity[2] <= midi_out_regs[5].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].velocity[3] <= midi_out_regs[5].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].velocity[4] <= midi_out_regs[5].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].velocity[5] <= midi_out_regs[5].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].velocity[6] <= midi_out_regs[5].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].number[0] <= midi_out_regs[5].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].number[1] <= midi_out_regs[5].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].number[2] <= midi_out_regs[5].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].number[3] <= midi_out_regs[5].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].number[4] <= midi_out_regs[5].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].number[5] <= midi_out_regs[5].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].number[6] <= midi_out_regs[5].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[5].valid <= midi_out_regs[5].valid.DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].velocity[0] <= midi_out_regs[4].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].velocity[1] <= midi_out_regs[4].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].velocity[2] <= midi_out_regs[4].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].velocity[3] <= midi_out_regs[4].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].velocity[4] <= midi_out_regs[4].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].velocity[5] <= midi_out_regs[4].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].velocity[6] <= midi_out_regs[4].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].number[0] <= midi_out_regs[4].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].number[1] <= midi_out_regs[4].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].number[2] <= midi_out_regs[4].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].number[3] <= midi_out_regs[4].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].number[4] <= midi_out_regs[4].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].number[5] <= midi_out_regs[4].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].number[6] <= midi_out_regs[4].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[4].valid <= midi_out_regs[4].valid.DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].velocity[0] <= midi_out_regs[3].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].velocity[1] <= midi_out_regs[3].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].velocity[2] <= midi_out_regs[3].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].velocity[3] <= midi_out_regs[3].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].velocity[4] <= midi_out_regs[3].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].velocity[5] <= midi_out_regs[3].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].velocity[6] <= midi_out_regs[3].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].number[0] <= midi_out_regs[3].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].number[1] <= midi_out_regs[3].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].number[2] <= midi_out_regs[3].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].number[3] <= midi_out_regs[3].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].number[4] <= midi_out_regs[3].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].number[5] <= midi_out_regs[3].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].number[6] <= midi_out_regs[3].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[3].valid <= midi_out_regs[3].valid.DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].velocity[0] <= midi_out_regs[2].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].velocity[1] <= midi_out_regs[2].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].velocity[2] <= midi_out_regs[2].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].velocity[3] <= midi_out_regs[2].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].velocity[4] <= midi_out_regs[2].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].velocity[5] <= midi_out_regs[2].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].velocity[6] <= midi_out_regs[2].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].number[0] <= midi_out_regs[2].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].number[1] <= midi_out_regs[2].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].number[2] <= midi_out_regs[2].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].number[3] <= midi_out_regs[2].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].number[4] <= midi_out_regs[2].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].number[5] <= midi_out_regs[2].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].number[6] <= midi_out_regs[2].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[2].valid <= midi_out_regs[2].valid.DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].velocity[0] <= midi_out_regs[1].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].velocity[1] <= midi_out_regs[1].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].velocity[2] <= midi_out_regs[1].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].velocity[3] <= midi_out_regs[1].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].velocity[4] <= midi_out_regs[1].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].velocity[5] <= midi_out_regs[1].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].velocity[6] <= midi_out_regs[1].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].number[0] <= midi_out_regs[1].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].number[1] <= midi_out_regs[1].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].number[2] <= midi_out_regs[1].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].number[3] <= midi_out_regs[1].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].number[4] <= midi_out_regs[1].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].number[5] <= midi_out_regs[1].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].number[6] <= midi_out_regs[1].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[1].valid <= midi_out_regs[1].valid.DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].velocity[0] <= midi_out_regs[0].velocity[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].velocity[1] <= midi_out_regs[0].velocity[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].velocity[2] <= midi_out_regs[0].velocity[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].velocity[3] <= midi_out_regs[0].velocity[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].velocity[4] <= midi_out_regs[0].velocity[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].velocity[5] <= midi_out_regs[0].velocity[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].velocity[6] <= midi_out_regs[0].velocity[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].number[0] <= midi_out_regs[0].number[0].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].number[1] <= midi_out_regs[0].number[1].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].number[2] <= midi_out_regs[0].number[2].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].number[3] <= midi_out_regs[0].number[3].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].number[4] <= midi_out_regs[0].number[4].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].number[5] <= midi_out_regs[0].number[5].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].number[6] <= midi_out_regs[0].number[6].DB_MAX_OUTPUT_PORT_TYPE
+midi_note_o[0].valid <= midi_out_regs[0].valid.DB_MAX_OUTPUT_PORT_TYPE
 led_r_out[0] <= led_r_reg[0].DB_MAX_OUTPUT_PORT_TYPE
 led_r_out[1] <= led_r_reg[1].DB_MAX_OUTPUT_PORT_TYPE
 led_r_out[2] <= led_r_reg[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -2413,7 +2397,7 @@ led_g_out[5] <= led_g_reg[5].DB_MAX_OUTPUT_PORT_TYPE
 led_g_out[6] <= led_g_reg[6].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:0:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:0:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -2550,7 +2534,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:1:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:1:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -2687,7 +2671,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:2:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:2:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -2824,7 +2808,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:3:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:3:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -2961,7 +2945,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:4:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:4:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -3098,7 +3082,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:5:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:5:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -3235,7 +3219,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:6:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:6:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -3372,7 +3356,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:7:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:7:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -3509,7 +3493,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:8:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:8:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -3646,7 +3630,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:9:inst_dds
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|DDS:\dds_inst_gen:9:inst_dds
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
 tone_on_i => dacdat_g_o.OUTPUTSELECT
@@ -3783,7 +3767,7 @@ dacdat_g_o[14] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 dacdat_g_o[15] <= dacdat_g_o.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Milestone3_infrastructure_block|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|dacdat_sum:inst_dacdat_sum
+|midi_synth_top|digital_audio_interface_driver_top:inst_digital_audio_interface_driver_top|dds_top:inst_dds_top|dacdat_sum:inst_dacdat_sum
 dacdat_in[9][0] => Add8.IN32
 dacdat_in[9][1] => Add8.IN31
 dacdat_in[9][2] => Add8.IN30

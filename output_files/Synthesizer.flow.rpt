@@ -1,5 +1,5 @@
 Flow report for Synthesizer
-Mon Jul 02 13:46:06 2018
+Mon Jul 02 20:52:07 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Mon Jul 02 13:46:02 2018           ;
+; Flow Status                        ; Successful - Mon Jul 02 20:52:03 2018           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Synthesizer                                     ;
-; Top-level Entity Name              ; Milestone3_infrastructure_block                 ;
+; Top-level Entity Name              ; midi_synth_top                                  ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C20F484C7                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 5,583 / 18,752 ( 30 % )                         ;
-;     Total combinational functions  ; 5,528 / 18,752 ( 29 % )                         ;
-;     Dedicated logic registers      ; 559 / 18,752 ( 3 % )                            ;
-; Total registers                    ; 559                                             ;
+; Total logic elements               ; 5,598 / 18,752 ( 30 % )                         ;
+;     Total combinational functions  ; 5,566 / 18,752 ( 30 % )                         ;
+;     Dedicated logic registers      ; 560 / 18,752 ( 3 % )                            ;
+; Total registers                    ; 560                                             ;
 ; Total pins                         ; 77 / 315 ( 24 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 16,320 / 239,616 ( 7 % )                        ;
@@ -64,30 +64,30 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/02/2018 13:44:28 ;
+; Start date & time ; 07/02/2018 20:50:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Synthesizer         ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                           ;
-+-------------------------------------+---------------------------------------+---------------+---------------------------------+------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name                     ; Section Id ;
-+-------------------------------------+---------------------------------------+---------------+---------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 40637554105699.153054986706840        ; --            ; --                              ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --                              ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --                              ; --         ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; Milestone3_infrastructure_block ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; Milestone3_infrastructure_block ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; Milestone3_infrastructure_block ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --                              ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --                              ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --                              ; --         ;
-; TOP_LEVEL_ENTITY                    ; Milestone3_infrastructure_block       ; Synthesizer   ; --                              ; --         ;
-; VHDL_INPUT_VERSION                  ; VHDL_2008                             ; VHDL_1993     ; --                              ; --         ;
-; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                   ; --            ; --                              ; --         ;
-+-------------------------------------+---------------------------------------+---------------+---------------------------------+------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                          ;
++-------------------------------------+---------------------------------------+---------------+----------------+------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name    ; Section Id ;
++-------------------------------------+---------------------------------------+---------------+----------------+------------+
+; COMPILER_SIGNATURE_ID               ; 40637554105699.153057541913992        ; --            ; --             ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --             ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --             ; --         ;
+; PARTITION_COLOR                     ; 16764057                              ; --            ; midi_synth_top ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; midi_synth_top ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; midi_synth_top ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --             ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --             ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --             ; --         ;
+; TOP_LEVEL_ENTITY                    ; midi_synth_top                        ; Synthesizer   ; --             ; --         ;
+; VHDL_INPUT_VERSION                  ; VHDL_2008                             ; VHDL_1993     ; --             ; --         ;
+; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                   ; --            ; --             ; --         ;
++-------------------------------------+---------------------------------------+---------------+----------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -95,11 +95,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:56     ; 1.0                     ; 4711 MB             ; 00:00:56                           ;
-; Fitter                    ; 00:00:33     ; 1.0                     ; 4947 MB             ; 00:00:33                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4593 MB             ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:01:02     ; 1.0                     ; 4718 MB             ; 00:00:59                           ;
+; Fitter                    ; 00:00:38     ; 1.0                     ; 4946 MB             ; 00:00:37                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4595 MB             ; 00:00:02                           ;
 ; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4637 MB             ; 00:00:02                           ;
-; Total                     ; 00:01:34     ; --                      ; --                  ; 00:01:33                           ;
+; Total                     ; 00:01:45     ; --                      ; --                  ; 00:01:40                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
